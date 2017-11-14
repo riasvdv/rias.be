@@ -26,7 +26,7 @@
                     {% case "image" %}
                         <figure class="my-8">
                             <a href="{{ block.image.one.getUrl() }}" rel="fluidbox">
-                                <img src="{{ block.image.one.getUrl() }}" alt="">
+                                <img src="{{ block.image.one.getUrl({ width: 800 }) }}" alt="">
                             </a>
                             <figcaption class="text-base text-grey-dark text-center max-w-sm mx-auto">{{ block.caption }}</figcaption>
                         </figure>
