@@ -31,7 +31,7 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="{{ entry.seoTitle }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://rias.be" />
+    <meta property="og:url" content="{{ entry.url }}" />
     <meta property="og:image" content="{{ entry.seoImage.count() ? entry.seoImage.one.getUrl() : '' }}" />
     <meta property="og:description" content="{{ entry.seoDescription }}" />
     <meta property="og:site_name" content="Rias Van der Veken | PHP Developer" />
