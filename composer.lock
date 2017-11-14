@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ef8b07541087f4fa052e4aed9c74875",
+    "content-hash": "f424611afdb267eeadfd633d1f765717",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -1459,6 +1459,61 @@
             ],
             "description": "A PHP library for improving your web typography",
             "time": "2017-10-27T18:33:56+00:00"
+        },
+        {
+            "name": "nystudio107/craft3-cookies",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft3-cookies.git",
+                "reference": "3cb42a38b670b0180390bf9d75fb5b4c667a7996"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft3-cookies/zipball/3cb42a38b670b0180390bf9d75fb5b4c667a7996",
+                "reference": "3cb42a38b670b0180390bf9d75fb5b4c667a7996",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-beta.23"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Cookies",
+                "handle": "cookies",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft3-cookies/CHANGELOG.md",
+                "class": "nystudio107\\cookies\\Cookies",
+                "components": {
+                    "cookies": "nystudio107\\cookies\\services\\CookiesService"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\cookies\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "A simple plugin for setting and getting cookies from within Craft CMS templates.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "cookies",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2017-08-05T12:15:14+00:00"
         },
         {
             "name": "nystudio107/craft3-typogrify",

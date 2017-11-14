@@ -17,6 +17,8 @@
     "eslint-config-spatie": "^2.0.3",
     "fluidbox": "^2.0.5",
     "font-awesome": "^4.7.0",
+    "fontfaceobserver": "^2.0.13",
+    "js-cookie": "^2.2.0",
     "laravel-mix": "^1.6.1",
     "lodash": "^4.17.4",
     "postcss-cli": "^4.1.1",
