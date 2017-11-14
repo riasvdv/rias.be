@@ -1,0 +1,33 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+    <div class="container mx-auto">
+        <header class="mb-8 max-w-md mx-auto">
+            <div class="intro text-lg font-normal sm:text-xl lg:text-2xl leading-normal">
+                {{ entry.intro | typogrify }}
+            </div>
+        </header>
+
+        {% set blogposts = craft.entries.section('blog').all %}
+        {% if blogposts | length %}
+        <section class="max-w-md mx-auto">
+            <h3 class="text-xl mb-4">Blog</h3>
+            {% for blogpost in blogposts | slice(0, 5) %}
+            <p class="mb-4 leading-normal">
+                <a href="{{ blogpost.url }}" class="text-grey-darker no-underline mb-4 shadow-orange-lighter hover:shadow-orange-lighter">
+                    {{ blogpost.title }}
+                </a>
+            </p>
+            {% endfor %}
+            {% if blogposts | length > 5 %}
+            <p class="mb-4 leading-normal">
+                <a href="/blog" class="text-grey-darker no-underline shadow-teal-lighter hover:shadow-teal-lighter mb-4">
+                    More blogposts
+                </a>
+            </p>
+            {% endif %}
+        </section>
+        {% endif %}
+    </div>
+{% endblock %}

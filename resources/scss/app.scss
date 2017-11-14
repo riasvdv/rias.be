@@ -1,0 +1,81 @@
+@import "./vendor/prism.css";
+@import "~font-awesome/scss/font-awesome";
+@import "~fluidbox/src/css/fluidbox";
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+@tailwind preflight;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+@import "base";
+
+@import "blocks/code";
+@import "blocks/text";
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor..
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+.shadow-teal-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #a0f0ed inset;
+}
+
+.hover\:shadow-teal-lighter:hover {
+    box-shadow: 0 -50px 0 0 #a0f0ed inset;
+}
+
+.shadow-orange-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #fcd9b6 inset;
+}
+
+.hover\:shadow-orange-lighter:hover {
+    box-shadow: 0 -50px 0 0 #fcd9b6 inset;
+}
+
+.intro p {
+    @apply mb-4;
+}
+.intro a {
+    @apply .text-grey-darker .no-underline .shadow-orange-lighter;
+
+    &:hover {
+        box-shadow: 0 -50px 0 0 #fcd9b6 inset;
+    }
+}

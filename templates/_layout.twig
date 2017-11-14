@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ entry.seoTitle }} | Rias Van der Veken</title>
+    <meta name="description" content="{{ entry.seoDescription }}">
+    <meta name="robots" content="all">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- MS Tap Highlight for Windows Phones -->
+    <!-- The tag is specific to Internet Explorer 10 on Windows Phone, and does not apply to Internet Explorer 10 on Windows. -->
+    <!-- http://stackoverflow.com/questions/7508100/webkit-tap-highlight-color-in-windows-phone -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Windows 8 Start Tile -->
+    <meta name="application-name" content="Rias Van der Veken"/>
+    <!-- OG tags -->
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Rias Van der Veken - PHP Developer">
+    <meta itemprop="description" content="{{ entry.seoDescription }}">
+    <meta itemprop="image" content="{{ entry.seoImage.count() ? entry.seoImage.one.getUrl() : '' }}">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@riasvdv">
+    <meta name="twitter:title" content="{{ entry.seoTitle }}">
+    <meta name="twitter:description" content="{{ entry.seoDescription }}">
+    <meta name="twitter:creator" content="@riasvdv">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="{{ entry.seoImage.count() ? entry.seoImage.one.getUrl() : '' }}">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ entry.seoTitle }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://rias.be" />
+    <meta property="og:image" content="{{ entry.seoImage.count() ? entry.seoImage.one.getUrl() : '' }}" />
+    <meta property="og:description" content="{{ entry.seoDescription }}" />
+    <meta property="og:site_name" content="Rias Van der Veken | PHP Developer" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#fbfcfc">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#4dc0b4">
+
+    <!-- CSS, you gotta have style -->
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Fira+Sans:400,400i,700,700i" rel="stylesheet">
+</head>
+<body class="p-4 sm:p-6 text-grey-darker bg-grey-lightest" style="font-family: 'Fira Mono'">
+
+<div class="container mx-auto">
+    <nav class="flex items-center flex-col mb-4 sm:mb-8">
+        <a href="/" class="text-teal shadow-none hover:shadow-none">
+            <svg class="sm:w-16 sm:h-16" width="35" height="42" viewBox="0 0 35 42" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.3 25.824l8.38 13.11c.388.625.443 1.363.055 2.044-.333.625-1 1.022-1.665 1.022h-5.05c-.665 0-1.275-.34-1.608-.908l-8.434-13.678H8.1v12.6C8.1 41.092 7.214 42 6.16 42H1.94C.888 42 0 41.092 0 40.014V21.34c0-1.078.888-1.986 1.942-1.986h17.09c3.218 0 5.382-.908 6.492-2.838.388-.624.555-1.532.555-2.61 0-1.874-.556-3.18-1.72-4.2-1.222-1.136-2.942-1.647-5.106-1.647H1.942C.888 8.06 0 7.15 0 6.072V1.986C0 .908.888 0 1.942 0h17.81c4.274 0 7.77 1.25 10.378 3.746 2.718 2.497 4.05 5.903 4.05 10.16 0 5.505-2.386 9.478-6.936 11.52-.277.115-.61.285-.943.398z" fill-rule="nonzero" />
+            </svg>
+        </a>
+        {% if craft.entries.section('blog').count() %}
+            <a href="/blog" class="text-grey-darker text-lg mt-3 hover:shadow-orange-lighter no-underline">Blog</a>
+        {% endif %}
+    </nav>
+</div>
+
+{% block content %}{% endblock %}
+
+{% if craft.entries.section('blog').count() %}
+<nav class="fixed flex justify-center w-full" style="left: 0; right: 0; bottom: 15px;">
+    <a href="#" class="block sm:hidden bg-teal rounded-full text-white py-2 px-4 no-underline text-md shadow-none hover:shadow-none">
+        MENU
+    </a>
+</nav>
+{% endif %}
+
+<script src="{{ mix('js/app.js') }}"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42220637-4', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

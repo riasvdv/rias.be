@@ -1,0 +1,22 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+    <div class="container mx-auto">
+        <header class="mb-8 max-w-md mx-auto">
+            <div class="intro text-lg font-normal sm:text-xl lg:text-2xl leading-normal">
+                {{ entry.seoDescription | typogrify }}
+            </div>
+        </header>
+
+        <section class="max-w-md mx-auto">
+            {% for blogpost in craft.entries.section('blog').all %}
+            <p class="mb-4 leading-normal">
+                <a href="{{ blogpost.url }}" class="text-grey-darker no-underline mb-4 shadow-orange-lighter hover:shadow-orange-lighter">
+                    {{ blogpost.title }}
+                </a>
+            </p>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}

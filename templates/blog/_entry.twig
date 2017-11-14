@@ -1,0 +1,37 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+    <div class="container mx-auto">
+        <div class="max-w-lg mx-auto font-sans leading-normal text-lg">
+            <h1 class="max-w-md mx-auto text-3xl font-bold mb-4">{{ entry.title }}</h1>
+            {% for block in entry.blogMatrix.all %}
+                {% switch block.type %}
+                    {% case "text" %}
+                        <div class="max-w-md mx-auto block--text">
+                            {% if block.heading %}
+                                <h2 class="mb-2">{{  block.heading }}</h2>
+                            {% endif %}
+                            {{ block.textContent }}
+                        </div>
+                    {% case "code" %}
+                        <div class="block block--code">
+                            <pre class="max-h-half line-numbers"><code class="language-{{ block.codeType }}">{{ block.code }}</code></pre>
+                            {% if block.codeCaption |length %}
+                                <aside class="block__caption">
+                                    <h5 class="text-base text-center py-1 border-t border-teal text-grey font-normal leading-loose"><i class="fa fa-code"></i> {{ block.codeCaption }}</h5>
+                                </aside>
+                            {% endif %}
+                        </div>
+                    {% case "image" %}
+                        <figure class="my-8">
+                            <a href="{{ block.image.one.getUrl() }}" rel="fluidbox">
+                                <img src="{{ block.image.one.getUrl() }}" alt="">
+                            </a>
+                            <figcaption class="text-base text-grey-dark text-center max-w-sm mx-auto">{{ block.caption }}</figcaption>
+                        </figure>
+                {% endswitch %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

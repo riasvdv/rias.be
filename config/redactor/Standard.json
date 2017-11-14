@@ -1,0 +1,12 @@
+{
+  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
+  "plugins": ["source", "fullscreen", "video"],
+  "formatting": ["p", "blockquote", "pre", "h1", "h2", "h3", "h4", "h5"],
+  "formattingAdd": {
+    "code": {
+      "title": "Code",
+      "args": ["code"]
+    }
+  },
+  "toolbarFixed": true
+}

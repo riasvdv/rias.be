@@ -1,0 +1,14 @@
+.block--text {
+    a {
+        @apply text-grey-darker mt-auto mb-auto no-underline shadow-orange-lighter;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 -50px 0 0 #fcd9b6 inset;
+        }
+    }
+
+    code {
+        @apply text-grey-dark py-1 px-2 bg-grey-light;
+    }
+}
