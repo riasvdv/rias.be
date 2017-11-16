@@ -8,11 +8,13 @@ require('./bootstrap');
 $(function() {
     $('a[rel="fluidbox"]').fluidbox();
 
-    $('.js-open-nav').on('click', () => {
+    $('.js-open-nav').on('click', (e) => {
+        e.preventDefault();
         $('#mobile-nav').removeClass('hidden').addClass('open');
     });
 
-    $('.js-close-nav').on('click', () => {
+    $('.js-close-nav').on('click', (e) => {
+        e.preventDefault();
         $('#mobile-nav').removeClass('open');
     });
 });

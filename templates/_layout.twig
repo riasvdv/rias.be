@@ -86,12 +86,12 @@
 {% block content %}{% endblock %}
 
 {% if craft.entries.section('blog').count() %}
-    <div class="fixed flex justify-center w-full" style="left: 0; right: 0; bottom: 15px;">
+    <div class="fixed flex justify-center w-full" style="left: 0; right: 0; bottom: 15px; z-index: 995;">
         <a href="#" class="block sm:hidden bg-teal rounded-full text-white py-2 px-4 no-underline text-md shadow-none hover:shadow-none js-open-nav">
             MENU
         </a>
     </div>
-    <nav id="mobile-nav" class="hidden fixed flex max-w-sm mx-auto justify-center w-full bg-white flex-col pin-b pin-l pin-r shadow-top p-1 rounded-lg">
+    <nav id="mobile-nav" class="hidden fixed flex max-w-sm mx-auto justify-center w-full bg-white flex-col pin-b pin-l pin-r shadow-top p-1 rounded-lg" style="z-index: 999;">
         <div class="flex justify-center py-2 border-b border-grey-light">
             <button class="ml-2"><i class="fa fa-bars text-white"></i></button>
             <span class="mx-auto uppercase text-sm text-grey">Navigation</span>
