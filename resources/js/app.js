@@ -9,7 +9,7 @@ $(function() {
     $('a[rel="fluidbox"]').fluidbox();
 
     $('.js-open-nav').on('click', () => {
-        $('#mobile-nav').addClass('open');
+        $('#mobile-nav').removeClass('hidden').addClass('open');
     });
 
     $('.js-close-nav').on('click', () => {
