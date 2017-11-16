@@ -7,6 +7,14 @@ require('./bootstrap');
 
 $(function() {
     $('a[rel="fluidbox"]').fluidbox();
+
+    $('.js-open-nav').on('click', () => {
+        $('#mobile-nav').addClass('open');
+    });
+
+    $('.js-close-nav').on('click', () => {
+        $('#mobile-nav').removeClass('open');
+    });
 });
 
 const FontFaceObserver = require('fontfaceobserver');
