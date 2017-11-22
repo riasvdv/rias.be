@@ -34,7 +34,8 @@ if (mix.inProduction()) {
                 paths: glob.sync([
                     path.join(__dirname, 'templates/**/*.twig'),
                     path.join(__dirname, 'templates/**/*.html'),
-                    path.join(__dirname, 'resources/js/**/*.js')
+                    path.join(__dirname, 'resources/js/**/*.js'),
+                    path.join(__dirname, 'node_modules/fluidbox/**/*.js'),
                 ]),
                 extractors: [
                     {
