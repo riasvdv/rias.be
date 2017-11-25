@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b63b365f215cadc78283329cff8b257",
+    "content-hash": "58aaa3c77e93188f1056062e93d5d072",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -327,22 +327,23 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.0-beta.34",
+            "version": "dev-release/3.0.0-RC1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "3f06fa5e6e7bde6eef5b908ed6e8e331e8c841ee"
+                "reference": "4bb13e1a558f5e44fc9ecb0f7a9e17ee6b671bac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3f06fa5e6e7bde6eef5b908ed6e8e331e8c841ee",
-                "reference": "3f06fa5e6e7bde6eef5b908ed6e8e331e8c841ee",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/4bb13e1a558f5e44fc9ecb0f7a9e17ee6b671bac",
+                "reference": "4bb13e1a558f5e44fc9ecb0f7a9e17ee6b671bac",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "~1.4.2",
+                "craftcms/oauth2-craftid": "~1.0.0",
                 "craftcms/plugin-installer": "~1.5.0",
-                "craftcms/server-check": "~1.0.17",
+                "craftcms/server-check": "~1.1.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "danielstjules/stringy": "~3.0.0",
                 "enshrined/svg-sanitize": "~0.6.0",
@@ -364,7 +365,7 @@
                 "twig/twig": "~2.3.0",
                 "yiisoft/yii2": "~2.0.13.0",
                 "yiisoft/yii2-debug": "~2.0.10",
-                "yiisoft/yii2-queue": "~2.0.0",
+                "yiisoft/yii2-queue": "~2.0.1",
                 "yiisoft/yii2-swiftmailer": "~2.0.6",
                 "zendframework/zend-feed": "~2.8.0"
             },
@@ -403,7 +404,58 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2017-11-09T21:08:24+00:00"
+            "time": "2017-11-25T00:27:48+00:00"
+        },
+        {
+            "name": "craftcms/oauth2-craftid",
+            "version": "1.0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/oauth2-craftid.git",
+                "reference": "3f18364139d72d83fb50546d85130beaaa868836"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/oauth2-craftid/zipball/3f18364139d72d83fb50546d85130beaaa868836",
+                "reference": "3f18364139d72d83fb50546d85130beaaa868836",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": "^2.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0",
+                "satooshi/php-coveralls": "^1.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "craftcms\\oauth2\\client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Craft OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "cms",
+                "craftcms",
+                "craftid",
+                "oauth",
+                "oauth2"
+            ],
+            "time": "2017-11-22T19:46:18+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -447,17 +499,66 @@
             "time": "2017-07-25T13:26:24+00:00"
         },
         {
-            "name": "craftcms/server-check",
-            "version": "1.0.17",
+            "name": "craftcms/redactor",
+            "version": "1.0.0-beta.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/craftcms/server-check.git",
-                "reference": "8dfa94cb48ef4531bea21c91511821469a6f8c7e"
+                "url": "https://github.com/craftcms/redactor.git",
+                "reference": "74e8296ce835a668ac835c42d3de92748b83a3b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/8dfa94cb48ef4531bea21c91511821469a6f8c7e",
-                "reference": "8dfa94cb48ef4531bea21c91511821469a6f8c7e",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/74e8296ce835a668ac835c42d3de92748b83a3b0",
+                "reference": "74e8296ce835a668ac835c42d3de92748b83a3b0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor",
+                "handle": "redactor",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/redactor/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/redactor/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\redactor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
+            "keywords": [
+                "Redactor",
+                "cms",
+                "craftcms",
+                "html",
+                "yii2"
+            ],
+            "time": "2017-11-22T19:48:42+00:00"
+        },
+        {
+            "name": "craftcms/server-check",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/server-check.git",
+                "reference": "6e7ecc427b5252b8b878f028a45738e19e7968b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/6e7ecc427b5252b8b878f028a45738e19e7968b9",
+                "reference": "6e7ecc427b5252b8b878f028a45738e19e7968b9",
                 "shasum": ""
             },
             "type": "library",
@@ -478,7 +579,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2017-06-29T20:23:11+00:00"
+            "time": "2017-11-11T00:13:31+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -612,95 +713,6 @@
             ],
             "description": "An SVG sanitizer for PHP",
             "time": "2017-06-11T23:08:25+00:00"
-        },
-        {
-            "name": "erusev/parsedown",
-            "version": "1.6.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "fbe3fe878f4fe69048bb8a52783a09802004f548"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/fbe3fe878f4fe69048bb8a52783a09802004f548",
-                "reference": "fbe3fe878f4fe69048bb8a52783a09802004f548",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Parsedown": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "Parser for Markdown.",
-            "homepage": "http://parsedown.org",
-            "keywords": [
-                "markdown",
-                "parser"
-            ],
-            "time": "2017-11-14T20:44:03+00:00"
-        },
-        {
-            "name": "erusev/parsedown-extra",
-            "version": "0.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
-                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
-                "shasum": ""
-            },
-            "require": {
-                "erusev/parsedown": "~1.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ParsedownExtra": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "An extension of Parsedown that adds support for Markdown Extra.",
-            "homepage": "https://github.com/erusev/parsedown-extra",
-            "keywords": [
-                "markdown",
-                "markdown extra",
-                "parsedown",
-                "parser"
-            ],
-            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -1346,20 +1358,20 @@
         },
         {
             "name": "misterbk/mix",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mister-bk/craft-plugin-mix.git",
-                "reference": "716255599c58285fd1edc1eeb9015b837ad7b3be"
+                "reference": "e631f17058891b8f66de97fafab62456f71ff05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mister-bk/craft-plugin-mix/zipball/716255599c58285fd1edc1eeb9015b837ad7b3be",
-                "reference": "716255599c58285fd1edc1eeb9015b837ad7b3be",
+                "url": "https://api.github.com/repos/mister-bk/craft-plugin-mix/zipball/e631f17058891b8f66de97fafab62456f71ff05c",
+                "reference": "e631f17058891b8f66de97fafab62456f71ff05c",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "~3.0.0-beta.1"
+                "craftcms/cms": "^3.0.0-RC1"
             },
             "type": "craft-plugin",
             "extra": {
@@ -1400,7 +1412,7 @@
                 "laravel-mix",
                 "mix"
             ],
-            "time": "2017-06-30T09:35:18+00:00"
+            "time": "2017-11-23T09:21:07+00:00"
         },
         {
             "name": "mundschenk-at/php-typography",
@@ -1784,22 +1796,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "bf2267389f86ae9a168fd0166be59d36ffc07827"
+                "reference": "f793fe6ff54acabd9bc9f76f4a9ad3c89a68c789"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/bf2267389f86ae9a168fd0166be59d36ffc07827",
-                "reference": "bf2267389f86ae9a168fd0166be59d36ffc07827",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f793fe6ff54acabd9bc9f76f4a9ad3c89a68c789",
+                "reference": "f793fe6ff54acabd9bc9f76f4a9ad3c89a68c789",
                 "shasum": ""
             },
             "conflict": {
                 "adodb/adodb-php": "<5.20.6",
-                "amphp/artax": ">=2,<2.0.6|<1.0.6",
+                "amphp/artax": "<1.0.6|>=2,<2.0.6",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
-                "cakephp/cakephp": ">=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=2.7,<2.7.6|>=3,<3.0.15|>=3.1,<3.1.4|>=1.3,<1.3.18",
+                "cakephp/cakephp": ">=1.3,<1.3.18|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=2.7,<2.7.6|>=3,<3.0.15|>=3.1,<3.1.4",
                 "cart2quote/module-quotation": ">=4.1.6,<=4.4.5|>=5,<5.4.4",
-                "cartalyst/sentry": "<2.1",
+                "cartalyst/sentry": "<=2.1.6",
                 "codeigniter/framework": "<=3.0.6",
                 "composer/composer": "<=1.0.0-alpha11",
                 "contao-components/mediaelement": ">=2.14.2,<2.21.1",
@@ -1818,7 +1830,7 @@
                 "dompdf/dompdf": ">=0.6,<0.6.2",
                 "drupal/core": ">=8,<8.3.7",
                 "drupal/drupal": ">=8,<8.3.7",
-                "ezsystems/ezpublish-legacy": ">=2017.8,<2017.8.1.1|>=5.4,<5.4.10.1|>=5.3,<5.3.12.2",
+                "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.2|>=5.4,<5.4.10.1|>=2017.8,<2017.8.1.1",
                 "firebase/php-jwt": "<2",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
@@ -1838,7 +1850,7 @@
                 "oro/crm": ">=1.7,<1.7.4",
                 "oro/platform": ">=1.7,<1.7.4",
                 "phpmailer/phpmailer": ">=5,<5.2.24",
-                "phpunit/phpunit": ">=5.0.10,<5.6.3|>=4.8.19,<4.8.28",
+                "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
                 "phpxmlrpc/extras": "<6.0.1",
                 "pusher/pusher-php-server": "<2.2.1",
                 "sabre/dav": ">=1.6,<1.6.99|>=1.7,<1.7.11|>=1.8,<1.8.9",
@@ -1854,16 +1866,16 @@
                 "squizlabs/php_codesniffer": ">=1,<2.8.1",
                 "swiftmailer/swiftmailer": ">=4,<5.4.5",
                 "symfony/dependency-injection": ">=2,<2.0.17",
-                "symfony/form": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13|>=2.3,<2.3.35|>=2.4,<2.6.12",
+                "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
                 "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2",
                 "symfony/http-foundation": ">=2,<2.3.27|>=2.4,<2.5.11|>=2.6,<2.6.6",
                 "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
                 "symfony/routing": ">=2,<2.0.19",
-                "symfony/security": ">=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5|>=2.3,<2.3.37|>=2.4,<2.6.13|>=2.7,<2.7.9|>=2,<2.0.25|>=2.1,<2.1.13|>=2.2,<2.2.9",
-                "symfony/security-core": ">=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5|>=2.4,<2.6.13|>=2.7,<2.7.9|>=2.8,<2.8.6|>=3,<3.0.6",
+                "symfony/security": ">=2,<2.0.25|>=2.1,<2.1.13|>=2.2,<2.2.9|>=2.3,<2.3.37|>=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5",
+                "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<2.8.6|>=2.8.23,<2.8.25|>=3,<3.0.6|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5",
                 "symfony/security-csrf": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
-                "symfony/security-http": ">=2.4,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13|>=2.3,<2.3.41",
+                "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
                 "symfony/serializer": ">=2,<2.0.11",
                 "symfony/symfony": ">=2,<2.3.41|>=2.4,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
                 "symfony/translation": ">=2,<2.0.17",
@@ -1871,11 +1883,11 @@
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
                 "twig/twig": "<1.20",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.22|>=8,<8.7.5",
-                "typo3/flow": ">=1,<1.0.4|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5|>=1.1,<1.1.1|>=2,<2.0.1",
-                "typo3/neos": ">=1.2,<1.2.13|>=2,<2.0.4|>=1.1,<1.1.3",
+                "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
+                "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "yiisoft/yii": ">=1.1.14,<1.1.15",
                 "yiisoft/yii2": "<2.0.5",
@@ -1920,7 +1932,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-11-17T12:15:33+00:00"
+            "time": "2017-11-24T16:44:41+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -2064,66 +2076,6 @@
             "time": "2015-10-13T18:44:15+00:00"
         },
         {
-            "name": "selvinortiz/doxter",
-            "version": "3.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/selvinortiz/craft-plugin-doxter.git",
-                "reference": "52e40c6a7273e7026f99a634a86b70e4e2714860"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/selvinortiz/craft-plugin-doxter/zipball/52e40c6a7273e7026f99a634a86b70e4e2714860",
-                "reference": "52e40c6a7273e7026f99a634a86b70e4e2714860",
-                "shasum": ""
-            },
-            "require": {
-                "erusev/parsedown": "^1.6",
-                "erusev/parsedown-extra": "^0.7.1",
-                "michelf/php-smartypants": "^1.8"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Doxter",
-                "class": "selvinortiz\\doxter\\Doxter",
-                "handle": "doxter",
-                "schemaVersion": "3.0.0",
-                "developer": "Selvin Ortiz",
-                "developerUrl": "https://selvinortiz.com",
-                "description": "Markdown Editor & Parser for Craft 3",
-                "documentationUrl": "https://github.com/selvinortiz/craft-plugin-doxter/blob/master/README.md",
-                "changelogUrl": "https://raw.githubusercontent.com/selvinortiz/craft-plugin-doxter/master/CHANGELOG.md",
-                "hasCpSection": false,
-                "hasCpSettings": false,
-                "components": {
-                    "api": "selvinortiz\\doxter\\services\\DoxterService"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "selvinortiz\\doxter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Selvin Ortiz",
-                    "email": "selvin@selvin.co"
-                }
-            ],
-            "description": "Markdown Editor & Parser for Craft 3",
-            "keywords": [
-                "Craft",
-                "craftcms",
-                "doxter",
-                "plugin"
-            ],
-            "time": "2017-07-29T02:12:30+00:00"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.8",
             "source": {
@@ -2179,16 +2131,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.0-BETA4",
+            "version": "v3.4.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "0f859c42d6b557fdac74754c9823170765ae3872"
+                "reference": "72b0921e1c59928b61be8b7a7a98ae5a4f2a02e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/0f859c42d6b557fdac74754c9823170765ae3872",
-                "reference": "0f859c42d6b557fdac74754c9823170765ae3872",
+                "url": "https://api.github.com/repos/symfony/console/zipball/72b0921e1c59928b61be8b7a7a98ae5a4f2a02e1",
+                "reference": "72b0921e1c59928b61be8b7a7a98ae5a4f2a02e1",
                 "shasum": ""
             },
             "require": {
@@ -2244,20 +2196,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-11-12T16:53:54+00:00"
+            "time": "2017-11-19T18:41:20+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v4.0.0-BETA4",
+            "version": "v4.0.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "92697a71cd55c5852d0f19cd80e7fb6d1eb12b88"
+                "reference": "26a15dab86c3820473716be4f846eac774ad4ad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/92697a71cd55c5852d0f19cd80e7fb6d1eb12b88",
-                "reference": "92697a71cd55c5852d0f19cd80e7fb6d1eb12b88",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/26a15dab86c3820473716be4f846eac774ad4ad9",
+                "reference": "26a15dab86c3820473716be4f846eac774ad4ad9",
                 "shasum": ""
             },
             "require": {
@@ -2300,20 +2252,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-11-12T16:47:31+00:00"
+            "time": "2017-11-21T09:27:49+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.4.0-BETA4",
+            "version": "v3.4.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "2365c3ddfcd48de678f13d54b1785cede221afd4"
+                "reference": "de56eee71e0a128d8c54ccc1909cdefd574bad0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/2365c3ddfcd48de678f13d54b1785cede221afd4",
-                "reference": "2365c3ddfcd48de678f13d54b1785cede221afd4",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/de56eee71e0a128d8c54ccc1909cdefd574bad0f",
+                "reference": "de56eee71e0a128d8c54ccc1909cdefd574bad0f",
                 "shasum": ""
             },
             "require": {
@@ -2349,11 +2301,11 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-11-07T14:20:24+00:00"
+            "time": "2017-11-19T18:59:05+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.0-BETA4",
+            "version": "v3.4.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -2461,16 +2413,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.4.0-BETA4",
+            "version": "v3.4.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "dce0aaed6962844b680b9a98a163e2f5f768752b"
+                "reference": "db25e810fd5e124085e3777257d0cf4ae533d0ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/dce0aaed6962844b680b9a98a163e2f5f768752b",
-                "reference": "dce0aaed6962844b680b9a98a163e2f5f768752b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/db25e810fd5e124085e3777257d0cf4ae533d0ea",
+                "reference": "db25e810fd5e124085e3777257d0cf4ae533d0ea",
                 "shasum": ""
             },
             "require": {
@@ -2506,7 +2458,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-11-05T16:10:10+00:00"
+            "time": "2017-11-22T12:18:49+00:00"
         },
         {
             "name": "twig/twig",
@@ -2570,6 +2522,59 @@
                 "templating"
             ],
             "time": "2017-04-21T00:13:02+00:00"
+        },
+        {
+            "name": "verbb/expanded-singles",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/expanded-singles.git",
+                "reference": "40f52e48c16823bad4e51a1d4213a8f4b7ca6afc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/expanded-singles/zipball/40f52e48c16823bad4e51a1d4213a8f4b7ca6afc",
+                "reference": "40f52e48c16823bad4e51a1d4213a8f4b7ca6afc",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-beta.23"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Expanded Singles",
+                "handle": "expanded-singles",
+                "description": "Alters the Entries Index sidebar to list all Singles, rather than grouping them under a 'Singles' link.",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/expanded-singles/master/CHANGELOG.md",
+                "class": "verbb\\expandedsingles\\ExpandedSingles"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\expandedsingles\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A simple plugin for Craft CMS that alters the Entries Index sidebar to list all Singles, rather than grouping them under a 'Singles' link.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "expanded singles"
+            ],
+            "time": "2017-10-17T21:17:18+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3143,11 +3148,19 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "3.0.0-RC1",
+            "alias_normalized": "3.0.0.0-RC1",
+            "version": "dev-release/3.0.0-RC1",
+            "package": "craftcms/cms"
+        }
+    ],
     "minimum-stability": "beta",
     "stability-flags": {
-        "craftcms/cms": 10,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "craftcms/cms": 20,
+        "craftcms/redactor": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
