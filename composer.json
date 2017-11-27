@@ -41,7 +41,5 @@
     "post-create-project-cmd": [
       "@php craft setup/welcome"
     ]
-  },
-  "repositories": [
-  ]
+  }
 }
