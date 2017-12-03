@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 const glob = require('glob-all');
-let purgeCss = require('purgecss-webpack-plugin');
+const fs = require('fs-extra');
+const purgeCss = require('purgecss-webpack-plugin');
 
 //mix.config.uglify.compress.drop_console = false;
 mix.config.postCss = require('./postcss.config').plugins;
@@ -25,7 +26,10 @@ mix
     .setPublicPath('web/build')
     .js('resources/js/app.js', 'web/build/js')
     .sass('resources/scss/app.scss', 'web/build/css')
-    .copy('./node_modules/font-awesome/fonts/*', 'web/build/fonts');
+    .copy('./node_modules/font-awesome/fonts/*', 'web/build/fonts')
+    .then(function () {
+        fs.copySync('web/build/css/app.css', 'templates/critical.css');
+    });
 
 if (mix.inProduction()) {
     mix.webpackConfig({
