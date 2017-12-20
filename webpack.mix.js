@@ -20,7 +20,7 @@ mix.config.postCss = require('./postcss.config').plugins;
 mix
     .options({
         postCss: require('./postcss.config.js').plugins,
-        processCssUrls: false
+        processCssUrls: false,
     })
     .version()
     .setPublicPath('web/build')
@@ -45,13 +45,13 @@ if (mix.inProduction()) {
                     {
                         extractor: class {
                             static extract(content) {
-                                return content.match(/[A-z0-9-:\/]+/g)
+                                return content.match(/[A-z0-9-:\/]+/g);
                             }
                         },
-                        extensions: ['html', 'js', 'php', 'vue', 'twig']
-                    }
-                ]
-            })
-        ]
-    })
+                        extensions: ['html', 'js', 'php', 'vue', 'twig'],
+                    },
+                ],
+            }),
+        ],
+    });
 }
