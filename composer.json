@@ -23,7 +23,7 @@
     "php": ">=7.0.0",
     "vlucas/phpdotenv": "^2.4.0",
     "roave/security-advisories": "dev-master",
-    "craftcms/cms": "^3.0.0-RC4",
+    "craftcms/cms": "3.0.0-RC5",
     "nystudio107/craft3-typogrify": "1.1.5",
     "misterbk/mix": "^1.3",
     "nystudio107/craft3-cookies": "1.1.7",

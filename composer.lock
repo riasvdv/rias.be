@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e2fb45485c78c089857e9e03cd8861f",
+    "content-hash": "02adb3dca5b1a05ad400767461c13862",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -299,11 +299,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.0-RC4",
+            "version": "3.0.0-RC5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c8fd183b7eb21d4d4c2584dd687e056a2c58510b",
-                "reference": "c8fd183b7eb21d4d4c2584dd687e056a2c58510b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/d3ee52019f3c772fd2d69017f0e2071308e5be85",
+                "reference": "d3ee52019f3c772fd2d69017f0e2071308e5be85",
                 "shasum": ""
             },
             "require": {
@@ -343,12 +343,6 @@
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
             },
-            "require-dev": {
-                "codeception/codeception": "~2.3.3",
-                "codeception/mockery-module": "~0.2.2",
-                "codeception/specify": "~0.4.6",
-                "codeception/verify": "~0.3.3"
-            },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options.",
@@ -360,7 +354,6 @@
                     "craft\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -371,7 +364,15 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2018-01-02T18:31:00+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "forum": "https://craftcms.stackexchange.com/",
+                "source": "https://github.com/craftcms/cms",
+                "docs": "https://github.com/craftcms/docs",
+                "rss": "https://github.com/craftcms/cms/releases.atom"
+            },
+            "time": "2018-01-09T19:21:35+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
