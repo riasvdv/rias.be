@@ -33,6 +33,10 @@
                             </a>
                             <figcaption class="text-base text-grey-dark text-center max-w-sm mx-auto">{{ block.caption }}</figcaption>
                         </figure>
+                    {% case "embed" %}
+                        <div class="flex justify-center">
+                            {{ block.embed.embedData.code | raw }}
+                        </div>
                 {% endswitch %}
             {% endfor %}
         </div>
