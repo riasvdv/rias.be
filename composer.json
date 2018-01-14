@@ -25,6 +25,7 @@
     "craftcms/redactor": "1.0.0.1",
     "luwes/craft3-codemirror": "v1.0.0",
     "misterbk/mix": "^1.3",
+    "newism/craft3-fields": "0.0.7",
     "nystudio107/craft3-cookies": "1.1.7",
     "nystudio107/craft3-typogrify": "1.1.5",
     "rias/craft-schema": "^1.0",
