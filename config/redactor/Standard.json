@@ -1,35 +1,47 @@
 {
-    "buttons": [
-        "formatting",
-        "bold",
-        "italic",
-        "unorderedlist",
-        "orderedlist",
-        "link",
-        "image",
-        "video"
-    ],
-    "plugins": [
-        "fullscreen",
-        "video"
-    ],
-    "formatting": [
-        "p",
-        "blockquote",
-        "pre",
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5"
-    ],
-    "formattingAdd": {
-        "code": {
-            "title": "Code",
-            "args": [
-                "code"
-            ]
-        }
+  "buttons": [
+    "source",
+    "formatting",
+    "bold",
+    "italic",
+    "unorderedlist",
+    "orderedlist",
+    "link",
+    "image",
+    "video",
+    "file",
+    "widget"
+  ],
+  "plugins": [
+    "fullscreen",
+    "video"
+  ],
+  "formatting": [
+    "p",
+    "blockquote",
+    "pre",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5"
+  ],
+  "formattingAdd": {
+    "code-add": {
+      "title": "Inline code",
+      "api": "module.block.format",
+      "args": {
+        "tag": "code"
+      }
     },
-    "toolbarFixed": true
+    "code-remove": {
+      "title": "Inline code Remove",
+      "api": "module.block.format",
+      "args": {
+        "tag": "code",
+        "type": "remove"
+      }
+    }
+  },
+  "toolbarFixed": true
 }
