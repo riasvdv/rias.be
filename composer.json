@@ -30,6 +30,7 @@
     "nystudio107/craft-typogrify": "1.1.11",
     "putyourlightson/craft-blitz": "1.3.0",
     "rias/craft-schema": "^1.0",
+    "rias/craftremote": "^1.0",
     "verbb/expanded-singles": "1.0.4",
     "vlucas/phpdotenv": "^2.4.0"
   },
