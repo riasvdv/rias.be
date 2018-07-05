@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8803338585f35090f77af9b6923b3f10",
+    "content-hash": "ff8e872e025af24969eb3d788fc310f3",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -375,11 +375,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.13.2",
+            "version": "3.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/cadc71477c3e64a93038a900ea34877163d0af51",
-                "reference": "cadc71477c3e64a93038a900ea34877163d0af51",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/56a91951c79bce33f784a8b1674a87037a5fb950",
+                "reference": "56a91951c79bce33f784a8b1674a87037a5fb950",
                 "shasum": ""
             },
             "require": {
@@ -449,7 +449,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-06-27T13:28:26+00:00"
+            "time": "2018-07-03T23:13:18+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1929,11 +1929,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.0.24",
+            "version": "3.0.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/97ffc1a58794297015b62330ebff031c4de11241",
-                "reference": "97ffc1a58794297015b62330ebff031c4de11241",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/38cbb3f414b56ba0f8331b74950778f595383fa1",
+                "reference": "38cbb3f414b56ba0f8331b74950778f595383fa1",
                 "shasum": ""
             },
             "require": {
@@ -1998,7 +1998,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-06-25T17:40:58+00:00"
+            "time": "2018-07-03T19:15:04+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -2057,11 +2057,11 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.15",
+            "version": "v2.0.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
                 "shasum": ""
             },
             "require": {
@@ -2093,7 +2093,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-06-08T15:26:40+00:00"
+            "time": "2018-07-04T16:31:37+00:00"
         },
         {
             "name": "php-science/textrank",
@@ -2279,11 +2279,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/8510fe8f8a193d944ecd8e26614362fe5005e17b",
-                "reference": "8510fe8f8a193d944ecd8e26614362fe5005e17b",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/ceb2480226d9fe274c3c1501080ce86787bed3eb",
+                "reference": "ceb2480226d9fe274c3c1501080ce86787bed3eb",
                 "shasum": ""
             },
             "require": {
@@ -2297,7 +2297,7 @@
                 "developerUrl": "https://www.putyourlightson.net/",
                 "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-blitz/v1/CHANGELOG.md",
                 "class": "putyourlightson\\blitz\\Blitz",
-                "schemaVersion": "1.1.0",
+                "schemaVersion": "1.3.0",
                 "hasCpSettings": true
             },
             "autoload": {
@@ -2325,7 +2325,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2018-07-01T10:32:17+00:00"
+            "time": "2018-07-03T15:30:49+00:00"
         },
         {
             "name": "rias/craft-schema",
@@ -2593,25 +2593,25 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.0.2",
+            "version": "v6.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/412333372fb6c8ffb65496a2bbd7321af75733fc",
-                "reference": "412333372fb6c8ffb65496a2bbd7321af75733fc",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
+                "reference": "aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
                 "shasum": ""
             },
             "require": {
                 "egulias/email-validator": "~2.0",
                 "php": ">=7.0.0"
             },
-            "require-dev": {
-                "mockery/mockery": "~0.9.1",
-                "symfony/phpunit-bridge": "~3.3@dev"
+            "suggest": {
+                "ext-intl": "Needed to support internationalized email addresses",
+                "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
@@ -2619,7 +2619,6 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2633,13 +2632,13 @@
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.symfony.com",
+            "homepage": "https://swiftmailer.symfony.com",
             "keywords": [
                 "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2017-09-30T22:39:41+00:00"
+            "time": "2018-07-04T11:12:44+00:00"
         },
         {
             "name": "symfony/console",
@@ -3107,11 +3106,11 @@
         },
         {
             "name": "verbb/expanded-singles",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/expanded-singles/zipball/699d66d3ce1c7ce4244bd2173b1c21913d6df0c1",
-                "reference": "699d66d3ce1c7ce4244bd2173b1c21913d6df0c1",
+                "url": "https://api.github.com/repos/verbb/expanded-singles/zipball/0d5d80ff5fec1f2a8a70c0f981efa4650211a479",
+                "reference": "0d5d80ff5fec1f2a8a70c0f981efa4650211a479",
                 "shasum": ""
             },
             "require": {
@@ -3134,7 +3133,6 @@
                     "verbb\\expandedsingles\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3146,13 +3144,20 @@
             ],
             "description": "A simple plugin for Craft CMS that alters the Entries Index sidebar to list all Singles, rather than grouping them under a 'Singles' link.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "expanded singles"
             ],
-            "time": "2018-02-20T10:35:41+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/expanded-singles/issues?state=open",
+                "source": "https://github.com/verbb/expanded-singles",
+                "docs": "https://github.com/verbb/expanded-singles",
+                "rss": "https://github.com/verbb/expanded-singles/commits/v2.atom"
+            },
+            "time": "2018-07-04T22:06:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
