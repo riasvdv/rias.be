@@ -1,0 +1,27 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+    <div class="container mx-auto">
+        <header class="mb-8 max-w-md mx-auto">
+            <div class="intro text-lg font-normal sm:text-xl lg:text-2xl leading-normal">
+                {{ entry.title }}
+            </div>
+        </header>
+
+        <section class="max-w-md mx-auto">
+            <div class="">
+                {% for plugin in craft.entries.section('plugins').with(['icon']).all %}
+                    <a href="{{ plugin.githubUrl }}" class="flex flex-col sm:flex-row sm:items-center mb-12 leading-normal no-underline text-grey-dark hover:text-grey-darker group">
+                        <img class="w-1/5 flex-no-shrink mx-auto mb-2 sm:mx-0 sm:mb-0" src="{{ plugin.icon[0].url }}" alt="">
+                        <div class="ml-4">
+                            <h2>{{ plugin.title }}</h2>
+                            <div>{{ plugin.pluginDescription|typogrify }}</div>
+                            <span>Price: {{ plugin.price > 0 ? '€'~plugin.price : 'FREE' }}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}
