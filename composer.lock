@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69eacbc1da5ceec7c5b655933150b47a",
+    "content-hash": "69828fa2d6fa6f4f17078ab907c7f95e",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -714,6 +714,60 @@
                 "yii2"
             ],
             "time": "2017-07-20T15:14:12+00:00"
+        },
+        {
+            "name": "craftremote/plugin",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CraftRemote/plugin.git",
+                "reference": "28163e6a2b8e2db83297ebb4ff8584a0ecb4e0dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CraftRemote/plugin/zipball/28163e6a2b8e2db83297ebb4ff8584a0ecb4e0dd",
+                "reference": "28163e6a2b8e2db83297ebb4ff8584a0ecb4e0dd",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "craftremote",
+                "handle": "craftremote",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/craftremote/plugin/master/CHANGELOG.md",
+                "components": {
+                    "craftremoteService": "craftremote\\plugin\\services\\CraftremoteService"
+                },
+                "class": "craftremote\\plugin\\Craftremote"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craftremote\\plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rias",
+                    "homepage": "https://rias.be"
+                }
+            ],
+            "description": "Remotely manage your Craft CMS installs.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "craftremote"
+            ],
+            "time": "2018-07-08T18:16:01+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -2614,60 +2668,6 @@
                 "schema"
             ],
             "time": "2018-01-14T16:42:21+00:00"
-        },
-        {
-            "name": "rias/craftremote",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Rias500/craftremote-plugin.git",
-                "reference": "bf11cb161cc36b4b615f19bade7a46b4d56c08c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craftremote-plugin/zipball/bf11cb161cc36b4b615f19bade7a46b4d56c08c1",
-                "reference": "bf11cb161cc36b4b615f19bade7a46b4d56c08c1",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "craftremote",
-                "handle": "craftremote",
-                "hasCpSettings": true,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/Rias500/craftremote/master/CHANGELOG.md",
-                "components": {
-                    "craftremoteService": "rias\\craftremote\\services\\CraftremoteService"
-                },
-                "class": "rias\\craftremote\\Craftremote"
-            },
-            "autoload": {
-                "psr-4": {
-                    "rias\\craftremote\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rias",
-                    "homepage": "https://rias.be"
-                }
-            ],
-            "description": "Remotely manage your Craft CMS installs.",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craft-plugin",
-                "craftcms",
-                "craftremote"
-            ],
-            "time": "2018-07-05T19:26:04+00:00"
         },
         {
             "name": "seld/cli-prompt",
