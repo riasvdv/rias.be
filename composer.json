@@ -21,8 +21,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/cms": "^3.0",
-    "craftcms/redactor": "2.1.7",
+    "craftcms/cms": "3.1.24",
+    "craftcms/redactor": "2.3.2",
     "craftremote/plugin": "1.1.2",
     "luwes/craft3-codemirror": "1.0.1",
     "misterbk/mix": "1.5.2",
@@ -30,8 +30,8 @@
     "nystudio107/craft-cookies": "1.1.11",
     "nystudio107/craft-seomatic": "3.1.49",
     "nystudio107/craft-typogrify": "1.1.17",
-    "rias/craft-schema": "^1.0",
-    "verbb/expanded-singles": "1.0.5",
+    "putyourlightson/craft-blitz": "^2.0",
+    "verbb/expanded-singles": "1.0.7",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "config": {
