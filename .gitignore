@@ -6,5 +6,4 @@ node_modules
 /web/assets
 /web/build
 /storage/assets
-yarn.lock
 /templates/critical.css
