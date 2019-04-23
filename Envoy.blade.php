@@ -120,9 +120,8 @@ php craft project-config/sync
 {{ logMessage("🙏  Blessing new release…") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
-#php craft clear-caches/all;
-
 sudo -S /usr/sbin/service php7.3-fpm reload
+php craft clear-caches/all;
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
@@ -141,7 +140,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +3 | xargs -d "\n" rm -rf;
 {{ logMessage("💻  Deploying code changes…") }}
 cd {{ $currentDir }}
 git pull origin master
-#php craft clear-caches/all
-#php craft project-config/sync
 sudo -S /usr/sbin/service php7.3-fpm reload
+php craft clear-caches/all
+php craft project-config/sync
 @endtask
