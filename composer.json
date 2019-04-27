@@ -22,7 +22,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/cms": "3.1.24",
-    "craftcms/redactor": "2.3.2",
+    "craftcms/redactor": "2.3.3.1",
     "craftremote/plugin": "1.1.2",
     "luwes/craft3-codemirror": "1.0.1",
     "misterbk/mix": "1.5.2",
