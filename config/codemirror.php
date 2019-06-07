@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2017 Wesley Luyten
  */
 use yii\web\JsExpression;
+
 /**
  * CodeMirror config.php
  *

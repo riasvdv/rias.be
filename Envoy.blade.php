@@ -1,7 +1,7 @@
 @setup
 $server = "134.209.193.221";
 $userAndServer = 'forge@'. $server;
-$repository = "rias500/rias.be";
+$repository = "riasvdv/rias.be";
 $baseDir = "/home/forge/rias.be";
 $releasesDir = "{$baseDir}/releases";
 $persistentDir = "{$baseDir}/persistent";
