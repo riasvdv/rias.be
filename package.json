@@ -29,6 +29,6 @@
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0",
     "tailwindcss": "^1.0.4",
-    "throttle-debounce": "^1.0.1"
+    "throttle-debounce": "^2.1.0"
   }
 }
