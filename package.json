@@ -25,7 +25,7 @@
     "postcss-cli": "^4.1.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^3.0.0",
-    "purgecss-webpack-plugin": "^0.11.0",
+    "purgecss-webpack-plugin": "^1.1.0",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^18.3.0",
     "tailwindcss": "^1.0.4",
