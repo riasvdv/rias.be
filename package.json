@@ -21,7 +21,7 @@
     "glob-all": "^3.1.0",
     "js-cookie": "^2.2.0",
     "laravel-mix": "^4.0.16",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "postcss-cli": "^6.1.2",
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^3.0.0",
