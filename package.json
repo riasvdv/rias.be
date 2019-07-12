@@ -28,7 +28,7 @@
     "purgecss-webpack-plugin": "^1.1.0",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^18.3.0",
-    "tailwindcss": "^1.0.4",
+    "tailwindcss": "^1.0.5",
     "throttle-debounce": "^2.1.0"
   }
 }
