@@ -8,5 +8,6 @@ installer.php
 public/css
 public/js
 public/img
+public/static
 public/mix-manifest.json
 /vendor

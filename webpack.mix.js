@@ -23,5 +23,5 @@ mix.js('resources/js/site.js', 'public/js')
         globs: [
             path.join(__dirname, 'site/themes/**/*.{html,php}'),
         ],
-        whitelistPatterns: [/hljs/],
+        whitelistPatterns: [/hljs/, /border/],
     });
