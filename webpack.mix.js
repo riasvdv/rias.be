@@ -12,10 +12,6 @@ mix.js('resources/js/site.js', 'public/js')
 
     .version()
 
-    .babelConfig({
-        plugins: ['@babel/plugin-syntax-dynamic-import'],
-    })
-
     .webpackConfig({
         output: {
             chunkFilename: 'js/[name].js',
