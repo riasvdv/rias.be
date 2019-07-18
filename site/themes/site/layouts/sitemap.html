@@ -1,0 +1,24 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ permalink replace="sitemap.xml|" }}</loc>
+        <lastmod>{{ date }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+    {{ pages from="/" }}
+        <url>
+            <loc>{{ permalink }}</loc>
+            <lastmod>{{ date }}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>1</priority>
+        </url>
+    {{ /pages }}
+    {{ collection:blog }}
+        <url>
+            <loc>{{ permalink }}</loc>
+            <lastmod>{{ date }}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>1</priority>
+        </url>
+    {{ /collection:blog }}
+</urlset>

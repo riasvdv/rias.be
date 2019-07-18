@@ -1,4 +1,7 @@
 collections:
   blog: 'blog/{slug}'
 taxonomies: {  }
-routes: {  }
+routes:
+  /sitemap.xml:
+    layout: sitemap
+    content_type: xml
