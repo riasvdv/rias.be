@@ -25,6 +25,7 @@ mix.js('resources/js/site.js', 'public/js')
     .purgeCss({
         enabled: mix.inProduction(),
         globs: [
+            path.join(__dirname, 'site/themes/**/*.{html,php}'),
         ],
         whitelistPatterns: [/hljs/],
     });
