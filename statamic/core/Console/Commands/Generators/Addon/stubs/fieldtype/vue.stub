@@ -1,0 +1,25 @@
+Vue.component('dummy_addon-fieldtype', {
+
+    mixins: [Fieldtype],
+
+    template: '<div>DummyAddon</div>',
+
+    data: function() {
+        return {
+            //
+        };
+    },
+
+    computed: {
+        //
+    },
+
+    methods: {
+        //
+    },
+
+    ready: function() {
+        //
+    }
+
+});

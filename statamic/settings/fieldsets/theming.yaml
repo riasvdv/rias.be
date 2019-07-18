@@ -1,0 +1,40 @@
+fields:
+
+  theme:
+    type: theme
+
+  templates:
+    type: section
+
+  default_layout:
+  default_page_template:
+    width: 33
+  default_entry_template:
+    width: 33
+  default_taxonomy_template:
+    width: 33
+  error_template_folder:
+
+  fieldsets:
+    type: section
+
+  default_fieldset:
+  default_page_fieldset:
+    width: 50
+  default_entry_fieldset:
+    width: 50
+  default_term_fieldset:
+    width: 50
+  default_asset_fieldset:
+    width: 50
+
+  misc:
+    type: section
+
+  smartypants:
+    type: toggle
+  allow_php:
+    type: toggle
+  markdown_hard_wrap:
+    type: toggle
+

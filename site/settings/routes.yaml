@@ -1,0 +1,4 @@
+collections:
+  blog: 'blog/{slug}'
+taxonomies: {  }
+routes: {  }

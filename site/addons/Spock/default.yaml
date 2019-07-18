@@ -1,0 +1,17 @@
+# The names of the environments on which commands should be enabled.
+# If you're on an environment not listed here, nothing will happen.
+environments:
+  - production
+
+# Whether the default git setup includes `git push` after committing.
+git_push: false
+
+# Class names of events to ignore.
+# For example, you may want to ignore Statamic\Events\Data\UserSaved
+# if you're gitignoring the users directory.
+ignore_events: []
+
+# Extra commands to be run before and after the default git commands.
+# When customizing the Spock commands, these are ignored.
+commands_before: []
+commands_after: []

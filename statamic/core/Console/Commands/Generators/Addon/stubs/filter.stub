@@ -1,0 +1,18 @@
+<?php
+
+namespace Statamic\Addons\DummyAddon;
+
+use Statamic\Extend\Filter;
+
+class DummyAddonFilter extends Filter
+{
+    /**
+     * Perform filtering on a collection
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function filter()
+    {
+        //
+    }
+}

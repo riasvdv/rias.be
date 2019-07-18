@@ -1,0 +1,120 @@
+.publishing .page-wrapper {
+    padding: 0;
+
+    .publish-errors {
+        margin: 0 24px 24px;
+        padding: 16px 0;
+    }
+}
+
+.publish-form {
+    position: relative;
+    padding-bottom: 120px;
+
+    .loading-blocker {
+        padding-top: 50px;
+        border-radius: 3px;
+    }
+}
+
+.head .status {
+    display: inline-block;
+    label {
+        margin: 0 6px 0 0;
+        position: relative;
+        top: 3px;
+    }
+    > div {
+        display: inline-block;
+        position: relative;
+        top: 8px;
+    }
+
+}
+
+code.parent-url {
+    padding: 0 0 3px 0;
+    display: block;
+    font-size: 11px;
+    background: none;
+    color: $color_gray_light;
+}
+
+.publish-fields {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-group {
+        width: 100%;
+
+        > label,
+        .field-inner > label {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+    }
+
+    > .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .has-error > .field-inner > label {
+        color: $color_red;
+    }
+
+    .field-inner {
+        position: relative;
+    }
+
+    .read-only-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        cursor: not-allowed;
+        background: rgba(white, 0.3);
+    }
+}
+
+.publish-sidebar {
+    flex-basis: 40%;
+}
+
+.sneak-peek-editing .publish-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Sticky Header
+  ========================================================================== */
+
+  .sticky {
+      background: linear-gradient($bg 95%, rgba($bg, 0));
+      position: sticky;
+      top: 0;
+      padding: 12px 24px 16px;
+      margin: -16px 0 8px !important;
+      z-index: 102;
+  }
+
+
+  /* Responsive
+    ========================================================================== */
+
+@media (max-width: 980px) {
+
+  .publish-fields .form-group {
+      flex-basis: 100%;
+
+      &.width-100,
+      &.width-75,
+      &.width-66,
+      &.width-50,
+      &.width-33,
+      &.width-25 { flex-basis: 100%; }
+  }
+}

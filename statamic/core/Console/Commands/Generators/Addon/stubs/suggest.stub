@@ -1,0 +1,11 @@
+<?php namespace Statamic\Addons\DummyAddon;
+
+use Statamic\Addons\Suggest\Modes\AbstractMode;
+
+class DummyAddonSuggestMode extends AbstractMode
+{
+    public function suggestions()
+    {
+        
+    }
+}

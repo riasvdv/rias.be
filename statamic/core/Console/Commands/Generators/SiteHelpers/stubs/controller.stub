@@ -1,0 +1,16 @@
+<?php
+
+namespace Statamic\SiteHelpers;
+
+use Statamic\Extend\Controller as AbstractController;
+
+class DummyController extends AbstractController
+{
+    /**
+     * @return mixed
+     */
+    public function example()
+    {
+        //
+    }
+}

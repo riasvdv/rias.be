@@ -1,0 +1,18 @@
+<?php
+
+namespace Statamic\Addons\DummyAddon;
+
+use Statamic\Extend\Controller;
+
+class DummyAddonController extends Controller
+{
+    /**
+     * Maps to your route definition in routes.yaml
+     *
+     * @return mixed
+     */
+    public function index()
+    {
+        return $this->view('index');
+    }
+}

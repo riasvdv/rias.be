@@ -1,0 +1,16 @@
+<?php
+
+namespace Statamic\Addons\DummyAddon;
+
+use Statamic\Extend\API;
+
+class DummyAddonAPI extends API
+{
+    /**
+     * Accessed by $this->api('DummyAddon')->example() from other addons
+     */
+    public function example()
+    {
+        //
+    }
+}

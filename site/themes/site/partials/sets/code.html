@@ -1,0 +1,8 @@
+<div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md">{{ code | noparse | markdown }}</code>
+    {{ if caption }}
+        <aside class="">
+            <h5 class="text-base text-center py-1 text-gray-600 font-normal leading-loose"><i class="fa fa-code"></i> {{ caption }}</h5>
+        </aside>
+    {{ /if }}
+</div>

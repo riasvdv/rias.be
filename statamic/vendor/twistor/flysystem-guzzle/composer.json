@@ -1,0 +1,38 @@
+{
+    "name": "twistor/flysystem-guzzle",
+    "description": "An HTTP adapter for Flysystem that uses Guzzle.",
+    "keywords": [
+        "flysystem",
+        "guzzle"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/twistor/flysystem-guzzle",
+    "authors": [
+        {
+            "name": "Chris Leppanen",
+            "email": "chris.leppanen@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "league/flysystem": "~1.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Twistor\\Flysystem\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+
+    /**
+     * @return mixed
+     */
+    public function methodName()
+    {
+        //
+    }

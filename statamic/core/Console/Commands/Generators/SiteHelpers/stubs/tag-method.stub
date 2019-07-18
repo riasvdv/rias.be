@@ -1,0 +1,10 @@
+
+    /**
+     * The {{ site:method_name }} tag
+     *
+     * @return mixed
+     */
+    public function methodName()
+    {
+        //
+    }

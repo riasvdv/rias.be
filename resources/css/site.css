@@ -1,0 +1,101 @@
+@tailwind base;
+
+@import '../../node_modules/highlight.js/styles/github-gist.css';
+
+body {
+    font-family: 'Fira Mono', 'Fira', 'Fira Code', 'Courier New', 'Courier', monospace;
+}
+
+strong {
+    @apply font-bold;
+}
+
+h1 {
+    @apply font-bold text-3xl mb-4;
+}
+
+h2 {
+    @apply font-bold text-2xl mb-4;
+}
+
+p {
+    @apply mb-4;
+}
+
+code {
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+figure picture, figure picture img {
+    margin: 0 auto;
+    max-height: 50vh;
+    height: auto;
+    width: 100%;
+}
+
+a:not(.no-shadow) {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #fbd998 inset;
+}
+
+a:not(.no-shadow):hover {
+    box-shadow: 0 -50px 0 0 #fbd998 inset;
+}
+
+@tailwind components;
+
+/* Other */
+#mobile-nav {
+    transform: translateY(105%);
+}
+#mobile-nav.loaded {
+    transition: transform 250ms ease-out;
+}
+
+#mobile-nav.open {
+    transform: translateY(0);
+}
+
+@tailwind utilities;
+
+.aspect-16x9 {
+    height: 100vh;
+    max-height: 80vh;
+    padding-bottom: 56.25%;
+}
+.aspect-16x9 iframe {
+    max-height: 80vh;
+}
+
+.shadow-teal-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #81E6D9 inset;
+}
+
+.hover\:shadow-teal-lighter:hover {
+    box-shadow: 0 -50px 0 0 #81E6D9 inset;
+}
+
+.shadow-orange-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #fbd998 inset;
+}
+
+.hover\:shadow-orange-lighter:hover {
+    box-shadow: 0 -50px 0 0 #fbd998 inset;
+}
+
+@responsive {
+    .shadow-top {
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-top-md {
+        box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .shadow-top-lg {
+        box-shadow: 0 -15px 30px 0 rgba(0, 0, 0, 0.11), 0 -5px 15px 0 rgba(0, 0, 0, 0.08);
+    }
+}

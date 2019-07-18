@@ -1,0 +1,16 @@
+fields:
+
+  routes:
+    type: yaml
+
+  collections:
+    type: yaml
+
+  taxonomies:
+    type: yaml
+
+  redirect:
+    type: yaml
+
+  vanity:
+    type: yaml

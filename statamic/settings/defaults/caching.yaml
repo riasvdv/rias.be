@@ -1,0 +1,42 @@
+# The "Stache" is our flat-file equivalent of a database. With this setting enabled, Statamic will look for any
+# files modified files and update accordingly. When disabled, there is a performance increase, but you'll
+# need to update manually, either by clearing the cache or by using the control panel to manage files.
+stache_always_update: true
+
+# The Stache will lock itself while updating to prevent conflicts when multiple requests want to update it.
+# If you have a reason to disable this feature, go for it.
+stache_lock_enabled: true
+
+# The length of time in seconds that a request will wait for the lock to be released before returning a refresh or 503 response.
+stache_lock_wait_length: 30
+
+# Static Page Caching allows your web pages to be saved as flat HTML files for incredible speed benefits.
+static_caching_enabled: false
+
+# The type of static caching to use. Options are "cache" which will use the internal application cache,
+# or "file" which will write html files to disk and requires that you set up some server rewrite rules.
+static_caching_type: cache
+
+# How long should each page be cached, in minutes. This only applies when using the "cache" type.
+static_caching_default_cache_length: null
+
+# The location where files will be written when using file based static caching.
+static_caching_file_path: static
+
+# When enabled, a page will be treated as the same URL regardless of any query string parameters.
+static_caching_ignore_query_strings: false
+
+# An array of URLs to exclude from static caching.
+static_caching_exclude: []
+
+# An array of invalidation rules. See https://docs.statamic.com/caching#invalidation for more details.
+static_caching_invalidation: []
+
+# The length of time (in seconds) a file lock should be held when writing static html files. On very highly
+# trafficked sites, multiple requests may trigger writing the same file. Statamic can hold the lock a
+# little longer than necessary to ensure that subsequent requests don't attempt to write again.
+# On some servers, this delay will be noticeable in the browser on the initial request.
+static_caching_lock_hold_length: 0
+
+# Whether the {{ cache }} tags actually function. Disabling this setting applies to all tag instances.
+cache_tags_enabled: true

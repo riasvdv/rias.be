@@ -1,0 +1,22 @@
+fieldtype_fields:
+  parent:
+    type: pages
+    max_items: 1
+    label: "{{ title }} ({{ url }})"
+  depth:
+    type: text
+    width: 50
+  max_items:
+    type: integer
+    width: 50
+  sort:
+    type: text
+    width: 50
+  label:
+    type: text
+    width: 50
+  mode:
+    type: select
+    options:
+      tags: Tags
+      panes: Panes

@@ -1,0 +1,11 @@
+.DS_Store
+.env
+node_modules/
+bower_components/
+local/cache/*
+local/storage/*
+local/temp/*
+installer.php
+public/css
+public/js
+public/mix-manifest.json
