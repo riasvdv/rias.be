@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <title>{{ title }} | Rias.be</title>
+    {{ contents }}
+        {{ if type == 'header' }}
+            <meta name="description" content="{{ text | striptags | truncate:250:... }}">
+        {{ /if }}
+    {{ /contents }}
 
     <meta name="msapplication-tap-high400" content="no">
 
@@ -38,7 +43,7 @@
 
 <div class="container mx-auto">
     <nav class="flex items-center flex-col mb-4 sm:mb-8">
-        <a href="/" class="no-shadow text-teal-500">
+        <a href="/" class="no-shadow text-teal-500" aria-label="Home">
             <svg class="fill-current sm:w-16 sm:h-16" width="35" height="42" viewBox="0 0 35 42" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26.3 25.824l8.38 13.11c.388.625.443 1.363.055 2.044-.333.625-1 1.022-1.665 1.022h-5.05c-.665 0-1.275-.34-1.608-.908l-8.434-13.678H8.1v12.6C8.1 41.092 7.214 42 6.16 42H1.94C.888 42 0 41.092 0 40.014V21.34c0-1.078.888-1.986 1.942-1.986h17.09c3.218 0 5.382-.908 6.492-2.838.388-.624.555-1.532.555-2.61 0-1.874-.556-3.18-1.72-4.2-1.222-1.136-2.942-1.647-5.106-1.647H1.942C.888 8.06 0 7.15 0 6.072V1.986C0 .908.888 0 1.942 0h17.81c4.274 0 7.77 1.25 10.378 3.746 2.718 2.497 4.05 5.903 4.05 10.16 0 5.505-2.386 9.478-6.936 11.52-.277.115-.61.285-.943.398z" fill-rule="nonzero" />
             </svg>
@@ -60,7 +65,7 @@
     <div class="flex justify-center py-2 border-b border-gray-400">
         <button class="ml-2"><i class="fa fa-bars text-white"></i></button>
         <span class="mx-auto uppercase text-sm text-gray">Navigation</span>
-        <button class="mr-2 js-close-nav text-gray-dark">X</button>
+        <button class="mr-2 js-close-nav text-gray-dark" aria-label="close">X</button>
     </div>
     <div class="flex justify-center py-4 overflow-x-scroll scrolling-touch max-w-full border-b border-gray-400">
         <a href="/" class="text-gray-dark text-lg mx-2 hover:shadow-orange-300 no-underline">Home</a>
