@@ -86,6 +86,11 @@ yarn run production --progress false
 
 @task('updateSymlinks', ['on' => 'remote'])
 {{ logMessage("🔗  Updating symlinks to persistent data...") }}
+# Remove the public/img directory and replace with persistent data
+rm -rf {{ $newReleaseDir }}/public/img
+cd {{ $newReleaseDir }}
+ln -nfs {{ $baseDir }}/persistent/img public/img
+
 # Import the environment config
 cd {{ $newReleaseDir }}
 ln -nfs {{ $baseDir }}/.env .env
@@ -104,7 +109,6 @@ ln -nfs {{ $newReleaseDir }} {{ $currentDir }}
 cd {{ $newReleaseDir }}
 
 php artisan clear:cache
-php artisan clear:glide
 php artisan clear:stache
 php artisan clear:static
 
@@ -128,7 +132,6 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf
 cd {{ $currentDir }}
 git pull origin master
 php artisan clear:cache
-php artisan clear:glide
 php artisan clear:stache
 php artisan clear:static
 sudo service php7.3-fpm restart
