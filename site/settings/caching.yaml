@@ -7,3 +7,5 @@ stache_lock_enabled: true
 stache_lock_wait_length: 30
 static_caching_lock_hold_length: 0
 stache_always_update: '{env:APP_DEBUG}'
+static_caching_exclude:
+  - /sitemap.xml
