@@ -11,7 +11,7 @@
     "webpack": "node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "highlight.js": "^9.15.8"
+    "highlight.js": "^9.15.9"
   },
   "devDependencies": {
     "laravel-mix": "^4.1.2",
