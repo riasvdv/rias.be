@@ -28,6 +28,6 @@ class TestSiteCommand extends TestCommand
      */
     public function handle()
     {
-        $this->phpunit(['--testsuite', 'site']);
+        return $this->phpunit(['--testsuite', 'site']);
     }
 }

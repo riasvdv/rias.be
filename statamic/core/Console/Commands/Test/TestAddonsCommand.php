@@ -28,6 +28,6 @@ class TestAddonsCommand extends TestCommand
      */
     public function handle()
     {
-        $this->phpunit(['--testsuite', 'addons']);
+        return $this->phpunit(['--testsuite', 'addons']);
     }
 }

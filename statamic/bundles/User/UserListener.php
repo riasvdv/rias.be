@@ -143,7 +143,7 @@ class UserListener extends Listener
         );
 
         if (! $logged_in) {
-            return back()->withInput()->withErrors(t('invalid_creds'));
+            return back()->withInput()->withErrors(t('invalid_creds'), 'userLogin');
         }
 
         $redirect = Request::input('redirect', '/');

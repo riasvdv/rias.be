@@ -28,7 +28,7 @@
         </div>
 
         <div class="relate-pane pane-selections">
-            <div class="pane-header">Selected</div>
+            <div class="pane-header">{{ translate('cp.selected') | titleize }}</div>
             <div class="relate-items" v-el:sortable>
                 <div class="item" v-for="item in selected">
                     <span class="item-remove" @click.prevent="remove(item)">&times;</span>

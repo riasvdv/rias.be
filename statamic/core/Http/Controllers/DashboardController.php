@@ -45,7 +45,7 @@ class DashboardController extends CpController
                 'html' => (string) $widget->html()
             ];
         })->filter(function ($item) {
-            if (! $permissions = $item['widget']->get('permissions')) {
+            if (! $permissions = $item['widget']->getPermissions()) {
                 return true;
             }
 

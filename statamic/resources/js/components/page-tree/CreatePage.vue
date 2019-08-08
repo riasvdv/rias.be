@@ -72,16 +72,6 @@ export default {
                     });
                 });
 
-                // Ensure there is a default
-                if (! _.findWhere(fieldsets, { value: 'default' })) {
-                    fieldsets.push({ value: 'default', text: 'Default' });
-                }
-
-                // Sort alphabetically
-                fieldsets = _.sortBy(fieldsets, function (fieldset) {
-                    return fieldset.text;
-                });
-
                 this.fieldsets = fieldsets;
                 this.loading = false;
 

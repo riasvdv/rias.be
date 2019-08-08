@@ -23,9 +23,9 @@
                 @endif
 
                 <h1>{{ $release->tag_name }}</h1>
-                <h5 class="date">{{ trans('cp.released_on_date', ['date' => Carbon::parse($release->created_at)->format('F jS, Y')]) }}</h5>
+                <h5 class="date">{{ trans('cp.released_on_date', ['date' => Carbon::parse($release->created_at)->formatLocalized('%B %d, %Y')]) }}</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body" v-pre>
                 {!! format_update($release->body) !!}
             </div>
 

@@ -15,6 +15,11 @@ class Widget
     use HasParameters;
 
     /**
+     * Sets default permissions
+     */
+    protected $defaultPermissions = [];
+
+    /**
      * Create a new Widget instance
      */
     public function __construct()
@@ -26,5 +31,13 @@ class Widget
     public function setParameters($parameters)
     {
         $this->parameters = $parameters;
+    }
+
+    public function getPermissions()
+    {
+        return array_merge(
+            $this->defaultPermissions,
+            $this->get('permissions', [])
+        );
     }
 }

@@ -10,6 +10,8 @@ use Statamic\Extend\Widget;
 
 class FormWidget extends Widget
 {
+    protected $defaultPermissions = ['forms'];
+
     public function html()
     {
         $form = $this->get('form');

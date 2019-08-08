@@ -8,6 +8,8 @@ use Statamic\Extend\Widget;
 
 class UpdaterWidget extends Widget
 {
+    protected $defaultPermissions = ['updater'];
+
     public function html()
     {
         $success = true;

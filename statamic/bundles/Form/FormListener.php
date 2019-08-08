@@ -116,7 +116,8 @@ class FormListener extends Listener
     {
         if (request()->ajax()) {
             return response([
-                'errors' => (new MessageBag($errors))->all()
+                'errors' => (new MessageBag($errors))->all(),
+                'field_errors' => $errors,
             ], 400);
         }
 

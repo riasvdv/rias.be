@@ -293,7 +293,8 @@ class FilesystemServiceProvider extends ServiceProvider
             'version' => 'latest',
             'root' => array_get($data, 'path', '/'),
             'visibility' => 'public',
-            'credentials' => $credentials
+            'credentials' => $credentials,
+            'options' => array_get($data, 'options', []),
         ]);
     }
 
@@ -309,7 +310,7 @@ class FilesystemServiceProvider extends ServiceProvider
         }
 
         $this->manager->extend('custom_s3', function ($app, $config) {
-            $s3 = new AwsS3Adapter(new S3Client($config), $config['bucket'], $config['root']);
+            $s3 = new AwsS3Adapter(new S3Client($config), $config['bucket'], $config['root'], $config['options']);
 
             // If the cache option was specified, we'll use Predis to store the filesystem meta
             // data for the specified time. Otherwise, we'll just use an in-memory adapter.

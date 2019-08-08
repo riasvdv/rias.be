@@ -18,9 +18,15 @@ class FieldsetJsonController extends CpController
      */
     public function index()
     {
-        $fieldsets = collect(Fieldset::all())->sortBy(function ($fieldset) {
+        $fieldsets = collect(Fieldset::all());
+
+        $fieldsets = $this->handleDefaultFieldset($fieldsets);
+
+        $fieldsets = $fieldsets->sortBy(function ($fieldset) {
             return $fieldset->title();
-        })->map(function ($fieldset) {
+        });
+
+        $fieldsets = $fieldsets->map(function ($fieldset) {
             // If we've decided to omit hidden fieldsets, and this one should be
             // hidden, we'll just move right along.
             if (bool($this->request->query('hidden', true)) === false && $fieldset->hidden()) {
@@ -91,6 +97,23 @@ class FieldsetJsonController extends CpController
         }
 
         return $array;
+    }
+
+    private function handleDefaultFieldset($fieldsets)
+    {
+        // When doing Fieldset::all(), you only get fieldsets you've manually created.
+        // If you haven't manually created a default.yaml fieldset, we want to include the system fallback one.
+        // If you *have* created one, it'll already be in the list anyway.
+
+        $hasManuallyCreatedDefault = null !== $fieldsets->first(function ($i, $fieldset) {
+            return $fieldset->name() === 'default';
+        });
+
+        if (! $hasManuallyCreatedDefault) {
+            $fieldsets->push(Fieldset::get('default'));
+        }
+
+        return $fieldsets;
     }
 
     private function addConditions($field)

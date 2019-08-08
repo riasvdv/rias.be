@@ -42,7 +42,7 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $this->phpunit();
+        return $this->phpunit();
     }
 
     protected function phpunit($options = [])
@@ -68,7 +68,7 @@ class TestCommand extends Command
             $this->output->writeln('Warning: '.$e->getMessage());
         }
 
-        $process->run(function ($type, $line) {
+        return $process->run(function ($type, $line) {
             $this->output->write($line);
         });
     }

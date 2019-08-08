@@ -55,7 +55,7 @@ class Term extends Content implements TermContract
             return \Statamic\API\Term::normalizeSlug($this->getSlug());
         }
 
-        $this->setSlug($slug);
+        $this->setSlug(Str::slug($slug));
     }
 
     /**
