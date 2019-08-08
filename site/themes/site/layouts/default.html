@@ -9,9 +9,11 @@
     <title>{{ title }} | Rias.be</title>
     {{ contents }}
         {{ if type == 'header' }}
-            <meta name="description" content="{{ text | striptags | truncate:250:... }}">
+            <meta name="description" content="{{ text | toMetaDescription }}">
         {{ /if }}
     {{ /contents }}
+
+    <meta name="og:image" content="{{ site_url }}assets/social.png">
 
     <meta name="msapplication-tap-high400" content="no">
 
