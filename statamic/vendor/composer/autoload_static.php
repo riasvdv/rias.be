@@ -3298,7 +3298,6 @@ class ComposerStaticInit872a52fc87c3c36c14eb1a4e89338f97
         'Statamic\\Http\\Middleware\\CP\\Localize' => __DIR__ . '/../..' . '/core/Http/Middleware/CP/Localize.php',
         'Statamic\\Http\\Middleware\\CP\\StartPage' => __DIR__ . '/../..' . '/core/Http/Middleware/CP/StartPage.php',
         'Statamic\\Http\\Middleware\\CpEnabled' => __DIR__ . '/../..' . '/core/Http/Middleware/CpEnabled.php',
-        'Statamic\\Http\\Middleware\\Installer' => __DIR__ . '/../..' . '/core/Http/Middleware/Installer.php',
         'Statamic\\Http\\Middleware\\Outpost' => __DIR__ . '/../..' . '/core/Http/Middleware/Outpost.php',
         'Statamic\\Http\\Middleware\\TransformsRequest' => __DIR__ . '/../..' . '/core/Http/Middleware/TransformsRequest.php',
         'Statamic\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/core/Http/Middleware/TrimStrings.php',

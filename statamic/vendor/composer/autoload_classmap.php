@@ -2861,7 +2861,6 @@ return array(
     'Statamic\\Http\\Middleware\\CP\\Localize' => $baseDir . '/core/Http/Middleware/CP/Localize.php',
     'Statamic\\Http\\Middleware\\CP\\StartPage' => $baseDir . '/core/Http/Middleware/CP/StartPage.php',
     'Statamic\\Http\\Middleware\\CpEnabled' => $baseDir . '/core/Http/Middleware/CpEnabled.php',
-    'Statamic\\Http\\Middleware\\Installer' => $baseDir . '/core/Http/Middleware/Installer.php',
     'Statamic\\Http\\Middleware\\Outpost' => $baseDir . '/core/Http/Middleware/Outpost.php',
     'Statamic\\Http\\Middleware\\TransformsRequest' => $baseDir . '/core/Http/Middleware/TransformsRequest.php',
     'Statamic\\Http\\Middleware\\TrimStrings' => $baseDir . '/core/Http/Middleware/TrimStrings.php',
