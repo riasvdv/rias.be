@@ -59,10 +59,6 @@ echo "*" > .git/info/sparse-checkout
 echo "!storage" >> .git/info/sparse-checkout
 echo "!public/build" >> .git/info/sparse-checkout
 git read-tree -mu HEAD
-
-# Mark release
-cd {{ $newReleaseDir }}
-echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
