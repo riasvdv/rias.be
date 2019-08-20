@@ -15,4 +15,5 @@ jobs:
     - name: Run Envoy deploy
       run: |
         composer global require laravel/envoy
+        composer install
         ~/.composer/vendor/bin/envoy run deploy
