@@ -11,23 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Checkout code & composer install
-      run: |
-        composer install
-    
-    - name: Set up private key
-      run: |
-        SSH_PATH="$HOME/.ssh"
-        mkdir -p "$SSH_PATH"
-        touch "$SSH_PATH/known_hosts"
-        echo "$PRIVATE_KEY" > "$SSH_PATH/deploy_key"
-        chmod 700 "$SSH_PATH"
-        chmod 600 "$SSH_PATH/known_hosts"
-        chmod 600 "$SSH_PATH/deploy_key"
-        eval $(ssh-agent)
-        ssh-add "$SSH_PATH/deploy_key"
-        ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
-    
-    - name: Deploy
-      run: ./vendor/bin/envoy run deploy
+      - name: Set up variables
+        run: |
+          server="rias.be"
+          userAndServer="forge@$server"
+          repository="riasvdv/rias.be"
+          baseDir="/home/forge/rias.be"
+          releasesDir="$baseDir/releases"
+          currentDir="$baseDir/current"
+          newReleaseName="$(date +%F)-$(date +%H)$(date +%M)$(date +%S)"
+          newReleaseDir="$releasesDir/$newReleaseName"
+          user=$(whoami)
+
+      - uses: appleboy/ssh-action@master
+        name: Clone repository
+        secrets:
+          - KEY
+        args:
+          - "--host"
+          - "$server"
+          - "--script"
+          - "[ -d $releasesDir ] || mkdir $releasesDir"
