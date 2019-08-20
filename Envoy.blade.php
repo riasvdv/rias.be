@@ -19,7 +19,6 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 @servers(['local' => '127.0.0.1', 'remote' => $userAndServer])
 
 @macro('deploy')
-#startDeployment
 cloneRepository
 runComposer
 runYarn
