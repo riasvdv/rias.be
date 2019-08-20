@@ -25,11 +25,3 @@ jobs:
 
       - name: Clone repository
         uses: appleboy/ssh-action@master
-        with:
-          secrets:
-            - KEY
-          args:
-            - "--host"
-            - "$server"
-            - "--script"
-            - "[ -d $releasesDir ] || mkdir $releasesDir"
