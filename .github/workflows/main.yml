@@ -23,12 +23,13 @@ jobs:
           newReleaseDir="$releasesDir/$newReleaseName"
           user=$(whoami)
 
-      - uses: appleboy/ssh-action@master
-        name: Clone repository
-        secrets:
-          - KEY
-        args:
-          - "--host"
-          - "$server"
-          - "--script"
-          - "[ -d $releasesDir ] || mkdir $releasesDir"
+      - name: Clone repository
+        uses: appleboy/ssh-action@master
+        with:
+          secrets:
+            - KEY
+          args:
+            - "--host"
+            - "$server"
+            - "--script"
+            - "[ -d $releasesDir ] || mkdir $releasesDir"
