@@ -12,5 +12,4 @@ jobs:
           fetch-depth: 1
       - run: composer install
       - run: echo ${{ SSH_KEY }} > ./id_rsa && chmod 600 ./id_rsa
-      - run: cat ./id_rsa
       - run: SSH_KEY=./id_rsa ./vendor/bin/envoy run deploy-code
