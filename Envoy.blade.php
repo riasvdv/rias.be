@@ -4,7 +4,7 @@ $userAndServer = 'forge@'. $server;
 $sshKey = getenv('SSH_KEY');
 $sshFlags = '';
 if ($sshKey) {
-    $sshFlags = '-i '.getenv('SSH_KEY');
+    $sshFlags = '-oStrictHostKeyChecking=no -i '.getenv('SSH_KEY');
 }
 $repository = "riasvdv/rias.be";
 $baseDir = "/home/forge/rias.be";
