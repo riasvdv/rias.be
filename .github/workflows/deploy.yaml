@@ -10,6 +10,9 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - run: composer install
-      - run: echo "${{ secrets.SSH_KEY }}" > ./id_rsa && chmod 600 ./id_rsa
-      - run: SSH_KEY=./id_rsa ./vendor/bin/envoy run deploy
+      - name: Install Laravel Envoy
+        run: composer global require laravel/envoy
+      - name: Install SSH Key
+        run: echo "${{ secrets.SSH_KEY }}" > ./id_rsa && chmod 600 ./id_rsa && export SSH_KEY=./id_rsa
+      - name: Deploy Code
+        run: ./vendor/bin/envoy run deploy-code
