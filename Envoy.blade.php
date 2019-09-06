@@ -1,8 +1,11 @@
 @setup
-require __DIR__.'/vendor/autoload.php';
-
 $server = "rias.be";
 $userAndServer = 'forge@'. $server;
+$sshKey = getenv('SSH_KEY');
+$sshFlags = '';
+if ($sshKey) {
+    $sshFlags = '-i '.getenv('SSH_KEY');
+}
 $repository = "riasvdv/rias.be";
 $baseDir = "/home/forge/rias.be";
 $releasesDir = "{$baseDir}/releases";
@@ -16,7 +19,7 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 }
 @endsetup
 
-@servers(['local' => '127.0.0.1', 'remote' => $userAndServer])
+@servers(['local' => '127.0.0.1', 'remote' => "{$userAndServer} {$sshFlags}"])
 
 @macro('deploy')
 startDeployment
