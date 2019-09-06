@@ -13,6 +13,6 @@ jobs:
       - name: Install Laravel Envoy
         run: composer global require laravel/envoy
       - name: Install SSH Key
-        run: echo "${{ secrets.SSH_KEY }}" > ./id_rsa && chmod 600 ./id_rsa && export SSH_KEY=./id_rsa
+        run: echo "${{ secrets.SSH_KEY }}" > ./id_rsa && chmod 600 ./id_rsa
       - name: Deploy Code
-        run: ~/.composer/vendor/bin/envoy run deploy-code
+        run: SSH_KEY=./id_rsa ~/.composer/vendor/bin/envoy run deploy-code
