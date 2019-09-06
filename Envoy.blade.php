@@ -19,7 +19,7 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 }
 @endsetup
 
-@servers(['local' => '127.0.0.1', 'remote' => "{$userAndServer} {$sshFlags}"])
+@servers(['local' => '127.0.0.1', 'remote' => "{$sshFlags} {$userAndServer}"])
 
 @macro('deploy')
 startDeployment
