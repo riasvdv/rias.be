@@ -2,9 +2,9 @@ const mix = require('laravel-mix');
 
 require('laravel-mix-purgecss');
 
-mix.js('resources/js/site.js', 'public/dist/js')
+mix.js('resources/js/site.js', 'public/js')
 
-    .postCss('resources/css/site.css', 'public/dist/css', [require('tailwindcss')('tailwind.config.js')])
+    .postCss('resources/css/site.css', 'public/css', [require('tailwindcss')('tailwind.config.js')])
 
     .options({
         processCssUrls: false,

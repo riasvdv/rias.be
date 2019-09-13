@@ -1,6 +1,6 @@
 [build]
 command = "yarn && yarn production && php artisan build"
-publish = "public/dist"
+publish = "public"
 
 [context.production.environment]
 PHP_VERSION="7.2"

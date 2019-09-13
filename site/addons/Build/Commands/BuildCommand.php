@@ -39,10 +39,8 @@ class BuildCommand extends Command
 
     public function handle()
     {
-        Config::set('caching.static_caching_file_path', '/public/dist');
-
-        $files = Storage::allFiles(webroot_path('/public/dist'));
-        dd($files);
+        Config::set('caching.static_caching_file_path', '/public');
+        Config::set('caching.static_caching_enabled', true);
 
         $requests = Content::all()
             ->map(function ($content) {
@@ -69,6 +67,20 @@ class BuildCommand extends Command
         $this->getOutput()->progressFinish();
 
         $this->info("Renaming files");
+
+        /** @var \SplFileInfo[] $files */
+        $files = File::allFiles(webroot_path('/public'));
+        $files = array_filter($files, function (\SplFileInfo $file) {
+            return $file->getExtension() === 'html';
+        });
+
+        foreach ($files as $file) {
+            if ($file->getFilename() === '_.html') {
+                File::move($file->getRealPath(), str_replace('_.html', 'index.html', $file->getRealPath()));
+                continue;
+            }
+            File::move($file->getRealPath(), str_replace('_.html', '.html', $file->getRealPath()));
+        }
 
         $this->info("Done.");
     }
