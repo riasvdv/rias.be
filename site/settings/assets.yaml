@@ -1,3 +1,3 @@
 image_manipulation_cached: true
-image_manipulation_cached_path: public/img
+image_manipulation_cached_path: public/dist/img
 image_manipulation_route: img

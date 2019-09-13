@@ -5,9 +5,8 @@ local/cache/*
 local/storage/*
 local/temp/*
 installer.php
-public/css
-public/js
-public/img
+public/dist
+!public/dist/img
 public/static
 public/mix-manifest.json
 /vendor

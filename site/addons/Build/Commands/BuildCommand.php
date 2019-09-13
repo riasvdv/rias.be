@@ -5,6 +5,7 @@ namespace Statamic\Addons\Build\Commands;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Statamic\API\Config;
 use Statamic\API\Content;
 use Statamic\Extend\Command;
@@ -40,6 +41,9 @@ class BuildCommand extends Command
     {
         Config::set('caching.static_caching_file_path', '/public/dist');
 
+        $files = Storage::allFiles(webroot_path('/public/dist'));
+        dd($files);
+
         $requests = Content::all()
             ->map(function ($content) {
                 if ($content->url()) {
@@ -63,6 +67,8 @@ class BuildCommand extends Command
             $this->getOutput()->progressAdvance();
         }
         $this->getOutput()->progressFinish();
+
+        $this->info("Renaming files");
 
         $this->info("Done.");
     }
