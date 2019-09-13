@@ -1,0 +1,3 @@
+[build]
+command = "yarn && yarn production && php artisan build"
+publish = "public/dist"

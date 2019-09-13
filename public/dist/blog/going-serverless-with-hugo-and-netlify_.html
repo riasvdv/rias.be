@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>{{ title }} | Rias.be</title>
-    {{ contents }}
-        {{ if type == 'header' }}
-            <meta name="description" content="{{ text | toMetaDescription }}">
-        {{ /if }}
-    {{ /contents }}
+    <title>Going serverless with Hugo and Netlify | Rias.be</title>
+                        <meta name="description" content="I recently worked on the new Spatie docs website. We moved our site from a Digital Ocean server to Netlify, a serverless platform.">
+                        
 
-    <meta name="og:image" content="{{ site_url }}assets/social.png">
+    <meta name="og:image" content="/assets/social.png">
 
     <meta name="msapplication-tap-high400" content="no">
 
@@ -37,9 +34,9 @@
     <meta name="theme-color" content="#4dc0b4">
 
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site:mix url="dist/css/site.css" }}">
+    <link rel="stylesheet" href="/dist/css/site.css?id=09d6968258325e33eeaf">
 
-    <script src="{{ site:mix url="dist/js/site.js" }}" defer></script>
+    <script src="/dist/js/site.js?id=9ec614fcbf5082db308e" defer></script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-gray-100">
 
@@ -56,7 +53,25 @@
     </nav>
 </div>
 
-{{ template_content }}
+<div class="max-w-xl mx-auto">
+    <div class="text-center mb-6">
+        <h1 class="mb-0 leading-tight">Going serverless with Hugo and Netlify</h1>
+        <small class="text-base font-normal">July 9th, 2019</small>
+    </div>
+</div>
+
+    <header class="mb-4 max-w-xl mx-auto">
+    <div class="intro text-xl font-normal leading-normal">
+        <p>I recently worked on the new Spatie docs website. We moved our site from a Digital Ocean server to Netlify, a serverless platform.</p>
+    </div>
+</header>
+
+    <div class="max-w-xl mx-auto">
+    <p>Freek wrote a great breakdown of why and how we did this.</p><p>Read it here: <a href="https://freek.dev/1396-going-serverless-with-hugo-and-netlify">https://freek.dev/1396-going-serverless-with-hugo-and-netlify</a></p>
+</div>
+
+
+
 
 <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
     <a href="#" class="no-shadow block sm:hidden bg-teal-500 rounded-full text-white py-2 px-4 no-underline text-md js-open-nav">
@@ -100,16 +115,5 @@
     </div>
 </nav>
 
-{{ if {env:APP_ENV} == 'production' }}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42220637-4', 'auto');
-        ga('send', 'pageview');
-    </script>
-{{ /if }}
 </body>
 </html>

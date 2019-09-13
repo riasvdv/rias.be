@@ -237,7 +237,6 @@ class URL
         // Get the root URL as defined in the config.
         // This may be relative (eg. `/` or `/subdir/`) or absolute (eg. `http://example.com/`)
         $siteUrl = Config::getSiteUrl($locale);
-
         // Make sure URLs have trailing slashes.
         $url = Str::ensureLeft($url, '/');
         $siteUrl = Str::ensureRight($siteUrl, '/');

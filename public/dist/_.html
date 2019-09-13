@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>{{ title }} | Rias.be</title>
-    {{ contents }}
-        {{ if type == 'header' }}
-            <meta name="description" content="{{ text | toMetaDescription }}">
-        {{ /if }}
-    {{ /contents }}
+    <title>Home | Rias.be</title>
+                        <meta name="description" content="I'm Rias, a full stack web developer from Antwerp specialized in Laravel, Vue.js, Statamic & Craft CMS. A back-end developer at Spatie, freelancer in my spare time, co-organizer of Full Stack Belgium, developer of Jumpseat and a proud IMD alumnus. You can find me or my work on Github and Twitter, or...">
+            
 
-    <meta name="og:image" content="{{ site_url }}assets/social.png">
+    <meta name="og:image" content="/assets/social.png">
 
     <meta name="msapplication-tap-high400" content="no">
 
@@ -37,9 +34,9 @@
     <meta name="theme-color" content="#4dc0b4">
 
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site:mix url="dist/css/site.css" }}">
+    <link rel="stylesheet" href="/dist/css/site.css?id=09d6968258325e33eeaf">
 
-    <script src="{{ site:mix url="dist/js/site.js" }}" defer></script>
+    <script src="/dist/js/site.js?id=9ec614fcbf5082db308e" defer></script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-gray-100">
 
@@ -56,7 +53,42 @@
     </nav>
 </div>
 
-{{ template_content }}
+<div class="container mx-auto">
+        <header class="mb-4 max-w-xl mx-auto">
+    <div class="intro text-xl font-normal leading-normal">
+        <p>I'm Rias, a full stack web developer from Antwerp specialized in Laravel, Vue.js, Statamic &amp; Craft CMS</p><p>A back-end developer at <a href="https://spatie.be">Spatie</a>, freelancer in my spare time, co-organizer of <a href="https://fullstackbelgium.be">Full Stack Belgium</a>, developer of <a href="https://www.jumpseat.be/">Jumpseat</a> and a proud <a href="https://www.weareimd.be/">IMD alumnus</a></p><p>You can find me or my work on <a href="https://github.com/riasvdv">Github</a> and <a href="https://twitter.com/riasvdv">Twitter</a>, or just send me a quick <a href="mailto:hello@rias.be">email</a> if you need to contact me!<br></p>
+    </div>
+</header>
+
+
+
+
+            <section class="max-w-xl mx-auto mt-12">
+            <h3 class="text-base tracking-widest font-bold uppercase mb-4">Blog</h3>
+                            <p class="mb-4 leading-normal">
+    <a href="/blog/creating-a-statamic-site-helper-for-laravel-mix" class="text-grey-darker no-underline mb-4 shadow-orange-lighter hover:shadow-orange-lighter">
+        Creating a Statamic site helper for Laravel Mix
+    </a>
+</p>
+                            <p class="mb-4 leading-normal">
+    <a href="/blog/a-colorful-statamic-addon" class="text-grey-darker no-underline mb-4 shadow-orange-lighter hover:shadow-orange-lighter">
+        A colorful Statamic Addon
+    </a>
+</p>
+                            <p class="mb-4 leading-normal">
+    <a href="/blog/going-serverless-with-hugo-and-netlify" class="text-grey-darker no-underline mb-4 shadow-orange-lighter hover:shadow-orange-lighter">
+        Going serverless with Hugo and Netlify
+    </a>
+</p>
+            
+
+            <p class="mb-4 leading-normal">
+                <a href="/blog" class="no-shadow text-grey-darker no-underline shadow-teal-lighter hover:shadow-teal-lighter mb-4">
+                    Read more
+                </a>
+            </p>
+        </section>
+    </div>
 
 <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
     <a href="#" class="no-shadow block sm:hidden bg-teal-500 rounded-full text-white py-2 px-4 no-underline text-md js-open-nav">
@@ -100,16 +132,5 @@
     </div>
 </nav>
 
-{{ if {env:APP_ENV} == 'production' }}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42220637-4', 'auto');
-        ga('send', 'pageview');
-    </script>
-{{ /if }}
 </body>
 </html>

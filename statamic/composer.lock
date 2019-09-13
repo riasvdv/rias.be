@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7cdc701fb81365b655f1231bc47b006",
+    "content-hash": "b74902dea71e11289d46eac042ec4d06",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2535,6 +2535,20 @@
             "time": "2016-02-11T07:05:27+00:00"
         },
         {
+            "name": "rias/warm",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../site/addons/Warm",
+                "reference": "5fbfea21a7c25df98b1c43da400bdfd393603bed",
+                "shasum": null
+            },
+            "type": "library",
+            "transport-options": {
+                "symlink": false
+            }
+        },
+        {
             "name": "socialiteproviders/manager",
             "version": "v2.2.1",
             "source": {
@@ -4444,8 +4458,7 @@
             "authors": [
                 {
                     "name": "Chris Boulton",
-                    "homepage": "http://github.com/chrisboulton",
-                    "role": "Original developer"
+                    "homepage": "http://github.com/chrisboulton"
                 }
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
@@ -5497,6 +5510,60 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
+            "name": "spatie/crawler",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/crawler.git",
+                "reference": "c83bef7eecc247f67a0a0a96957c9fb2ebb0806d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/c83bef7eecc247f67a0a0a96957c9fb2ebb0806d",
+                "reference": "c83bef7eecc247f67a0a0a96957c9fb2ebb0806d",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "^5.1",
+                "php": ">=5.6.0",
+                "symfony/dom-crawler": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Crawler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be"
+                }
+            ],
+            "description": "Crawl all internal links found on a website",
+            "homepage": "https://github.com/spatie/crawler",
+            "keywords": [
+                "crawler",
+                "link",
+                "spatie",
+                "website"
+            ],
+            "time": "2016-09-13T13:13:44+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.4.0",
             "source": {
@@ -5554,7 +5621,8 @@
         "league/flysystem-ziparchive": 20,
         "mustangostang/spyc": 20,
         "michelf/php-smartypants": 20,
-        "netcarver/textile": 20
+        "netcarver/textile": 20,
+        "rias/warm": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

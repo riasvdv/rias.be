@@ -10,7 +10,7 @@ class Tags extends AbstractTags
 {
     public function mix()
     {
-        $manifest = STATAMIC_ROOT.'/mix-manifest.json';
+        $manifest = str_replace('/public/public', '/public', webroot_path('/public/mix-manifest.json'));
 
         if (! file_exists($manifest)) {
             throw new Exception("Could not find {$manifest}");

@@ -3,6 +3,7 @@
 namespace Statamic\StaticCaching\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Log;
 use Statamic\API\Config;
 use Statamic\StaticCaching\Cacher;
 

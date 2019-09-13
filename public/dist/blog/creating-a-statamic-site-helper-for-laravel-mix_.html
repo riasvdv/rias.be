@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>{{ title }} | Rias.be</title>
-    {{ contents }}
-        {{ if type == 'header' }}
-            <meta name="description" content="{{ text | toMetaDescription }}">
-        {{ /if }}
-    {{ /contents }}
+    <title>Creating a Statamic site helper for Laravel Mix | Rias.be</title>
+                        <meta name="description" content="Laravel Mix isn't provided by default in Statamic v2, in this short post I'll show you how to create a quick site helper to read the mix-manifest.json and output versioned assets.">
+                                                                                                
 
-    <meta name="og:image" content="{{ site_url }}assets/social.png">
+    <meta name="og:image" content="/assets/social.png">
 
     <meta name="msapplication-tap-high400" content="no">
 
@@ -37,9 +34,9 @@
     <meta name="theme-color" content="#4dc0b4">
 
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site:mix url="dist/css/site.css" }}">
+    <link rel="stylesheet" href="/dist/css/site.css?id=09d6968258325e33eeaf">
 
-    <script src="{{ site:mix url="dist/js/site.js" }}" defer></script>
+    <script src="/dist/js/site.js?id=9ec614fcbf5082db308e" defer></script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-gray-100">
 
@@ -56,7 +53,91 @@
     </nav>
 </div>
 
-{{ template_content }}
+<div class="max-w-xl mx-auto">
+    <div class="text-center mb-6">
+        <h1 class="mb-0 leading-tight">Creating a Statamic site helper for Laravel Mix</h1>
+        <small class="text-base font-normal">July 31st, 2019</small>
+    </div>
+</div>
+
+    <header class="mb-4 max-w-xl mx-auto">
+    <div class="intro text-xl font-normal leading-normal">
+        <p>Laravel Mix isn't provided by default in Statamic v2, in this short post I'll show you how to create a quick site helper to read the mix-manifest.json and output versioned assets.<br></p>
+    </div>
+</header>
+
+    <div class="max-w-xl mx-auto">
+    <h2>First things first: add Laravel Mix to your Statamic project<br></h2><p>We'll start of by creating a <b><i>webpack.mix.js</i></b> file in the root of our project. This post assumes you're using Statamic's default config of having all its files in the webroot.<br></p>
+</div>
+    <div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md"><pre><code class="js">const mix = require('laravel-mix');
+
+mix
+  .js('resources/js/site.js', 'assets/js')
+  .postCss('resources/css/site.css', 'assets/css')
+</code></pre>
+</code>
+            <aside class="">
+            <h5 class="text-base text-center py-1 text-gray-600 font-normal leading-loose"><i class="fa fa-code"></i> webpack.mix.js</h5>
+        </aside>
+    </div>
+    <div class="max-w-xl mx-auto">
+    <p>To keep it simple, we use the Laravel Mix convention of storing our pre-compiled assets in a <i><b>resources</b></i> folder, we're compiling to an <i><b>assets</b></i> folder in the root of our project. Make sure you've followed the necessary <a href="https://laravel-mix.com/docs/4.0/installation#stand-alone-project" target="_blank">installation instructions</a> of Laravel Mix.<br></p><h2>Add a Tags helper for your site<br></h2><p>Run <b><i>php please make:tags-helper</i></b> to add a <b><i>Tags.php</i></b> file to your project. Next we'll add the necessary <i><b>mix</b></i> function to generate versioned asset links. The code should be pretty self-explanatory.<br></p>
+</div>
+    <div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md"><pre><code class="php">&lt;?php
+
+namespace Statamic\SiteHelpers;
+
+use Exception;
+use Illuminate\Support\Str;
+use Statamic\Extend\Tags as AbstractTags;
+
+class Tags extends AbstractTags
+{
+    public function mix()
+    {
+        $manifest = STATAMIC_ROOT.'/mix-manifest.json'; // Where the manifest is stored
+
+        if (! file_exists($manifest)) {
+            throw new Exception("Could not find {$manifest}");
+        }
+
+        $path = $this-&gt;getParam('url'); // Which asset file we're trying to find
+        if (!Str::startsWith($path, '/')) {
+            $path = "/{$path}"; // Make sure there's a leading slash
+        }
+
+        $manifest = json_decode(file_get_contents($manifest), true); // Get the manifest contents
+
+        if (! isset($manifest[$path])) {
+            throw new Exception("{$path} not found in mix-manifest.");
+        }
+
+        return $manifest[$path]; // Return the versioned url
+    }
+}
+</code></pre>
+</code>
+            <aside class="">
+            <h5 class="text-base text-center py-1 text-gray-600 font-normal leading-loose"><i class="fa fa-code"></i> The mix tag</h5>
+        </aside>
+    </div>
+    <div class="max-w-xl mx-auto">
+    <p>If your manifest file is stored somewhere else, you can always just edit the first line to make sure the tag finds the correct file.</p><p>Once this Tag helper is created, you can use it in your templates with the following code:</p>
+</div>
+    <div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md"><pre><code class="twig">&lt;link rel="stylesheet" href="{{ site:mix url="/assets/css/site.css" }}"&gt;
+&lt;script src="{{ site:mix url="/assets/js/site.js" }}" defer&gt;&lt;/script&gt;
+</code></pre>
+</code>
+    </div>
+    <div class="max-w-xl mx-auto">
+    <p>And the helper will output the versioned asset links.</p><p>If you would rather use an add-on, which is easier to reuse on every project, the Statamic marketplace has both <a href="https://statamic.com/marketplace/addons/laravel-mix" target="_blank">Laravel Mix</a> and <a href="https://statamic.com/marketplace/addons/statamic-mix" target="_blank">Statamic Mix</a> to solve this problem for you. <br></p>
+</div>
+
+
+
 
 <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
     <a href="#" class="no-shadow block sm:hidden bg-teal-500 rounded-full text-white py-2 px-4 no-underline text-md js-open-nav">
@@ -100,16 +181,5 @@
     </div>
 </nav>
 
-{{ if {env:APP_ENV} == 'production' }}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42220637-4', 'auto');
-        ga('send', 'pageview');
-    </script>
-{{ /if }}
 </body>
 </html>

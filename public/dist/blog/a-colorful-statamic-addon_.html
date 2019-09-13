@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>{{ title }} | Rias.be</title>
-    {{ contents }}
-        {{ if type == 'header' }}
-            <meta name="description" content="{{ text | toMetaDescription }}">
-        {{ /if }}
-    {{ /contents }}
+    <title>A colorful Statamic Addon | Rias.be</title>
+                        <meta name="description" content="Clients and content editors often want a lot of choices and make everything customizable to fit their style or the content.">
+                                                                                                
 
-    <meta name="og:image" content="{{ site_url }}assets/social.png">
+    <meta name="og:image" content="/assets/social.png">
 
     <meta name="msapplication-tap-high400" content="no">
 
@@ -37,9 +34,9 @@
     <meta name="theme-color" content="#4dc0b4">
 
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site:mix url="dist/css/site.css" }}">
+    <link rel="stylesheet" href="/dist/css/site.css?id=09d6968258325e33eeaf">
 
-    <script src="{{ site:mix url="dist/js/site.js" }}" defer></script>
+    <script src="/dist/js/site.js?id=9ec614fcbf5082db308e" defer></script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-gray-100">
 
@@ -56,7 +53,86 @@
     </nav>
 </div>
 
-{{ template_content }}
+<div class="max-w-xl mx-auto">
+    <div class="text-center mb-6">
+        <h1 class="mb-0 leading-tight">A colorful Statamic Addon</h1>
+        <small class="text-base font-normal">July 17th, 2019</small>
+    </div>
+</div>
+
+    <header class="mb-4 max-w-xl mx-auto">
+    <div class="intro text-xl font-normal leading-normal">
+        <p>Clients and content editors often want a lot of choices and make everything customizable to fit their style or the content.<br></p>
+    </div>
+</header>
+
+    <div class="max-w-xl mx-auto">
+    <p>But how do you provide them this choice without a risk of ruining you or your team's thoughtful design decisions?</p><p>Meet <a href="https://statamic.com/marketplace/addons/color-swatches" target="_blank">Color Swatches</a>, a Statamic addon that allows a content editor to pick from a predefined set of colors</p>
+</div>
+    <figure class="my-8">
+    <div class="flex justify-center mb-2 max-w-4xl mx-auto">
+                    <a href="/assets/color-swatches.png" class="inline-block" target="_blank">
+                <picture>
+                    <img
+                        srcset="
+                            /img/containers/main/./color-swatches.png/cd2837d108b849f6d5eead3b1332aa16.png 400w,                            /img/containers/main/./color-swatches.png/aeb4f71555caadc83185263a87a6f7ed.png 600w,                            /img/containers/main/./color-swatches.png/ef782420cbc493a084707c7cc5ed133f.png 800w,                            /img/containers/main/./color-swatches.png/7b53431c2448ec7353a0b670868af3ad.png 1000w,                            /img/containers/main/./color-swatches.png/d59e69bddc6561ba9f0126995edf8f10.png 1200w,                            /img/containers/main/./color-swatches.png/4df5be7c05753de08456ac1e5278aff8.png 1400w,
+                            /img/containers/main/./color-swatches.png/bd7b83a9366c501c95f7a1c421b3f209.png 1600w,
+                            /img/containers/main/./color-swatches.png/abfd3a0b53e37cd5f085080e95cec8f7.png 1800w,
+                            /img/containers/main/./color-swatches.png/f7a3a37f2e9b45b04507189aa9b2d8fa.png 2000w,
+                        "
+                        src="/img/containers/main/./color-swatches.png/e46375ab545baf20dfc101c8070a06d1.png"
+                        sizes="100vw"
+                        alt="">
+                </picture>
+            </a>
+        
+    </div>
+            <figcaption class="block text-base text-gray-600 text-center max-w-sm mx-auto">An example configuration</figcaption>
+    </figure>
+
+    <div class="max-w-xl mx-auto">
+    <h2>Using color swatches</h2><p>Add the fieldtype to your fieldset, you can define multiple colors 
+for a swatch by using a YAML array. It's also possible to set a default color by entering the label.</p>
+
+</div>
+    <div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md"><pre><code class="yaml">sections:
+  main:
+    display: Main
+    fields:
+      color:
+        type: color_swatches
+        colors:
+          red: '#E3342F'
+          orange: '#F6993F'
+          green: '#38C172'
+          blue-yellow:
+            - '#4299E1'
+            - '#ECC94B'
+        default: blue
+
+</code></pre>
+</code>
+            <aside class="">
+            <h5 class="text-base text-center py-1 text-gray-600 font-normal leading-loose"><i class="fa fa-code"></i> The code to generate the example configuration</h5>
+        </aside>
+    </div>
+    <div class="max-w-xl mx-auto">
+    <p>After adding and configuring the fieldset, you can use the values in your template</p>
+</div>
+    <div class="max-w-3xl mx-auto my-8">
+    <code class="line-numbers shadow-md"><pre><code class="twig">{{ color.label }}
+{{ color.value }}
+{{ color.value[0] }} &lt;!-- When you have more than one color --&gt;
+</code></pre>
+</code>
+    </div>
+    <div class="max-w-xl mx-auto">
+    <p>If you want to give it a try, you can check it out over at the <a href="https://statamic.com/marketplace/addons/color-swatches" target="_blank">Statamic Marketplace</a>! <br></p>
+</div>
+
+
+
 
 <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
     <a href="#" class="no-shadow block sm:hidden bg-teal-500 rounded-full text-white py-2 px-4 no-underline text-md js-open-nav">
@@ -100,16 +176,5 @@
     </div>
 </nav>
 
-{{ if {env:APP_ENV} == 'production' }}
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42220637-4', 'auto');
-        ga('send', 'pageview');
-    </script>
-{{ /if }}
 </body>
 </html>

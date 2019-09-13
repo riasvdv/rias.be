@@ -2618,6 +2618,22 @@
         "description": "A polyfill for getallheaders."
     },
     {
+        "name": "rias/warm",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "../site/addons/Warm",
+            "reference": "5fbfea21a7c25df98b1c43da400bdfd393603bed",
+            "shasum": null
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "transport-options": {
+            "symlink": false
+        }
+    },
+    {
         "name": "socialiteproviders/manager",
         "version": "v2.2.1",
         "version_normalized": "2.2.1.0",
