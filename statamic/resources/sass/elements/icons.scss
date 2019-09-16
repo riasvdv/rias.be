@@ -1,0 +1,67 @@
+[class^="icon"] {
+	display: inline-block;
+	font-size: 16px;
+
+	.icon-group & {
+		margin: 0 0 0 10px;
+		vertical-align: middle;
+	}
+}
+.icon-left { margin-right: 10px; }
+.icon-right { margin-left: 10px; }
+
+.icon-status, .little-dot {
+	border-radius: 7px;
+	display: inline-block;
+	height: 7px;
+	position: relative;
+	width: 7px;
+}
+.icon-status-draft {
+	background: $color_gray_light;
+}
+.icon-status-hidden {
+	border: solid 1px $color_gray_light;
+}
+.icon-status-live {
+	background: $color_green;
+}
+.icon-status-error {
+	background: $color_red;
+}
+.icon-status-warning {
+    @apply .bg-yellow-dark;
+}
+
+.icon-large {
+    font-size: 42px;
+}
+
+.icon-user-initials {
+    background: $color_dark_blue;
+    height: 32px;
+    width: 32px;
+	color: #fff;
+	display: block;
+	text-align: center;
+	line-height: 32px;
+}
+
+.svg-icon {
+
+	&.using-svg {
+		@apply .flex .items-center;
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	div {
+		padding-top: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50% 50%;
+	}
+}

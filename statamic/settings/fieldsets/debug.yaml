@@ -1,0 +1,12 @@
+fields:
+
+  debug:
+    type: toggle
+
+  debug_bar:
+    type: toggle
+    show_when:
+      debug: true
+
+  loggers:
+    type: yaml

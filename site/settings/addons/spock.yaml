@@ -1,0 +1,5 @@
+environments:
+  - production
+git_push: true
+git_username: riasvdv
+git_email: hello@rias.be

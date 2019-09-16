@@ -1,0 +1,10 @@
+collections:
+  blog: 'blog/{slug}'
+taxonomies: {  }
+routes:
+  /sitemap.xml:
+    layout: sitemap
+    content_type: xml
+  /feed:
+    layout: feed
+    content_type: xml

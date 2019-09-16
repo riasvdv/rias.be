@@ -1,0 +1,12 @@
+fieldtype_fields:
+  cheatsheet:
+    type: toggle
+  container:
+    type: asset_container
+    allow_blank: true
+  folder:
+    type: asset_folder
+    width: 50
+  restrict_assets:
+    type: toggle
+    width: 50

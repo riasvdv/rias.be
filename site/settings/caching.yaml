@@ -1,0 +1,17 @@
+cache_tags_enabled: true
+static_caching_type: file
+static_caching_file_path: public/static
+static_caching_ignore_query_strings: false
+static_caching_exclude:
+  - /sitemap.xml
+static_caching_invalidation:
+  collections:
+    blog:
+      urls:
+        - /blog
+        - /
+stache_lock_enabled: true
+stache_lock_wait_length: 30
+static_caching_lock_hold_length: 0
+static_caching_enabled: '{env:STATIC_CACHE_ENABLED}'
+stache_always_update: '{env:APP_DEBUG}'

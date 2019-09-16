@@ -1,0 +1,27 @@
+/* ==========================================================================
+   SECTION FIELDTYPE
+   ========================================================================== */
+
+.section-fieldtype {
+    @apply .border-t .border-b .bg-bg-lighter;
+
+  &.form-group {
+    position: relative;
+    &:first-child {
+        @apply .rounded-t .border-t-0;
+    }
+  }
+
+    label {
+        @apply .uppercase .text-sm .font-bold;
+        margin-bottom: 0 !important;
+    }
+
+    .help-block { @apply .mb-0 mt-sm; }
+
+    p { @apply .m-0; }
+
+    .read-only-overlay {
+        display: none;
+    }
+}

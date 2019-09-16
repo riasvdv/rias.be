@@ -1,0 +1,18 @@
+fieldtype_fields:
+  container:
+    type: asset_container
+  folder:
+    type: asset_folder
+    width: 50
+  restrict:
+    type: toggle
+    width: 50
+  max_files:
+    type: integer
+    width: 50
+  mode:
+    type: select
+    width: 50
+    options:
+      grid: Grid
+      list: List

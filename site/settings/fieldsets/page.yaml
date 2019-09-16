@@ -1,0 +1,76 @@
+sections:
+  main:
+    display: Main
+    fields:
+      color:
+        type: color_swatches
+        colors:
+          red: '#F56565'
+          orange: '#ED8936'
+          yellow: '#ECC94B'
+          green: '#48BB78'
+          teal: '#38B2AC'
+          blue: '#4299E1'
+          indigo: '#667EEA'
+          purple: '#9F7AEA'
+          pink: '#ED64A6'
+      contents:
+        sets:
+          header:
+            display: Header
+            fields:
+              text:
+                type: bard
+          code:
+            display: Code
+            fields:
+              code:
+                type: markdown
+              caption:
+                type: text
+          image:
+            display: Image
+            fields:
+              image:
+                type: assets
+                container: main
+              caption:
+                type: text
+          video:
+            display: Video
+            fields:
+              embed:
+                type: video
+        buttons:
+          - h2
+          - h3
+          - h4
+          - bold
+          - italic
+          - underline
+          - strikethrough
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - superscript
+          - subscript
+          - anchor
+          - assets
+          - code
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: false
+        container: main
+        folder: /
+        restrict_assets: false
+        type: bard
+        display: Content
+taxonomies: true
+title: Page
+create_title: Page

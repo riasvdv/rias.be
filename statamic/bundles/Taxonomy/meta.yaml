@@ -1,0 +1,18 @@
+fieldtype_fields:
+  max_items:
+    type: integer
+  sort:
+    type: text
+    width: 50
+  label:
+    type: text
+    width: 50
+  taxonomy:
+    type: text
+    width: 50
+  mode:
+    type: select
+    width: 50
+    options:
+      tags: Tags
+      panes: Panes

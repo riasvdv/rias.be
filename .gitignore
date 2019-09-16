@@ -1,0 +1,14 @@
+.DS_Store
+.env
+node_modules/
+local/cache/*
+local/storage/*
+local/temp/*
+installer.php
+public/css
+public/js
+public/sitemap.xml
+public/**/*.html
+public/static
+public/mix-manifest.json
+/vendor

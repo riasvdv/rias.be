@@ -1,0 +1,28 @@
+<figure class="my-8">
+    <div class="flex justify-center mb-2 max-w-4xl mx-auto">
+        {{ assets:image }}
+            <a href="{{ url }}" class="inline-block" target="_blank">
+                <picture>
+                    <img
+                        srcset="
+                            {{ if width > 400 }}{{ glide:url width="400" }} 400w,{{ /if }}
+                            {{ if width > 600 }}{{ glide:url width="600" }} 600w,{{ /if }}
+                            {{ if width > 800 }}{{ glide:url width="800" }} 800w,{{ /if }}
+                            {{ if width > 1000 }}{{ glide:url width="1000" }} 1000w,{{ /if }}
+                            {{ if width > 1200 }}{{ glide:url width="1200" }} 1200w,{{ /if }}
+                            {{ glide:url width="1400" }} 1400w,
+                            {{ glide:url width="1600" }} 1600w,
+                            {{ glide:url width="1800" }} 1800w,
+                            {{ glide:url width="2000" }} 2000w,
+                        "
+                        src="{{ glide:url width="200" }}"
+                        sizes="100vw"
+                        alt="{{ alt }}">
+                </picture>
+            </a>
+        {{ /assets:image }}
+    </div>
+    {{ if caption }}
+        <figcaption class="block text-base text-gray-600 text-center max-w-sm mx-auto">{{ caption }}</figcaption>
+    {{ /if }}
+</figure>

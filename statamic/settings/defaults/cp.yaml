@@ -1,0 +1,10 @@
+start_page: dashboard
+date_format: Y/n/d
+
+# If unspecified, the CP will be shown in the default locale. To show the CP
+# in a different locale, set this value. Users can set their own locale
+# preference by adding `locale: whatever` to their respective files.
+locale: null
+
+# The number of items to show on each paginated page.
+pagination_size: 50

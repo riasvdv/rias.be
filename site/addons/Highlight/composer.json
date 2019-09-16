@@ -1,0 +1,6 @@
+{
+    "name": "rias/highlight",
+    "require": {
+        "spatie/commonmark-highlighter": "^2.0"
+    }
+}

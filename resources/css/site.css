@@ -1,0 +1,132 @@
+@tailwind base;
+
+body {
+    font-family: 'Fira Mono', 'Fira', 'Fira Code', 'Courier New', 'Courier', monospace;
+}
+
+strong {
+    @apply font-bold;
+}
+
+h1 {
+    @apply font-bold text-3xl mb-4;
+}
+
+h2 {
+    @apply font-bold text-2xl mb-4;
+}
+
+h3 {
+    @apply font-bold text-xl mb-4;
+}
+
+p {
+    @apply mb-4;
+}
+
+em, i:not(.fa) {
+    @apply font-mono bg-gray-200 not-italic p-1;
+}
+
+pre {
+    @apply bg-white shadow-lg overflow-y-scroll py-1 px-2;
+    max-height: 60vh;
+}
+
+figure picture, figure picture img {
+    margin: 0 auto;
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
+}
+
+a:not(.no-shadow) {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #fbd998 inset;
+}
+
+a:not(.no-shadow):hover {
+    box-shadow: 0 -50px 0 0 #fbd998 inset;
+}
+
+@tailwind components;
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+    @apply text-teal-500;
+}
+
+.hljs-string {
+    @apply text-teal-700;
+}
+
+.hljs-selector-tag, .hljs-type {
+    @apply text-teal-500;
+}
+
+.hljs-keyword, .hljs-section, .hljs-name, .hljs-number {
+    @apply text-orange-500;
+}
+
+.hljs-title, .hljs-attr, .hljs-selector-id, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo {
+    @apply text-teal-500;
+}
+
+/* Other */
+#mobile-nav {
+    transform: translateY(105%);
+}
+#mobile-nav.loaded {
+    transition: transform 250ms ease-out;
+}
+
+#mobile-nav.open {
+    transform: translateY(0);
+}
+
+@tailwind utilities;
+
+.aspect-16x9 {
+    height: 100vh;
+    max-height: 80vh;
+    padding-bottom: 56.25%;
+}
+.aspect-16x9 iframe {
+    max-height: 80vh;
+}
+
+.shadow-teal-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #81E6D9 inset;
+}
+
+.hover\:shadow-teal-lighter:hover {
+    box-shadow: 0 -50px 0 0 #81E6D9 inset;
+}
+
+.shadow-orange-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -5px 0 0 #fbd998 inset;
+}
+
+.hover\:shadow-orange-lighter:hover {
+    box-shadow: 0 -50px 0 0 #fbd998 inset;
+}
+
+
+@responsive {
+    .shadow-top {
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-top-md {
+        box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .shadow-top-lg {
+        box-shadow: 0 -15px 30px 0 rgba(0, 0, 0, 0.11), 0 -5px 15px 0 rgba(0, 0, 0, 0.08);
+    }
+}

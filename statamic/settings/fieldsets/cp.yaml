@@ -1,0 +1,16 @@
+fields:
+
+  start_page:
+    type: select
+    options:
+      dashboard: Dashboard
+      pages: Pages
+
+  date_format:
+    type: text
+
+  pagination_size:
+    type: integer
+
+  widgets:
+    type: yaml

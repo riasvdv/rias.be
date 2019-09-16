@@ -1,0 +1,28 @@
+<?php
+
+namespace Statamic\Addons\DummyAddon;
+
+use Statamic\Extend\Tags;
+
+class DummyAddonTags extends Tags
+{
+    /**
+     * The {{ dummy_addon }} tag
+     *
+     * @return string|array
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * The {{ dummy_addon:example }} tag
+     *
+     * @return string|array
+     */
+    public function example()
+    {
+        //
+    }
+}

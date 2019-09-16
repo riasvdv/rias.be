@@ -1,0 +1,45 @@
+fields:
+
+  stache:
+    type: section
+  stache_always_update:
+    type: toggle
+
+  cache_tags:
+    type: section
+  cache_tags_enabled:
+    type: toggle
+
+  static_caching:
+    type: section
+  static_caching_enabled:
+    type: toggle
+  static_caching_type:
+    type: radio
+    options:
+      cache: Cache
+      file: File
+    show_when:
+      static_caching_enabled: true
+  static_caching_length:
+    type: integer
+    show_when:
+      static_caching_enabled: true
+      static_caching_type: cache
+  static_caching_file_path:
+    type: text
+    show_when:
+      static_caching_enabled: true
+      static_caching_type: file
+  static_caching_ignore_query_strings:
+    type: toggle
+    show_when:
+      static_caching_enabled: true
+  static_caching_exclude:
+    type: list
+    show_when:
+      static_caching_enabled: true
+  static_caching_invalidation:
+    type: yaml
+    show_when:
+      static_caching_enabled: true

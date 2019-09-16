@@ -1,0 +1,40 @@
+[build]
+command = "yarn && yarn production && php artisan build"
+publish = "public"
+
+[context.production.environment]
+PHP_VERSION="7.2"
+
+[[redirects]]
+  from = "https://rias.dev/*"
+  to = "https://rias.be/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.rias.dev/*"
+  to = "https://rias.be/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.rias.be/*"
+  to = "https://rias.be/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://rias.netlify.com/*"
+  to = "https://rias.be/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "text/xml"
+
+[[headers]]
+  for = "/feed"
+  [headers.values]
+    Content-Type = "text/xml"

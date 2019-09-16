@@ -1,0 +1,41 @@
+fields:
+
+  license_key:
+
+  locales:
+    type: locale_settings
+  
+  timezone:
+    type: text
+
+  date_format:
+
+  default_extension:
+    type: select
+    options:
+      md: Markdown
+      textile: Textile
+      html: HTML
+
+  filesystems:
+    type: yaml
+
+  app_key:
+
+  redactor:
+    type: grid
+    fields:
+      name:
+        type: text
+        width: 30
+      settings:
+        type: yaml
+  
+  csrf_exclude:
+    type: list
+
+#  protect:
+#    type: yaml
+
+  php_max_memory_limit:
+    type: text
