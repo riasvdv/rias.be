@@ -1,14 +1,18 @@
+# General
 .DS_Store
 .env
+
+# Yarn
 node_modules/
+
+# Statamic Local files
 local/cache/*
 local/storage/*
 local/temp/*
-installer.php
+
+# Public files
 public/css
 public/js
 public/sitemap.xml
 public/**/*.html
-public/static
 public/mix-manifest.json
-/vendor
