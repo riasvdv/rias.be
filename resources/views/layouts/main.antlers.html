@@ -60,8 +60,9 @@
             </svg>
         </a>
         <div class="flex">
-            <a href="/blog" class="{{ if url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">Blog</a>
-            <a href="https://twitter.com/riasvdv" class="text-gray-600 hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">Twitter</a>
+            {{ structure:pages scope="structure" }}
+                <a href="{{ url }}" {{ if is_external }}target="_blank"{{ /if }} class="{{ if url | contains:/blog and current_url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">{{ title }}</a>
+            {{ /structure:pages }}
         </div>
     </nav>
 </div>
