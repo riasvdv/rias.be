@@ -18,9 +18,7 @@
     {{ if contents }}
         {{ contents }}
             {{ if type == 'header' }}
-                {{ header }}
-                    <meta name="description" content="{{ text | toMetaDescription }}">
-                {{ /header }}
+                <meta name="description" content="{{ header | toMetaDescription }}">
             {{ /if }}
         {{ /contents }}
     {{ /if }}
