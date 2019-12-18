@@ -3184,7 +3184,7 @@
             "dist": {
                 "type": "path",
                 "url": "../statamic-color-swatches",
-                "reference": "39399fc22bfb83bbeebb65f88419e56768514225"
+                "reference": "e8c4ace3fe75b63ae9f2a0d7192efe787c72b550"
             },
             "require": {
                 "pixelfear/composer-dist-plugin": "^0.1.0"

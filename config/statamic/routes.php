@@ -16,7 +16,7 @@ return [
     */
 
     'routes' => [
-        '/feed' => [
+        'feed' => [
             'layout' => '',
             'template' => 'layouts/feed',
             'content_type' => 'xml',
