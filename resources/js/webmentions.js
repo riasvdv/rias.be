@@ -1,22 +1,21 @@
 import firebase from './firebase';
 import formatRelative from 'date-fns/formatRelative'
+import axios from 'axios';
 
 const container = document.querySelector("[data-webmentions]");
-const db = firebase.firestore();
 
 if (container) {
-    db.collection("webmentions")
-        .where('post_url', '==', container.dataset.webmentions)
-        .orderBy('created_at', 'desc')
-        .onSnapshot((querySnapshot) => {
+    axios.get(`https://firestore.googleapis.com/v1/projects/${firebase.app().options.projectId}/databases/(default)/documents/webmentions`)
+        .then(({data}) => {
             let webmentions = {
                 likes: [],
                 retweets: [],
                 comments: [],
             };
-            querySnapshot.forEach(doc => {
-                const data = doc.data();
-                switch (data.type) {
+
+            data.documents.forEach(doc => {
+                const data = doc.fields;
+                switch (data.type.stringValue) {
                     case 'like':
                         return webmentions.likes.push(data);
                     case 'retweet':
@@ -25,6 +24,7 @@ if (container) {
                         return webmentions.comments.push(data)
                 }
             });
+
             renderWebmentions(container, webmentions);
         });
 }
@@ -86,9 +86,9 @@ function renderLike(webmention) {
         rendered.querySelector(selector)[attribute] = value;
     }
 
-    set("[data-author]", "href", webmention.author_url || '');
-    set("[data-author-avatar]", "src", webmention.author_photo_url);
-    set("[data-author-avatar]", "alt", `Photo of ${webmention.author_name}`);
+    set("[data-author]", "href", webmention.author_url.stringValue || '');
+    set("[data-author-avatar]", "src", webmention.author_photo_url.stringValue);
+    set("[data-author-avatar]", "alt", `Photo of ${webmention.author_name.stringValue}`);
 
     return rendered;
 }
@@ -114,18 +114,18 @@ function renderWebmention(webmention) {
         }
     }
 
-    set("[data-author]", "href", webmention.author_url);
-    set("[data-author-avatar]", "src", webmention.author_photo_url);
-    set("[data-author-avatar]", "alt", `Photo of ${webmention.author_name}`);
-    set("[data-author-name]", "textContent", webmention.author_name);
-    set("[data-type]", "textContent", typeAction(webmention.type));
-    set("[data-date]", "href", webmention.interaction_url);
-    set("[data-date]", "textContent", webmention.created_at.seconds
-        ? formatRelative(new Date(webmention.created_at.seconds * 1000), new Date)
+    set("[data-author]", "href", webmention.author_url ? webmention.author_url.stringValue : '');
+    set("[data-author-avatar]", "src", webmention.author_photo_url ? webmention.author_photo_url.stringValue : '');
+    set("[data-author-avatar]", "alt", webmention.author_name ? `Photo of ${webmention.author_name.stringValue}` : '');
+    set("[data-author-name]", "textContent", webmention.author_name ? webmention.author_name.stringValue : '');
+    set("[data-type]", "textContent", typeAction(webmention.type.stringValue));
+    set("[data-date]", "href", webmention.interaction_url ? webmention.interaction_url.stringValue : '');
+    set("[data-date]", "textContent", webmention.created_at.seconds && webmention.created_at.seconds.timestampValue
+        ? formatRelative(new Date(webmention.created_at.seconds.timestampValue * 1000), new Date)
         : ''
     );
 
-    if (webmention.text && webmention.type === 'replied') {
+    if (webmention.text.stringValue && webmention.type.stringValue === 'replied') {
         set(
             "[data-content]",
             "innerHTML",
