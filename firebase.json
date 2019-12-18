@@ -37,7 +37,8 @@
       "/usr/local/bin/php artisan sitemap"
     ],
     "postdeploy": [
-      "commit && gp"
+      "/usr/local/bin/hub commit -a -m 'wip'",
+      "/usr/local/bin/hub push origin master"
     ]
   },
   "functions": {
