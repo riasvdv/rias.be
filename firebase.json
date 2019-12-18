@@ -35,6 +35,9 @@
       "/usr/local/bin/yarn production",
       "/usr/local/bin/php please ssg:generate",
       "/usr/local/bin/php artisan sitemap"
+    ],
+    "postdeploy": [
+      "commit && gp"
     ]
   },
   "functions": {
