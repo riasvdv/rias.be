@@ -11,6 +11,7 @@ jobs:
           urls: |
             https://rias.be/
           temporaryPublicStorage: true
+          runs: 3
       - name: Save results
         uses: actions/upload-artifact@v1
         with:
