@@ -16,6 +16,11 @@ mix.js('resources/js/site.js', 'public/js')
         output: {
             chunkFilename: 'js/[name].js',
         },
+        /*optimization: {
+            splitChunks: {
+                chunks: 'all',
+            },
+        },*/
     })
 
     .purgeCss({

@@ -1,4 +1,3 @@
-import "./firebase";
 import "./webmentions";
 
 document.addEventListener('DOMContentLoaded', (event) => {

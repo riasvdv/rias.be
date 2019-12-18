@@ -1,31 +1,32 @@
 import firebase from './firebase';
 import formatRelative from 'date-fns/formatRelative'
-import axios from 'axios';
 
 const container = document.querySelector("[data-webmentions]");
 
 if (container) {
-    axios.get(`https://firestore.googleapis.com/v1/projects/${firebase.app().options.projectId}/databases/(default)/documents/webmentions`)
-        .then(({data}) => {
-            let webmentions = {
-                likes: [],
-                retweets: [],
-                comments: [],
-            };
+    fetch(`https://firestore.googleapis.com/v1/projects/${firebase.app().options.projectId}/databases/(default)/documents/webmentions`)
+        .then(response => {
+            response.json().then(data => {
+                let webmentions = {
+                    likes: [],
+                    retweets: [],
+                    comments: [],
+                };
 
-            data.documents.forEach(doc => {
-                const data = doc.fields;
-                switch (data.type.stringValue) {
-                    case 'like':
-                        return webmentions.likes.push(data);
-                    case 'retweet':
-                        return webmentions.retweets.push(data);
-                    default:
-                        return webmentions.comments.push(data)
-                }
+                data.documents.forEach(doc => {
+                    const data = doc.fields;
+                    switch (data.type.stringValue) {
+                        case 'like':
+                            return webmentions.likes.push(data);
+                        case 'retweet':
+                            return webmentions.retweets.push(data);
+                        default:
+                            return webmentions.comments.push(data)
+                    }
+                });
+
+                renderWebmentions(container, webmentions);
             });
-
-            renderWebmentions(container, webmentions);
         });
 }
 
