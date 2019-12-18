@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rias.be/feed</id>
+    <link href="https://rias.be/feed" rel="self"></link>
+    <title><![CDATA[Rias Van der Veken]]></title>
+    {{ collection from="blog" limit="1" }}
+    <updated>{{ date format="c" }}</updated>
+    {{ /collection }}
+    {{ collection from="blog" }}
+    <entry>
+        <title><![CDATA[{{ title }}]]></title>
+        <link rel="alternate" href="https://rias.be{{ url }}" />
+        <id>https://rias.be{{ url }}</id>
+        <author>
+            <name> <![CDATA[Rias Van der Veken]]></name>
+        </author>
+        <summary type="html">
+            <![CDATA[{{ contents }}
+            {{ if type == 'header' }}
+            {{ header }}{{ text }}{{ /header }}
+            {{ /if }}
+            {{ /contents }}]]>
+        </summary>
+        <updated>{{ date format="c" }}</updated>
+    </entry>
+    {{ /collection }}
+</feed>

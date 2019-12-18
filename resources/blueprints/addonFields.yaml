@@ -1,0 +1,108 @@
+title: Addon Fields
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: link_it
+        field:
+          newWindow: true
+          text: true
+          aria: true
+          append: true
+          type: link_it
+          localizable: false
+          display: link_it
+          containers:
+            - assets
+          taxonomies:
+            - category
+          collections:
+            - blog
+            - pages
+          types:
+            - asset
+            - entry
+            - custom
+            - email
+            - term
+            - tel
+            - url
+      -
+        handle: links
+        field:
+          sets:
+            links:
+              display: Links
+              fields:
+                -
+                  handle: link
+                  field:
+                    type: link_it
+                    localizable: false
+                    display: Link
+                    newWindow: true
+                    containers:
+                      - assets
+                    collections:
+                      - blog
+                    taxonomies:
+                      - category
+          type: replicator
+          localizable: false
+          display: Links
+      -
+        handle: position
+        field:
+          type: position
+          display: Position
+          left: true
+          center: true
+          right: true
+          full: true
+          drop-left: true
+          drop-right: false
+          default: right
+      -
+        handle: color
+        field:
+          type: color_swatches
+          localizable: false
+          display: Color
+          colors:
+            -
+              label: red
+              value:
+                - '#F56565'
+            -
+              label: orange
+              value:
+                - '#ED8936'
+            -
+              label: yellow
+              value:
+                - '#ECC94B'
+            -
+              label: green
+              value:
+                - '#48BB78'
+            -
+              label: teal
+              value:
+                - '#38B2AC'
+            -
+              label: blue
+              value:
+                - '#4299E1'
+            -
+              label: indigo
+              value:
+                - '#667EEA'
+            -
+              label: purple
+              value:
+                - '#9F7AEA'
+            -
+              label: pink
+              value:
+                - '#ED64A6'

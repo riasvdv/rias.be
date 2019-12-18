@@ -1,0 +1,37 @@
+{
+  "hosting": {
+    "public": "storage/app/static",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "/feed",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/rss+xml"
+          }
+        ]
+      }
+    ],
+    "predeploy": [
+      "/usr/local/bin/yarn production",
+      "/usr/local/bin/php please ssg:generate",
+      "/usr/local/bin/php artisan sitemap"
+    ]
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ],
+    "source": "functions"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

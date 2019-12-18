@@ -1,0 +1,160 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: color
+        field:
+          type: color_swatches
+          localizable: false
+          display: Color
+          colors:
+            -
+              label: red
+              value:
+                - '#F56565'
+            -
+              label: orange
+              value:
+                - '#ED8936'
+            -
+              label: yellow
+              value:
+                - '#ECC94B'
+            -
+              label: green
+              value:
+                - '#48BB78'
+            -
+              label: teal
+              value:
+                - '#38B2AC'
+            -
+              label: blue
+              value:
+                - '#4299E1'
+            -
+              label: indigo
+              value:
+                - '#667EEA'
+            -
+              label: purple
+              value:
+                - '#9F7AEA'
+            -
+              label: pink
+              value:
+                - '#ED64A6'
+      -
+        handle: twitter_url
+        field:
+          type: text
+          rules: url
+          display: 'Twitter URL'
+      -
+        handle: contents
+        field:
+          sets:
+            header:
+              display: Header
+              fields:
+                -
+                  handle: header
+                  field:
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - underline
+                      - strikethrough
+                      - code
+                      - unorderedlist
+                      - orderedlist
+                      - removeformat
+                      - quote
+                      - anchor
+                      - table
+                    save_html: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    fullscreen: true
+                    allow_source: true
+                    type: bard
+                    localizable: false
+                    display: Text
+            code:
+              display: Code
+              fields:
+                -
+                  handle: code
+                  field:
+                    restrict: false
+                    smartypants: false
+                    automatic_line_breaks: true
+                    automatic_links: false
+                    escape_markup: true
+                    type: markdown_highlight
+                    localizable: false
+                    display: Code
+                -
+                  handle: caption
+                  field:
+                    character_limit: 0
+                    type: text
+                    localizable: false
+                    display: Caption
+            image:
+              display: Image
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    mode: grid
+                    type: assets
+                    localizable: false
+                    display: Image
+            video:
+              display: Video
+              fields:
+                -
+                  handle: video
+                  field:
+                    type: video
+                    localizable: false
+                    display: Video
+          buttons:
+            - h2
+            - h3
+            - h4
+            - h5
+            - h6
+            - bold
+            - italic
+            - underline
+            - strikethrough
+            - code
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: true
+          fullscreen: true
+          allow_source: true
+          type: bard
+          localizable: false
+          display: Contents

@@ -1,0 +1,11 @@
+<div class="mb-8 leading-normal border-l-4 border-{{ color:label }}-500 pl-4">
+    <a href="{{ url }}" class="no-shadow block text-gray-700 no-underline mb-4 hover:text-gray-900">
+        <h3 class="inline-block text-xl font-bold mb-1">{{ title }}</h3>
+        <small class="block">{{ date }}</small>
+        {{ contents }}
+            {{ if type == 'header' }}
+                <p>{{ header }}</p>
+            {{ /if }}
+        {{ /contents }}
+    </a>
+</div>

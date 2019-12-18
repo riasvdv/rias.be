@@ -1,0 +1,18 @@
+<div class="container mx-auto">
+    {{ partial:contents }}
+
+    {{ if {collection:count in="blog"} > 0 }}
+        <section class="max-w-xl mx-auto mt-12">
+            <h3 class="text-base tracking-widest font-bold uppercase mb-4">Blog</h3>
+            {{ collection:blog limit="3" }}
+                {{ partial:blog/snippet }}
+            {{ /collection:blog }}
+
+            <p class="mb-4 leading-normal">
+                <a href="{{ link to="/blog" }}" class="no-shadow text-grey-darker no-underline shadow-teal-lighter hover:shadow-teal-lighter mb-4">
+                    Read more
+                </a>
+            </p>
+        </section>
+    {{ /if }}
+</div>

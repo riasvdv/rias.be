@@ -1,0 +1,8 @@
+title: Pages
+route: '{parent_uri}/{slug}'
+template: page
+layout: layouts/main
+blueprints:
+  - page
+structure: pages
+revisions: false

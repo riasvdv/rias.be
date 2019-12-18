@@ -1,0 +1,164 @@
+@tailwind base;
+
+html {
+    font-size: 18px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@screen md {
+    html {
+        font-size: 19px;
+    }
+}
+
+body {
+    font-family: 'Fira Mono', 'Fira', 'Fira Code', 'Courier New', 'Courier', monospace;
+}
+
+strong {
+    @apply font-bold;
+}
+
+h1 {
+    @apply font-bold text-3xl mb-4;
+}
+
+h2 {
+    @apply font-bold text-2xl mb-4;
+}
+
+h3 {
+    @apply font-bold text-xl mb-4;
+}
+
+p {
+    @apply mb-4;
+}
+
+figure picture, figure picture img {
+    margin: 0 auto;
+    max-height: 50vh;
+    max-width: 100%;
+    height: auto;
+}
+
+a:not(.no-shadow) {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -2px 0 0 #fbd998 inset;
+}
+
+a:not(.no-shadow):hover {
+    box-shadow: 0 -2rem 0 0 #fbd998 inset;
+}
+
+@tailwind components;
+
+code {
+    @apply font-mono bg-gray-100 text-orange-500;
+    font-size: 0.85em;
+    padding: 0.1rem;
+}
+
+pre {
+    @apply bg-gray-100 shadow-md leading-relaxed;
+}
+
+.hljs {
+    @apply bg-gray-100 p-6;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-type,
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    @apply text-teal-500;
+}
+
+.hljs-string {
+    @apply text-teal-600;
+}
+
+.hljs-keyword,
+.hljs-section, .hljs-name, .hljs-number {
+    @apply text-orange-500;
+}
+
+.hljs .highlighted {
+    @apply inline-block py-1 px-3 -mx-3;
+    background-color: hsl(136, 100%, 96%);
+}
+
+/* Other */
+#mobile-nav {
+    transform: translateY(105%);
+}
+#mobile-nav.loaded {
+    transition: transform 250ms ease-out;
+}
+
+#mobile-nav.open {
+    transform: translateY(0);
+}
+
+@tailwind utilities;
+
+.aspect-16x9 {
+    height: 100vh;
+    max-height: 80vh;
+    padding-bottom: 56.25%;
+}
+.aspect-16x9 iframe {
+    max-height: 80vh;
+}
+
+.shadow-teal-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -2px 0 0 #81E6D9 inset;
+}
+
+.hover\:shadow-teal-lighter:hover {
+    box-shadow: 0 -2rem 0 0 #81E6D9 inset;
+}
+
+.shadow-orange-lighter {
+    transition: box-shadow 150ms;
+    box-shadow: 0 -2px 0 0 #fbd998 inset;
+}
+
+.hover\:shadow-orange-lighter:hover {
+    box-shadow: 0 -2rem 0 0 #fbd998 inset;
+}
+
+.permalink {
+    @apply no-underline ml-1 text-gray-400;
+    box-shadow: none !important;
+}
+
+.permalink:hover {
+    @apply text-gray-500;
+}
+
+
+@responsive {
+    .shadow-top {
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-top-md {
+        box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .shadow-top-lg {
+        box-shadow: 0 -15px 30px 0 rgba(0, 0, 0, 0.11), 0 -5px 15px 0 rgba(0, 0, 0, 0.08);
+    }
+}

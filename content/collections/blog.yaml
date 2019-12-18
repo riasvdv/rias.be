@@ -1,0 +1,18 @@
+title: Blog
+route: 'blog/{slug}'
+template: page
+layout: layouts/main
+blueprints:
+  - page
+mount: f6ffcda5-0f65-4e5d-a163-df73250e1cb9
+revisions: false
+entry_order:
+  - 12d155a9-45e1-4861-b4c1-a52be429bd7d
+  - 4ae27f9f-7b1a-4e08-962f-91310afc8a4f
+  - 2af5cc2f-85ec-41cb-a487-3c4c72f66f7f
+  - 9d2314bb-a5be-4be9-a33b-7e62e63a61e3
+  - 6ea9f159-32cf-4975-85e2-46a99ec56e47
+date: true
+date_behavior:
+  past: public
+  future: private
