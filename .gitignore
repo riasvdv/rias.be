@@ -26,3 +26,4 @@ yarn-error.log
 firebase-key.json
 /dist
 /.firebase
+firebase-debug.log
