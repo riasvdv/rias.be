@@ -44,6 +44,7 @@ return [
         public_path('assets/icons') => 'assets/icons',
         public_path('robots.txt') => 'robots.txt',
         public_path('favicon.ico') => 'favicon.ico',
+        public_path('sw.js') => 'sw.js',
     ],
 
     'symlinks' => [
