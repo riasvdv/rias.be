@@ -44,6 +44,7 @@ return [
         public_path('assets') => 'assets',
         public_path('robots.txt') => 'robots.txt',
         public_path('favicon.ico') => 'favicon.ico',
+        public_path('manifest.json') => 'manifest.json',
         public_path('sw.js') => 'sw.js',
     ],
 
