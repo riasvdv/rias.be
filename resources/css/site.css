@@ -38,7 +38,6 @@ p {
 
 figure picture, figure picture img {
     margin: 0 auto;
-    max-height: 50vh;
     max-width: 100%;
     height: auto;
 }
