@@ -1,0 +1,20 @@
+{
+    "name": "rias/responsive-images",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "Rias\\ResponsiveImages\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Responsive Images",
+            "description": "Responsive Images addon"
+        },
+        "laravel": {
+            "providers": [
+                "Rias\\ResponsiveImages\\ServiceProvider"
+            ]
+        }
+    }
+}
