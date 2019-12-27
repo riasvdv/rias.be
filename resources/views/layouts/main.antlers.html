@@ -73,7 +73,7 @@
         </a>
         <div class="flex">
             {{ structure:pages scope="structure" }}
-                {{ if not url | contains:/offline }}
+                {{ if display_in_nav !== false }}
                     <a href="{{ url }}" {{ if is_external }}target="_blank" rel="noopener"{{ /if }} class="{{ if url | contains:/blog and current_url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">{{ title }}</a>
                 {{ /if }}
             {{ /structure:pages }}

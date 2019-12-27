@@ -37,6 +37,7 @@
       "/usr/local/bin/php artisan sitemap"
     ],
     "postdeploy": [
+      "/usr/local/bin/hub add --all",
       "/usr/local/bin/hub commit -a -m 'wip'",
       "/usr/local/bin/hub push origin master"
     ]

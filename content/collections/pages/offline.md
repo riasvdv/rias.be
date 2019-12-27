@@ -1,5 +1,6 @@
 ---
 title: 'Your connection seems down'
+display_in_nav: false
 contents:
   -
     type: set
