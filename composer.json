@@ -13,7 +13,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "rias/responsive-images": "dev-master",
+        "rias/statamic-responsive-images": "dev-master",
         "rias/statamic-color-swatches": "dev-master",
         "rias/statamic-link-it": "dev-master",
         "rias/statamic-markdown-highlight": "dev-master",
@@ -92,7 +92,7 @@
         },
         {
             "type": "path",
-            "url": "addons/rias/responsive-images"
+            "url": "../statamic-responsive-images"
         }
     ]
 }

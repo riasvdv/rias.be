@@ -14,17 +14,6 @@ mix
 
     .version()
 
-    .webpackConfig({
-        output: {
-            chunkFilename: 'js/[name].js',
-        },
-        /*optimization: {
-            splitChunks: {
-                chunks: 'all',
-            },
-        },*/
-    })
-
     .purgeCss({
         enabled: mix.inProduction(),
         globs: [
