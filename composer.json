@@ -13,14 +13,14 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "rias/statamic-responsive-images": "dev-master",
+        "spatie/statamic-responsive-images": "dev-master",
         "rias/statamic-color-swatches": "dev-master",
         "rias/statamic-link-it": "dev-master",
         "rias/statamic-markdown-highlight": "dev-master",
         "rias/statamic-position-fieldtype": "dev-master",
         "spatie/laravel-sitemap": "^5.5",
         "statamic/cms": "3.0.*@beta",
-        "statamic/static-site-generator": "dev-master"
+        "statamic/ssg": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^1.3",
