@@ -13,7 +13,7 @@ contents:
             content:
               -
                 type: text
-                text: 'I''m Rias, a full stack web developer from Antwerp specialized in Laravel, Vue.js, Statamic & Craft CMS'
+                text: 'I''m Rias, a full stack web developer from Antwerp specialized in Laravel, Statamic & Craft CMS'
           -
             type: paragraph
             content:
@@ -107,6 +107,6 @@ title: Home
 template: home
 fieldset: page
 updated_by: ada9a6ce-9291-49fe-b0fb-1ba6bb9655cf
-updated_at: 1576226729
+updated_at: 1579794839
 id: d1cc3004-fd1e-44b4-9ec8-d1614b9ee19d
 ---
