@@ -22,7 +22,7 @@
     "tailwindcss": "^1.2.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
-    "workbox-expiration": "^4.3.1",
+    "workbox-expiration": "^5.0.0",
     "workbox-routing": "^4.3.1",
     "workbox-strategies": "^4.3.1"
   },
