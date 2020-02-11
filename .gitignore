@@ -27,3 +27,5 @@ firebase-key.json
 /dist
 /.firebase
 firebase-debug.log
+
+.now

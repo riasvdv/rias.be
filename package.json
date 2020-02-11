@@ -27,6 +27,7 @@
     "workbox-strategies": "^4.3.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "cross-env": "^7.0.0"
   }
 }
