@@ -13,12 +13,12 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "spatie/statamic-responsive-images": "dev-master",
         "rias/statamic-color-swatches": "dev-master",
         "rias/statamic-link-it": "dev-master",
         "rias/statamic-markdown-highlight": "dev-master",
         "rias/statamic-position-fieldtype": "dev-master",
         "spatie/laravel-sitemap": "^5.5",
+        "spatie/statamic-responsive-images": "dev-master",
         "statamic/cms": "3.0.*@beta",
         "statamic/ssg": "dev-master"
     },
@@ -70,10 +70,6 @@
         ]
     },
     "repositories": [
-        {
-            "type": "path",
-            "url": "../statamic-static-site-generator"
-        },
         {
             "type": "path",
             "url": "../statamic-color-swatches"

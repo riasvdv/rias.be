@@ -1,11 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=$npm_package_config_webpack",
-    "watch": "npm run dev -- -w",
-    "watch-poll": "npm run dev -- -w --watch-poll",
-    "hot": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=$npm_package_config_webpack",
-    "production": "npm run dev -- -p --no-progress"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "config": {
     "webpack": "node_modules/laravel-mix/setup/webpack.config.js"
@@ -17,13 +19,17 @@
     "firebase": "^7.7.0",
     "first-input-delay": "^0.1.3",
     "laravel-mix": "^5.0.1",
-    "laravel-mix-purgecss": "^4.2.0",
+    "laravel-mix-purgecss": "^5.0.0-rc.1",
     "postcss-easy-import": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.1.4",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
     "workbox-expiration": "^4.3.1",
     "workbox-routing": "^4.3.1",
     "workbox-strategies": "^4.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0"
   }
 }
