@@ -1,10 +1,9 @@
-import firebase from './firebase';
 import formatRelative from 'date-fns/formatRelative'
 
 const container = document.querySelector("[data-webmentions]");
 
 if (container) {
-    fetch(`https://firestore.googleapis.com/v1/projects/${firebase.app().options.projectId}/databases/(default)/documents/webmentions`)
+    fetch(`https://firestore.googleapis.com/v1/projects/rias-be/databases/(default)/documents/webmentions`)
         .then(response => {
             response.json().then(data => {
                 let webmentions = {
