@@ -1,14 +1,12 @@
-import {registerRoute} from 'workbox-routing/registerRoute.mjs';
-import {CacheFirst} from 'workbox-strategies/CacheFirst.mjs';
-import {StaleWhileRevalidate} from 'workbox-strategies/StaleWhileRevalidate.mjs';
-import {Plugin as ExpirationPlugin} from 'workbox-expiration/Plugin.mjs';
+import {registerRoute} from 'workbox-routing';
+import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import {ExpirationPlugin} from 'workbox-expiration';
 
 registerRoute('https://fonts.googleapis.com/(.*)', new CacheFirst({
     cacheName: 'googleapis',
     plugins: [new ExpirationPlugin({
         maxEntries: 30,
         maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-
     })],
     cacheableResponse: {
         statuses: [0, 200]
