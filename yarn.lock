@@ -1327,10 +1327,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-alpinejs@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-2.0.0.tgz#bd39a635c0b3f985079aaa1f11f3e5b6211112e8"
-  integrity sha512-//zbTL+liMUOMLxodJzXScjgEZOSLbwr4QkrpTfuTyI/7K572BkYJ68jbSiwb+IDN/uNjqlNpe1+nFsiUZpLRQ==
+alpinejs@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-2.0.1.tgz#bce4bd7710c5ebf6046e64a07040b2f5add6f4ae"
+  integrity sha512-upLQQ+MFJCzAaQW7rrlOQ1YqeEpvAJspzCTIUisepv2TqayoP5dOulPxr0eW7pfs8Z/PaIcwC6OW3mmasRSjaA==
 
 ansi-colors@^3.0.0:
   version "3.2.4"
