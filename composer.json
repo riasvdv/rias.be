@@ -19,7 +19,7 @@
         "rias/statamic-position-fieldtype": "dev-master",
         "spatie/laravel-sitemap": "^5.5",
         "spatie/statamic-responsive-images": "dev-master",
-        "statamic/cms": "3.0.*@beta",
+        "statamic/cms": "dev-master as 3.0",
         "statamic/ssg": "dev-master"
     },
     "require-dev": {

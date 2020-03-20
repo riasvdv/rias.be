@@ -1,0 +1,10 @@
+title: Main
+collections:
+  - pages
+tree:
+  -
+    title: Blog
+    entry: f6ffcda5-0f65-4e5d-a163-df73250e1cb9
+  -
+    title: Twitter
+    url: https://twitter.com/riasvdv

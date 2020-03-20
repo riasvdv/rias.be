@@ -1,8 +1,19 @@
 title: Pages
-route: '{parent_uri}/{slug}'
 template: page
 layout: layouts/main
 blueprints:
   - page
-structure: pages
 revisions: false
+route: '{parent_uri}/{slug}'
+sort_dir: asc
+structure:
+  root: true
+  tree:
+    -
+      entry: d1cc3004-fd1e-44b4-9ec8-d1614b9ee19d
+    -
+      entry: f6ffcda5-0f65-4e5d-a163-df73250e1cb9
+    -
+      entry: 0451b734-1934-46a3-98b5-78e68a567302
+    -
+      entry: 3082a70a-032e-4323-a5e2-50f3142709fc
