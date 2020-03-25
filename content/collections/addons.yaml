@@ -1,7 +1,10 @@
 title: Addons
 blueprints:
   - addonFields
-orderable: true
 revisions: false
-entry_order:
-  - 6d9c44c2-dd57-4531-abb2-f771e38c16fe
+route: 'addons/{parent_uri}/{slug}'
+structure:
+  max_depth: 1
+  tree:
+    -
+      entry: 6d9c44c2-dd57-4531-abb2-f771e38c16fe
