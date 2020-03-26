@@ -7138,17 +7138,17 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-workbox-core@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-5.1.1.tgz#2837765aa40a0d82ea58abcaf549938ae552f256"
-  integrity sha512-9eP2SecpDpcs+8ZDja0fYx4IJV9+G5qa+q5/kheaxFY6sYlGjOVf+v7JaAVXeZmUSCTOwHY3qRFA4P5WU4vjCw==
+workbox-core@^5.1.1, workbox-core@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-5.1.2.tgz#c0df3f74df780f63fc1568eabd64f1c4beae2de6"
+  integrity sha512-w9DBIEE5+mgja5KRWr1ilk4g9YrmXmylb4wqHx/77XxwK3OD+a44RXNWUCrzxgixRDyfyt7TSc9Iqb0GZkoBxg==
 
-workbox-expiration@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/workbox-expiration/-/workbox-expiration-5.1.1.tgz#c6120cb1b4ed9b7f3b76d3fcc61314514c472dea"
-  integrity sha512-JkCWtY2HIWw8SA7xfDq7lD0SzL0qy8a8QXC6hGHRMgMbzWUWYASGXVyqwTY2IUn5Hm7u58xO9LQTNbBYDSD0Ww==
+workbox-expiration@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/workbox-expiration/-/workbox-expiration-5.1.2.tgz#41d5d35b833d0fe7371b2aac0063c322d7b66ece"
+  integrity sha512-iPkcHR3VF4uUHIZNzIHrDdKIRAiZ2BCMq0F4JJqOkluSH2AzLtVDl2FPeicoeo/pReNi/Jwl2lZtLrUKGuB6JA==
   dependencies:
-    workbox-core "^5.1.1"
+    workbox-core "^5.1.2"
 
 workbox-routing@^5.0.0, workbox-routing@^5.1.1:
   version "5.1.1"
