@@ -1021,10 +1021,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-alpinejs@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-2.2.3.tgz#800ff56fc773f65279dac1a405a919930e6bc4cd"
-  integrity sha512-Nxqqj/67MzcP7s7runJELF7/IedUYpTA3yvWq8TbnZwOTgXWbDDvUzsljMwRk4zQGRWKs1pmqv3EJE8a1M8cwg==
+alpinejs@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-2.2.4.tgz#ce5dfcfed1bea539b30f540e5531c491dceb0524"
+  integrity sha512-80uqdT+WkEgxY6acCjEJDE1UfhpIhx8HuRYa97/eNhI3kNcs9SOvMiABsMZcjr2oWmWDadJvnWtWcMdIYuqL1g==
 
 ansi-colors@^3.0.0:
   version "3.2.4"
@@ -7138,7 +7138,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-workbox-core@^5.1.1, workbox-core@^5.1.2:
+workbox-core@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-5.1.2.tgz#c0df3f74df780f63fc1568eabd64f1c4beae2de6"
   integrity sha512-w9DBIEE5+mgja5KRWr1ilk4g9YrmXmylb4wqHx/77XxwK3OD+a44RXNWUCrzxgixRDyfyt7TSc9Iqb0GZkoBxg==
