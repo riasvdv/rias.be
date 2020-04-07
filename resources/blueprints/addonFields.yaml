@@ -1,8 +1,72 @@
-title: Addon Fields
+title: 'Addon Fields'
 sections:
   main:
     display: Main
     fields:
+      -
+        handle: buttonbox_position
+        field:
+          options:
+            -
+              label: Left
+              value: left
+              image: null
+              icon: align-left
+            -
+              label: Center
+              value: center
+              image: null
+              icon: align-center
+            -
+              label: Right
+              value: right
+              image: null
+              icon: align-right
+          type: button_box
+          localizable: false
+          listable: hidden
+          display: Position
+      -
+        handle: buttonbox_layout
+        field:
+          options:
+            -
+              label: Center
+              value: center
+              image: center.svg
+              icon: null
+            -
+              label: 'Overflow visible'
+              value: overflow
+              image: overflow-visible.svg
+              icon: null
+            -
+              label: 'Overflow hidden'
+              value: overflow-visible
+              image: overflow-hidden.svg
+              icon: null
+          type: button_box
+          localizable: false
+          listable: hidden
+          display: Layout
+      -
+        handle: buttonbox_type
+        field:
+          options:
+            -
+              label: Grid
+              value: grid
+              image: null
+              icon: th
+            -
+              label: List
+              value: list
+              image: null
+              icon: list
+          type: button_box
+          localizable: false
+          listable: hidden
+          display: Type
       -
         handle: link_it
         field:
@@ -106,3 +170,18 @@ sections:
               label: pink
               value:
                 - '#ED64A6'
+      -
+        handle: ccolor
+        field:
+          swatches:
+            - '#ff0'
+            - '#f0f'
+          theme: classic
+          color_modes:
+            - hex
+          default_color_mode: HEXA
+          lock_opacity: true
+          type: color
+          localizable: false
+          listable: hidden
+          display: Color

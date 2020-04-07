@@ -1,9 +1,12 @@
 title: Addons
+template: default
+layout: layout
 blueprints:
   - addonFields
 revisions: false
-route: 'addons/{parent_uri}/{slug}'
+sort_dir: asc
 structure:
+  root: false
   max_depth: 1
   tree:
     -
