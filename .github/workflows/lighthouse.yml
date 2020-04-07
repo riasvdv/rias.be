@@ -9,7 +9,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
-            https://rias.be/
+            https://www.rias.be/
           temporaryPublicStorage: true
           runs: 3
       - name: Save results
