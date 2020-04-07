@@ -1,0 +1,19 @@
+[build]
+publish = "storage/app/static"
+command = "yarn production && php please ssg:generate && php artisan sitemap"
+
+PHP_VERSION = "7.4"
+
+[[headers]]
+  for = "/feed"
+  [headers.values]
+	Content-Type = "application/rss+xml"
+
+  for = "css/site.css"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+  for = "js/site.js"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+

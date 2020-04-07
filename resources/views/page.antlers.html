@@ -10,11 +10,11 @@
 {{ if collection == 'blog' }}
 {{ if twitter_url }}
 <div class="max-w-2xl mx-auto my-6 p-3 bg-orange-200 flex items-center justify-center">
-    You can comment or react to this post by replying to <a class="no-shadow text-black font-bold ml-1" target="_blank" href="{{ twitter_url }}">this Tweet</a>
+    You can like or retweet <a class="no-shadow text-black font-bold ml-1" target="_blank" href="{{ twitter_url }}">this Tweet</a>
 </div>
 {{ /if }}
 <div class="max-w-xl mx-auto mt-6">
-    <div class="text-center my-6">
+    <div class="text-center">
         <div data-webmentions="https://rias.be{{ url }}/"></div>
 
         <template id="webmention-template">
@@ -41,4 +41,13 @@
         </template>
     </div>
 </div>
+
+<script src="https://utteranc.es/client.js"
+        repo="riasvdv/rias.be"
+        issue-term="title"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 {{ /if }}
