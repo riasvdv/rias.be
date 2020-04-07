@@ -1,6 +1,6 @@
 [build]
 publish = "storage/app/static"
-command = "yarn production && php artisan key:generate && php please ssg:generate && php artisan sitemap"
+command = "composer build"
 
 [context.production.environment]
 PHP_VERSION="7.4"

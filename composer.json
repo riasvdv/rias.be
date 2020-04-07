@@ -69,6 +69,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate"
+        ],
+        "build": [
+            "yarn production",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php please ssg:generate",
+            "@php artisan sitemap"
         ]
     }
 }
