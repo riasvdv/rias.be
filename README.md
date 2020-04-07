@@ -1,4 +1,4 @@
-# The source code of https://rias.be
+# The source code of Rias.be
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9ed53e90-a5ba-47bb-bc58-f9d822b1fa24/deploy-status)](https://app.netlify.com/sites/rias/deploys)
 
