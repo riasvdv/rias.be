@@ -43,7 +43,7 @@ class Sitemap extends Command
         /** @var \Statamic\Entries\Entry $entry */
         foreach ($paths as $entry) {
             $sitemap->add(
-                Url::create(str_replace(config('app.url'), 'https://rias.be', $entry->absoluteUrl()))
+                Url::create(str_replace(config('app.url'), 'https://www.rias.be', $entry->absoluteUrl()))
                     ->setLastModificationDate($entry->hasDate() ? $entry->date() : Carbon::now())
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
             );
