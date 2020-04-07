@@ -11,6 +11,11 @@ PHP_VERSION="7.4"
 	Content-Type = "application/rss+xml"
 
 [[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+	Content-Type = "application/xml"
+
+[[headers]]
   for = "css/site.css"
   [headers.values]
     Cache-Control = "max-age=31536000"
