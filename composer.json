@@ -13,10 +13,12 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
+        "predis/predis": "^1.1",
         "rias/statamic-color-swatches": "dev-master",
         "rias/statamic-link-it": "dev-master",
         "rias/statamic-markdown-highlight": "dev-master",
         "rias/statamic-position-fieldtype": "dev-master",
+        "rias/statamic-button-box": "dev-master",
         "spatie/laravel-sitemap": "^5.5",
         "spatie/statamic-responsive-images": "dev-master",
         "statamic/cms": "^3.0@beta",
@@ -68,27 +70,5 @@
         "post-create-project-cmd": [
             "@php artisan key:generate"
         ]
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../statamic-color-swatches"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-position-fieldtype"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-markdown-highlight"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-link-it"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-responsive-images"
-        }
-    ]
+    }
 }
