@@ -2,7 +2,7 @@
 publish = "storage/app/static"
 command = "yarn production && php please ssg:generate && php artisan sitemap"
 
-PHP_VERSION = "7.4"
+PHP_VERSION=7.4
 
 [[headers]]
   for = "/feed"
