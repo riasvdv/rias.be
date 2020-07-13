@@ -26,4 +26,4 @@ rm composer-setup.php
 php composer.phar install
 
 # BUILD STATIC SITE
-php please ssg:generate
+composer build
