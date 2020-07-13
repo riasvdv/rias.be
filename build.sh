@@ -11,9 +11,10 @@ yum install wget
 wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.5.0.tar.gz
 tar xvzf libwebp-0.5.0.tar.gz
 cd libwebp-0.5.0
-sudo ./configure
-sudo make
-sudo make install
+./configure
+make
+make install
+cd ../
 
 # INSTALL COMPOSER
 EXPECTED_CHECKSUM="$(wget -q -O - https://composer.github.io/installer.sig)"
