@@ -26,4 +26,4 @@ rm composer-setup.php
 php composer.phar install
 
 # BUILD STATIC SITE
-composer build
+php composer.phar build
