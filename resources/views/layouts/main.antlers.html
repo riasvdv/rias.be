@@ -73,7 +73,7 @@
         <div class="flex">
             {{ nav:main scope="structure" }}
                 {{ if display_in_nav !== false }}
-                    <a href="{{ url }}" {{ if is_external }}target="_blank" rel="noopener"{{ /if }} class="{{ if url | contains:/blog and current_url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">{{ title }}</a>
+                    <a href="{{ url }}" {{ if is_external }}target="_blank" rel="noopener"{{ /if }} class="text-xl {{ if url | contains:/blog and current_url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">{{ title }}</a>
                 {{ /if }}
             {{ /nav:main }}
         </div>
@@ -94,28 +94,28 @@
             <button class="text-gray-dark text-xs p-1" aria-label="close" x-on:click="open = false">X</button>
         </div>
         <div class="flex justify-center py-4 overflow-x-scroll scrolling-touch max-w-full border-b border-gray-400">
-            <a href="/" class="text-gray-700 text-base mx-2 no-shadow no-underline">Home</a>
-            <a href="/blog" class="text-gray-700 text-base mx-2 no-shadow no-underline">Blog</a>
+            <a href="/" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Home</a>
+            <a href="/blog" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Blog</a>
         </div>
         <div class="flex max-w-full overflow-x-scroll scrolling-touch -mx-2 px-2">
             <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
                 <a href="mailto:hello@rias.be" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-xs text-orange">Email</span>
+                    <span class="text-base text-orange">Email</span>
                 </a>
             </div>
             <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
                 <a href="https://twitter.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-xs text-orange">Twitter</span>
+                    <span class="text-base text-orange">Twitter</span>
                 </a>
             </div>
             <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
                 <a href="https://www.linkedin.com/in/rias-" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-xs text-orange">LinkedIn</span>
+                    <span class="text-base text-orange">LinkedIn</span>
                 </a>
             </div>
             <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
                 <a href="https://github.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-xs text-orange">Github</span>
+                    <span class="text-base text-orange">Github</span>
                 </a>
             </div>
         </div>
