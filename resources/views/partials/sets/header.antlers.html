@@ -1,5 +1,3 @@
-<header class="mb-4 max-w-xl mx-auto">
-    <div class="font-normal leading-normal">
-        {{ header }}
-    </div>
+<header class="prose {{ if url === '/' }}prose-2xl{{ else }}prose-xl{{ /if }} mx-auto mb-4">
+    {{ header }}
 </header>

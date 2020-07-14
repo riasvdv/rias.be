@@ -1,8 +1,8 @@
-<div class="container mx-auto">
+<div class="prose prose-xl mx-auto">
     {{ partial:contents }}
 
     {{ if {collection:count in="blog"} > 0 }}
-        <section class="max-w-xl mx-auto mt-12">
+        <section class="mt-12">
             <h3 class="text-base tracking-widest font-bold uppercase mb-4">Blog</h3>
             {{ collection:blog limit="3" }}
                 {{ partial:blog/snippet }}

@@ -11,6 +11,29 @@ module.exports = {
     'resources/**/*.twig',
   ],
   theme: {
+    typography: {
+      default: {
+        css: {
+          code: {
+            color: '#ed8936',
+            fontWeight: 'normal',
+            '&:before': {
+              display: 'none',
+            },
+            '&:after': {
+              display: 'none',
+            }
+          },
+          a: {
+            color: '#4a5568',
+            'text-decoration': 'none',
+            '&:hover': {
+              color: '#4a5568',
+            },
+          },
+        },
+      },
+    },
     container: {
       center: true,
     },
@@ -22,5 +45,7 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 };
