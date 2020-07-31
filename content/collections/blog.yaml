@@ -2,8 +2,6 @@ title: Blog
 route: 'blog/{slug}'
 template: page
 layout: layouts/main
-blueprints:
-  - page
 mount: f6ffcda5-0f65-4e5d-a163-df73250e1cb9
 revisions: false
 entry_order:

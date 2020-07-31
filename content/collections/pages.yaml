@@ -1,8 +1,6 @@
 title: Pages
 template: page
 layout: layouts/main
-blueprints:
-  - page
 revisions: false
 route: '{parent_uri}/{slug}'
 structure:

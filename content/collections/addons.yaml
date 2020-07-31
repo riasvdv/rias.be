@@ -1,8 +1,6 @@
 title: Addons
 template: default
 layout: layout
-blueprints:
-  - addonFields
 revisions: false
 sort_dir: asc
 structure:
