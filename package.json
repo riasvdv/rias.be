@@ -13,7 +13,7 @@
     "@tailwindcss/typography": "^0.2.0",
     "alpinejs": "^2.6.0",
     "cssnano": "^4.1.10",
-    "date-fns": "^2.16.0",
+    "date-fns": "^2.16.1",
     "first-input-delay": "^0.1.3",
     "laravel-mix": "^5.0.5",
     "postcss-easy-import": "^3.0.0",
