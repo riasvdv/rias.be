@@ -19,6 +19,12 @@ return [
             'name' => config('app.name'),
             'locale' => 'en_US',
             'url' => config('app.url'),
+        ],
+
+        'two' => [
+            'name' => config('app.name') . ' Two',
+            'locale' => 'en_GB',
+            'url' => config('app.url') . '/two',
         ]
 
     ]

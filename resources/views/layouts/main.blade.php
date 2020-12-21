@@ -14,14 +14,14 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
 
-    <title>{{ title }} | Rias.be</title>
-    {{ if contents }}
-        {{ contents }}
-            {{ if type == 'header' }}
-                <meta name="description" content="{{ header | toMetaDescription }}">
-            {{ /if }}
-        {{ /contents }}
-    {{ /if }}
+    <title>{{ $title->value() }} | Rias.be</title>
+    @if ($contents->value())
+        @foreach ($contents as $content)
+            @if ($content['type'] === 'header')
+                <meta name="description" content="{{ modify($content['header'])->toMetaDescription() }}">
+            @endif
+        @endforeach
+    @endif
     <link href="https://github.com/riasvdv" rel="me">
     <link rel="webmention" href="https://webmention.io/rias.be/webmention" />
     <link rel="pingback" href="https://webmention.io/rias.be/xmlrpc" />
@@ -49,8 +49,8 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/manifest.json">
 
-    {{ highlight:css }}
-    <link rel="stylesheet" href="{{ mix src="css/site.css" }}">
+    {!! tag('highlight:css') !!}
+    <link rel="stylesheet" href="{{ mix("css/site.css") }}">
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -71,16 +71,21 @@
             </svg>
         </a>
         <div class="flex">
-            {{ nav:main scope="structure" }}
-                {{ if display_in_nav !== false }}
-                    <a href="{{ url }}" {{ if is_external }}target="_blank" rel="noopener"{{ /if }} class="text-xl {{ if url | contains:/blog and current_url | contains:/blog }}text-orange-500{{ else }}text-gray-600{{ /if }} hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">{{ title }}</a>
-                {{ /if }}
-            {{ /nav:main }}
+            @foreach (tag('nav:main') as $navItem)
+                <a href="{{ $navItem['url'] }}"
+                   @if($navItem['is_external'])
+                    target="_blank" rel="noopener"
+                   @endif
+                   class="text-xl
+                   @if($navItem['is_current'] || $navItem['is_parent'])text-orange-500 @else text-gray-600 @endif hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">
+                    {{ $navItem['title'] }}
+                </a>
+            @endforeach
         </div>
     </nav>
 </div>
 
-{{ template_content }}
+@yield('content')
 
 <div x-data="{ open: false }" x-on:click.away="open = false">
     <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
@@ -122,7 +127,7 @@
     </nav>
 </div>
 
-<script src="{{ mix src="js/site.js" }}" defer></script>
+<script src="{{ mix("js/site.js") }}" defer></script>
 <script type="text/javascript">
     WebFontConfig = {
         google: { families: ['Fira+Mono:400,700&display=swap'] }

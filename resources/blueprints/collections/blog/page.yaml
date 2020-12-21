@@ -121,6 +121,13 @@ sections:
                     type: assets
                     localizable: false
                     display: Image
+                -
+                  handle: caption
+                  field:
+                    character_limit: 0
+                    type: text
+                    localizable: false
+                    display: Caption
             video:
               display: Video
               fields:

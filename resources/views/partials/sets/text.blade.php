@@ -1,3 +1,3 @@
 <div class="prose prose-xl mx-auto">
-    {{ text | headerLinks }}
+    {!! modify($text)->headerLinks() !!}
 </div>
