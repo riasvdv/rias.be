@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d221771efa2eb2397ac95f6be24e35f",
+    "content-hash": "efaa650df7c31fc1f04a86a1959c72f6",
     "packages": [
         {
             "name": "box/spout",
@@ -3450,15 +3450,22 @@
         {
             "name": "rias/statamic-data-import",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../statamic-data-import",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riasvdv/statamic-data-import.git",
                 "reference": "53e83e77a1b9e2e6dfadd627f06bca7712e020a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riasvdv/statamic-data-import/zipball/53e83e77a1b9e2e6dfadd627f06bca7712e020a8",
+                "reference": "53e83e77a1b9e2e6dfadd627f06bca7712e020a8",
+                "shasum": ""
             },
             "require": {
                 "spatie/simple-excel": "^1.9",
                 "statamic/cms": "^3.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "statamic": {
@@ -3476,21 +3483,31 @@
                     "Rias\\StatamicDataImport\\": "src"
                 }
             },
-            "transport-options": {
-                "relative": true
-            }
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/riasvdv/statamic-data-import/issues",
+                "source": "https://github.com/riasvdv/statamic-data-import/tree/1.1.0"
+            },
+            "time": "2020-11-05T18:26:54+00:00"
         },
         {
             "name": "rias/statamic-link-it",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../statamic-linkit",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riasvdv/statamic-linkit.git",
                 "reference": "39200bbdd7d31b0055b30184e169eb013822481b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riasvdv/statamic-linkit/zipball/39200bbdd7d31b0055b30184e169eb013822481b",
+                "reference": "39200bbdd7d31b0055b30184e169eb013822481b",
+                "shasum": ""
             },
             "require": {
                 "pixelfear/composer-dist-plugin": "^0.1.0"
             },
+            "default-branch": true,
             "type": "statamic-addon",
             "extra": {
                 "download-dist": {
@@ -3512,10 +3529,13 @@
                     "Rias\\LinkIt\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "description": "Link to anything and everything!",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/riasvdv/statamic-linkit/issues",
+                "source": "https://github.com/riasvdv/statamic-linkit/tree/v2.2.0"
+            },
+            "time": "2020-11-04T14:56:37+00:00"
         },
         {
             "name": "rias/statamic-markdown-highlight",
@@ -3611,10 +3631,16 @@
         {
             "name": "rias/statamic-redirect",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../statamic-redirect",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riasvdv/statamic-redirect.git",
                 "reference": "7bf720a5f9b61cfab3944253e083bbd2c9f523ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riasvdv/statamic-redirect/zipball/7bf720a5f9b61cfab3944253e083bbd2c9f523ad",
+                "reference": "7bf720a5f9b61cfab3944253e083bbd2c9f523ad",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -3626,6 +3652,7 @@
                 "orchestra/testbench": "^5.0",
                 "phpunit/phpunit": "^9.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "statamic": {
@@ -3643,14 +3670,12 @@
                     "Rias\\StatamicRedirect\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Rias\\StatamicRedirect\\Tests\\": "tests"
-                }
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/riasvdv/statamic-redirect/issues",
+                "source": "https://github.com/riasvdv/statamic-redirect/tree/1.3.1"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-10-20T09:32:16+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -4440,14 +4465,21 @@
         {
             "name": "spatie/statamic-responsive-images",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/statamic-responsive-images.git",
+                "reference": "5affb881381e27b6bac1db27cfd6a277b88457c6"
+            },
             "dist": {
-                "type": "path",
-                "url": "../statamic-responsive-images",
-                "reference": "215efae2173ffd7b283d4f2d610461c9730ba085"
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/statamic-responsive-images/zipball/5affb881381e27b6bac1db27cfd6a277b88457c6",
+                "reference": "5affb881381e27b6bac1db27cfd6a277b88457c6",
+                "shasum": ""
             },
             "require": {
                 "statamic/cms": "^3.0"
             },
+            "default-branch": true,
             "type": "statamic-addon",
             "extra": {
                 "statamic": {
@@ -4465,13 +4497,16 @@
                     "Spatie\\ResponsiveImages\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Responsive Images for Statamic 3",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/spatie/statamic-responsive-images/issues",
+                "source": "https://github.com/spatie/statamic-responsive-images/tree/v1.7.0"
+            },
+            "time": "2020-12-21T08:12:20+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -9836,7 +9871,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0"
+        "php": "^7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

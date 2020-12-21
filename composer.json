@@ -9,7 +9,7 @@
     ],
     "type": "project",
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4",
         "edalzell/blade-directives": "^2.1",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^7.0",
@@ -83,23 +83,5 @@
             "@php please ssg:generate",
             "@php artisan sitemap"
         ]
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../statamic-redirect"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-data-import"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-linkit"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-responsive-images"
-        }
-    ]
+    }
 }
