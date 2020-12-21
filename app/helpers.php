@@ -27,7 +27,7 @@ function collection(string $handle, bool $all = false): \Statamic\Stache\Query\E
     return $query;
 }
 
-function tag(string $name, array $params = []): mixed
+function tag(string $name, array $params = [])
 {
     if ($pos = strpos($name, ':')) {
         $original_method = substr($name, $pos + 1);
