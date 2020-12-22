@@ -47,6 +47,4 @@ function tag(string $name, array $params = [])
     ]);
 
     return $tag->$method();
-
-    //return call_user_func([$tag, $method]);
 }
