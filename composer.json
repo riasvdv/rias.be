@@ -19,12 +19,12 @@
         "rias/statamic-color-swatches": "^2.0",
         "rias/statamic-data-import": "dev-master",
         "rias/statamic-link-it": "dev-master",
-        "rias/statamic-markdown-highlight": "^1.0",
+        "rias/statamic-markdown-highlight": "^1.1.0",
         "rias/statamic-position-fieldtype": "2.0.1",
         "rias/statamic-redirect": "dev-master",
         "spatie/laravel-sitemap": "^5.5",
         "spatie/statamic-responsive-images": "dev-master",
-        "statamic/cms": "v3.0.35",
+        "statamic/cms": "v3.0.37",
         "statamic/ssg": "^0.2"
     },
     "require-dev": {
@@ -83,5 +83,23 @@
             "@php please ssg:generate",
             "@php artisan sitemap"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../statamic-redirect"
+        },
+        {
+            "type": "path",
+            "url": "../statamic-data-import"
+        },
+        {
+            "type": "path",
+            "url": "../statamic-linkit"
+        },
+        {
+            "type": "path",
+            "url": "../statamic-responsive-images"
+        }
+    ]
 }
