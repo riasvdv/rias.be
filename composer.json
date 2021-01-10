@@ -84,22 +84,5 @@
             "@php artisan sitemap"
         ]
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../statamic-redirect"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-data-import"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-linkit"
-        },
-        {
-            "type": "path",
-            "url": "../statamic-responsive-images"
-        }
-    ]
+    "repositories": []
 }
