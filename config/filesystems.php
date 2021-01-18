@@ -71,6 +71,11 @@ return [
             'visibility' => 'public',
         ],
 
+        'media' => [
+            'driver' => 'local',
+            'root'   => public_path('media'),
+        ],
+
     ],
 
 ];

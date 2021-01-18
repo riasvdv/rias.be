@@ -3,6 +3,7 @@
 /public/hot
 /public/storage
 /public/vendor/statamic
+/public/media
 /storage/*.key
 /vendor
 /.idea

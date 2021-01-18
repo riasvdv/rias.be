@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'accountable' => [
+        'user' => env('ACCOUNTABLE_USER'),
+        'pass' => env('ACCOUNTABLE_PASS'),
+    ],
+
 ];
