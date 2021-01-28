@@ -98,7 +98,7 @@
 
 <div x-data="{ open: false }" x-on:click.away="open = false">
     <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
-        <a href="#" x-on:click="open = true" class="no-shadow block sm:hidden bg-teal-500 rounded-lg text-white py-2 px-6 no-underline text-base tracking-widest">
+        <a href="#" x-on:click.prevent="open = true" class="no-shadow block sm:hidden bg-teal-500 rounded-lg text-white py-2 px-6 no-underline text-base tracking-widest">
             MENU
         </a>
     </div>
