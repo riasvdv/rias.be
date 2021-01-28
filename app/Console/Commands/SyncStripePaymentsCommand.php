@@ -20,7 +20,7 @@ class SyncStripePaymentsCommand extends Command
         CreatePaymentFromChargeAction $createPaymentFromChargeAction,
         GeneratePaymentReceiptForPaymentAction $generatePaymentReceiptForPaymentAction
     ) {
-        $latestPaymentTimestamp = Payment::latest()->first()?->created_at?->timestamp;
+        $latestPaymentTimestamp = optional(optional(Payment::latest()->first())->created_at)->timestamp;
 
         $params = [
             'limit' => 20,
@@ -28,7 +28,7 @@ class SyncStripePaymentsCommand extends Command
 
         if ($latestPaymentTimestamp) {
             $params['created'] = [
-                'gt' => Payment::latest()->first()?->created_at?->timestamp
+                'gt' => $latestPaymentTimestamp
             ];
         }
 

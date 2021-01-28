@@ -31,8 +31,8 @@ class SyncPaymentsToAccountableCommand extends Command
                 $contents = file_get_contents($payment->getFirstMediaPath());
 
                 $invoiceId = $accountable->uploadInvoice(
-                    contents: $contents,
-                    filename: $payment->created_at->format('Y-m-d-his') . '.pdf'
+                    $contents,
+                    $payment->created_at->format('Y-m-d-his') . '.pdf'
                 );
 
                 $invoice = $accountable->getInvoice($invoiceId);
