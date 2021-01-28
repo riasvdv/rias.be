@@ -102,35 +102,37 @@
             MENU
         </a>
     </div>
-    <nav id="mobile-nav" x-bind:class="{ 'open': open }" class="fixed flex max-w-sm mx-auto justify-center w-full bg-white flex-col bottom-0 left-0 right-0 shadow-2xl mb-3 p-1 rounded-lg z-50">
-        <div class="flex justify-between items-center px-2 border-b border-gray-300">
-            <span class="uppercase text-xs tracking-widest text-gray-500">Navigation</span>
-            <button class="text-gray-dark text-xs p-1" aria-label="close" x-on:click="open = false">X</button>
-        </div>
-        <div class="flex justify-center py-4 overflow-x-scroll scrolling-touch max-w-full border-b border-gray-400">
-            <a href="/" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Home</a>
-            <a href="/blog" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Blog</a>
-        </div>
-        <div class="flex max-w-full overflow-x-scroll scrolling-touch -mx-2 px-2">
-            <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
-                <a href="mailto:hello@rias.be" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-base text-orange">Email</span>
-                </a>
+    <nav id="mobile-nav" x-bind:class="{ 'open': open }" class="fixed flex max-w-sm mx-auto justify-center w-full px-4 flex-col bottom-0 left-0 right-0 mb-3 p-1 z-50">
+        <div class="bg-white shadow-2xl rounded-lg">
+            <div class="flex justify-center py-4 px-4 overflow-x-scroll scrolling-touch max-w-full border-b border-gray-400">
+                <a href="/" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Home</a>
+                <a href="/blog" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Blog</a>
+
+                <button class="text-gray-dark text-xs p-1 ml-auto" aria-label="close" x-on:click="open = false">
+                    {!! tag('svg', ['src' => '/assets/svg/times-circle.svg', 'class' => 'text-teal-500 w-6 h-6']) !!}
+                </button>
             </div>
-            <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
-                <a href="https://twitter.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-base text-orange">Twitter</span>
-                </a>
-            </div>
-            <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
-                <a href="https://www.linkedin.com/in/rias-" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-base text-orange">LinkedIn</span>
-                </a>
-            </div>
-            <div class="flex-no-shrink flex-no-grow w-1/4 mx-1 py-1">
-                <a href="https://github.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
-                    <span class="text-base text-orange">Github</span>
-                </a>
+            <div class="flex max-w-full overflow-x-scroll scrolling-touch gap-2 px-2 py-2">
+                <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
+                    <a href="mailto:hello@rias.be" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Email</span>
+                    </a>
+                </div>
+                <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
+                    <a href="https://twitter.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Twitter</span>
+                    </a>
+                </div>
+                <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
+                    <a href="https://www.linkedin.com/in/rias-" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">LinkedIn</span>
+                    </a>
+                </div>
+                <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
+                    <a href="https://github.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Github</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>

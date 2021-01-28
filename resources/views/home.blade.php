@@ -9,7 +9,7 @@
                 <div class="text-center my-8">
                     <h3 class="text-base text-2xl text-gray-400 tracking-widest uppercase mb-4">Blog</h3>
                 </div>
-                <div class="grid grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     @foreach (tag('collection:blog', ['limit' => 3]) as $entry)
                         @include('partials.blog.teaser')
                     @endforeach
@@ -28,7 +28,7 @@
                 <div class="text-center my-8">
                     <h3 class="text-base text-2xl text-gray-400 tracking-widest uppercase mb-4">Addons / Packages</h3>
                 </div>
-                <div class="grid grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     @foreach (tag('collection:addons') as $entry)
                         @include('partials.addon.teaser')
                     @endforeach
