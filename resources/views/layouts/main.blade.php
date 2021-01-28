@@ -64,22 +64,31 @@
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-white">
 
 <div class="container mx-auto">
-    <nav class="flex items-center flex-col mb-4 sm:mb-8">
+    <nav class="flex justify-between items-center mb-4 sm:mb-16">
         <a href="/" class="no-shadow text-teal-500" aria-label="Home">
             <svg class="fill-current sm:w-16 sm:h-16" width="35" height="42" viewBox="0 0 35 42" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26.3 25.824l8.38 13.11c.388.625.443 1.363.055 2.044-.333.625-1 1.022-1.665 1.022h-5.05c-.665 0-1.275-.34-1.608-.908l-8.434-13.678H8.1v12.6C8.1 41.092 7.214 42 6.16 42H1.94C.888 42 0 41.092 0 40.014V21.34c0-1.078.888-1.986 1.942-1.986h17.09c3.218 0 5.382-.908 6.492-2.838.388-.624.555-1.532.555-2.61 0-1.874-.556-3.18-1.72-4.2-1.222-1.136-2.942-1.647-5.106-1.647H1.942C.888 8.06 0 7.15 0 6.072V1.986C0 .908.888 0 1.942 0h17.81c4.274 0 7.77 1.25 10.378 3.746 2.718 2.497 4.05 5.903 4.05 10.16 0 5.505-2.386 9.478-6.936 11.52-.277.115-.61.285-.943.398z" fill-rule="nonzero" />
             </svg>
         </a>
-        <div class="flex">
+        <div class="flex items-center gap-6">
             @foreach (tag('nav:main') as $navItem)
-                <a href="{{ $navItem['url'] }}"
-                   @if($navItem['is_external'])
-                    target="_blank" rel="noopener"
-                   @endif
-                   class="text-xl
-                   @if($navItem['is_current'] || $navItem['is_parent'])text-orange-500 @else text-gray-600 @endif hover:text-orange-500 mx-2 text-lg mt-3 no-underline no-shadow hidden sm:block">
-                    {{ $navItem['title'] }}
-                </a>
+                @if ($navItem['title'] === 'Contact me')
+                    <a href="{{ $navItem['url'] }}" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded no-underline no-shadow transform hover:-translate-y-1 hover:shadow">
+                        {{ $navItem['title'] }}
+                    </a>
+                @else
+                    <a {{ $navItem['is_external'] ? 'target="_blank" rel="noopener"' : '' }}
+                        href="{{ $navItem['url'] }}"
+                        class="text-xl hover:text-orange-500 text-lg no-underline no-shadow hidden sm:block
+                        @if($navItem['is_current'] || $navItem['is_parent'])
+                            text-orange-500
+                        @else
+                            text-gray-600
+                        @endif"
+                    >
+                        {{ $navItem['title'] }}
+                    </a>
+                @endif
             @endforeach
         </div>
     </nav>

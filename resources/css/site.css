@@ -16,6 +16,7 @@ a:not(.no-shadow):hover {
 }
 
 @tailwind components;
+@tailwind utilities;
 
 pre {
     @apply bg-gray-100 shadow-md leading-relaxed;
@@ -66,8 +67,6 @@ pre {
 #mobile-nav.open {
     transform: translateY(0);
 }
-
-@tailwind utilities;
 
 .aspect-16x9 {
     height: 100vh;

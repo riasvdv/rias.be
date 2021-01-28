@@ -5,7 +5,7 @@ mix
     .js('resources/js/sw.js', 'public')
 
     .postCss('resources/css/site.css', 'public/css', [
-        require('tailwindcss')('tailwind.config.js')
+        require('tailwindcss'),
     ])
 
     .options({

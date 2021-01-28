@@ -19,7 +19,7 @@ contents:
             content:
               -
                 type: text
-                text: 'A back-end developer at '
+                text: 'Back-end developer at '
               -
                 type: text
                 marks:
@@ -31,8 +31,15 @@ contents:
                       rel: null
                 text: Spatie
               -
+                type: hard_break
+              -
                 type: text
-                text: ', freelancer in my spare time, co-organizer of '
+                text: 'Freelancer as a secondary occupation'
+              -
+                type: hard_break
+              -
+                type: text
+                text: 'Co-organizer of '
               -
                 type: text
                 marks:
@@ -44,8 +51,10 @@ contents:
                       rel: null
                 text: 'Full Stack Belgium'
               -
+                type: hard_break
+              -
                 type: text
-                text: ' and developer of '
+                text: 'Developer of '
               -
                 type: text
                 marks:
@@ -106,7 +115,7 @@ contents:
 title: Home
 template: home
 fieldset: page
-updated_by: ada9a6ce-9291-49fe-b0fb-1ba6bb9655cf
-updated_at: 1579794839
+updated_by: abbd2c61-7cd8-4904-b11c-37488fbe0eac
+updated_at: 1611850939
 id: d1cc3004-fd1e-44b4-9ec8-d1614b9ee19d
 ---

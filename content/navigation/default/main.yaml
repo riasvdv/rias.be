@@ -4,3 +4,6 @@ tree:
   -
     title: Twitter
     url: 'https://twitter.com/riasvdv'
+  -
+    title: 'Contact me'
+    url: 'mailto:hey@rias.be'

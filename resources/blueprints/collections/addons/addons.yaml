@@ -1,0 +1,115 @@
+title: Addons
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: color
+        field:
+          display: Color
+          type: color_swatches
+          icon: color
+          width: 25
+          listable: hidden
+          colors:
+            -
+              label: red
+              value:
+                - '#F56565'
+            -
+              label: orange
+              value:
+                - '#ED8936'
+            -
+              label: yellow
+              value:
+                - '#ECC94B'
+            -
+              label: green
+              value:
+                - '#48BB78'
+            -
+              label: teal
+              value:
+                - '#38B2AC'
+            -
+              label: blue
+              value:
+                - '#4299E1'
+            -
+              label: indigo
+              value:
+                - '#667EEA'
+            -
+              label: purple
+              value:
+                - '#9F7AEA'
+            -
+              label: pink
+              value:
+                - '#ED64A6'
+          validate:
+            - required
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          width: 75
+      -
+        handle: description
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - underline
+            - removeformat
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: false
+          allow_source: false
+          display: Description
+          type: bard
+          icon: bard
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: url
+        field:
+          input_type: url
+          antlers: false
+          display: URL
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+            - url
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - addons
+          max_items: 1
+          listable: false
+          localizable: true

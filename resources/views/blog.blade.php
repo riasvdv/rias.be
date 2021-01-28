@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mx-auto">
-    <div class="max-w-2xl mx-auto">
+    <div class="grid grid-cols-3 gap-8">
         @foreach (tag('collection:blog') as $entry)
             @include('partials.blog.teaser')
         @endforeach
