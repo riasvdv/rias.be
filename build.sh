@@ -7,7 +7,7 @@ yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum install -y amazon-linux-extras
 yum clean metadata
 yum remove php*
-yum install php80 php-{common,curl,mbstring,gd,gettext,bcmath,json,xml,fpm,intl,zip,imap} php80-{common,curl,mbstring,gd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
+yum install php80 php80-php{common,curl,mbstring,gd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
 yum install wget
 
 alias php='php80'
