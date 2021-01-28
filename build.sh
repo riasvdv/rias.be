@@ -28,7 +28,7 @@ php composer-setup.php --quiet
 rm composer-setup.php
 
 # INSTALL COMPOSER DEPENDENCIES
-php composer.phar install
+php composer.phar update --ignore-platform-reqs
 
 # BUILD STATIC SITE
 php composer.phar build
