@@ -1,10 +1,14 @@
 #!/bin/sh
 
 # Install PHP & WGET
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum-config-manager — enable remi-php80
+
 yum install -y amazon-linux-extras
-amazon-linux-extras enable php8.0
 yum clean metadata
-yum install php php-{common,curl,mbstring,gd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
+yum remove php*
+yum install php80 php80-{common,curl,mbstring,gd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
 yum install wget
 
 # INSTALL COMPOSER
