@@ -9,7 +9,7 @@
     ],
     "type": "project",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4",
         "edalzell/blade-directives": "^2.1",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^7.0",
