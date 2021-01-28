@@ -82,7 +82,7 @@ sections:
           validate:
             - required
       -
-        handle: url
+        handle: link
         field:
           input_type: url
           antlers: false
