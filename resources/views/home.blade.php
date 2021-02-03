@@ -17,7 +17,7 @@
 
                 <div class="mb-4 leading-normal my-8 text-center">
                     <a href="/blog" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded no-underline no-shadow transform hover:-translate-y-1 hover:shadow">
-                        Read more
+                        More blogposts
                     </a>
                 </div>
             </section>
