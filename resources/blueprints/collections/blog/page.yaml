@@ -4,10 +4,16 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: color
         field:
           type: color_swatches
-          localizable: false
           display: Color
           colors:
             -
@@ -163,5 +169,22 @@ sections:
           fullscreen: true
           allow_source: true
           type: bard
-          localizable: false
           display: Contents
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
