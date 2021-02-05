@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a94f952125333d27218e9f904fcc1d3c",
+    "content-hash": "ebfb7998d3a9074531aa164aac263ab1",
     "packages": [
         {
             "name": "box/spout",
@@ -4746,16 +4746,16 @@
         },
         {
             "name": "spatie/statamic-responsive-images",
-            "version": "dev-master",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/statamic-responsive-images.git",
-                "reference": "1f57a0f917c7751bb4054c5ee043f8e3f62808ba"
+                "reference": "28dc6a05c4d143a75e3dbd83e7a5c46ef2c98d24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/statamic-responsive-images/zipball/1f57a0f917c7751bb4054c5ee043f8e3f62808ba",
-                "reference": "1f57a0f917c7751bb4054c5ee043f8e3f62808ba",
+                "url": "https://api.github.com/repos/spatie/statamic-responsive-images/zipball/28dc6a05c4d143a75e3dbd83e7a5c46ef2c98d24",
+                "reference": "28dc6a05c4d143a75e3dbd83e7a5c46ef2c98d24",
                 "shasum": ""
             },
             "require": {
@@ -4767,7 +4767,6 @@
                 "spatie/laravel-ray": "^1.10",
                 "spatie/phpunit-snapshot-assertions": "^4.2"
             },
-            "default-branch": true,
             "type": "statamic-addon",
             "extra": {
                 "statamic": {
@@ -4792,9 +4791,9 @@
             "description": "Responsive Images for Statamic 3",
             "support": {
                 "issues": "https://github.com/spatie/statamic-responsive-images/issues",
-                "source": "https://github.com/spatie/statamic-responsive-images/tree/v2.4.1"
+                "source": "https://github.com/spatie/statamic-responsive-images/tree/v2.4.2"
             },
-            "time": "2021-02-05T20:53:28+00:00"
+            "time": "2021-02-05T21:22:34+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -11167,8 +11166,7 @@
     "stability-flags": {
         "rias/statamic-data-import": 20,
         "rias/statamic-link-it": 20,
-        "rias/statamic-redirect": 20,
-        "spatie/statamic-responsive-images": 20
+        "rias/statamic-redirect": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
