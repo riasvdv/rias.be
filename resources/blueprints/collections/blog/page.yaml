@@ -91,7 +91,6 @@ sections:
                     fullscreen: true
                     allow_source: true
                     type: bard
-                    localizable: false
                     display: Text
             code:
               display: Code
@@ -105,14 +104,12 @@ sections:
                     automatic_links: false
                     escape_markup: true
                     type: markdown_highlight
-                    localizable: false
                     display: Code
                 -
                   handle: caption
                   field:
                     character_limit: 0
                     type: text
-                    localizable: false
                     display: Caption
             image:
               display: Image
@@ -125,14 +122,40 @@ sections:
                     allow_uploads: true
                     mode: grid
                     type: assets
-                    localizable: false
                     display: Image
                 -
                   handle: caption
                   field:
                     character_limit: 0
                     type: text
-                    localizable: false
+                    display: Caption
+            art_image:
+              display: 'Art directed image'
+              fields:
+                -
+                  handle: art_image
+                  field:
+                    use_breakpoints: true
+                    allow_ratio: true
+                    allow_fit: true
+                    breakpoints:
+                      - sm
+                      - md
+                      - lg
+                      - xl
+                      - 2xl
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    display: 'Art directed image'
+                    type: responsive
+                    icon: assets
+                    listable: hidden
+                -
+                  handle: caption
+                  field:
+                    character_limit: 0
+                    type: text
                     display: Caption
             video:
               display: Video
@@ -141,7 +164,6 @@ sections:
                   handle: video
                   field:
                     type: video
-                    localizable: false
                     display: Video
           buttons:
             - h2
@@ -170,6 +192,8 @@ sections:
           allow_source: true
           type: bard
           display: Contents
+          listable: hidden
+          always_show_set_button: false
   sidebar:
     display: Sidebar
     fields:
