@@ -18,7 +18,7 @@
     "postcss": "^8.2.6",
     "postcss-easy-import": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
-    "puppeteer": "^7.0.4",
+    "puppeteer": "^7.1.0",
     "tailwindcss": "^2.0.2",
     "workbox-expiration": "^6.1.0",
     "workbox-routing": "^6.1.0",
