@@ -20,7 +20,7 @@
     "postcss-preset-env": "^6.7.0",
     "puppeteer": "^7.1.0",
     "tailwindcss": "^2.0.2",
-    "workbox-expiration": "^6.1.0",
+    "workbox-expiration": "^6.1.1",
     "workbox-routing": "^6.1.0",
     "workbox-strategies": "^6.1.0"
   },
