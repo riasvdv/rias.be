@@ -7428,10 +7428,10 @@ wildcard@^2.0.0:
   resolved "https://registry.yarnpkg.com/wildcard/-/wildcard-2.0.0.tgz#a77d20e5200c6faaac979e4b3aadc7b3dd7f8fec"
   integrity sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
 
-workbox-core@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.1.0.tgz#2671b64f76550e83a4c2202676b67ce372e10881"
-  integrity sha512-s3KqTJfBreO4xCZpR2LB5p/EknAx8eg0QumKiIgxM4hRO0RtwS2pJvTieNEM23X3RqxRhqweriLD8To19KUvjg==
+workbox-core@^6.1.0, workbox-core@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/workbox-core/-/workbox-core-6.1.1.tgz#c8a9b424031b0cf7dacf9d7b8e023d126c9d0167"
+  integrity sha512-xsc/72AQxFtt2BHmwU8QtnVV+W5ln4nnYGuz9Q5sPWYGqW4cH0P+FpZDoGM59bmNEyNf+W9bEmidW//e5GsbwQ==
 
 workbox-expiration@^6.1.0:
   version "6.1.0"
@@ -7447,12 +7447,12 @@ workbox-routing@^6.1.0:
   dependencies:
     workbox-core "^6.1.0"
 
-workbox-strategies@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/workbox-strategies/-/workbox-strategies-6.1.0.tgz#9ddcee44408d2fb403f22a7989803b5c58560590"
-  integrity sha512-HvUknzJdZWeV3x7Eq33a7TGAv9/r1TEiQK6kQ1QNzN+IKiqhIjnhKFHmMxb5hK1Gw9/aDSJTLNPDaLPfIJRQFQ==
+workbox-strategies@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/workbox-strategies/-/workbox-strategies-6.1.1.tgz#6e0adda84bcda17d3d0c48baec2eab9b988b9ca6"
+  integrity sha512-7qYA9Eiq6hnP2dyenlD7ZtWI1ArBMT8yhTvHVlaOl9kYY7W+Iv3lAfRCjj/nucOKeVXATx4iVJEuFPn5J+8lzw==
   dependencies:
-    workbox-core "^6.1.0"
+    workbox-core "^6.1.1"
 
 wrap-ansi@^7.0.0:
   version "7.0.0"
