@@ -22,7 +22,7 @@
     "tailwindcss": "^2.0.2",
     "workbox-expiration": "^6.1.0",
     "workbox-routing": "^6.1.0",
-    "workbox-strategies": "^6.1.0"
+    "workbox-strategies": "^6.1.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.0",
