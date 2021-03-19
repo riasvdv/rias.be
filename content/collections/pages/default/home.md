@@ -34,7 +34,7 @@ contents:
                 type: hard_break
               -
                 type: text
-                text: 'Freelancer developer as a secondary occupation'
+                text: 'Freelance developer as a secondary occupation'
               -
                 type: hard_break
               -
@@ -117,6 +117,6 @@ title: Home
 template: home
 fieldset: page
 updated_by: abbd2c61-7cd8-4904-b11c-37488fbe0eac
-updated_at: 1616166819
+updated_at: 1616167845
 id: d1cc3004-fd1e-44b4-9ec8-d1614b9ee19d
 ---
