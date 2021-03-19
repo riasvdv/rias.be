@@ -1,0 +1,37 @@
+title: Layout
+fields:
+  -
+    handle: replicator
+    field:
+      collapse: false
+      sets:
+        button_box:
+          display: 'Button box'
+          fields:
+            -
+              handle: button_box
+              field:
+                options:
+                  -
+                    label: Simple
+                    value: simple
+                    image: null
+                    icon: adjust
+                  -
+                    label: Expanded
+                    value: expanded
+                    image: null
+                    icon: file
+                  -
+                    label: Image
+                    value: image
+                    image: null
+                    icon: image
+                display: 'Button Box'
+                type: button_box
+                icon: button_box
+                listable: hidden
+      display: Replicator
+      type: replicator
+      icon: replicator
+      listable: hidden
