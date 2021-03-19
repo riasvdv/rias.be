@@ -41,7 +41,7 @@ class SyncPaymentsToAccountableCommand extends Command
                 $latestInvoice = collect($invoices)->filter(function ($invoice) {
                     return !is_null($invoice['invoiceNumber']);
                 })->sortByDesc(function ($invoice) {
-                    return Carbon::create($invoice['invoiceDate']);
+                    return (int) $invoice['invoiceNumber'];
                 })->first();
 
                 $latestInvoiceNumber = (int) $latestInvoice['invoiceNumber'];

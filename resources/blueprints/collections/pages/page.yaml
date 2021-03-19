@@ -4,10 +4,16 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: color
         field:
           type: color_swatches
-          localizable: false
           display: Color
           colors:
             -
@@ -85,8 +91,23 @@ sections:
                     fullscreen: true
                     allow_source: true
                     type: bard
-                    localizable: false
                     display: Text
+                    width: 75
+                -
+                  handle: image
+                  field:
+                    mode: grid
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    max_files: 1
+                    display: Image
+                    type: assets
+                    icon: assets
+                    width: 25
+                    listable: hidden
+                    validate:
+                      - image
             code:
               display: Code
               fields:
@@ -99,14 +120,12 @@ sections:
                     automatic_links: false
                     escape_markup: true
                     type: markdown_highlight
-                    localizable: false
                     display: Code
                 -
                   handle: caption
                   field:
                     character_limit: 0
                     type: text
-                    localizable: false
                     display: Caption
             image:
               display: Image
@@ -119,8 +138,35 @@ sections:
                     allow_uploads: true
                     mode: grid
                     type: assets
-                    localizable: false
                     display: Image
+            art_image:
+              display: 'Art directed image'
+              fields:
+                -
+                  handle: art_image
+                  field:
+                    use_breakpoints: true
+                    allow_ratio: true
+                    allow_fit: true
+                    breakpoints:
+                      - sm
+                      - md
+                      - lg
+                      - xl
+                      - 2xl
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    display: 'Art directed image'
+                    type: responsive
+                    icon: assets
+                    listable: hidden
+                -
+                  handle: caption
+                  field:
+                    character_limit: 0
+                    type: text
+                    display: Caption
             video:
               display: Video
               fields:
@@ -128,8 +174,24 @@ sections:
                   handle: video
                   field:
                     type: video
-                    localizable: false
                     display: Video
+            link:
+              display: Link
+              fields:
+                -
+                  handle: link
+                  field:
+                    type: link_it
+                    localizable: true
+                    display: Link
+                    validate:
+                      - required
+                    listable: hidden
+                    replicator_preview: false
+                    new_window: true
+                    text: true
+                    collections:
+                      - pages
           buttons:
             - h2
             - h3
@@ -156,5 +218,31 @@ sections:
           fullscreen: true
           allow_source: true
           type: bard
-          localizable: false
           display: Contents
+          listable: hidden
+          always_show_set_button: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  layout:
+    display: Layout
+    fields:
+      -
+        import: layout
