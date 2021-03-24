@@ -3,7 +3,8 @@ import formatRelative from 'date-fns/formatRelative'
 const container = document.querySelector("[data-webmentions]");
 
 if (container) {
-    fetch(`https://webmention.io/api/mentions.jf2?target=${container.dataset.webmentions}`)
+    const url = container.dataset.webmentions.replace(/\/$/, "");
+    fetch(`https://webmention.io/api/mentions.jf2?target=${url}`)
         .then(response => {
             response.json().then(data => {
                 let webmentions = {
