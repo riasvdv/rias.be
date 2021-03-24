@@ -23,8 +23,8 @@
         @endforeach
     @endif
     <link href="https://github.com/riasvdv" rel="me">
-    <link rel="webmention" href="https://webmention.io/rias.be/webmention" />
-    <link rel="pingback" href="https://webmention.io/rias.be/xmlrpc" />
+    <link rel="webmention" href="https://webmention.io/www.rias.be/webmention" />
+    <link rel="pingback" href="https://webmention.io/www.rias.be/xmlrpc" />
 
     <meta name="og:image" content="https://www.rias.be/assets/social.png">
 
