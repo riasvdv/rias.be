@@ -14,7 +14,7 @@
 
         <span class="flex items-center transition-all group-hover:gap-4 mt-auto">
             <span class="mr-2">Continue reading</span>
-            <span class="w-4 h-4 inline-block">{!! tag('svg', ['src' => '/assets/svg/long-arrow-right.svg']) !!}</span>
+            <span class="w-4 h-4 inline-block">{!! statamic_tag('svg', ['src' => '/assets/svg/long-arrow-right.svg']) !!}</span>
         </span>
     </a>
 </div>

@@ -3,10 +3,10 @@
     <id>https://www.rias.be/feed</id>
     <link href="https://www.rias.be/feed" rel="self"></link>
     <title><![CDATA[Rias.be]]></title>
-    @foreach (tag('collection:blog', ['limit' => 1]) as $entry)
+    @foreach (statamic_tag('collection:blog', ['limit' => 1]) as $entry)
     <updated>{{ $entry->date()->format('c') }}</updated>
     @endforeach
-    @foreach (tag('collection:blog') as $entry)
+    @foreach (statamic_tag('collection:blog') as $entry)
     <entry>
         <title><![CDATA[{{ $entry->value('title') }}]]></title>
         <link rel="alternate" href="https://www.rias.be{{ $entry->url() }}" />

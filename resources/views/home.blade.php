@@ -4,13 +4,13 @@
     <div class="container mx-auto">
         @include('partials.contents')
 
-        @if (tag('collection:count', ['in' => 'blog']) > 0)
+        @if (statamic_tag('collection:count', ['in' => 'blog']) > 0)
             <section class="my-24">
                 <div class="text-center my-8">
                     <h3 class="text-base text-2xl text-gray-500 tracking-widest uppercase mb-4">Blog</h3>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    @foreach (tag('collection:blog', ['limit' => 3]) as $entry)
+                    @foreach (statamic_tag('collection:blog', ['limit' => 3]) as $entry)
                         @include('partials.blog.teaser')
                     @endforeach
                 </div>
@@ -23,13 +23,13 @@
             </section>
         @endif
 
-        @if (tag('collection:count', ['in' => 'addons']) > 0)
+        @if (statamic_tag('collection:count', ['in' => 'addons']) > 0)
             <section class="my-24">
                 <div class="text-center my-8">
                     <h3 class="text-base text-2xl text-gray-500 tracking-widest uppercase mb-4">Addons / Packages</h3>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    @foreach (tag('collection:addons') as $entry)
+                    @foreach (statamic_tag('collection:addons') as $entry)
                         @include('partials.addon.teaser')
                     @endforeach
                 </div>

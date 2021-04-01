@@ -6,11 +6,6 @@ use Statamic\Modifiers\Modify;
 use Statamic\Tags\Loader as TagLoader;
 use Statamic\View\Antlers\Parser;
 
-function modify($value): Modify
-{
-    return Modify::value($value);
-}
-
 function collection(string $handle, bool $all = false): \Statamic\Stache\Query\EntryQueryBuilder
 {
     /** @var \Statamic\Stache\Query\EntryQueryBuilder $query */
@@ -27,7 +22,7 @@ function collection(string $handle, bool $all = false): \Statamic\Stache\Query\E
     return $query;
 }
 
-function tag(string $name, array $params = [], array $context = [])
+function statamic_tag(string $name, array $params = [], array $context = [])
 {
     if ($pos = strpos($name, ':')) {
         $original_method = substr($name, $pos + 1);

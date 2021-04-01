@@ -11,7 +11,7 @@
 
         <span class="flex items-center group-hover:gap-4 mt-auto">
             <span class="mr-2">More info</span>
-            <span class="w-4 h-4 inline-block">{!! tag('svg', ['src' => '/assets/svg/external-link.svg']) !!}</span>
+            <span class="w-4 h-4 inline-block">{!! statamic_tag('svg', ['src' => '/assets/svg/external-link.svg']) !!}</span>
         </span>
     </a>
 </div>
