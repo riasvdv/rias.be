@@ -46,6 +46,10 @@ return [
         'entries' => [
             'class' => Stores\EntriesStore::class,
             'directory' => base_path('content/collections'),
+            'indexes' => [
+                'status',
+                'redirect',
+            ]
         ],
 
         'navigation' => [
