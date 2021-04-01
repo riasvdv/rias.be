@@ -20,10 +20,8 @@ yarn-error.log
 !/users/.gitkeep
 /public/vendor
 /public/mix-manifest.json
-/public/css
-/public/js
+/public/build
 /public/img
-/public/sw.js
 firebase-key.json
 /dist
 /.firebase

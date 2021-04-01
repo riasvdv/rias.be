@@ -1,5 +1,3 @@
-import formatRelative from 'date-fns/formatRelative'
-
 const container = document.querySelector("[data-webmentions]");
 
 if (container) {

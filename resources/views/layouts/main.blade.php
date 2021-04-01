@@ -50,15 +50,9 @@
     <link rel="manifest" href="/manifest.json">
 
     {!! statamic_tag('highlight:css') !!}
-    <link rel="stylesheet" href="{{ mix("css/site.css") }}">
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js');
-            });
-        }
-    </script>
+    {{ vite_assets() }}
+
     <script>!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-white">
@@ -138,10 +132,9 @@
     </nav>
 </div>
 
-<script src="{{ mix("js/site.js") }}" defer></script>
 <script type="text/javascript">
     WebFontConfig = {
-        google: { families: ['Fira+Mono:400,700&display=swap'] }
+        google: { families: ['Fira+Code:400,700&display=swap'] }
     };
     (function() {
         var wf = document.createElement('script');

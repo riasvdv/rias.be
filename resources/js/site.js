@@ -1,3 +1,7 @@
+import 'vite/dynamic-import-polyfill';
+
+import '../css/site.css';
+
 import Alpine from 'alpinejs';
 import "./webmentions";
 
