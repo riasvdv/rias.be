@@ -82,7 +82,7 @@ return [
     */
 
     'indexes' => [
-        //
+        'path',
     ],
 
 ];
