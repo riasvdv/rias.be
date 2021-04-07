@@ -4,7 +4,9 @@
     <div class="max-w-xl mx-auto">
         <div class="text-center mb-6 prose">
             <h1 class="mb-0 leading-tight">{!! modify($title)->widont() !!}</h1>
-            <small class="text-base font-normal">{{ $date }}</small>
+            @if ($collection->handle() === 'blog')
+                <small class="text-base font-normal">{{ $date }}</small>
+            @endif
         </div>
     </div>
 
