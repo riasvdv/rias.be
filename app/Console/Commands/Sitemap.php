@@ -49,7 +49,7 @@ class Sitemap extends Command
             );
         }
 
-        $sitemap->writeToFile(storage_path('app/static/sitemap.xml'));
+        $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('Sitemap saved!');
     }
