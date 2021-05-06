@@ -7,7 +7,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.0",
     "alpinejs": "^2.8.0",
-    "puppeteer": "^7.1.0",
+    "puppeteer": "^9.1.1",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "postcss": "^8.2.14",
