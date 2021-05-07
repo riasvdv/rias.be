@@ -93,5 +93,15 @@
             "@php please ssg:generate",
             "@php artisan sitemap"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../statamic-blade"
+        },
+        {
+            "type": "path",
+            "url": "addons/rias/statamic-paddle"
+        }
+    ]
 }

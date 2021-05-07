@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "503821eea4fc817cacd4c748241433a5",
+    "content-hash": "3953c6cc3ff5b34808ec184eff5aae6f",
     "packages": [
         {
             "name": "box/spout",
@@ -841,10 +841,16 @@
         {
             "name": "edalzell/blade-directives",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edalzell/statamic-blade.git",
+                "reference": "6044b0242ce40791efadedf0a05c15bc1a06ccfe"
+            },
             "dist": {
-                "type": "path",
-                "url": "../statamic-blade",
-                "reference": "ce8050cf54e5f09c033cb7d537028453450a3bee"
+                "type": "zip",
+                "url": "https://api.github.com/repos/edalzell/statamic-blade/zipball/6044b0242ce40791efadedf0a05c15bc1a06ccfe",
+                "reference": "6044b0242ce40791efadedf0a05c15bc1a06ccfe",
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "^7.30.3 || ^8.24",
@@ -857,6 +863,7 @@
                 "orchestra/testbench": "^5.0 || ^6.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "statamic": {
@@ -877,11 +884,7 @@
                     "Edalzell\\Blade\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Edalzell\\Blade\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -894,9 +897,11 @@
                 }
             ],
             "description": "Blade directives that work w/ Statamic",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/edalzell/statamic-blade/issues",
+                "source": "https://github.com/edalzell/statamic-blade/tree/v3.2"
+            },
+            "time": "2021-05-07T16:46:05+00:00"
         },
         {
             "name": "egulias/email-validator",
