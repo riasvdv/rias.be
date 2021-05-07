@@ -5,12 +5,12 @@
                 @responsive($asset['url'], ['webp' => false, 'loading' => 'lazy', 'alt' => $asset['title']])
             @else
                 <picture>
-                    <img src="{{ $asset->url() }}" alt="{{ $asset->title() }}">
+                    <img src="{{ $asset['url'] }}" alt="{{ $asset['title'] }}">
                 </picture>
             @endif
         @endforeach
     </div>
-    @if (isset($caption) && $caption->value())
-        <figcaption class="block text-base text-gray-600 text-center max-w-sm mx-auto">{{ $caption->value() }}</figcaption>
+    @if (isset($caption) && $caption)
+        <figcaption class="block text-base text-gray-600 text-center max-w-sm mx-auto">{{ $caption }}</figcaption>
     @endif
 </figure>
