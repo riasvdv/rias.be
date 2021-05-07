@@ -1,8 +1,8 @@
 <figure class="my-8">
     <div class="flex justify-center mb-2 max-w-4xl mx-auto">
-        @foreach ($image->value() as $asset)
-            @if ($asset->extension() !== 'gif')
-                @responsive($asset, ['webp' => false, 'loading' => 'lazy', 'alt' => $asset->title()])
+        @foreach ($image as $asset)
+            @if ($asset['extension'] !== 'gif')
+                @responsive($asset['url'], ['webp' => false, 'loading' => 'lazy', 'alt' => $asset['title']])
             @else
                 <picture>
                     <img src="{{ $asset->url() }}" alt="{{ $asset->title() }}">

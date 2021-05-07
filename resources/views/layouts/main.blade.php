@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-    <title>{{ $title->value() }} | Rias.be</title>
-    @if ($contents->value())
+    <title>{{ $title }} | Rias.be</title>
+    @if ($contents)
         @foreach ($contents as $content)
             @if ($content['type'] === 'header')
                 <meta name="description" content="{{ modify($content['header'])->toMetaDescription() }}">

@@ -10,7 +10,7 @@
     "type": "project",
     "require": {
         "php": "^8.0",
-        "edalzell/blade-directives": "3.0",
+        "edalzell/blade-directives": "dev-main",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^8.0.4",
         "laravel/octane": "dev-master",
@@ -30,10 +30,11 @@
         "spatie/statamic-responsive-images": "^2.4.2",
         "spatie/temporary-directory": "^1.3",
         "spiral/roadrunner": "v2.0",
-        "statamic/cms": "v3.1.2",
+        "statamic/cms": "3.1.11",
         "stripe/stripe-php": "^7.68"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.13",
         "mockery/mockery": "^1.0",
@@ -93,5 +94,14 @@
             "@php artisan sitemap"
         ]
     },
-    "repositories": []
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../statamic-blade"
+        },
+        {
+            "type": "path",
+            "url": "addons/rias/statamic-paddle"
+        }
+    ]
 }
