@@ -149,5 +149,6 @@
         s.parentNode.insertBefore(wf, s);
     })(); </script>
 <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"Rias",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+<script async defer data-domain="rias.be" src="https://analytics.rias.be/js/plausible.js"></script>
 </body>
 </html>
