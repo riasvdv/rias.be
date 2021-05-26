@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Http;
 
 class Api
 {
+    public const REVENUE_OTHER = 'other-revenue';
+    public const REVENUE_INVOICE = 'invoice';
+
     private string $baseUrl;
 
     private string $token;
@@ -24,17 +27,25 @@ class Api
         $this->token = $response['access_token'];
     }
 
-    public function uploadInvoice(string $contents, string $fileName): string
+    public function getNextRevenueNumber(string $type): string
     {
-        $fileName = explode('/', Http::withToken($this->token)
-            ->attach('file', $contents, $fileName)
-            ->post($this->baseUrl . '/users/file')
-            ->json())[1];
-
         return Http::withToken($this->token)
-            ->post($this->baseUrl . '/v1/invoices/dropzone-import', [
-                'filename' => $fileName,
-            ])->json()['_id'];
+            ->get($this->baseUrl . "/v2/revenues/next-number?type={$type}")
+            ->json('nextRevenueNumber');
+    }
+
+    public function uploadFile(string $contents, string $fileName): string
+    {
+        return Http::withToken($this->token)
+            ->attach('file', $contents, $fileName)
+            ->post($this->baseUrl . '/users/file?s3=true')
+            ->json('s3FilePath');
+    }
+
+    public function createRevenue(array $data): Response
+    {
+        return Http::withToken($this->token)
+            ->post($this->baseUrl . '/v2/revenues', $data);
     }
 
     public function getInvoices(): array
