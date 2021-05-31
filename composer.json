@@ -25,6 +25,7 @@
         "rias/statamic-position-fieldtype": "2.0.1",
         "rias/statamic-redirect": "dev-master",
         "spatie/browsershot": "^3.42",
+        "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-medialibrary": "^9.4",
         "spatie/laravel-sitemap": "^6.0",
         "spatie/statamic-responsive-images": "^2.4.2",
@@ -94,14 +95,5 @@
             "@php artisan sitemap"
         ]
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../statamic-blade"
-        },
-        {
-            "type": "path",
-            "url": "addons/rias/statamic-paddle"
-        }
-    ]
+    "repositories": []
 }

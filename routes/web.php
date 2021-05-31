@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('feed', 'layouts.feed');
+Route::feeds();
 
 // Route::get('/', function () {
 //     return view('welcome');

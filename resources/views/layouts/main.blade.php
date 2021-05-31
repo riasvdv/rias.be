@@ -44,6 +44,8 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/manifest.json">
 
+    @include('feed::links')
+
     {!! statamic_tag('highlight:css') !!}
 
     {{ vite_assets() }}
