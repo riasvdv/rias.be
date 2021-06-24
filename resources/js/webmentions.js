@@ -54,6 +54,7 @@ function renderAvatarList(label, webmentions) {
     list.appendChild(count);
 
     const reactions = document.createElement('div');
+    reactions.className = 'w-full';
 
     webmentions.forEach(like => {
         reactions.appendChild(renderLike(like));
