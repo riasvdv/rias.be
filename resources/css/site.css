@@ -120,5 +120,5 @@ pre {
 }
 
 .giscus {
-    @apply max-w-xl mx-auto;
+    @apply max-w-3xl mx-auto;
 }
