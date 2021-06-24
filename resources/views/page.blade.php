@@ -47,13 +47,16 @@
             </div>
         </div>
 
-        <script src="https://utteranc.es/client.js"
-                repo="riasvdv/rias.be"
-                issue-term="title"
-                label="comments"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
+        <script src="https://giscus.app/client.js"
+            data-repo="riasvdv/rias.be"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxODMwNzA4MTg="
+            data-category="General"
+            data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMzMDU0MzYz"
+            data-mapping="title"
+            data-reactions-enabled="1"
+            data-theme="light"
+            crossorigin="anonymous"
+            async>
         </script>
     @endif
 @endsection
