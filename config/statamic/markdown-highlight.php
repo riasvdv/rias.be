@@ -7,7 +7,7 @@ return [
      * themes work with Shiki https://github.com/shikijs/shiki/blob/master/docs/themes.md#all-themes
      * you can also pass in an absolute path to a custom VS Code theme.
      */
-    'theme' => __DIR__ . '/../ayu-light.json',
+    'theme' => 'github-light',
 
     /**
      * Whether the result should be cached, the cache key and invalidation
