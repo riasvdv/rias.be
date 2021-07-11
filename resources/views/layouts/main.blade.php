@@ -46,8 +46,6 @@
 
     @include('feed::links')
 
-    {!! statamic_tag('highlight:css') !!}
-
     {{ vite_assets() }}
 
     <script async defer src="/scope.js"></script>

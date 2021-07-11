@@ -22,38 +22,34 @@ pre {
     @apply bg-gray-100 shadow-md leading-relaxed;
 }
 
-.hljs {
-    @apply bg-gray-100 p-6;
+.shiki {
+    @apply p-6 overflow-x-scroll;
+    background: rgba(241,249,248,var(--tw-bg-opacity)) !important;
 }
 
-.hljs-variable,
-.hljs-template-variable,
-.hljs-strong,
-.hljs-emphasis,
-.hljs-quote,
-.hljs-selector-tag,
-.hljs-type,
-.hljs-title,
-.hljs-attr,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-    @apply text-teal-500;
+.shiki .highlight {
+    background-color: hsl(197, 88%, 94%);
+    padding: 3px 0;
 }
 
-.hljs-string {
-    @apply text-teal-600;
-}
-
-.hljs-keyword,
-.hljs-section, .hljs-name, .hljs-number {
-    @apply text-orange-500;
-}
-
-.hljs .highlighted {
-    @apply inline-block py-1 px-3 -mx-3;
+.shiki .add {
     background-color: hsl(136, 100%, 96%);
+    padding: 3px 0;
+}
+
+.shiki .del {
+    background-color: hsl(354, 100%, 96%);
+    padding: 3px 0;
+}
+
+.shiki.focus .line:not(.focus) {
+    transition: all 250ms;
+    filter: blur(2px);
+}
+
+.shiki.focus:hover .line {
+    transition: all 250ms;
+    filter: blur(0);
 }
 
 /* Other */

@@ -10,6 +10,7 @@
     "type": "project",
     "require": {
         "php": "^8.0",
+        "doublethreedigital/runway": "^2.1",
         "edalzell/blade-directives": "dev-main",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^8.0.4",
@@ -21,14 +22,14 @@
         "rias/statamic-color-swatches": "^2.0",
         "rias/statamic-data-import": "dev-master",
         "rias/statamic-link-it": "dev-master",
-        "rias/statamic-markdown-highlight": "^1.1.0",
+        "rias/statamic-markdown-highlight": "^v2.0.0",
         "rias/statamic-position-fieldtype": "2.0.1",
         "rias/statamic-redirect": "dev-master",
         "spatie/browsershot": "^3.42",
         "spatie/laravel-feed": "^4.0.2",
         "spatie/laravel-medialibrary": "^9.4",
         "spatie/laravel-sitemap": "^6.0",
-        "spatie/statamic-responsive-images": "^2.4.2",
+        "spatie/statamic-responsive-images": "dev-main",
         "spatie/temporary-directory": "^1.3",
         "spiral/roadrunner": "v2.0",
         "statamic/cms": "3.1.26",
@@ -50,7 +51,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "spatie/laravel-ray"
+            ]
         }
     },
     "autoload": {
@@ -94,6 +97,5 @@
             "@php please ssg:generate",
             "@php artisan sitemap"
         ]
-    },
-    "repositories": []
+    }
 }
