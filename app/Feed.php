@@ -23,10 +23,10 @@ class Feed
                 $header = collect($entry->augmentedValue('contents')->value())->firstWhere('type', 'header');
 
                 return FeedItem::create()
-                    ->title((string) $entry->augmentedValue('title'))
+                    ->title(mb_convert_encoding((string) $entry->augmentedValue('title'), "UTF-8", "HTML-ENTITIES"))
                     ->id($entry->absoluteUrl())
-                    ->summary((string) $header['header'])
-                    ->updated($entry->lastModified())
+                    ->summary(mb_convert_encoding((string) $header['header'], "UTF-8", "HTML-ENTITIES"))
+                    ->updated($entry->date())
                     ->link($entry->absoluteUrl())
                     ->authorName('Rias Van der Veken')
                     ->authorEmail('hey@rias.be')
