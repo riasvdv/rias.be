@@ -407,6 +407,18 @@
   optionalDependencies:
     prettier "^1.18.2"
 
+"@vue/reactivity@^3.0.2":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.4.tgz#d926ed46fb0d48582ccf8665b062d37b5d35ba99"
+  integrity sha512-YDlgii2Cr9yAoKVZFzgY4j0mYlVT73986X3e5SPp6ifqckSEoFSUWXZK2Tb53TB/9qO29BEEbspnKD3m3wAwkA==
+  dependencies:
+    "@vue/shared" "3.1.4"
+
+"@vue/shared@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.4.tgz#c14c461ec42ea2c1556e86f60b0354341d91adc3"
+  integrity sha512-6O45kZAmkLvzGLToBxEz4lR2W6kXohCtebV2UxjH9GXjd8X9AhEn68FN9eNanFtWNzvgw1hqd6HkPRVQalqf7Q==
+
 acorn-node@^1.6.1:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/acorn-node/-/acorn-node-1.8.2.tgz#114c95d64539e53dede23de8b9d96df7c7ae2af8"
@@ -433,10 +445,12 @@ agent-base@6:
   dependencies:
     debug "4"
 
-alpinejs@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-2.8.0.tgz#d0de7309dd642e9198aef7c14acb9243246549f0"
-  integrity sha512-UHvE71BBYHJa6+RxjMwM0g4eokq+5yG1QO5C6VieUu0MVPlsUSlwvrh19VVZQApNIlQsgcvQUhIalzAIgoAPoA==
+alpinejs@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/alpinejs/-/alpinejs-3.2.1.tgz#d620d1ca121ae2bf22242c2dd427c04d826e5e2b"
+  integrity sha512-MYYGUmVHNWN27TvgAtUCYXZlfsXoVCrLQT3a0Ak6CQKqf1TCHfQKxmhzJWscW5kPcLlOK2aYmWbV2H+XyfN2FQ==
+  dependencies:
+    "@vue/reactivity" "^3.0.2"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
