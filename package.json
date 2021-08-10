@@ -19,7 +19,7 @@
     "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "shiki": "^0.9.5",
+    "shiki": "^0.9.6",
     "vue": "^2.6.14"
   }
 }
