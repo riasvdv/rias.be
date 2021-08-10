@@ -1,5 +1,4 @@
 # Default Statamic
-/node_modules
 /public/hot
 /public/storage
 /public/vendor/statamic
@@ -30,3 +29,12 @@ firebase-debug.log
 .now
 rr
 .rr.yaml
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
