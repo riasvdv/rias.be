@@ -32,7 +32,8 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['daily', 'flare'],
+            'ignore_exceptions' => false,
         ],
 
         'single' => [
@@ -64,6 +65,10 @@ return [
         'errorlog' => [
             'driver' => 'errorlog',
             'level' => 'debug',
+        ],
+
+        'flare' => [
+            'driver' => 'flare',
         ],
     ],
 
