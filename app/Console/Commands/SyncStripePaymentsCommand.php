@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Domain\Stripe\Actions\CreatePaymentFromChargeAction;
 use App\Domain\Stripe\Actions\GeneratePaymentReceiptForPaymentAction;
 use App\Payment;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Stripe\Charge;
@@ -46,7 +47,13 @@ class SyncStripePaymentsCommand extends Command
             })
             ->each(function (Charge $charge) use ($chat, $token, $createPaymentFromChargeAction, $generatePaymentReceiptForPaymentAction) {
                 $payment = $createPaymentFromChargeAction->execute($charge);
-                $generatePaymentReceiptForPaymentAction->execute($payment);
+
+                try {
+                    $generatePaymentReceiptForPaymentAction->execute($payment);
+                } catch (Exception $e) {
+                    $payment->delete();
+                    throw $e;
+                }
 
                 $formattedUSD = number_format($charge->amount / 100, 2);
                 $formattedEur = number_format($payment->amount_eur / 100, 2, ',', '.');
