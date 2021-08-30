@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "puppeteer": "^10.2.0",
-    "shiki": "^0.9.7",
+    "shiki": "^0.9.8",
     "vue": "^2.6.14"
   }
 }
