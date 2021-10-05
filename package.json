@@ -9,7 +9,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "alpinejs": "^3.2.4",
-    "autoprefixer": "^10.3.2",
+    "autoprefixer": "^10.3.7",
     "cross-env": "^7.0.3",
     "postcss": "^8.3.0",
     "tailwindcss": "^2.2.7",
