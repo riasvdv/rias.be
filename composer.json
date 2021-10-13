@@ -14,6 +14,7 @@
         "edalzell/blade-directives": "dev-main",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^8.0.4",
+        "laravel/octane": "^1.0",
         "laravel/tinker": "^2.0",
         "nyholm/psr7": "^1.4",
         "predis/predis": "^1.1",
