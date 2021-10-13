@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\LinkInvoicesToPayoutsCommand;
 use App\Console\Commands\SyncPaymentsToAccountableCommand;
 use App\Console\Commands\SyncStripePaymentsCommand;
 use Illuminate\Console\Scheduling\Schedule;
@@ -28,6 +29,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command(SyncStripePaymentsCommand::class)->hourly();
         $schedule->command(SyncPaymentsToAccountableCommand::class)->hourly();
+        $schedule->command(LinkInvoicesToPayoutsCommand::class)->hourly();
     }
 
     /**

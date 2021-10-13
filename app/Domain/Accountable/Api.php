@@ -48,6 +48,26 @@ class Api
             ->post($this->baseUrl . '/v2/revenues', $data);
     }
 
+    public function updateRevenue(string $id, array $data): Response
+    {
+        return Http::withToken($this->token)
+            ->put($this->baseUrl . '/v2/revenues/' . $id, $data);
+    }
+
+    public function getRevenues(): array
+    {
+        return Http::withToken($this->token)
+            ->get($this->baseUrl . '/v2/revenues?page=1&perPage=10000')
+            ->json()['data'] ?? [];
+    }
+
+    public function getTransactions(): array
+    {
+        return Http::withToken($this->token)
+                ->get($this->baseUrl . '/v1/transactions')
+                ->json()['data'] ?? [];
+    }
+
     public function getInvoices(): array
     {
         return Http::withToken($this->token)
