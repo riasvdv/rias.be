@@ -11,7 +11,7 @@
     "alpinejs": "^3.2.4",
     "autoprefixer": "^10.3.2",
     "cross-env": "^7.0.3",
-    "postcss": "^8.3.0",
+    "postcss": "^8.3.10",
     "tailwindcss": "^2.2.7",
     "vite": "^2.5.0",
     "vite-plugin-vue2": "^1.8.1",
