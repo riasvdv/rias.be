@@ -44,4 +44,9 @@ return [
         'token' => env('TELEGRAM_TOKEN'),
         'chat_id' => env('TELEGRAM_CHAT_ID'),
     ],
+
+    'ebike' => [
+        'remember' => env('EBIKE_REMEMBER'),
+        'session_id' => env('EBIKE_SESSION_ID'),
+    ],
 ];
