@@ -19,7 +19,9 @@ class SyncEbikeToStravaCommand extends Command
      */
     public function handle(Api $api)
     {
-        $rideIds = collect($api->getActivityHeaders())
+        $latest = DB::table('synced_rides')->latest('id')->first();
+
+        $rideIds = collect($api->getActivityHeaders($latest?->ride_id))
             ->flatMap(function ($activityHeader) {
                 return $activityHeader['header_rides_ids'] ?? [];
             });
@@ -33,7 +35,14 @@ class SyncEbikeToStravaCommand extends Command
                 continue;
             }
 
-            if ($api->syncRideToStrava($rideId)) {
+            $response = $api->syncRideToStrava($rideId);
+            $json = $response->json();
+
+            if ($response->successful()) {
+                DB::table('synced_rides')->insert(['ride_id' => $rideId]);
+            } elseif ($json['errors'][0]['code'] ?? null === 9) {
+                $this->getOutput()->error($json['errors'][0]['message']);
+
                 DB::table('synced_rides')->insert(['ride_id' => $rideId]);
             }
         }
