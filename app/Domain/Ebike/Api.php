@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class Api
 {
-    public function getActivityHeaders(string $latest = '1635405048712')
+    public function getActivityHeaders(string $latest = '1635405048712'): PromiseInterface|Response
     {
         return Http::withCookies([
             'REMEMBER' => config('services.ebike.remember'),
@@ -22,8 +22,7 @@ class Api
                 'Sec-Fetch-Site' => 'same-origin',
                 'Sec-GPC' => '1',
             ])
-            ->get("https://www.ebike-connect.com/ebikeconnect/api/portal/activities/trip/headers?max=20&offset={$latest}")
-            ->json() ?? [];
+            ->get("https://www.ebike-connect.com/ebikeconnect/api/portal/activities/trip/headers?max=20&offset={$latest}");
     }
 
     public function syncRideToStrava(string $rideId): PromiseInterface|Response

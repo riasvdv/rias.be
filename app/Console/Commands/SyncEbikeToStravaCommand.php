@@ -12,16 +12,18 @@ class SyncEbikeToStravaCommand extends Command
 
     protected $description = 'Syncs Bosch eBike Connect data to Strava';
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle(Api $api)
     {
         $latest = DB::table('synced_rides')->latest('id')->first();
 
-        $rideIds = collect($api->getActivityHeaders($latest?->ride_id))
+        $activityResponse = $api->getActivityHeaders($latest?->ride_id);
+
+        if (! $activityResponse->successful()) {
+            $this->getOutput()->error($activityResponse->body());
+            return;
+        }
+
+        $rideIds = collect($activityResponse->json())
             ->flatMap(function ($activityHeader) {
                 return $activityHeader['header_rides_ids'] ?? [];
             });
