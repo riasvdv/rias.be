@@ -21,7 +21,7 @@ class SyncEbikeToStravaCommand extends Command
     {
         $rideIds = collect($api->getActivityHeaders())
             ->flatMap(function ($activityHeader) {
-                return $activityHeader['header_rides_ids'];
+                return $activityHeader['header_rides_ids'] ?? [];
             });
 
         $this->getOutput()->progressStart($rideIds->count());
