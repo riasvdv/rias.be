@@ -38,14 +38,12 @@ class SyncStripePaymentsCommand extends Command
 
         $this->getOutput()->progressStart(count($charges));
 
-        $token = config('services.telegram.token');
-        $chat = config('services.telegram.chat_id');
 
         collect($charges->getIterator())
             ->filter(function (Charge $charge) {
                 return is_null(Payment::where('stripe_id', $charge->id)->first());
             })
-            ->each(function (Charge $charge) use ($chat, $token, $createPaymentFromChargeAction, $generatePaymentReceiptForPaymentAction) {
+            ->each(function (Charge $charge) use ($createPaymentFromChargeAction, $generatePaymentReceiptForPaymentAction) {
                 $payment = $createPaymentFromChargeAction->execute($charge);
 
                 try {
@@ -58,17 +56,41 @@ class SyncStripePaymentsCommand extends Command
                 $formattedUSD = number_format($charge->amount / 100, 2);
                 $formattedEur = number_format($payment->amount_eur / 100, 2, ',', '.');
 
-                $message = "💸 A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!";
+                $payload = <<<JSON
+                    {
+                      "username": "Statamic",
+                      "avatar_url": "https://statamic.com/img/favicons/favicon-196x196.png",
+                      "content": "💸  A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!",
+                      "embeds": [],
+                      "components": [
+                        {
+                          "type": 1,
+                          "components": [
+                            {
+                              "type": 2,
+                              "style": 5,
+                              "label": "View receipt",
+                              "url": "{$charge->receipt_url}"
+                            },
+                            {
+                              "type": 2,
+                              "style": 5,
+                              "label": "View in Stripe",
+                              "url": "https://dashboard.stripe.com/payments/{$payment->stripe_id}"
+                            },
+                            {
+                              "type": 2,
+                              "style": 5,
+                              "label": "Open Accountable",
+                              "url": "https://web.accountable.eu"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                JSON;
 
-                $reply_markup = json_encode([
-                    'inline_keyboard' => [[
-                        ['text' => 'View Receipt', 'url' => $charge->receipt_url],
-                        ['text' => 'View in Stripe', 'url' => "https://dashboard.stripe.com/payments/{$payment->stripe_id}"],
-                        ['text' => 'Open Accountable', 'url' => "https://web.accountable.eu"],
-                    ]]
-                ]);
-
-                Http::post("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat}&parse_mode=HTML&text={$message}&reply_markup={$reply_markup}");
+                Http::post(config('services.discord.webhook_url'), json_decode($payload, true));
 
                 $this->getOutput()->progressAdvance();
             });

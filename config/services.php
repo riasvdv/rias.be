@@ -49,4 +49,8 @@ return [
         'remember' => env('EBIKE_REMEMBER'),
         'session_id' => env('EBIKE_SESSION_ID'),
     ],
+
+    'discord' => [
+        'webhook_url' => env('DISCORD_WEBHOOK_URL'),
+    ]
 ];
