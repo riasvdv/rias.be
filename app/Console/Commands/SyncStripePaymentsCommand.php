@@ -56,41 +56,38 @@ class SyncStripePaymentsCommand extends Command
                 $formattedUSD = number_format($charge->amount / 100, 2);
                 $formattedEur = number_format($payment->amount_eur / 100, 2, ',', '.');
 
-                $payload = <<<JSON
-                    {
-                      "username": "Statamic",
-                      "avatar_url": "https://statamic.com/img/favicons/favicon-196x196.png",
-                      "content": "💸  A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!",
-                      "embeds": [],
-                      "components": [
-                        {
-                          "type": 1,
-                          "components": [
-                            {
-                              "type": 2,
-                              "style": 5,
-                              "label": "View receipt",
-                              "url": "{$charge->receipt_url}"
-                            },
-                            {
-                              "type": 2,
-                              "style": 5,
-                              "label": "View in Stripe",
-                              "url": "https://dashboard.stripe.com/payments/{$payment->stripe_id}"
-                            },
-                            {
-                              "type": 2,
-                              "style": 5,
-                              "label": "Open Accountable",
-                              "url": "https://web.accountable.eu"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                JSON;
+                $payload = [
+                    'username' => 'Statamic',
+                    'avatar_url' => 'https://statamic.com/img/favicons/favicon-196x196.png',
+                    'content' => "💸  A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!",
+                    'components' => [
+                        [
+                            'type' => 1,
+                            'components' => [
+                                [
+                                    'type' => 2,
+                                    'style' => 5,
+                                    'label' => 'View receipt',
+                                    'url' => $charge->receipt_url,
+                                ],
+                                [
+                                    'type' => 2,
+                                    'style' => 5,
+                                    'label' => 'View in Stripe',
+                                    'url' => "https://dashboard.stripe.com/payments/{$charge->id}",
+                                ],
+                                [
+                                    'type' => 2,
+                                    'style' => 5,
+                                    'label' => 'Open Accountable',
+                                    'url' => "https://web.accountable.eu",
+                                ],
+                            ]
+                        ]
+                    ]
+                ];
 
-                $response = Http::post(config('services.discord.webhook_url'), json_decode($payload, true));
+                $response = Http::post(config('services.discord.webhook_url'), $payload);
 
                 if (! $response->successful()) {
                     report(new Exception(json_encode($response->json())));
