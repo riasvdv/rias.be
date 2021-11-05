@@ -463,7 +463,7 @@ contents:
         type: hard_break
       -
         type: text
-        text: 'Algemene voorwaarden Rias.be BVBA - v1.0 - januari 2019'
+        text: 'Algemene voorwaarden Rias.be - v1.0 - januari 2019'
       -
         type: hard_break
 updated_by: ada9a6ce-9291-49fe-b0fb-1ba6bb9655cf
