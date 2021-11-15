@@ -87,12 +87,9 @@ class SyncStripePaymentsCommand extends Command
                     ]
                 ];
 
-                Http::post(config('services.discord.webhook_url'), []); // An empty post to "wake up" the webhook
                 $response = Http::post(config('services.discord.webhook_url'), $payload);
 
-                if (! $response->successful()) {
-                    report(new Exception(json_encode($response->json())));
-                }
+                report(new Exception(json_encode($response->json())));
 
                 $this->getOutput()->progressAdvance();
             });
