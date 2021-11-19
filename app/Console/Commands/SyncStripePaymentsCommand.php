@@ -6,8 +6,10 @@ use App\Domain\Stripe\Actions\CreatePaymentFromChargeAction;
 use App\Domain\Stripe\Actions\GeneratePaymentReceiptForPaymentAction;
 use App\Payment;
 use Exception;
+use Facade\Ignition\Facades\Flare;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
+use Psr\Log\LogLevel;
 use Stripe\Charge;
 use Stripe\StripeClient;
 
@@ -89,7 +91,9 @@ class SyncStripePaymentsCommand extends Command
 
                 $response = Http::post(config('services.discord.webhook_url'), $payload);
 
-                report(new Exception($response->body()));
+                if ($response->status() !== 204) {
+                    Flare::reportMessage("Failed to send webhook to Discord: " . $response->body(), LogLevel::ERROR);
+                }
 
                 $this->getOutput()->progressAdvance();
             });
