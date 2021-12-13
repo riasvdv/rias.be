@@ -72,7 +72,7 @@
         <div class="flex items-center">
             @foreach (statamic_tag('nav:main') as $navItem)
                 @if ($navItem['title'] === 'Contact me')
-                    <a href="{{ $navItem['url'] }}" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded no-underline no-shadow transform hover:-translate-y-1 hover:shadow">
+                    <a href="{{ $navItem['url'] }}" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded no-underline no-shadow hover:-translate-y-1 hover:shadow">
                         {{ $navItem['title'] }}
                     </a>
                 @else

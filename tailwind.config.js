@@ -1,51 +1,16 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    purge: [
+    content: [
         'app/**/*.php',
-        'resources/**/*.html',
-        'resources/**/*.js',
-        'resources/**/*.jsx',
-        'resources/**/*.ts',
-        'resources/**/*.tsx',
-        'resources/**/*.php',
-        'resources/**/*.vue',
-        'resources/**/*.twig',
+        'resources/**/*.{html,js,jsx,ts,tsx,php,vue,twig}',
     ],
-    darkMode: false, // or 'media' or 'class'
     theme: {
         screens: {
             'sm': '640px',
             'md': '768px',
             'lg': '1024px',
             'xl': '1280px',
-        },
-        colors: {
-            // Build your palette here
-            white: '#ffffff',
-            transparent: 'transparent',
-            current: 'currentColor',
-            gray: {
-                50: '#f8fcfb',
-                100: '#f1f9f8',
-                200: '#e1efee',
-                300: '#cbe1df',
-                400: '#99b2af',
-                500: '#6d8380',
-                600: '#506260',
-                700: '#3b4f4d',
-                800: '#233432',
-                900: '#162220',
-            },
-            orange: colors.orange,
-            red: colors.red,
-            yellow: colors.yellow,
-            green: colors.green,
-            blue: colors.blue,
-            indigo: colors.indigo,
-            purple: colors.purple,
-            pink: colors.pink,
-            teal:colors.teal,
         },
         container: {
             center: true,
@@ -78,11 +43,6 @@ module.exports = {
                     },
                 },
             }),
-        },
-    },
-    variants: {
-        extend: {
-            gap: ['group-hover'],
         },
     },
     plugins: [

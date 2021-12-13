@@ -11,7 +11,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Statamic::script('app', 'cp');
+        //Statamic::script('app', 'cp');
     }
 
     public function register()
