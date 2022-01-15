@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Domain\Accountable\Api;
+use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
@@ -32,11 +33,14 @@ class SyncPaymentsToAccountableCommand extends Command
 
                 $filePath = $accountable->uploadFile($contents, $payment->created_at->format('Y-m-d-his') . '.pdf');
                 $nextRevenueNumber = $accountable->getNextRevenueNumber(Api::REVENUE_OTHER);
+
+                $client = ['location' => 'local'];
+                if ($payment->type === PaymentType::STATAMIC) {
+                    $client['name'] = 'Statamic Marketplace';
+                }
+
                 $response = $accountable->createRevenue([
-                    'client' => [
-                        'location' => 'local',
-                        'name' => 'Statamic Marketplace',
-                    ],
+                    'client' => $client,
                     'currency' => 'EUR',
                     'filePath' => $filePath, // TODO: Filepath
                     'fileType' => 'imported',
@@ -62,6 +66,9 @@ class SyncPaymentsToAccountableCommand extends Command
                             'unitAmountExclVAT' => $payment->amount_eur * 10,
                             'VATRate' => 0,
                             'whyZeroVAT' => 'user-franchisee',
+                            'name' => $payment->type === PaymentType::STATAMIC
+                                ? 'Addon sale'
+                                : 'Plaatskaartjes premium',
                         ]
                     ],
                     'paymentDate' => $payment->created_at->format('Y-m-d'),

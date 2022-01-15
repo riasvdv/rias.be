@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Domain\Stripe\Actions\CreatePaymentFromChargeAction;
 use App\Domain\Stripe\Actions\GeneratePaymentReceiptForPaymentAction;
+use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Exception;
 use Facade\Ignition\Facades\Flare;
@@ -13,18 +14,18 @@ use Psr\Log\LogLevel;
 use Stripe\Charge;
 use Stripe\StripeClient;
 
-class SyncStripePaymentsCommand extends Command
+class SyncStatamicPaymentsCommand extends Command
 {
-    protected $signature = 'stripe:sync-payments';
+    protected $signature = 'stripe:sync-statamic-payments';
 
-    protected $description = 'Sync Stripe payments';
+    protected $description = 'Sync Statamic Stripe payments';
 
     public function handle(
         StripeClient $stripeClient,
         CreatePaymentFromChargeAction $createPaymentFromChargeAction,
         GeneratePaymentReceiptForPaymentAction $generatePaymentReceiptForPaymentAction
     ) {
-        $latestPaymentTimestamp = optional(optional(Payment::latest()->first())->created_at)->timestamp;
+        $latestPaymentTimestamp = optional(optional(Payment::where('type', PaymentType::STATAMIC)->latest()->first())->created_at)->timestamp;
 
         $params = [
             'limit' => 20,

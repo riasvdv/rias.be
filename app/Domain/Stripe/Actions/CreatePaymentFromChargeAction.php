@@ -2,6 +2,7 @@
 
 namespace App\Domain\Stripe\Actions;
 
+use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Spatie\Browsershot\Browsershot;
 use Spatie\TemporaryDirectory\TemporaryDirectory;
@@ -22,6 +23,7 @@ class CreatePaymentFromChargeAction
         $balanceTransaction = $this->stripeClient->balanceTransactions->retrieve($charge->balance_transaction);
 
         return Payment::create([
+            'type' => PaymentType::STATAMIC,
             'stripe_id' => $charge->id,
             'amount_usd' => $charge->amount,
             'amount_eur' => $balanceTransaction->amount,

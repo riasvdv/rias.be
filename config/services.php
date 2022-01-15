@@ -35,6 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'stripe-plaatskaartjes' => [
+        'key' => env('STRIPE_PLAATSKAARTJES_KEY'),
+        'secret' => env('STRIPE_PLAATSKAARTJES_SECRET'),
+    ],
+
     'accountable' => [
         'user' => env('ACCOUNTABLE_USER'),
         'pass' => env('ACCOUNTABLE_PASS'),
