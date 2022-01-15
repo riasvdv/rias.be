@@ -78,7 +78,7 @@ class SyncPlaatskaartjesPaymentsCommand extends Command
 
                 $payload = [
                     'username' => 'Plaatskaartjes',
-                    'avatar_url' => 'https://plaatskaartjes.be/img/logo.svg',
+                    'avatar_url' => 'https://plaatskaartjes.be/logo.png',
                     'content' => "💸  A new payment of €{$formattedEur} has been received!",
                 ];
 
