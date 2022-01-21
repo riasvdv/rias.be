@@ -11,6 +11,7 @@ use Facade\Ignition\Facades\Flare;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Psr\Log\LogLevel;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 use Stripe\Charge;
 use Stripe\StripeClient;
 
@@ -59,42 +60,7 @@ class SyncStatamicPaymentsCommand extends Command
                 $formattedUSD = number_format($charge->amount / 100, 2);
                 $formattedEur = number_format($payment->amount_eur / 100, 2, ',', '.');
 
-                $payload = [
-                    'username' => 'Statamic',
-                    'avatar_url' => 'https://statamic.com/img/favicons/favicon-196x196.png',
-                    'content' => "💸  A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!",
-                    'components' => [
-                        [
-                            'type' => 1,
-                            'components' => [
-                                [
-                                    'type' => 2,
-                                    'style' => 5,
-                                    'label' => 'View receipt',
-                                    'url' => $charge->receipt_url,
-                                ],
-                                [
-                                    'type' => 2,
-                                    'style' => 5,
-                                    'label' => 'View in Stripe',
-                                    'url' => "https://dashboard.stripe.com/payments/{$charge->id}",
-                                ],
-                                [
-                                    'type' => 2,
-                                    'style' => 5,
-                                    'label' => 'Open Accountable',
-                                    'url' => "https://web.accountable.eu",
-                                ],
-                            ]
-                        ]
-                    ]
-                ];
-
-                $response = Http::post(config('services.discord.webhook_url'), $payload);
-
-                if ($response->status() !== 204) {
-                    Flare::reportMessage("Failed to send webhook to Discord: " . $response->body(), LogLevel::ERROR);
-                }
+                DiscordAlert::to('statamic')->message("💸  A new payment of €{$formattedEur} (\${$formattedUSD}) has been received!");
 
                 $this->getOutput()->progressAdvance();
             });

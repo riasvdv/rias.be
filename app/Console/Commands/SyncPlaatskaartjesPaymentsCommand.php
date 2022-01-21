@@ -11,6 +11,7 @@ use Facade\Ignition\Facades\Flare;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Psr\Log\LogLevel;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 use Stripe\Charge;
 use Stripe\StripeClient;
 
@@ -76,17 +77,7 @@ class SyncPlaatskaartjesPaymentsCommand extends Command
 
                 $formattedEur = number_format($payment->amount_eur / 100, 2, ',', '.');
 
-                $payload = [
-                    'username' => 'Plaatskaartjes',
-                    'avatar_url' => 'https://plaatskaartjes.be/logo.png',
-                    'content' => "💸  A new payment of €{$formattedEur} has been received!",
-                ];
-
-                $response = Http::post(config('services.discord.webhook_url'), $payload);
-
-                if ($response->status() !== 204) {
-                    Flare::reportMessage("Failed to send webhook to Discord: " . $response->body(), LogLevel::ERROR);
-                }
+                DiscordAlert::to('plaatskaartjes')->message("💸  A new payment of €{$formattedEur} has been received!");
 
                 $this->getOutput()->progressAdvance();
             });

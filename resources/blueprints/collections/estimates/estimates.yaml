@@ -1,0 +1,150 @@
+title: Estimates
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: items
+        field:
+          fields:
+            -
+              handle: item_description
+              field:
+                input_type: text
+                antlers: false
+                display: 'Item description'
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+            -
+              handle: item_price
+              field:
+                display: 'Item price'
+                type: integer
+                icon: integer
+                listable: hidden
+                instructions_position: above
+            -
+              handle: item_quantity
+              field:
+                display: 'Item quantity'
+                type: integer
+                icon: integer
+                listable: hidden
+                instructions_position: above
+          mode: table
+          min_rows: 1
+          add_row: 'Add item'
+          reorderable: true
+          display: Items
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+      -
+        handle: remarks
+        field:
+          antlers: false
+          display: Remarks
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: client_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_street
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client street'
+          type: text
+          icon: text
+          width: 66
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_number
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client number'
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_postcode
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client postcode'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_city
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client city'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_country
+        field:
+          input_type: text
+          antlers: false
+          default: België
+          display: 'Client country'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: client_vat
+        field:
+          input_type: text
+          antlers: false
+          display: 'Client VAT'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above

@@ -4,6 +4,8 @@
 /public/vendor/statamic
 /public/media
 /storage/*.key
+/storage/redirect
+/content/collections/estimates
 /vendor
 /.idea
 /.vscode

@@ -1,0 +1,13 @@
+title: Estimates
+sites:
+  - default
+propagate: false
+template: estimate
+layout: layout
+revisions: false
+route: '/estimates/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
