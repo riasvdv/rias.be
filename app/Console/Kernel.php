@@ -9,11 +9,13 @@ use App\Console\Commands\SyncPlaatskaartjesPaymentsCommand;
 use App\Console\Commands\SyncStatamicPaymentsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\Health\Commands\RunHealthChecksCommand;
 
 class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command(RunHealthChecksCommand::class)->everyMinute();
         $schedule->command(SyncStatamicPaymentsCommand::class)->hourly();
         $schedule->command(SyncPlaatskaartjesPaymentsCommand::class)->hourly();
         $schedule->command(SyncPaymentsToAccountableCommand::class)->hourly();

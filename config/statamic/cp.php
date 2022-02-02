@@ -1,5 +1,12 @@
 <?php
 
+use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
+use Spatie\Health\Checks\Checks\DatabaseCheck;
+use Spatie\Health\Checks\Checks\DebugModeCheck;
+use Spatie\Health\Checks\Checks\EnvironmentCheck;
+use Spatie\Health\Checks\Checks\HorizonCheck;
+use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
+
 return [
 
     /*
@@ -38,7 +45,12 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+        ['type' => 'health_check', 'check' => CpuLoadCheck::class, 'width' => '33'],
+        ['type' => 'health_check', 'check' => DebugModeCheck::class, 'width' => '33'],
+        ['type' => 'health_check', 'check' => EnvironmentCheck::class, 'width' => '33'],
+        ['type' => 'health_check', 'check' => DatabaseCheck::class, 'width' => '33'],
+        ['type' => 'health_check', 'check' => \Spatie\Health\Checks\Checks\RedisCheck::class, 'width' => '33'],
+        ['type' => 'health_check', 'check' => UsedDiskSpaceCheck::class, 'width' => '33'],
     ],
 
     /*
