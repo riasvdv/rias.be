@@ -30,7 +30,7 @@
         "spatie/statamic-health": "^1.0",
         "spatie/statamic-responsive-images": "v2.8.5",
         "spatie/temporary-directory": "^1.3",
-        "statamic/cms": "v3.2.31",
+        "statamic/cms": "v3.2.32",
         "stripe/stripe-php": "^7.68"
     },
     "require-dev": {
