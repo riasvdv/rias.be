@@ -20,7 +20,7 @@
         @endif
         <div class="max-w-xl mx-auto mt-6">
             <div class="text-center">
-                <div data-webmentions="https://www.rias.be{{ $url }}/"></div>
+                <div data-webmentions="https://rias.be{{ $url }}/"></div>
 
                 <template id="webmention-template">
                     <li class="mb-8 last:mb-0 text-left">
