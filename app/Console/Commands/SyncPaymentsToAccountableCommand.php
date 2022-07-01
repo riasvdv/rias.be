@@ -6,7 +6,6 @@ use App\Domain\Accountable\Api;
 use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Illuminate\Console\Command;
-use Illuminate\Support\Carbon;
 
 class SyncPaymentsToAccountableCommand extends Command
 {
@@ -31,7 +30,7 @@ class SyncPaymentsToAccountableCommand extends Command
             ->each(function (Payment $payment) use ($accountable) {
                 $contents = file_get_contents($payment->getFirstMediaPath());
 
-                $filePath = $accountable->uploadFile($contents, $payment->created_at->format('Y-m-d-his') . '.pdf');
+                $filePath = $accountable->uploadFile($contents, $payment->created_at->format('Y-m-d-his').'.pdf');
                 $nextRevenueNumber = $accountable->getNextRevenueNumber(Api::REVENUE_OTHER);
 
                 $client = ['location' => 'local'];
@@ -69,7 +68,7 @@ class SyncPaymentsToAccountableCommand extends Command
                             'name' => $payment->type === PaymentType::STATAMIC
                                 ? 'Addon sale'
                                 : 'Plaatskaartjes premium',
-                        ]
+                        ],
                     ],
                     'paymentDate' => $payment->created_at->format('Y-m-d'),
                     'period' => [
@@ -82,7 +81,7 @@ class SyncPaymentsToAccountableCommand extends Command
                     'type' => 'other-revenue',
                     'user' => [
                         'VATType' => 'franchisee',
-                    ]
+                    ],
                 ]);
 
                 if ($response->successful()) {

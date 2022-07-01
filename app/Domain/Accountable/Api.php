@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 class Api
 {
     public const REVENUE_OTHER = 'other-revenue';
+
     public const REVENUE_INVOICE = 'invoice';
 
     private string $baseUrl;
@@ -18,7 +19,7 @@ class Api
     {
         $this->baseUrl = $baseUrl;
 
-        $response = Http::post($this->baseUrl . '/users/token', [
+        $response = Http::post($this->baseUrl.'/users/token', [
             'email' => config('services.accountable.user'),
             'password' => config('services.accountable.pass'),
             'grant_type' => 'password',
@@ -30,7 +31,7 @@ class Api
     public function getNextRevenueNumber(string $type): string
     {
         return Http::withToken($this->token)
-            ->get($this->baseUrl . "/v2/revenues/next-number?type={$type}")
+            ->get($this->baseUrl."/v2/revenues/next-number?type={$type}")
             ->json('nextRevenueNumber');
     }
 
@@ -38,53 +39,53 @@ class Api
     {
         return Http::withToken($this->token)
             ->attach('file', $contents, $fileName)
-            ->post($this->baseUrl . '/users/file?s3=true')
+            ->post($this->baseUrl.'/users/file?s3=true')
             ->json('s3FilePath');
     }
 
     public function createRevenue(array $data): Response
     {
         return Http::withToken($this->token)
-            ->post($this->baseUrl . '/v2/revenues', $data);
+            ->post($this->baseUrl.'/v2/revenues', $data);
     }
 
     public function updateRevenue(string $id, array $data): Response
     {
         return Http::withToken($this->token)
-            ->put($this->baseUrl . '/v2/revenues/' . $id, $data);
+            ->put($this->baseUrl.'/v2/revenues/'.$id, $data);
     }
 
     public function getRevenues(): array
     {
         return Http::withToken($this->token)
-            ->get($this->baseUrl . '/v2/revenues?page=1&perPage=10000')
+            ->get($this->baseUrl.'/v2/revenues?page=1&perPage=10000')
             ->json()['data'] ?? [];
     }
 
     public function getTransactions(): array
     {
         return Http::withToken($this->token)
-                ->get($this->baseUrl . '/v1/transactions')
+                ->get($this->baseUrl.'/v1/transactions')
                 ->json()['data'] ?? [];
     }
 
     public function getInvoices(): array
     {
         return Http::withToken($this->token)
-            ->get($this->baseUrl . '/v1/invoices')
+            ->get($this->baseUrl.'/v1/invoices')
             ->json();
     }
 
     public function getInvoice(string $id): array
     {
         return Http::withToken($this->token)
-            ->get($this->baseUrl . '/v1/invoices/' . $id)
+            ->get($this->baseUrl.'/v1/invoices/'.$id)
             ->json();
     }
 
     public function updateInvoice(string $id, array $data): Response
     {
         return Http::withToken($this->token)
-            ->put($this->baseUrl . '/v1/invoices/' . $id, $data);
+            ->put($this->baseUrl.'/v1/invoices/'.$id, $data);
     }
 }

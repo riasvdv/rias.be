@@ -20,7 +20,7 @@ return [
             'layout' => '',
             'template' => 'layouts/feed',
             'content_type' => 'xml',
-        ]
+        ],
     ],
 
     /*

@@ -20,6 +20,7 @@ class SyncEbikeToStravaCommand extends Command
 
         if (! $activityResponse->successful()) {
             $this->getOutput()->error($activityResponse->body());
+
             return;
         }
 

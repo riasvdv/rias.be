@@ -19,7 +19,7 @@ class Currency extends Text
     /**
      * Pre-process the data before it gets sent to the publish page.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function preProcess($data)
@@ -36,13 +36,13 @@ class Currency extends Text
         $symbol = mb_substr($value, 0, 1);
         $number = (int) mb_substr($value, 1);
 
-        return $symbol . number_format($number / 100, 2);
+        return $symbol.number_format($number / 100, 2);
     }
 
     /**
      * Process the data before it gets saved.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function process($data)

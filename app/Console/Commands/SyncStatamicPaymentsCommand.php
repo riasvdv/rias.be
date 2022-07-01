@@ -7,10 +7,7 @@ use App\Domain\Stripe\Actions\GeneratePaymentReceiptForPaymentAction;
 use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Exception;
-use Facade\Ignition\Facades\Flare;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
-use Psr\Log\LogLevel;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
 use Stripe\Charge;
 use Stripe\StripeClient;
@@ -34,14 +31,13 @@ class SyncStatamicPaymentsCommand extends Command
 
         if ($latestPaymentTimestamp) {
             $params['created'] = [
-                'gt' => $latestPaymentTimestamp
+                'gt' => $latestPaymentTimestamp,
             ];
         }
 
         $charges = $stripeClient->charges->all($params);
 
         $this->getOutput()->progressStart(count($charges));
-
 
         collect($charges->getIterator())
             ->filter(function (Charge $charge) {

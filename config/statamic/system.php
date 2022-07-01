@@ -83,6 +83,6 @@ return [
 
     'stache' => [
         'always_update' => true,
-    ]
+    ],
 
 ];

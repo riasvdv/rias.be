@@ -28,9 +28,9 @@ class Api
     public function syncRideToStrava(string $rideId): PromiseInterface|Response
     {
         return Http::withCookies([
-                'REMEMBER' => config('services.ebike.remember'),
-                'JSESSIONID' => config('services.ebike.session_id'),
-            ], 'www.ebike-connect.com')
+            'REMEMBER' => config('services.ebike.remember'),
+            'JSESSIONID' => config('services.ebike.session_id'),
+        ], 'www.ebike-connect.com')
                 ->withHeaders([
                     'Protect-from' => 'CSRF',
                     'Referer' => 'https://www.ebike-connect.com/activities',

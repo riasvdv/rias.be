@@ -23,9 +23,9 @@ class Feed
                 $header = collect($entry->augmentedValue('contents')->value())->firstWhere('type', 'header');
 
                 return FeedItem::create()
-                    ->title(mb_convert_encoding((string) $entry->augmentedValue('title'), "UTF-8", "HTML-ENTITIES"))
+                    ->title(mb_convert_encoding((string) $entry->augmentedValue('title'), 'UTF-8', 'HTML-ENTITIES'))
                     ->id($entry->absoluteUrl())
-                    ->summary(mb_convert_encoding((string) $header['header'], "UTF-8", "HTML-ENTITIES"))
+                    ->summary(mb_convert_encoding((string) $header['header'], 'UTF-8', 'HTML-ENTITIES'))
                     ->updated($entry->date())
                     ->link($entry->absoluteUrl())
                     ->authorName('Rias Van der Veken')

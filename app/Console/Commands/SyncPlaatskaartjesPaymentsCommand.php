@@ -7,10 +7,7 @@ use App\Domain\Stripe\Actions\GeneratePaymentReceiptForPaymentAction;
 use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Exception;
-use Facade\Ignition\Facades\Flare;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
-use Psr\Log\LogLevel;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
 use Stripe\Charge;
 use Stripe\StripeClient;
@@ -36,7 +33,7 @@ class SyncPlaatskaartjesPaymentsCommand extends Command
 
         if ($latestPaymentTimestamp) {
             $params['created'] = [
-                'gt' => $latestPaymentTimestamp
+                'gt' => $latestPaymentTimestamp,
             ];
         }
 
@@ -49,9 +46,9 @@ class SyncPlaatskaartjesPaymentsCommand extends Command
                 return $charge->status === 'succeeded';
             })
             ->filter(function (Charge $charge) {
-                return !Payment::where('stripe_id', $charge->id)->exists();
+                return ! Payment::where('stripe_id', $charge->id)->exists();
             })
-            ->each(function (Charge $charge) use ($stripeClient, $createPaymentFromChargeAction, $generatePaymentReceiptForPaymentAction) {
+            ->each(function (Charge $charge) use ($generatePaymentReceiptForPaymentAction) {
                 if (! $charge->balance_transaction) {
                     $this->getOutput()->progressAdvance();
 

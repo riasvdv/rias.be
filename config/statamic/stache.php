@@ -49,7 +49,7 @@ return [
             'indexes' => [
                 'status',
                 'redirect',
-            ]
+            ],
         ],
 
         'navigation' => [

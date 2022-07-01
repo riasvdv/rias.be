@@ -42,7 +42,7 @@ class LinkInvoicesToPayoutsCommand extends Command
             }
 
             foreach ($possibleTransactions as $possibleTransaction) {
-                if ((int) $invoice['totalAmountInclVAT'] === (int)($possibleTransaction['amount'] * 1000)) {
+                if ((int) $invoice['totalAmountInclVAT'] === (int) ($possibleTransaction['amount'] * 1000)) {
                     $invoice['transactions'] = [$possibleTransaction['_id']];
 
                     $data = Arr::only($invoice, [
@@ -81,7 +81,7 @@ class LinkInvoicesToPayoutsCommand extends Command
                     $response = $accountable->updateRevenue($invoice['_id'], $data);
 
                     if (! $response->successful()) {
-                        $this->warn("Error with a transaction: ");
+                        $this->warn('Error with a transaction: ');
                         $this->warn($response->json());
                     }
 

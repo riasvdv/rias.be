@@ -4,8 +4,6 @@ namespace App\Domain\Stripe\Actions;
 
 use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
-use Spatie\Browsershot\Browsershot;
-use Spatie\TemporaryDirectory\TemporaryDirectory;
 use Stripe\Charge;
 use Stripe\StripeClient;
 

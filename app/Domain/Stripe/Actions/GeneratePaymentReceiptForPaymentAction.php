@@ -13,7 +13,7 @@ class GeneratePaymentReceiptForPaymentAction
     {
         $temporaryDirectory = (new TemporaryDirectory())->create();
 
-        $path = $temporaryDirectory->path($payment->created_at->format('Y-m-d-his') . '.pdf');
+        $path = $temporaryDirectory->path($payment->created_at->format('Y-m-d-his').'.pdf');
 
         Browsershot::url($payment->receipt_url)
             ->width(610)

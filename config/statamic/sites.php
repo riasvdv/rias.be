@@ -22,10 +22,10 @@ return [
         ],
 
         'two' => [
-            'name' => config('app.name') . ' Two',
+            'name' => config('app.name').' Two',
             'locale' => 'en_GB',
-            'url' => config('app.url') . '/two',
-        ]
+            'url' => config('app.url').'/two',
+        ],
 
-    ]
+    ],
 ];
