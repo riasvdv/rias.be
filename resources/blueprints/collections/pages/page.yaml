@@ -175,23 +175,6 @@ sections:
                   field:
                     type: video
                     display: Video
-            link:
-              display: Link
-              fields:
-                -
-                  handle: link
-                  field:
-                    type: link_it
-                    localizable: true
-                    display: Link
-                    validate:
-                      - required
-                    listable: hidden
-                    replicator_preview: false
-                    new_window: true
-                    text: true
-                    collections:
-                      - pages
           buttons:
             - h2
             - h3

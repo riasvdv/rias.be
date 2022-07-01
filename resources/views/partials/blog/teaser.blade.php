@@ -8,13 +8,13 @@
         <h3 class="text-lg font-bold mt-px mb-8">{{ $entry['title'] }}</h3>
         @if($header = collect($entry['contents'])->where('type', 'header')->first())
             <div class="prose prose-lg mb-8">
-                <p>{!! modify(\Illuminate\Support\Str::limit(modify($header['header'])->striptags(), 150))->smartypants() !!}</p>
+                <p>{!! \Statamic\Statamic::modify(\Illuminate\Support\Str::limit(\Statamic\Statamic::modify($header['header'])->striptags(), 150))->smartypants() !!}</p>
             </div>
         @endif
 
         <span class="flex items-center transition-all group-hover:gap-4 mt-auto">
             <span class="mr-2">Continue reading</span>
-            <span class="w-4 h-4 inline-block">{!! statamic_tag('svg', ['src' => '/assets/svg/long-arrow-right.svg']) !!}</span>
+            <span class="w-4 h-4 inline-block">{!! \Statamic\Statamic::tag('svg')->params(['src' => '/assets/svg/long-arrow-right.svg']) !!}</span>
         </span>
     </a>
 </div>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        @foreach (statamic_tag('collection:blog') as $entry)
+        @foreach (\Statamic\Statamic::tag('collection:blog') as $entry)
             @include('partials.blog.teaser')
         @endforeach
     </div>

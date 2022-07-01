@@ -6,12 +6,12 @@
             <h3 class="text-lg font-bold mt-px">{{ $entry['title'] }}</h3>
         </span>
         <div class="prose prose-lg mb-8">
-            {!! modify($entry['description'])->smartypants() !!}
+            {!! \Statamic\Statamic::modify($entry['description'])->smartypants() !!}
         </div>
 
         <span class="flex items-center group-hover:gap-4 mt-auto">
             <span class="mr-2">More info</span>
-            <span class="w-4 h-4 inline-block">{!! statamic_tag('svg', ['src' => '/assets/svg/external-link.svg']) !!}</span>
+            <span class="w-4 h-4 inline-block">{!! \Statamic\Statamic::tag('svg')->params(['src' => '/assets/svg/external-link.svg']) !!}</span>
         </span>
     </a>
 </div>

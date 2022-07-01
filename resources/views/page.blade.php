@@ -3,24 +3,24 @@
 @section('content')
     <div class="max-w-xl mx-auto">
         <div class="text-center mb-6 prose">
-            <h1 class="mb-0 leading-tight">{!! modify($title)->widont() !!}</h1>
-            @if ($collection['handle'] === 'blog')
-                <small class="text-base font-normal">{{ $date }}</small>
+            <h1 class="mb-0 leading-tight">{!! \Statamic\Statamic::modify($page->title)->widont() !!}</h1>
+            @if ($page->collection->handle === 'blog')
+                <small class="text-base font-normal">{{ $page->date }}</small>
             @endif
         </div>
     </div>
 
     @include('partials.contents')
 
-    @if ($collection['handle'] === 'blog')
-        @if ($twitter_url)
+    @if ($page->collection->handle === 'blog')
+        @if ($page->twitter_url)
             <div class="max-w-2xl mx-auto my-6 p-3 bg-orange-200 flex items-center justify-center">
-                You can like or retweet <a class="no-shadow text-black font-bold ml-1" target="_blank" href="{{ $twitter_url }}">this Tweet</a>
+                You can like or retweet <a class="no-shadow text-black font-bold ml-1" target="_blank" href="{{ $page->twitter_url }}">this Tweet</a>
             </div>
         @endif
         <div class="max-w-xl mx-auto mt-6">
             <div class="text-center">
-                <div data-webmentions="https://rias.be{{ $url }}/"></div>
+                <div data-webmentions="https://rias.be{{ $page->url }}/"></div>
 
                 <template id="webmention-template">
                     <li class="mb-8 last:mb-0 text-left">

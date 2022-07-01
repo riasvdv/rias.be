@@ -13,7 +13,7 @@
     @if ($contents)
         @foreach ($contents as $content)
             @if ($content['type'] === 'header')
-                <meta name="description" content="{{ modify($content['header'])->toMetaDescription() }}">
+                <meta name="description" content="{{ \Statamic\Statamic::modify($content['header'])->toMetaDescription() }}">
             @endif
         @endforeach
     @endif
@@ -46,7 +46,7 @@
 
     @include('feed::links')
 
-    {{ vite_assets() }}
+    @vite(['resources/css/site.css', 'resources/js/site.js'])
 
     <script async defer src="/scope.js"></script>
     <script defer data-domain="rias.be" src="https://a.rias.be/js/script.js"></script>
@@ -71,7 +71,7 @@
             </svg>
         </a>
         <div class="flex items-center">
-            @foreach (statamic_tag('nav:main') as $navItem)
+            @foreach (\Statamic\Statamic::tag('nav:main') as $navItem)
                 @if ($navItem['title'] === 'Contact me')
                     <a href="{{ $navItem['url'] }}" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded no-underline no-shadow hover:-translate-y-1 hover:shadow">
                         {{ $navItem['title'] }}
@@ -109,7 +109,7 @@
                 <a href="/blog" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Blog</a>
 
                 <button class="text-gray-dark text-xs p-1 ml-auto" aria-label="close" x-on:click="open = false">
-                    {!! statamic_tag('svg', ['src' => '/assets/svg/times-circle.svg', 'class' => 'text-teal-500 w-6 h-6']) !!}
+                    {!! \Statamic\Statamic::tag('svg')->params(['src' => '/assets/svg/times-circle.svg', 'class' => 'text-teal-500 w-6 h-6']) !!}
                 </button>
             </div>
             <div class="flex max-w-full overflow-x-scroll scrolling-touch gap-2 px-2 py-2">
