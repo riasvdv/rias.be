@@ -124,6 +124,11 @@
                     </a>
                 </div>
                 <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
+                    <a href="https://phpc.social/@rias" rel="me" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Mastodon</span>
+                    </a>
+                </div>
+                <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
                     <a href="https://www.linkedin.com/in/rias-" class="block px-1 text-gray-500 no-shadow text-center">
                         <span class="text-base text-orange">LinkedIn</span>
                     </a>
