@@ -43,6 +43,7 @@ return [
     'accountable' => [
         'user' => env('ACCOUNTABLE_USER'),
         'pass' => env('ACCOUNTABLE_PASS'),
+        'clientId' => env('ACCOUNTABLE_CLIENT_ID'),
     ],
 
     'telegram' => [

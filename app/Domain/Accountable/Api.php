@@ -19,10 +19,10 @@ class Api
     {
         $this->baseUrl = $baseUrl;
 
-        $response = Http::post($this->baseUrl.'/users/token', [
+        $response = Http::post($this->baseUrl.'/v2/users/login', [
             'email' => config('services.accountable.user'),
             'password' => config('services.accountable.pass'),
-            'grant_type' => 'password',
+            'clientId' => config('services.accountable.clientId'),
         ])->json();
 
         $this->token = $response['access_token'];
@@ -67,25 +67,5 @@ class Api
         return Http::withToken($this->token)
                 ->get($this->baseUrl.'/v1/transactions')
                 ->json()['data'] ?? [];
-    }
-
-    public function getInvoices(): array
-    {
-        return Http::withToken($this->token)
-            ->get($this->baseUrl.'/v1/invoices')
-            ->json();
-    }
-
-    public function getInvoice(string $id): array
-    {
-        return Http::withToken($this->token)
-            ->get($this->baseUrl.'/v1/invoices/'.$id)
-            ->json();
-    }
-
-    public function updateInvoice(string $id, array $data): Response
-    {
-        return Http::withToken($this->token)
-            ->put($this->baseUrl.'/v1/invoices/'.$id, $data);
     }
 }
