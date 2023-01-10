@@ -39,7 +39,7 @@ class Api
     {
         return Http::withToken($this->token)
             ->attach('file', $contents, $fileName)
-            ->post($this->baseUrl.'/users/file?s3=true')
+            ->post($this->baseUrl.'/v2/users/file?s3=true')
             ->json('s3FilePath');
     }
 
