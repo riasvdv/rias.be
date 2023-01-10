@@ -86,6 +86,8 @@ class SyncPaymentsToAccountableCommand extends Command
 
                 if ($response->successful()) {
                     $payment->update(['sent_to_accountable' => true]);
+                } else {
+                    $this->getOutput()->error($response->reason());
                 }
 
                 $this->getOutput()->progressAdvance();
