@@ -37,10 +37,24 @@ class Api
 
     public function uploadFile(string $contents, string $fileName): string
     {
-        return Http::withToken($this->token)
+        // First get the upload url
+        $response = Http::withToken($this->token)
+            ->post($this->baseUrl.'/v2/users/upload-url?category=document&contentType=application%2fpdf&n=1')
+            ->json('url');
+
+        $url = $response['url'];
+        $fields = $response['fields'];
+
+        // Upload the file
+        Http::withToken($this->token)
             ->attach('file', $contents, $fileName)
-            ->post($this->baseUrl.'/v2/users/file?s3=true')
+            ->post($url, $fields)
             ->json('s3FilePath');
+
+        // Get the url
+        return Http::withToken($this->token)
+            ->get($this->baseUrl."/v2/users/file-url?filePath=" . $fields['key'])
+            ->json('url');
     }
 
     public function createRevenue(array $data): Response
