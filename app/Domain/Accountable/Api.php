@@ -47,14 +47,13 @@ class Api
 
         // Upload the file
         Http::withToken($this->token)
+            ->throw()
             ->attach('file', $contents, $fileName)
             ->post($url, $fields)
             ->json('s3FilePath');
 
         // Get the url
-        return Http::withToken($this->token)
-            ->get($this->baseUrl."/v2/users/file-url?filePath=" . $fields['key'])
-            ->json('url');
+        return $fields['key'];
     }
 
     public function createRevenue(array $data): Response
