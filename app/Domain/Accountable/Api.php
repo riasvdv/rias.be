@@ -39,7 +39,7 @@ class Api
     {
         // First get the upload url
         $response = Http::withToken($this->token)
-            ->post($this->baseUrl.'/v2/users/upload-url?category=document&contentType=application%2fpdf&n=1')
+            ->get($this->baseUrl.'/v2/users/upload-url?category=document&contentType=application%2fpdf&n=1')
             ->json('url');
 
         $url = $response['url'];
