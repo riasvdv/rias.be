@@ -19,7 +19,7 @@
     "vue-template-compiler": "^2.7.0"
   },
   "dependencies": {
-    "puppeteer": "^15.2.0",
+    "puppeteer": "^19.5.1",
     "shiki": "^0.10.1"
   }
 }
