@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'start_page' => 'dashboard',
+    'start_page' => 'pages',
 
     /*
     |--------------------------------------------------------------------------
@@ -44,12 +44,6 @@ return [
     */
 
     'widgets' => [
-        ['type' => 'health_check', 'check' => CpuLoadCheck::class, 'width' => '33'],
-        ['type' => 'health_check', 'check' => DebugModeCheck::class, 'width' => '33'],
-        ['type' => 'health_check', 'check' => EnvironmentCheck::class, 'width' => '33'],
-        ['type' => 'health_check', 'check' => DatabaseCheck::class, 'width' => '33'],
-        ['type' => 'health_check', 'check' => \Spatie\Health\Checks\Checks\RedisCheck::class, 'width' => '33'],
-        ['type' => 'health_check', 'check' => UsedDiskSpaceCheck::class, 'width' => '33'],
     ],
 
     /*

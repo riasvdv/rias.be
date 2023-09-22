@@ -1,7 +1,7 @@
 <?php
 
 $title = 'Rias.be';
-$description = 'I\'m Rias, a full stack web developer from Antwerp specialized in Laravel, Statamic & Craft CMS';
+$description = 'I\'m Rias, a full stack web developer from Antwerp specialized in Laravel, Livewire, Statamic & React';
 $image = '/assets/social.png';
 
 return [

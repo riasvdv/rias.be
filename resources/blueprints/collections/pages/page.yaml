@@ -224,8 +224,3 @@ sections:
           max_items: 1
           listable: false
           localizable: true
-  layout:
-    display: Layout
-    fields:
-      -
-        import: layout

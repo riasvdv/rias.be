@@ -10,7 +10,9 @@
         </div>
     </div>
 
-    @include('partials.contents')
+    <div class="max-w-3xl mx-auto">
+        @include('partials.contents')
+    </div>
 
     @if ($page->collection->handle === 'blog')
         @if ($page->twitter_url)

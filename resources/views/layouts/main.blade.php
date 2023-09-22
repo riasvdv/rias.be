@@ -46,20 +46,11 @@
 
     @include('feed::links')
 
+    @livewireStyles
     @vite(['resources/css/site.css', 'resources/js/site.js'])
 
-    <script async defer src="/scope.js"></script>
     <script defer data-domain="rias.be" src="https://a.rias.be/js/script.js"></script>
     <script>!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for(let registration of registrations) {
-                    registration.unregister()
-                }
-            })
-        }
-    </script>
 </head>
 <body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-white">
 
@@ -77,7 +68,7 @@
                         {{ $navItem['title'] }}
                     </a>
                 @else
-                    <a {{ $navItem['is_external'] ? 'target="_blank" rel="noopener"' : '' }}
+                    <a {{ $navItem['is_external'] ? 'target="_blank" rel="noopener"' : 'wire:navigate' }}
                         href="{{ $navItem['url'] }}"
                         class="mr-6 text-xl hover:text-orange-500 text-lg no-underline no-shadow hidden sm:block
                         @if($navItem['is_current'] || $navItem['is_parent'])
@@ -155,5 +146,7 @@
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
     })(); </script>
+
+@livewireScripts
 </body>
 </html>
