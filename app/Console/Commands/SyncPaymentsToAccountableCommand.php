@@ -40,7 +40,7 @@ class SyncPaymentsToAccountableCommand extends Command
 
                 $response = $accountable->createRevenue([
                     'client' => $client,
-                    'currency' => 'EUR',
+                    'currency' => 'USD',
                     'filePath' => $filePath, // TODO: Filepath
                     'fileType' => 'imported',
                     'invoiceDate' => $payment->created_at->format('Y-m-d'),
@@ -62,7 +62,14 @@ class SyncPaymentsToAccountableCommand extends Command
                             'categoryId' => 'be.revenue.sales_goods',
                             'quantity' => 1000, // 1?
                             'unit' => 'items',
-                            'unitAmountExclVAT' => $payment->amount_eur * 10,
+                            'unitAmountExclVAT' => $payment->amount_usd * 10,
+                            'totalAmountExclVAT' => $payment->amount_usd * 10,
+                            'totalVATAmount' => 0,
+                            'totalAmountInclVAT' => $payment->amount_usd * 10,
+                            'baseCurrencyTotalAmountExclVAT' => $payment->amount_eur * 10,
+                            'baseCurrencyTotalVATAmount' => 0,
+                            'baseCurrencyUnitAmountExclVAT' => $payment->amount_eur * 10,
+                            'baseCurrencyTotalAmountInclVAT' => $payment->amount_eur * 10,
                             'VATRate' => 0,
                             'whyZeroVAT' => 'user-franchisee',
                             'name' => $payment->type === PaymentType::STATAMIC
