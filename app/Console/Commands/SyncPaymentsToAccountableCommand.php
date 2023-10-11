@@ -36,6 +36,14 @@ class SyncPaymentsToAccountableCommand extends Command
                 $client = ['location' => 'local'];
                 if ($payment->type === PaymentType::STATAMIC) {
                     $client['name'] = 'Statamic Marketplace';
+                    $client['location'] = 'extra-eu';
+                    $client['type'] = 'business';
+                    $client['address'] = [
+                        'street' => '260 Williamson Blvd',
+                        'city' => 'Ormond Beach',
+                        'zip' => 'FL 32174',
+                        'country' => 'us',
+                    ];
                 }
 
                 $response = $accountable->createRevenue([
@@ -85,7 +93,7 @@ class SyncPaymentsToAccountableCommand extends Command
                     'revenueNumber' => $nextRevenueNumber,
                     'status' => 'paid',
                     'transactions' => [],
-                    'type' => 'other-revenue',
+                    'type' => 'invoice',
                     'user' => [
                         'VATType' => 'franchisee',
                     ],
