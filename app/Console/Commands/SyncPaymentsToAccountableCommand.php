@@ -33,23 +33,15 @@ class SyncPaymentsToAccountableCommand extends Command
                 $filePath = $accountable->uploadFile($contents, $payment->created_at->format('Y-m-d-his').'.pdf');
                 $nextRevenueNumber = $accountable->getNextRevenueNumber(Api::REVENUE_OTHER);
 
-                $client = ['location' => 'local'];
-                if ($payment->type === PaymentType::STATAMIC) {
-                    $client['name'] = 'Statamic Marketplace';
-                    $client['location'] = 'extra-eu';
-                    $client['type'] = 'business';
-                    $client['address'] = [
-                        'street' => '260 Williamson Blvd',
-                        'city' => 'Ormond Beach',
-                        'zip' => 'FL 32174',
-                        'country' => 'us',
-                    ];
+                if ($payment->type !== PaymentType::STATAMIC) {
+                    $client = ['location' => 'local'];
                 }
 
                 $response = $accountable->createRevenue([
-                    'client' => $client,
+                    'client' => $client ?? null,
+                    'clientId' => !isset($client) ? '5e7c6d029af96e0008190927' : null, // Statamic
                     'currency' => 'USD',
-                    'filePath' => $filePath, // TODO: Filepath
+                    'filePath' => $filePath,
                     'fileType' => 'imported',
                     'invoiceDate' => $payment->created_at->format('Y-m-d'),
                     'items' => [
@@ -98,6 +90,8 @@ class SyncPaymentsToAccountableCommand extends Command
                         'VATType' => 'franchisee',
                     ],
                 ]);
+
+                dd($response->json());
 
                 if ($response->successful()) {
                     $payment->update(['sent_to_accountable' => true]);
