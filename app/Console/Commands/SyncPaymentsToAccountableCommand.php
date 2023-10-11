@@ -45,16 +45,6 @@ class SyncPaymentsToAccountableCommand extends Command
                     'fileType' => 'imported',
                     'invoiceDate' => $payment->created_at->format('Y-m-d'),
                     'baseCurrency' => 'EUR',
-                    'totalAmountExclVAT' => $payment->type === PaymentType::STATAMIC
-                        ? $payment->amount_usd * 10
-                        : $payment->amount_eur * 10,
-                    'totalAmountInclVAT' => $payment->type === PaymentType::STATAMIC
-                        ? $payment->amount_usd * 10
-                        : $payment->amount_eur * 10,
-                    'totalVATAmount' => 0,
-                    'baseCurrencyTotalAmountExclVAT' => $payment->amount_eur * 10,
-                    'baseCurrencyTotalAmountInclVAT' => $payment->amount_eur * 10,
-                    'baseCurrencyTotalVATAmount' => 0,
                     'items' => [
                         [
                             'category' => [
@@ -88,6 +78,7 @@ class SyncPaymentsToAccountableCommand extends Command
                                 : 'Plaatskaartjes premium',
                         ],
                     ],
+                    'paymentAmount' => $payment->amount_eur * 10,
                     'paymentDate' => $payment->created_at->format('Y-m-d'),
                     'dueDate' => $payment->created_at->format('Y-m-d'),
                     'period' => [
@@ -103,8 +94,9 @@ class SyncPaymentsToAccountableCommand extends Command
                     ],
                 ]);
 
-
                 if ($response->successful()) {
+                    $id = $response->json('_id');
+
                     $payment->update(['sent_to_accountable' => true]);
                 } else {
                     $this->getOutput()->error($response->json());
