@@ -78,6 +78,7 @@ class SyncPaymentsToAccountableCommand extends Command
                         ],
                     ],
                     'paymentDate' => $payment->created_at->format('Y-m-d'),
+                    'dueDate' => $payment->created_at->format('Y-m-d'),
                     'period' => [
                         'quarter' => round(ceil($payment->created_at->format('n') / 3)),
                         'year' => (int) $payment->created_at->format('Y'),
@@ -91,12 +92,11 @@ class SyncPaymentsToAccountableCommand extends Command
                     ],
                 ]);
 
-                dd($response->json());
 
                 if ($response->successful()) {
                     $payment->update(['sent_to_accountable' => true]);
                 } else {
-                    $this->getOutput()->error($response->reason());
+                    $this->getOutput()->error($response->json());
                 }
 
                 $this->getOutput()->progressAdvance();
