@@ -40,10 +40,21 @@ class SyncPaymentsToAccountableCommand extends Command
                 $response = $accountable->createRevenue([
                     'client' => $client ?? null,
                     'clientId' => !isset($client) ? '5e7c6d029af96e0008190927' : null, // Statamic
-                    'currency' => 'USD',
+                    'currency' => $payment->type === PaymentType::STATAMIC ? 'USD' : 'EUR',
                     'filePath' => $filePath,
                     'fileType' => 'imported',
                     'invoiceDate' => $payment->created_at->format('Y-m-d'),
+                    'baseCurrency' => 'EUR',
+                    'totalAmountExclVAT' => $payment->type === PaymentType::STATAMIC
+                        ? $payment->amount_usd * 10
+                        : $payment->amount_eur * 10,
+                    'totalAmountInclVAT' => $payment->type === PaymentType::STATAMIC
+                        ? $payment->amount_usd * 10
+                        : $payment->amount_eur * 10,
+                    'totalVATAmount' => 0,
+                    'baseCurrencyTotalAmountExclVAT' => $payment->amount_eur * 10,
+                    'baseCurrencyTotalAmountInclVAT' => $payment->amount_eur * 10,
+                    'baseCurrencyTotalVATAmount' => 0,
                     'items' => [
                         [
                             'category' => [
