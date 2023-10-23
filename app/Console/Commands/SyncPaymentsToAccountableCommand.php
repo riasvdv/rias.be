@@ -6,6 +6,7 @@ use App\Domain\Accountable\Api;
 use App\Domain\Stripe\Enums\PaymentType;
 use App\Payment;
 use Illuminate\Console\Command;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
 class SyncPaymentsToAccountableCommand extends Command
 {
@@ -99,6 +100,9 @@ class SyncPaymentsToAccountableCommand extends Command
 
                     $payment->update(['sent_to_accountable' => true]);
                 } else {
+                    $error = json_encode($response->json());
+                    DiscordAlert::to('statamic')->message("🚨 Error while syncing to Accountable: {$error}");
+
                     $this->getOutput()->error($response->json());
                 }
 
