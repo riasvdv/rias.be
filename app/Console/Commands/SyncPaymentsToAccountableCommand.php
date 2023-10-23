@@ -103,7 +103,7 @@ class SyncPaymentsToAccountableCommand extends Command
                     $error = json_encode($response->json());
                     DiscordAlert::to('statamic')->message("🚨 Error while syncing to Accountable: {$error}");
 
-                    $this->getOutput()->error($response->json());
+                    $this->getOutput()->error($error);
                 }
 
                 $this->getOutput()->progressAdvance();
