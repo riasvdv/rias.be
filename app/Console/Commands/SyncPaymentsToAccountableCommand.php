@@ -32,7 +32,7 @@ class SyncPaymentsToAccountableCommand extends Command
                 $contents = file_get_contents($payment->getFirstMediaPath());
 
                 $filePath = $accountable->uploadFile($contents, $payment->created_at->format('Y-m-d-his').'.pdf');
-                $nextRevenueNumber = $accountable->getNextRevenueNumber(Api::REVENUE_OTHER);
+                $nextRevenueNumber = $accountable->getNextRevenueNumber(Api::REVENUE_INVOICE);
 
                 if ($payment->type !== PaymentType::STATAMIC) {
                     $client = ['location' => 'local'];
