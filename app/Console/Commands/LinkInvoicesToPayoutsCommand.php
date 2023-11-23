@@ -42,43 +42,17 @@ class LinkInvoicesToPayoutsCommand extends Command
             }
 
             foreach ($possibleTransactions as $possibleTransaction) {
-                if ((int) $invoice['totalAmountInclVAT'] === (int) ($possibleTransaction['amount'] * 1000)) {
+                if ((int) $invoice['baseCurrencyTotalAmountInclVAT'] === (int) ($possibleTransaction['amount'] * 1000)) {
                     $invoice['transactions'] = [$possibleTransaction['_id']];
+                    $invoice['user'] = ['VATType' => 'franchisee'];
 
-                    $data = Arr::only($invoice, [
-                        'client',
-                        'currency',
-                        'filePath',
-                        'fileType',
-                        'invoiceDate',
-                        'items',
-                        'paymentDate',
-                        'paymentType',
-                        'period',
-                        'revenueNumber',
-                        'status',
-                        'transactions',
-                        'type',
-                        'user',
-                        '_id',
-                    ]);
+                    $invoice = Arr::except($invoice, ['paymentQrCode', 'communication']);
 
-                    $data['items'] = array_map(function ($item) {
-                        return Arr::only($item, [
-                            'VATRate',
-                            'category',
-                            'categoryId',
-                            'quantity',
-                            'unit',
-                            'unitAmountExclVAT',
-                            'whyZeroVAT',
-                            '_id',
-                        ]);
-                    }, $data['items']);
+                    $invoice['items'] = array_map(function ($item) {
+                        return Arr::except($item, ['assetId']);
+                    }, $invoice['items']);
 
-                    $data['user'] = ['VATType' => 'franchisee'];
-
-                    $response = $accountable->updateRevenue($invoice['_id'], $data);
+                    $response = $accountable->updateRevenue($invoice['_id'], $invoice);
 
                     if (! $response->successful()) {
                         $this->warn('Error with a transaction: ');
