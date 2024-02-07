@@ -40,3 +40,7 @@ rr
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+/caddy
+frankenphp
+frankenphp-worker.php
