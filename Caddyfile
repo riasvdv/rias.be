@@ -55,6 +55,8 @@ rias.be {
 		# Mercure configuration is injected here...
 		{$CADDY_SERVER_EXTRA_DIRECTIVES}
 
+        try_files /static{uri}_{query}.html {uri} /index.php?{query};
+
 		php_server {
 			index frankenphp-worker.php
 			# Required for the public/storage/ directory...
