@@ -49,7 +49,6 @@ rias.be {
 	route {
 		root * "{$APP_PUBLIC_PATH}"
 		encode zstd gzip
-        file_server
 		import static
 		import security
 
