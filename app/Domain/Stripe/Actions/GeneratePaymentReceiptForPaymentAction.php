@@ -19,6 +19,7 @@ class GeneratePaymentReceiptForPaymentAction
             ->width(610)
             ->height(850)
             ->showBackground()
+            ->noSandbox()
             ->save($path);
 
         return $payment->addMedia($path)->toMediaCollection();
