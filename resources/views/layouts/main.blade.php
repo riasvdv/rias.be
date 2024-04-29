@@ -44,6 +44,10 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/manifest.json">
 
+    @isset($permalink)
+    <link rel="canonical" href="{{ $permalink }}">
+    @endisset
+
     @include('feed::links')
 
     @livewireStyles
