@@ -21,5 +21,8 @@
   "dependencies": {
     "puppeteer": "^15.2.0",
     "shiki": "^0.10.1"
+  },
+  "overrides": {
+    "picocolors@<=1.0.1": "1.0.1"
   }
 }
