@@ -103,7 +103,7 @@ sections:
                     automatic_line_breaks: true
                     automatic_links: false
                     escape_markup: true
-                    type: markdown_highlight
+                    type: markdown
                     display: Code
                 -
                   handle: caption
@@ -123,34 +123,6 @@ sections:
                     mode: grid
                     type: assets
                     display: Image
-                -
-                  handle: caption
-                  field:
-                    character_limit: 0
-                    type: text
-                    display: Caption
-            art_image:
-              display: 'Art directed image'
-              fields:
-                -
-                  handle: art_image
-                  field:
-                    use_breakpoints: true
-                    allow_ratio: true
-                    allow_fit: true
-                    breakpoints:
-                      - sm
-                      - md
-                      - lg
-                      - xl
-                      - 2xl
-                    container: assets
-                    restrict: false
-                    allow_uploads: true
-                    display: 'Art directed image'
-                    type: responsive
-                    icon: assets
-                    listable: hidden
                 -
                   handle: caption
                   field:

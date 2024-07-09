@@ -2,25 +2,18 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "production": "vite build",
-    "dev-cp": "vite -c vite.cp.config.js",
-    "production-cp": "vite build -c vite.cp.config.js"
+    "build": "vite build"
   },
+  "type": "module",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
     "alpinejs": "^3.11.1",
     "autoprefixer": "^10.4.19",
     "cross-env": "^7.0.3",
-    "laravel-vite-plugin": "^0.7.4",
+    "laravel-vite-plugin": "^1.0.4",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
-    "vite": "^2.9.14",
-    "vite-plugin-vue2": "^2.0.3",
-    "vue-template-compiler": "^2.7.14"
-  },
-  "dependencies": {
-    "puppeteer": "^19.7.3",
-    "shiki": "^0.10.1"
+    "vite": "^5.3.3"
   },
   "overrides": {
     "picocolors@<=1.0.1": "1.0.1"

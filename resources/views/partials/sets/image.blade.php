@@ -2,7 +2,7 @@
     <div class="flex justify-center mb-2 max-w-4xl mx-auto">
         @foreach ($image->value()->get() as $asset)
             @if ($asset->extension !== 'gif')
-                @responsive($asset, ['webp' => false, 'loading' => 'lazy', 'alt' => $asset->title])
+                <img src="{{ $asset->url }}" alt="{{ $asset->title }}" loading="lazy">
             @else
                 <picture>
                     <img src="{{ $asset->url }}" alt="{{ $asset->title }}">

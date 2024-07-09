@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Domain\Accountable\Api;
+use App\HighlightExtension;
 use Illuminate\Support\ServiceProvider;
+use Statamic\Facades\Markdown;
 use Stripe\StripeClient;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(Api::class, function () {
             return new Api('https://app.accountable.eu/api');
+        });
+
+        Markdown::addExtension(function () {
+            return new HighlightExtension();
         });
     }
 }

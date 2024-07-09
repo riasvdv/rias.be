@@ -9,24 +9,9 @@ use Statamic\Facades\Entry;
 
 class Sitemap extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'sitemap';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Create the sitemap';
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     public function handle()
     {

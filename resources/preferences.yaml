@@ -1,0 +1,15 @@
+nav:
+  content:
+    reorder: true
+    items:
+      'content::collections::pages': '@move'
+      'content::collections::blog': '@move'
+      'content::collections::addons': '@move'
+      'content::collections': '@hide'
+      'content::navigation::main':
+        action: '@move'
+        display: Navigation
+      'content::navigation': '@hide'
+      'content::taxonomies': '@hide'
+      'content::assets': '@inherit'
+      'content::globals': '@hide'

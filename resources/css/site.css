@@ -18,40 +18,6 @@ a:not(.no-shadow):hover {
 @tailwind components;
 @tailwind utilities;
 
-pre {
-    @apply bg-gray-100 shadow-md leading-relaxed;
-}
-
-.shiki {
-    @apply p-6 overflow-x-scroll;
-    background: rgba(241,249,248,var(--tw-bg-opacity)) !important;
-}
-
-.shiki .highlight {
-    background-color: hsl(197, 88%, 94%);
-    padding: 3px 0;
-}
-
-.shiki .add {
-    background-color: hsl(136, 100%, 96%);
-    padding: 3px 0;
-}
-
-.shiki .del {
-    background-color: hsl(354, 100%, 96%);
-    padding: 3px 0;
-}
-
-.shiki.focus .line:not(.focus) {
-    transition: all 250ms;
-    filter: blur(2px);
-}
-
-.shiki.focus:hover .line {
-    transition: all 250ms;
-    filter: blur(0);
-}
-
 /* Other */
 #mobile-nav {
     transform: translateY(105%);
@@ -115,4 +81,91 @@ pre {
 
 .giscus {
     @apply max-w-3xl mx-auto;
+}
+
+
+/**
+ * Highlighting
+ */
+pre, code {
+    @apply p-1;
+    color: #5C6773;
+    background: rgba(241,249,248,var(--tw-bg-opacity)) !important;
+}
+
+pre {
+    @apply p-6 overflow-x-scroll;
+}
+
+.hl-keyword {
+    color: #FA8D3E;
+}
+
+.hl-property {
+    color: #F2AE49;
+}
+
+.hl-attribute {
+    font-style: italic;
+}
+
+.hl-type {
+    color: #55B4D4;
+}
+
+.hl-generic {
+    color: #41A6D9;
+}
+
+.hl-value {
+    color: #86B300;
+}
+
+.hl-variable {
+    color: #5C6773;
+}
+
+.hl-comment {
+    color: #ABB0B6;
+}
+
+.hl-blur {
+    filter: blur(2px);
+}
+
+.hl-strong {
+    font-weight: bold;
+}
+
+.hl-em {
+    font-style: italic;
+}
+
+.hl-addition {
+    display: inline-block;
+    min-width: 100%;
+    background-color: #00FF0022;
+}
+
+.hl-deletion {
+    display: inline-block;
+    min-width: 100%;
+    background-color: #FF000011;
+}
+
+.hl-gutter {
+    display: inline-block;
+    font-size: 0.9em;
+    color: #5C6773;
+    padding: 0 1ch;
+}
+
+.hl-gutter-addition {
+    background-color: #34A853;
+    color: #fff;
+}
+
+.hl-gutter-deletion {
+    background-color: #EA4334;
+    color: #fff;
 }

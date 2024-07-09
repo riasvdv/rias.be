@@ -111,8 +111,8 @@
                     </a>
                 </div>
                 <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
-                    <a href="https://twitter.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
-                        <span class="text-base text-orange">Twitter</span>
+                    <a href="https://x.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">X</span>
                     </a>
                 </div>
                 <div class="flex-no-shrink flex-no-grow w-1/4 py-1">

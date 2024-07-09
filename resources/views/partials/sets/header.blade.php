@@ -3,9 +3,7 @@
 
     @isset($image)
         <div class="hidden lg:block shrink-0">
-            @responsive($image, [
-                'class' => 'rounded-full h-72 w-72',
-            ])
+            <img class="rounded-full h-72 w-72" src="{{ $image }}" alt="">
         </div>
     @endisset
 </header>
