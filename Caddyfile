@@ -24,6 +24,8 @@
 		X-Content-Type-Options nosniff
 		# keep referrer data off of HTTP connections
 		Referrer-Policy no-referrer-when-downgrade
+		X-XSS-Protection "1; mode=block"
+		X-Frame-Options "SAMEORIGIN"
 	}
 }
 
