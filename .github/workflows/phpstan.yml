@@ -1,0 +1,53 @@
+name: PHPStan
+
+on:
+  push:
+    paths:
+      - '**.php'
+      - 'phpstan.neon'
+      - '.github/workflows/phpstan.yml'
+
+jobs:
+    phpstan:
+        name: phpstan
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+
+        services:
+          redis:
+            image: redis
+            options: >-
+              --health-cmd "redis-cli ping"
+              --health-interval 10s
+              --health-timeout 5s
+              --health-retries 5
+            ports:
+              # Maps port 6379 on service container to the host
+              - 6379:6379
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.3'
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, redis, relay
+                  coverage: none
+                  tools: phpstan
+
+            - name: Setup env
+              run: |
+                cp .env.example .env
+
+            - name: Run composer install
+              run: |
+                composer config "http-basic.satis.spatie.be" "${{ secrets.SPATIE_USERNAME }}" "${{ secrets.SPATIE_PASSWORD }}"
+                composer install
+
+            - name: Prepare Laravel Application
+              run: |
+                php artisan key:generate
+
+            - name: Run PHPStan
+              run: ./vendor/bin/phpstan analyse
