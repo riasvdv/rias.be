@@ -78,7 +78,7 @@ class Api
     public function getTransactions(): array
     {
         return Http::withToken($this->token)
-                ->get($this->baseUrl.'/v1/transactions')
-                ->json()['data'] ?? [];
+            ->get($this->baseUrl.'/v1/transactions')
+            ->json()['data'] ?? [];
     }
 }
