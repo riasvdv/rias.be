@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba33140bfa6f45074af0f5bc77a53e7f",
+    "content-hash": "cb650ff8a9982b6be8b6251895da21d3",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -3134,26 +3134,30 @@
         },
         {
             "name": "nicmart/tree",
-            "version": "0.3.1",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicmart/Tree.git",
-                "reference": "c55ba47c64a3cb7454c22e6d630729fc2aab23ff"
+                "reference": "8d02952acc9779a2c14f7a9c4ac1650c3dacb545"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicmart/Tree/zipball/c55ba47c64a3cb7454c22e6d630729fc2aab23ff",
-                "reference": "c55ba47c64a3cb7454c22e6d630729fc2aab23ff",
+                "url": "https://api.github.com/repos/nicmart/Tree/zipball/8d02952acc9779a2c14f7a9c4ac1650c3dacb545",
+                "reference": "8d02952acc9779a2c14f7a9c4ac1650c3dacb545",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0"
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.8.0",
-                "ergebnis/license": "^1.0.0",
-                "ergebnis/php-cs-fixer-config": "^2.2.1",
-                "phpunit/phpunit": "^7.5.20"
+                "ergebnis/composer-normalize": "^2.31.0",
+                "ergebnis/license": "^2.4.0",
+                "ergebnis/php-cs-fixer-config": "^6.13.0",
+                "fakerphp/faker": "^1.23.0",
+                "infection/infection": "~0.26.19",
+                "phpunit/phpunit": "^9.6.14",
+                "psalm/plugin-phpunit": "~0.18.4",
+                "vimeo/psalm": "^5.16.0"
             },
             "type": "library",
             "autoload": {
@@ -3169,14 +3173,18 @@
                 {
                     "name": "Nicolò Martini",
                     "email": "nicmartnic@gmail.com"
+                },
+                {
+                    "name": "Andreas Möller",
+                    "email": "am@localheinz.com"
                 }
             ],
             "description": "A basic but flexible php tree data structure and a fluent tree builder implementation.",
             "support": {
                 "issues": "https://github.com/nicmart/Tree/issues",
-                "source": "https://github.com/nicmart/Tree/tree/0.3.1"
+                "source": "https://github.com/nicmart/Tree/tree/0.8.0"
             },
-            "time": "2020-11-27T09:02:17+00:00"
+            "time": "2023-12-02T13:24:56+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4626,31 +4634,31 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "7.1.3",
+            "version": "8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "f0f73947fdfaf68efdc68b73c4dbb28dfc785113"
+                "reference": "807d145a3c071dc0e69bb7e6783611e2591f9773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/f0f73947fdfaf68efdc68b73c4dbb28dfc785113",
-                "reference": "f0f73947fdfaf68efdc68b73c4dbb28dfc785113",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/807d145a3c071dc0e69bb7e6783611e2591f9773",
+                "reference": "807d145a3c071dc0e69bb7e6783611e2591f9773",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.3",
                 "guzzlehttp/psr7": "^2.0",
-                "illuminate/collections": "^8.38|^9.0|^10.0",
-                "nicmart/tree": "^0.3.0",
-                "php": "^8.0",
-                "spatie/browsershot": "^3.45",
+                "illuminate/collections": "^10.0|^11.0",
+                "nicmart/tree": "^0.8.0",
+                "php": "^8.1",
+                "spatie/browsershot": "^3.45|^4.0",
                 "spatie/robots-txt": "^2.0",
-                "symfony/dom-crawler": "^5.2|^6.0"
+                "symfony/dom-crawler": "^6.0|^7.0"
             },
             "require-dev": {
-                "pestphp/pest": "^1.21",
-                "phpunit/phpunit": "^9.5"
+                "pestphp/pest": "^2.0",
+                "spatie/ray": "^1.37"
             },
             "type": "library",
             "autoload": {
@@ -4678,7 +4686,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/7.1.3"
+                "source": "https://github.com/spatie/crawler/tree/8.2.0"
             },
             "funding": [
                 {
@@ -4690,7 +4698,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-24T07:47:06+00:00"
+            "time": "2024-02-15T10:40:48+00:00"
         },
         {
             "name": "spatie/error-solutions",
@@ -5390,35 +5398,34 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "6.4.0",
+            "version": "7.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "d5115b430de517aaa29a6410f4cd6f1561766579"
+                "reference": "6d3d7637690a9710456a01bacabf5088f93ffe11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/d5115b430de517aaa29a6410f4cd6f1561766579",
-                "reference": "d5115b430de517aaa29a6410f4cd6f1561766579",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/6d3d7637690a9710456a01bacabf5088f93ffe11",
+                "reference": "6d3d7637690a9710456a01bacabf5088f93ffe11",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.2",
-                "illuminate/support": "^8.0|^9.0|^10.0",
-                "nesbot/carbon": "^2.63",
-                "php": "^8.0",
-                "spatie/crawler": "^7.0",
-                "spatie/laravel-package-tools": "^1.5",
-                "symfony/dom-crawler": "^5.1.14|^6.0"
+                "guzzlehttp/guzzle": "^7.8",
+                "illuminate/support": "^10.0|^11.0",
+                "nesbot/carbon": "^2.71|^3.0",
+                "php": "^8.2",
+                "spatie/crawler": "^8.0.1",
+                "spatie/laravel-package-tools": "^1.16.1",
+                "symfony/dom-crawler": "^6.3.4|^7.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^6.23|^7.0|^8.0",
-                "pestphp/pest": "^1.22",
-                "phpunit/phpunit": "^9.5",
-                "spatie/pest-plugin-snapshots": "^1.1",
-                "spatie/phpunit-snapshot-assertions": "^4.0",
-                "spatie/temporary-directory": "^2.0"
+                "mockery/mockery": "^1.6.6",
+                "orchestra/testbench": "^8.14|^9.0",
+                "pestphp/pest": "^2.24",
+                "spatie/pest-plugin-snapshots": "^2.1",
+                "spatie/phpunit-snapshot-assertions": "^5.1.2",
+                "spatie/temporary-directory": "^2.2"
             },
             "type": "library",
             "extra": {
@@ -5452,7 +5459,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/6.4.0"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.2.1"
             },
             "funding": [
                 {
@@ -5460,7 +5467,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-10-18T14:38:11+00:00"
+            "time": "2024-05-21T12:31:34+00:00"
         },
         {
             "name": "spatie/robots-txt",
@@ -6105,26 +6112,26 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v6.4.8",
+            "version": "v7.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "105b56a0305d219349edeb60a800082eca864e4b"
+                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/105b56a0305d219349edeb60a800082eca864e4b",
-                "reference": "105b56a0305d219349edeb60a800082eca864e4b",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/01ce8174447f1f1dd33a5854b01beef79061d9fa",
+                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa",
                 "shasum": ""
             },
             "require": {
                 "masterminds/html5": "^2.6",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
-                "symfony/css-selector": "^5.4|^6.0|^7.0"
+                "symfony/css-selector": "^6.4|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -6152,7 +6159,7 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v6.4.8"
+                "source": "https://github.com/symfony/dom-crawler/tree/v7.1.1"
             },
             "funding": [
                 {
@@ -6168,7 +6175,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:49:08+00:00"
+            "time": "2024-05-31T14:57:53+00:00"
         },
         {
             "name": "symfony/error-handler",

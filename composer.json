@@ -19,7 +19,7 @@
         "spatie/laravel-discord-alerts": "^1.0.0",
         "spatie/laravel-feed": "^4.3.0",
         "spatie/laravel-medialibrary": "^10.12.2",
-        "spatie/laravel-sitemap": "^6.0",
+        "spatie/laravel-sitemap": "^7.2",
         "statamic/cms": "^v5.0",
         "stripe/stripe-php": "^7.68",
         "tempest/highlight": "^1.3"
