@@ -1,59 +1,41 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: postcss
-    versions:
-    - 8.2.12
-    - 8.2.5
-    - 8.2.7
-    - 8.2.8
-    - 8.2.9
-  - dependency-name: vite
-    versions:
-    - 2.2.1
-  - dependency-name: alpinejs
-    versions:
-    - 2.8.1
-    - 2.8.2
-  - dependency-name: "@fullhuman/postcss-purgecss"
-    versions:
-    - 4.0.2
-    - 4.0.3
-  - dependency-name: tailwindcss
-    versions:
-    - 2.0.3
-    - 2.0.4
-  - dependency-name: workbox-expiration
-    versions:
-    - 6.1.1
-    - 6.1.2
-  - dependency-name: workbox-strategies
-    versions:
-    - 6.1.1
-    - 6.1.2
-  - dependency-name: workbox-routing
-    versions:
-    - 6.1.1
-    - 6.1.2
-  - dependency-name: elliptic
-    versions:
-    - 6.5.4
-  - dependency-name: date-fns
-    versions:
-    - 2.18.0
-    - 2.19.0
-  - dependency-name: puppeteer
-    versions:
-    - 7.0.0
-    - 7.0.1
-    - 7.0.4
-    - 8.0.0
-  - dependency-name: laravel-mix
-    versions:
-    - 6.0.13
+  - package-ecosystem: composer
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: wednesday
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    allow:
+      - dependency-type: direct
+    versioning-strategy: increase-if-necessary
+  
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: wednesday
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    allow:
+      - dependency-type: direct
+    versioning-strategy: increase-if-necessary
