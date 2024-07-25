@@ -15,8 +15,8 @@ class HighlightExtension implements ExtensionInterface
     public function register(EnvironmentBuilderInterface $environment): void
     {
         $environment
-            ->addRenderer(FencedCode::class, new CodeBlockRenderer(), 10)
-            ->addRenderer(IndentedCode::class, new CodeBlockRenderer(), 10)
-            ->addRenderer(Code::class, new InlineCodeBlockRenderer(), 10);
+            ->addRenderer(FencedCode::class, new CodeBlockRenderer, 10)
+            ->addRenderer(IndentedCode::class, new CodeBlockRenderer, 10)
+            ->addRenderer(Code::class, new InlineCodeBlockRenderer, 10);
     }
 }

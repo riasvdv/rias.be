@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Markdown::addExtension(function () {
-            return new HighlightExtension();
+            return new HighlightExtension;
         });
     }
 }

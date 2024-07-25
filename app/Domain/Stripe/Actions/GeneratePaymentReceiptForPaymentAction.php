@@ -11,7 +11,7 @@ class GeneratePaymentReceiptForPaymentAction
 {
     public function execute(Payment $payment): Media
     {
-        $temporaryDirectory = (new TemporaryDirectory())->create();
+        $temporaryDirectory = (new TemporaryDirectory)->create();
 
         $path = $temporaryDirectory->path($payment->created_at->format('Y-m-d-his').'.pdf');
 
