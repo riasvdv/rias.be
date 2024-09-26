@@ -139,11 +139,11 @@ contents:
                   -
                     type: link
                     attrs:
-                      href: 'https://twitter.com/riasvdv'
+                      href: 'https://rtsn.dev/@rias'
                       rel: null
                       target: null
                       title: null
-                text: Twitter
+                text: Mastodon
               -
                 type: text
                 text: ', or just send me a quick '
@@ -153,7 +153,7 @@ contents:
                   -
                     type: link
                     attrs:
-                      href: 'mailto:hello@rias.be'
+                      href: 'mailto:hey@rias.be'
                       rel: null
                       target: null
                       title: null
