@@ -21,7 +21,7 @@
         "spatie/laravel-medialibrary": "^11.7.3",
         "spatie/laravel-sitemap": "^7.2.1",
         "statamic/cms": "^v5.0",
-        "stripe/stripe-php": "^15.1",
+        "stripe/stripe-php": "^16.0",
         "tempest/highlight": "^2.7"
     },
     "require-dev": {
