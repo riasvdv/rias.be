@@ -63,12 +63,12 @@ contents:
                       title: null
                 text: Flare
               -
-                type: hard_break
+                type: hardBreak
               -
                 type: text
                 text: 'Freelance developer as a secondary occupation'
               -
-                type: hard_break
+                type: hardBreak
               -
                 type: text
                 text: 'Co-organizer of '
@@ -98,7 +98,7 @@ contents:
                       title: null
                 text: 'Full Stack Europe'
               -
-                type: hard_break
+                type: hardBreak
               -
                 type: text
                 text: 'Developer of '
@@ -161,12 +161,12 @@ contents:
               -
                 type: text
                 text: ' if you need to contact me!'
-        image: 22499028_10211310598174000_7505863571641414265_o-1616166790.jpg
+        image: avatar.jpg
   -
     type: paragraph
 title: Home
 template: home
 fieldset: page
 updated_by: 809ecae2-5584-49d2-85c5-6dcb26779875
-updated_at: 1690292012
+updated_at: 1736594337
 ---
