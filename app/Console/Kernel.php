@@ -13,10 +13,10 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(SyncStatamicPaymentsCommand::class)->hourly();
+        //$schedule->command(SyncStatamicPaymentsCommand::class)->hourly();
         $schedule->command(SyncPlaatskaartjesPaymentsCommand::class)->hourly();
         $schedule->command(SyncPaymentsToAccountableCommand::class)->hourly();
-        $schedule->command(LinkInvoicesToPayoutsCommand::class)->hourly();
+        //$schedule->command(LinkInvoicesToPayoutsCommand::class)->hourly();
     }
 
     protected function commands()
