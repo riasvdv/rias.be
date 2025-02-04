@@ -53,7 +53,7 @@
     @livewireStyles
     @vite(['resources/css/site.css', 'resources/js/site.js'])
 </head>
-<body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-white">
+<body class="font-sans text-lg leading-normal p-4 sm:p-6 text-gray-700 bg-white antialiased">
 
 <div class="container mx-auto">
     <nav class="flex justify-between items-center mb-4 sm:mb-16">
@@ -111,8 +111,8 @@
                     </a>
                 </div>
                 <div class="flex-no-shrink flex-no-grow w-1/4 py-1">
-                    <a href="https://rtsn.dev/@rias" rel="me" class="block px-1 text-gray-500 no-shadow text-center">
-                        <span class="text-base text-orange">Mastodon</span>
+                    <a href="https://bsky.app/profile/rias.be" rel="me" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Bsky</span>
                     </a>
                 </div>
                 <div class="flex-no-shrink flex-no-grow w-1/4 py-1">

@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use App\Domain\Accountable\Api;
-use App\HighlightExtension;
 use Illuminate\Support\ServiceProvider;
+use Phiki\CommonMark\PhikiExtension;
 use Statamic\Facades\Markdown;
-use Stripe\StripeClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,16 +15,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(StripeClient::class, function () {
-            return new StripeClient(config('services.stripe.secret'));
-        });
-
-        $this->app->bind(Api::class, function () {
-            return new Api('https://app.accountable.eu/api');
-        });
-
         Markdown::addExtension(function () {
-            return new HighlightExtension;
+            return new PhikiExtension('one-light');
         });
     }
 }

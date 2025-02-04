@@ -16,7 +16,7 @@ contents:
             content:
               -
                 type: text
-                text: "I'm Rias, a full stack web developer from Antwerp specialized in Laravel, Livewire, Statamic & React"
+                text: "I'm Rias, a full stack web developer from Antwerp specialized in Laravel, Livewire, Statamic, Craft CMS & React"
           -
             type: paragraph
             content:
@@ -139,11 +139,11 @@ contents:
                   -
                     type: link
                     attrs:
-                      href: 'https://rtsn.dev/@rias'
+                      href: 'https://bsky.app/profile/rias.be'
                       rel: null
                       target: null
                       title: null
-                text: Mastodon
+                text: Bluesky
               -
                 type: text
                 text: ', or just send me a quick '
@@ -168,5 +168,5 @@ title: Home
 template: home
 fieldset: page
 updated_by: 809ecae2-5584-49d2-85c5-6dcb26779875
-updated_at: 1736594337
+updated_at: 1738672153
 ---
