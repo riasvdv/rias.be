@@ -3523,16 +3523,16 @@
         },
         {
             "name": "phiki/phiki",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phikiphp/phiki.git",
-                "reference": "33eca1265661c3fec8f03d345561334c1a2cc56e"
+                "reference": "0004e358bd5a9cc049557ce01167341b6a84780c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phikiphp/phiki/zipball/33eca1265661c3fec8f03d345561334c1a2cc56e",
-                "reference": "33eca1265661c3fec8f03d345561334c1a2cc56e",
+                "url": "https://api.github.com/repos/phikiphp/phiki/zipball/0004e358bd5a9cc049557ce01167341b6a84780c",
+                "reference": "0004e358bd5a9cc049557ce01167341b6a84780c",
                 "shasum": ""
             },
             "require": {
@@ -3571,9 +3571,9 @@
             "description": "Syntax highlighting using TextMate grammars in PHP.",
             "support": {
                 "issues": "https://github.com/phikiphp/phiki/issues",
-                "source": "https://github.com/phikiphp/phiki/tree/v1.1.0"
+                "source": "https://github.com/phikiphp/phiki/tree/v1.1.1"
             },
-            "time": "2025-01-30T02:05:45+00:00"
+            "time": "2025-02-05T15:22:40+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5588,16 +5588,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.46.0",
+            "version": "v5.46.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210"
+                "reference": "779a92a223d16ee16f6af6de0b6a9acfc95be082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210",
-                "reference": "7a144d5c11f2b1aa1ec15ccccd7abf5bdb754210",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/779a92a223d16ee16f6af6de0b6a9acfc95be082",
+                "reference": "779a92a223d16ee16f6af6de0b6a9acfc95be082",
                 "shasum": ""
             },
             "require": {
@@ -5682,7 +5682,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.46.0"
+                "source": "https://github.com/statamic/cms/tree/v5.46.1"
             },
             "funding": [
                 {
@@ -5690,7 +5690,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-22T19:19:52+00:00"
+            "time": "2025-02-04T15:32:24+00:00"
         },
         {
             "name": "statamic/stringy",
