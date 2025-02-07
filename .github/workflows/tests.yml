@@ -24,6 +24,7 @@ jobs:
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
+          php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
           php artisan key:generate
 
       - name: Run Tests
