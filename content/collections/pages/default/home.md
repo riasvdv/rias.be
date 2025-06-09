@@ -16,27 +16,58 @@ contents:
             content:
               -
                 type: text
-                text: "I'm Rias, a full stack web developer from Antwerp specialized in Laravel, Livewire, Statamic, Craft CMS & React"
+                text: "I'm Rias 👋"
           -
             type: paragraph
             content:
               -
                 type: text
-                text: 'Developer at '
+                text: 'A full stack software engineer from Antwerp'
+              -
+                type: hardBreak
+              -
+                type: text
+                text: 'specialized in Laravel, Livewire, Craft CMS, and React.'
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Software Engineer at '
               -
                 type: text
                 marks:
                   -
                     type: link
                     attrs:
-                      href: 'https://spatie.be'
+                      href: 'https://craftcms.com/'
                       rel: null
-                      target: null
+                      target: _blank
                       title: null
-                text: Spatie
+                text: 'Craft CMS'
               -
                 type: text
-                text: ', building '
+                text: ' and co-creator of '
+              -
+                type: text
+                marks:
+                  -
+                    type: link
+                    attrs:
+                      href: 'https://eventy.io'
+                      rel: null
+                      target: _blank
+                      title: null
+                text: Eventy
+              -
+                type: text
+                text: .
+          -
+            type: paragraph
+            content:
+              -
+                type: text
+                text: 'Previously worked on '
               -
                 type: text
                 marks:
@@ -63,56 +94,22 @@ contents:
                       title: null
                 text: Flare
               -
-                type: hardBreak
-              -
                 type: text
-                text: 'Freelance developer as a secondary occupation'
-              -
-                type: hardBreak
-              -
-                type: text
-                text: 'Co-organizer of '
+                text: ' at '
               -
                 type: text
                 marks:
                   -
                     type: link
                     attrs:
-                      href: 'https://fullstackbelgium.be'
-                      rel: null
-                      target: null
-                      title: null
-                text: 'Full Stack Belgium'
-              -
-                type: text
-                text: ' and '
-              -
-                type: text
-                marks:
-                  -
-                    type: link
-                    attrs:
-                      href: 'https://fullstackeurope.com'
+                      href: 'https://spatie.be'
                       rel: null
                       target: _blank
                       title: null
-                text: 'Full Stack Europe'
-              -
-                type: hardBreak
+                text: Spatie
               -
                 type: text
-                text: 'Developer of '
-              -
-                type: text
-                marks:
-                  -
-                    type: link
-                    attrs:
-                      href: 'https://www.jumpseat.be/'
-                      rel: null
-                      target: null
-                      title: null
-                text: Jumpseat
+                text: .
           -
             type: paragraph
             content:
@@ -129,7 +126,7 @@ contents:
                       rel: null
                       target: null
                       title: null
-                text: Github
+                text: GitHub
               -
                 type: text
                 text: ' and '
@@ -146,21 +143,7 @@ contents:
                 text: Bluesky
               -
                 type: text
-                text: ', or just send me a quick '
-              -
-                type: text
-                marks:
-                  -
-                    type: link
-                    attrs:
-                      href: 'mailto:hey@rias.be'
-                      rel: null
-                      target: null
-                      title: null
-                text: email
-              -
-                type: text
-                text: ' if you need to contact me!'
+                text: .
         image: avatar.jpg
   -
     type: paragraph
@@ -168,5 +151,5 @@ title: Home
 template: home
 fieldset: page
 updated_by: 809ecae2-5584-49d2-85c5-6dcb26779875
-updated_at: 1738672153
+updated_at: 1749469715
 ---
