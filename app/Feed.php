@@ -5,12 +5,13 @@ namespace App;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;
 use Statamic\Facades\Entry;
+use Statamic\Stache\Query\EntryQueryBuilder;
 
 class Feed
 {
     public static function getALlItems(): Collection
     {
-        /** @var \Statamic\Stache\Query\EntryQueryBuilder $query */
+        /** @var EntryQueryBuilder $query */
         $query = Entry::query();
 
         return $query
