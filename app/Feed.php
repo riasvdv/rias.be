@@ -22,7 +22,7 @@ class Feed
             ->map(function (\Statamic\Entries\Entry $entry) {
                 $header = collect($entry->augmentedValue('contents')->value())->firstWhere('type', 'header');
                 $header = mb_convert_encoding((string) $header['header'], 'UTF-8', 'HTML-ENTITIES');
-                $header = str_replace("\\", "\\\\", $header);
+                $header = str_replace('\\', '\\\\', $header);
 
                 return FeedItem::create()
                     ->title(mb_convert_encoding((string) $entry->augmentedValue('title'), 'UTF-8', 'HTML-ENTITIES'))
