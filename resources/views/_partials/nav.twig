@@ -1,0 +1,32 @@
+{% set navItems = [
+    {
+        title: 'Blog',
+        url: '/blog',
+        active: entry and (entry.slug == 'blog' or entry.section.handle == 'blog'),
+        external: false,
+        button: false,
+    },
+    {
+        title: 'Contact',
+        url: '/contact',
+        active: entry and entry.slug == 'contact',
+        external: false,
+        button: true,
+    },
+] %}
+
+{% for item in navItems %}
+    {% if item.button %}
+        <a href="{{ item.url }}" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded-sm no-underline no-shadow hover:-translate-y-1 hover:shadow-sm">
+            {{ item.title }}
+        </a>
+    {% else %}
+        <a
+            {% if item.external %}target="_blank" rel="noopener"{% endif %}
+            href="{{ item.url }}"
+            class="mr-6 hover:text-orange-500 text-lg no-underline no-shadow hidden sm:block {{ item.active ? 'text-orange-500' : 'text-gray-600' }}"
+        >
+            {{ item.title }}
+        </a>
+    {% endif %}
+{% endfor %}

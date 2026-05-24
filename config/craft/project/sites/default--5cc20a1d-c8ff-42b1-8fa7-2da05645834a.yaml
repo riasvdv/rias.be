@@ -1,0 +1,8 @@
+baseUrl: $APP_URL
+handle: default
+hasUrls: true
+language: en
+name: Rias.be
+primary: true
+siteGroup: 11185931-66ec-441b-b51a-e202ad8f5c69 # Rias.be
+sortOrder: 1

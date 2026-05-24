@@ -2,21 +2,25 @@
 
 namespace App\Providers;
 
+use App\Markdown\PhikiCommonMarkFlavor;
+use CraftCms\Cms\Support\Facades\Markdown;
 use Illuminate\Support\ServiceProvider;
-use Phiki\CommonMark\PhikiExtension;
-use Statamic\Facades\Markdown;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function boot()
+    /**
+     * Register any application services.
+     */
+    public function register(): void
     {
-        // Statamic::script('app', 'cp');
+        //
     }
 
-    public function register()
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
-        Markdown::addExtension(function () {
-            return new PhikiExtension('one-light');
-        });
+        Markdown::extend('original', new PhikiCommonMarkFlavor);
     }
 }

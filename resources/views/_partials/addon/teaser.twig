@@ -1,0 +1,15 @@
+{% set footer %}
+    <span class="flex items-center group-hover:gap-4 mt-auto">
+        <span class="mr-2">More info</span>
+        <span class="w-4 h-4 inline-block"><img src="/assets/svg/external-link.svg" alt=""></span>
+    </span>
+{% endset %}
+
+{% include '_partials/card.twig' with {
+    color: entry.color.label ?? '',
+    title: entry.title,
+    external: true,
+    href: entry.addonUrl.url,
+    description: entry.description|md,
+    footer: footer,
+} only %}

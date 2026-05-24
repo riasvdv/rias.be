@@ -1,7 +1,7 @@
 module.exports = {
     theme: {
         extend: {
-            typography: (theme) => ({
+            typography: theme => ({
                 DEFAULT: {
                     css: {
                         code: {
@@ -12,7 +12,7 @@ module.exports = {
                             },
                             '&:after': {
                                 display: 'none',
-                            }
+                            },
                         },
                         a: {
                             color: theme('colors.gray.700'),
@@ -29,4 +29,4 @@ module.exports = {
     plugins: [
         require('@tailwindcss/typography'),
     ],
-}
+};

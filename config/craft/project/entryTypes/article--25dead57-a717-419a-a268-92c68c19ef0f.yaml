@@ -1,0 +1,44 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  2cfcfde3-1fda-4e1f-a361-5c107c8efbf0:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:71d2ab89-f4b3-446e-ada9-cbcc0d818741'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-23T18:50:26+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 019e562c-68f1-72f3-aa5a-fa1a990dca53 # Markdown
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\CustomField
+            uid: 71d2ab89-f4b3-446e-ada9-cbcc0d818741
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f5595d40-85bc-479b-ba9a-33852c73c8e6
+        userCondition: null
+    thumbFieldKey: null
+handle: article
+hasTitleField: false
+icon: null
+name: Article
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

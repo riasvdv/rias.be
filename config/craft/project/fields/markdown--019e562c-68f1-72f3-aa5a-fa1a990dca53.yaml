@@ -1,0 +1,15 @@
+handle: markdown
+instructions: null
+name: Markdown
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 10
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: CraftCms\Cms\Field\PlainText

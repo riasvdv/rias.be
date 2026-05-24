@@ -1,0 +1,59 @@
+handle: contents
+instructions: null
+name: Contents
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - a2ba1390-b9a7-4fd4-aeb5-0d53df1fce67 # Header
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 25dead57-a717-419a-a268-92c68c19ef0f # Article
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - ec6c6c46-4a83-49b8-b063-daa3888fa7b8 # Code
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 3fdbb709-0266-4ad2-8309-eddd4be2f4a6 # Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - c9aa63bb-fc79-4936-985d-63fc1870473b # Video
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: CraftCms\Cms\Field\Matrix

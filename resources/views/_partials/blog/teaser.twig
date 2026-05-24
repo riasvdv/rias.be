@@ -1,0 +1,21 @@
+{% set header = entry.contents.type('header').eagerly().one() %}
+{% set description %}
+    {% if header %}
+        <p>{{ header.markdown|md|striptags|truncate(150) }}</p>
+    {% endif %}
+{% endset %}
+{% set footer %}
+    <span class="flex items-center transition-all group-hover:gap-4 mt-auto">
+        <span class="mr-2">Continue reading</span>
+        <span class="w-4 h-4 inline-block"><img src="/assets/svg/long-arrow-right.svg" alt=""></span>
+    </span>
+{% endset %}
+
+{% include '_partials/card.twig' with {
+    color: entry.color.label ?? '',
+    title: entry.title,
+    date: entry.postDate|date('F j, Y'),
+    href: entry.url,
+    description: description,
+    footer: footer,
+} only %}

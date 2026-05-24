@@ -1,0 +1,13 @@
+handle: videoUrl
+instructions: null
+name: Url
+searchable: false
+settings:
+  fullGraphqlData: true
+  maxLength: 255
+  showLabelField: false
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: CraftCms\Cms\Field\Link

@@ -1,0 +1,24 @@
+{% set image = block.image.one() %}
+{% set imageTransform = { width: 768 } %}
+{% set srcsetSizes = ['320w', '480w', '640w', '768w', '1152w', '1536w', '2304w'] %}
+
+{% if image %}
+    <figure class="my-8">
+        <div class="flex justify-center mb-2 max-w-4xl mx-auto">
+            {% if image.extension != 'gif' %}
+                {{ image.getImg(imageTransform, srcsetSizes)|attr({
+                    loading: 'lazy',
+                    sizes: 'auto, (min-width: 768px) 768px, 100vw',
+                    alt: image.alt ?: image.title,
+                }) }}
+            {% else %}
+                <picture>
+                    <img src="{{ image.url }}" alt="{{ image.title }}">
+                </picture>
+            {% endif %}
+        </div>
+        {% if block.title %}
+            <figcaption class="block text-base text-gray-600 text-center max-w-sm mx-auto">{{ block.title }}</figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

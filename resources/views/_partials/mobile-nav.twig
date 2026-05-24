@@ -1,0 +1,31 @@
+<div x-data="{ open: false }" x-on:click.away="open = false">
+    <div class="fixed flex justify-center w-full z-40 left-0 right-0" style="bottom: 15px;">
+        <a href="#" x-on:click.prevent="open = true" class="no-shadow block sm:hidden bg-teal-500 rounded-lg text-white py-2 px-6 no-underline text-base tracking-widest">
+            MENU
+        </a>
+    </div>
+    <nav id="mobile-nav" x-bind:class="{ 'open': open }" class="fixed flex max-w-sm mx-auto justify-center w-full px-4 flex-col bottom-0 left-0 right-0 mb-3 p-1 z-50">
+        <div class="bg-white shadow-2xl rounded-lg">
+            <div class="flex justify-center py-4 px-4 overflow-x-scroll scrolling-touch max-w-full border-b border-gray-400">
+                <a href="/" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Home</a>
+                <a href="/blog" class="text-gray-700 text-lg mx-2 no-shadow no-underline">Blog</a>
+
+                <button class="text-gray-dark text-xs p-1 ml-auto" aria-label="close" x-on:click="open = false">
+                    <img src="/assets/svg/times-circle.svg" class="text-teal-500 w-6 h-6" alt="">
+                </button>
+            </div>
+            <div class="flex max-w-full overflow-x-scroll scrolling-touch gap-2 px-2 py-2">
+                <div class="shrink-0 grow-0 w-1/4 py-1">
+                    <a href="mailto:hello@rias.be" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Email</span>
+                    </a>
+                </div>
+                <div class="shrink-0 grow-0 w-1/4 py-1">
+                    <a href="https://github.com/riasvdv" class="block px-1 text-gray-500 no-shadow text-center">
+                        <span class="text-base text-orange">Github</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

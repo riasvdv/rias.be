@@ -1,0 +1,68 @@
+{% extends '_layouts/main.twig' %}
+
+{% set title = entry.title %}
+{% set contentBlocks = entry.contents.all() %}
+{% set introBlock = contentBlocks[0] ?? null %}
+{% set avatarBlock = null %}
+{% set remainingBlocks = contentBlocks %}
+
+{% if introBlock and introBlock.type.handle == 'header' %}
+    {% set possibleAvatarBlock = contentBlocks[1] ?? null %}
+
+    {% if possibleAvatarBlock and possibleAvatarBlock.type.handle == 'image' and possibleAvatarBlock.image.one() %}
+        {% set avatarBlock = possibleAvatarBlock %}
+        {% set remainingBlocks = contentBlocks|slice(2) %}
+    {% else %}
+        {% set remainingBlocks = contentBlocks|slice(1) %}
+    {% endif %}
+{% endif %}
+
+{% block content %}
+    <div class="container mx-auto">
+        {% if introBlock and introBlock.type.handle == 'header' %}
+            <header class="mb-4 flex items-center justify-between">
+                <div class="prose prose-xl md:prose-2xl max-w-3xl">
+                    {{ introBlock.markdown|md }}
+                </div>
+
+                {% if avatarBlock %}
+                    {% set avatar = avatarBlock.image.one() %}
+
+                    <div class="hidden lg:block shrink-0">
+                        {{ avatar.getImg({ width: 288, height: 288 }, ['1.5x', '2x', '3x'])|attr({
+                            class: 'rounded-full h-72 w-72',
+                            sizes: '288px',
+                            alt: avatar.alt ?: avatar.title,
+                        }) }}
+                    </div>
+                {% endif %}
+            </header>
+        {% endif %}
+
+        {% include '_partials/contents.twig' with {
+            blocks: remainingBlocks,
+            isHome: true,
+        } only %}
+
+        {% set posts = entries().section('blog').status('live').limit(6).all() %}
+
+        {% if posts|length %}
+            <section class="my-24">
+                <div class="text-center my-8">
+                    <h3 class="text-base text-2xl text-gray-500 tracking-widest uppercase mb-4">Blog</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    {% for post in posts %}
+                        {% include '_partials/blog/teaser.twig' with { entry: post } only %}
+                    {% endfor %}
+                </div>
+
+                <div class="mb-4 leading-normal my-8 text-center">
+                    <a href="/blog" class="inline-block transition-all bg-teal-100 hover:bg-teal-200 text-gray-700 px-6 py-3 rounded-sm no-underline no-shadow hover:-translate-y-1 hover:shadow-sm">
+                        More blogposts
+                    </a>
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}

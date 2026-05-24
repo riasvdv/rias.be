@@ -1,5 +1,6 @@
 @import 'tailwindcss' source("../");
 @config "../../tailwind.config.js";
+@source inline("bg-red-500 bg-orange-500 bg-yellow-500 bg-green-500 bg-teal-500 bg-blue-500 bg-indigo-500 bg-purple-500 bg-pink-500");
 
 @theme {
     --font-sans: Inter UI, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
@@ -12,6 +13,7 @@
 }
 
 @layer base {
+  figure img,
   figure picture,
   figure picture img {
     margin: 0 auto;
@@ -29,7 +31,6 @@
   }
 }
 
-/* Other */
 #mobile-nav {
     transform: translateY(105%);
 }
@@ -94,7 +95,7 @@
     @apply max-w-3xl mx-auto;
 }
 
-pre, code {
+pre:not(.phiki), code {
     @apply p-1;
     @apply text-base;
     @apply font-light;
@@ -102,7 +103,49 @@ pre, code {
     background: rgba(241,249,248,1) !important;
 }
 
-pre {
+pre:not(.phiki) {
     @apply p-6 overflow-x-scroll;
 }
 
+pre.phiki {
+    @apply p-6 overflow-x-scroll;
+    background: rgba(241,249,248,1) !important;
+}
+
+pre.phiki code {
+    @apply p-0 text-base font-light;
+    background: transparent !important;
+}
+
+pre.phiki code .line {
+    display: block;
+}
+
+pre.phiki .line-number {
+    @apply inline-block pr-4 mr-4 text-right;
+    min-width: 2.5rem;
+    border-right: 1px solid rgba(92, 103, 115, 0.16);
+}
+
+pre.phiki code .line.highlight {
+    background-color: var(--phiki-line-highlight);
+}
+
+pre.phiki.focus .line:not(.focus) {
+    transition: filter 250ms;
+    filter: blur(2px);
+}
+
+pre.phiki.focus:hover .line {
+    filter: blur(0);
+}
+
+pre.phiki .line.insert {
+    background-color: var(--phiki-diff-insert-bg);
+    color: var(--phiki-diff-insert-fg);
+}
+
+pre.phiki .line.remove {
+    background-color: var(--phiki-diff-remove-bg);
+    color: var(--phiki-diff-remove-fg);
+}

@@ -1,0 +1,102 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  e3543298-cfc4-42cc-b6f2-c79b3c7d07c5:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-23T18:57:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 019e5628-0a9b-7269-8e25-ee026cf5bf6e # Color
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\CustomField
+            uid: f9cd5297-fbd6-477a-93d9-0dccee869010
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-05-23T18:56:12+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\Entries\EntryTitleField
+            uid: fb28d7b6-a616-47e5-8d0b-29f7b4a96c93
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            dateAdded: '2026-05-23T18:57:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 019e562c-68f1-72f3-aa5a-fa1a990dca53 # Markdown
+            handle: description
+            instructions: null
+            label: Description
+            required: false
+            tip: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\CustomField
+            uid: a0584572-6796-48bf-977b-2bea91df141a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-23T18:57:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 019e5631-3627-7343-bc2a-ff922145d94c # Url
+            handle: addonUrl
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\CustomField
+            uid: a6e61792-57a5-400d-9e3d-5da95966509f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 95e285ed-9931-4974-82fe-1661dd501634
+        userCondition: null
+    thumbFieldKey: null
+handle: addon
+hasTitleField: true
+icon: null
+name: Addon
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

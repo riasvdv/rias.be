@@ -1,0 +1,7 @@
+{% set entry = entries().section('pages').slug('home').one() %}
+
+{% if not entry %}
+    {% exit 404 %}
+{% endif %}
+
+{% include 'home.twig' with { entry: entry } only %}

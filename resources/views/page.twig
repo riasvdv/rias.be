@@ -1,0 +1,9 @@
+{% if entry.section.handle == 'blog' %}
+    {% include '_pages/article.twig' with { entry: entry } only %}
+{% elseif entry.slug == 'blog' %}
+    {% include 'blog.twig' with { entry: entry } only %}
+{% elseif entry.slug == 'home' %}
+    {% include 'home.twig' with { entry: entry } only %}
+{% else %}
+    {% include '_pages/default.twig' with { entry: entry } only %}
+{% endif %}

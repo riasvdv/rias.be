@@ -2,38 +2,51 @@
 
 namespace App;
 
+use CraftCms\Cms\Entry\Elements\Entry;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Spatie\Feed\FeedItem;
-use Statamic\Facades\Entry;
-use Statamic\Stache\Query\EntryQueryBuilder;
 
 class Feed
 {
-    public static function getALlItems(): Collection
+    public static function getAllItems(): Collection
     {
-        /** @var EntryQueryBuilder $query */
-        $query = Entry::query();
+        return collect(Entry::find()
+            ->section('blog')
+            ->status(Entry::STATUS_LIVE)
+            ->drafts(false)
+            ->orderBy('postDate', 'desc')
+            ->all())
+            ->map(fn (Entry $entry) => FeedItem::create()
+                ->title(self::encoded($entry->title))
+                ->id(self::productionUrl($entry->getUrl()))
+                ->summary(self::summary($entry))
+                ->updated(Carbon::instance($entry->postDate ?? $entry->dateUpdated ?? now()))
+                ->link(self::productionUrl($entry->getUrl()))
+                ->authorName('Rias Van der Veken')
+                ->authorEmail('hey@rias.be')
+                ->category($entry->color?->label ?? ''));
+    }
 
-        return $query
-            ->where('collection', 'blog')
-            ->where('published', true)
-            ->where('date', '<=', now())
-            ->orderBy('date', 'desc')
-            ->get()
-            ->map(function (\Statamic\Entries\Entry $entry) {
-                $header = collect($entry->augmentedValue('contents')->value())->firstWhere('type', 'header');
-                $header = mb_convert_encoding((string) $header['header'], 'UTF-8', 'HTML-ENTITIES');
-                $header = str_replace('\\', '\\\\', $header);
+    private static function summary(Entry $entry): string
+    {
+        $header = $entry->contents->type('header')->one();
 
-                return FeedItem::create()
-                    ->title(mb_convert_encoding((string) $entry->augmentedValue('title'), 'UTF-8', 'HTML-ENTITIES'))
-                    ->id($entry->absoluteUrl())
-                    ->summary($header)
-                    ->updated($entry->date())
-                    ->link($entry->absoluteUrl())
-                    ->authorName('Rias Van der Veken')
-                    ->authorEmail('hey@rias.be')
-                    ->category($entry->augmentedValue('color')->value()['label']);
-            });
+        if (! $header) {
+            return '';
+        }
+
+        return Str::replace('\\', '\\\\', self::encoded(strip_tags(Str::markdown($header->markdown ?? ''))));
+    }
+
+    private static function encoded(string $value): string
+    {
+        return mb_convert_encoding($value, 'UTF-8', 'HTML-ENTITIES');
+    }
+
+    private static function productionUrl(?string $url): string
+    {
+        return Str::replaceStart(rtrim(config('app.url'), '/'), 'https://rias.be', $url ?? '');
     }
 }

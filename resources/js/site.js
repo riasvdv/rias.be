@@ -1,8 +1,11 @@
+import Alpine from 'alpinejs';
 import '../css/site.css';
-import "./webmentions";
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    setTimeout(function () {
-        document.querySelector('#mobile-nav').classList.add('loaded');
+window.Alpine = Alpine;
+Alpine.start();
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('#mobile-nav')?.classList.add('loaded');
     }, 250);
 });

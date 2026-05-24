@@ -1,88 +1,88 @@
 {
-    "name": "statamic/statamic",
-    "description": "Statamic",
-    "keywords": [
-        "statamic",
-        "cms",
-        "flat file",
-        "laravel"
-    ],
-    "type": "project",
+    "$schema": "https://getcomposer.org/schema.json",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "^8.0",
-        "laravel/framework": "^v12.19.3",
-        "laravel/octane": "^2.3",
-        "laravel/tinker": "^2.0",
-        "livewire/livewire": "^3.0",
-        "phiki/phiki": "^1.1",
-        "rias/statamic-color-swatches": "^2.2",
-        "spatie/laravel-feed": "^4.3.0",
-        "spatie/laravel-sitemap": "^7.2.1",
-        "statamic/cms": "^v5.0",
-        "stripe/stripe-php": "^17.2"
+        "php": "^8.5",
+        "craftcms/cms": "^6.0.0",
+        "laravel/framework": "^13.0",
+        "laravel/octane": "^2.17",
+        "laravel/tinker": "^3.0",
+        "phiki/phiki": "^2.0",
+        "spatie/laravel-feed": "^4.5",
+        "spatie/laravel-sitemap": "^8.1"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.5",
-        "fakerphp/faker": "^1.13",
-        "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^11.0"
+        "barryvdh/laravel-debugbar": "^4.2",
+        "codemonkey/spx-mcp-server": "^0.2.1",
+        "fakerphp/faker": "^1.23",
+        "laravel/pail": "^1.2.5",
+        "laravel/pao": "^1.0.6",
+        "laravel/pint": "^1.27",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^12.5.12"
     },
-    "config": {
-        "platform": {
-            "php": "8.3"
-        },
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pixelfear/composer-dist-plugin": true
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../cms-6.x"
         }
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-                "spatie/laravel-ray"
-            ]
-        }
-    },
+    ],
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ]
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
-        "pre-update-cmd": [
-            "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "@php artisan statamic:install --ansi"
+            "@php artisan craft:setup:publish --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate"
+            "@php artisan key:generate --ansi",
+            "@php artisan craft:install"
         ],
-        "build": [
-            "yarn production",
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate",
-            "@php please ssg:generate",
-            "@php artisan sitemap"
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi @no_additional_args",
+            "@php artisan test"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "craftcms/plugin-installer": true,
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "yiisoft/yii2-composer": true
+        }
     }
 }

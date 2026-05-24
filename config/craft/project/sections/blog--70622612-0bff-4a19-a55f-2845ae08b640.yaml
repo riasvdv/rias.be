@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 802c9eab-6bb4-4618-b8e1-35ae17d0146e # Page
+handle: blog
+maxAuthors: 1
+minAuthors: 0
+name: Blog
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  5cc20a1d-c8ff-42b1-8fa7-2da05645834a: # Rias.be
+    enabledByDefault: true
+    hasUrls: true
+    template: page.twig
+    uriFormat: 'blog/{slug}'
+type: channel

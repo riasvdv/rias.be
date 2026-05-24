@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 947d1f61-c2e2-4e13-b2cd-8e97949493ca # Addon
+handle: addons
+maxAuthors: 1
+minAuthors: 0
+name: Addons
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  5cc20a1d-c8ff-42b1-8fa7-2da05645834a: # Rias.be
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 52310deb-238b-4845-a60b-62e71232741b
+type: structure

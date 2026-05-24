@@ -1,7 +1,0 @@
-title: Pages
-template: page
-layout: layouts/main
-revisions: false
-route: '{parent_uri}/{slug}'
-structure:
-  root: true

@@ -1,0 +1,44 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  cbe88a5b-beaf-49f9-b191-121a4522b408:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:3683565f-aa21-4743-8953-01e6457daff8'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-23T18:55:28+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 019e5631-3627-7343-bc2a-ff922145d94c # Url
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: CraftCms\Cms\FieldLayout\LayoutElements\CustomField
+            uid: 3683565f-aa21-4743-8953-01e6457daff8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1d997810-221d-427e-a9f6-612af632999d
+        userCondition: null
+    thumbFieldKey: null
+handle: video
+hasTitleField: false
+icon: null
+name: Video
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

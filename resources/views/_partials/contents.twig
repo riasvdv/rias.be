@@ -1,0 +1,6 @@
+{% for block in blocks %}
+    {% include "_partials/sets/#{block.type.handle}.twig" ignore missing with {
+        block: block,
+        isHome: isHome ?? false,
+    } only %}
+{% endfor %}

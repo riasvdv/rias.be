@@ -1,0 +1,82 @@
+handle: color
+instructions: null
+name: Color
+searchable: false
+settings:
+  allowCustomColors: false
+  palette:
+    -
+      __assoc__:
+        -
+          - color
+          - '#f56565'
+        -
+          - label
+          - red
+    -
+      __assoc__:
+        -
+          - color
+          - '#ed8936'
+        -
+          - label
+          - orange
+    -
+      __assoc__:
+        -
+          - color
+          - '#ecc94b'
+        -
+          - label
+          - yellow
+    -
+      __assoc__:
+        -
+          - color
+          - '#48bb78'
+        -
+          - label
+          - green
+    -
+      __assoc__:
+        -
+          - color
+          - '#38b2ac'
+        -
+          - label
+          - teal
+    -
+      __assoc__:
+        -
+          - color
+          - '#4299e1'
+        -
+          - label
+          - blue
+    -
+      __assoc__:
+        -
+          - color
+          - '#667eea'
+        -
+          - label
+          - indigo
+    -
+      __assoc__:
+        -
+          - color
+          - '#9f7aea'
+        -
+          - label
+          - purple
+    -
+      __assoc__:
+        -
+          - color
+          - '#ed64a6'
+        -
+          - label
+          - pink
+translationKeyFormat: null
+translationMethod: none
+type: CraftCms\Cms\Field\Color

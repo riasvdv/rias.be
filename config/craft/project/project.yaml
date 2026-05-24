@@ -1,0 +1,44 @@
+dateModified: 1779563565
+fs:
+  assets:
+    hasUrls: true
+    name: Assets
+    settings:
+      path: '@webroot/assets'
+      rootPath: /Users/rias/Code/craft.rias.be/public/assets
+      settingsHtml: "\n    \n                            \n        <div class=\"field\" id=\"path-field\" data-attribute=\"path\" data-error-key=\"path\"><div class=\"heading\"><label id=\"path-label\" for=\"path\">Base Path<span class=\"visually-hidden\">Required</span><span class=\"required\" aria-hidden=\"true\"></span></label></div><div id=\"path-instructions\" class=\"instructions\"><p>The base folder path that should be used as the root of the filesystem.</p>\n</div><div class=\"input ltr\">\n\n\n<div id=\"path-container\" class=\"autosuggest-container\" tabindex=\"-1\">\n        <input class=\"ltr text fullwidth text fullwidth\" type=\"text\" id=\"path-preview\" size value=\"@webroot/assets\" autocomplete=\"off\" disabled title placeholder=\"/path/to/folder\" dir=\"ltr\">\n\n    \n    <vue-autosuggest\n        :suggestions=\"filteredOptions\"\n        :get-suggestion-value=\"getSuggestionValue\"\n        :input-props=\"inputProps\"\n        :limit=\"limit\"\n        :component-attr-id-autosuggest=\"id\"\n        @selected=\"onSelected\"\n        @focus=\"updateFilteredOptions\"\n        @blur=\"onBlur\"\n        @input=\"onInputChange\"\n        v-model=\"inputProps.initialValue\"\n    >\n        <template slot-scope=\"{suggestion}\">\n            {{suggestion.item.name || suggestion.item}}\n            <span v-if=\"suggestion.item.hint\" class=\"light\">– {{suggestion.item.hint}}</span>\n        </template>\n    </vue-autosuggest>\n    \n</div>\n\n</div></div>\n\n\n"
+    type: CraftCms\Cms\Filesystem\Filesystems\Local
+    url: /assets
+meta:
+  __names__:
+    0a46a7e1-7181-479f-9595-3862c3342b53: Images # Images
+    1ed155de-d4c6-4dc4-a342-79f67151acd6: Addons # Addons
+    3fdbb709-0266-4ad2-8309-eddd4be2f4a6: Image # Image
+    5cc20a1d-c8ff-42b1-8fa7-2da05645834a: Rias.be # Rias.be
+    019e562c-68f1-72f3-aa5a-fa1a990dca53: Markdown # Markdown
+    019e5628-0a9b-7269-8e25-ee026cf5bf6e: Color # Color
+    019e5630-5a27-7051-a419-1606e14b1179: Image # Image
+    019e5631-5f98-71f8-998a-934244807385: Contents # Contents
+    019e5631-3627-7343-bc2a-ff922145d94c: Url # Url
+    25dead57-a717-419a-a268-92c68c19ef0f: Article # Article
+    802c9eab-6bb4-4618-b8e1-35ae17d0146e: Page # Page
+    947d1f61-c2e2-4e13-b2cd-8e97949493ca: Addon # Addon
+    11185931-66ec-441b-b51a-e202ad8f5c69: Rias.be # Rias.be
+    70622612-0bff-4a19-a55f-2845ae08b640: Blog # Blog
+    a2ba1390-b9a7-4fd4-aeb5-0d53df1fce67: Header # Header
+    c9aa63bb-fc79-4936-985d-63fc1870473b: Video # Video
+    d4f20a8d-1882-432b-b698-5448257f51fc: Pages # Pages
+    ec6c6c46-4a83-49b8-b063-daa3888fa7b8: Code # Code
+system:
+  edition: solo
+  live: true
+  name: Rias.be
+  schemaVersion: 6.0.0.2
+  timeZone: UTC
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

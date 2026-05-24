@@ -1,0 +1,19 @@
+{% extends '_layouts/main.twig' %}
+
+{% set title = entry.title %}
+{% set contentBlocks = entry.contents.all() %}
+
+{% block content %}
+    <div class="max-w-xl mx-auto">
+        <div class="text-center mb-6 prose">
+            <h1 class="mb-0 leading-tight">{{ entry.title|widont }}</h1>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+        {% include '_partials/contents.twig' with {
+            blocks: contentBlocks,
+            isHome: false,
+        } only %}
+    </div>
+{% endblock %}
