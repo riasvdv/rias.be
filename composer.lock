@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cc1f6dc5ef32079520322804049e5d1",
+    "content-hash": "e30e869a54c49616859cf9c6c9e82209",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -412,10 +412,16 @@
         {
             "name": "craftcms/cms",
             "version": "6.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "../cms-6.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cms.git",
                 "reference": "b7e574ff83a48edd044851a7cb6538a3742229a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b7e574ff83a48edd044851a7cb6538a3742229a5",
+                "reference": "b7e574ff83a48edd044851a7cb6538a3742229a5",
+                "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^3.0",
@@ -493,126 +499,70 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "CraftCms\\Cms\\Providers\\CraftServiceProvider"
-                    ],
                     "aliases": {
-                        "Addresses": "CraftCms\\Cms\\Support\\Facades\\Addresses",
-                        "Announcements": "CraftCms\\Cms\\Support\\Facades\\Announcements",
-                        "AssetIndexer": "CraftCms\\Cms\\Support\\Facades\\AssetIndexer",
-                        "Assets": "CraftCms\\Cms\\Support\\Facades\\Assets",
-                        "AuthMethods": "CraftCms\\Cms\\Support\\Facades\\AuthMethods",
-                        "BulkOps": "CraftCms\\Cms\\Support\\Facades\\BulkOps",
-                        "Conditions": "CraftCms\\Cms\\Support\\Facades\\Conditions",
-                        "DeltaRegistry": "CraftCms\\Cms\\Support\\Facades\\DeltaRegistry",
-                        "Deprecator": "CraftCms\\Cms\\Support\\Facades\\Deprecator",
-                        "Drafts": "CraftCms\\Cms\\Support\\Facades\\Drafts",
-                        "ElementActions": "CraftCms\\Cms\\Support\\Facades\\ElementActions",
-                        "ElementActivity": "CraftCms\\Cms\\Support\\Facades\\ElementActivity",
-                        "ElementCaches": "CraftCms\\Cms\\Support\\Facades\\ElementCaches",
-                        "ElementExporters": "CraftCms\\Cms\\Support\\Facades\\ElementExporters",
-                        "ElementSources": "CraftCms\\Cms\\Support\\Facades\\ElementSources",
-                        "Elements": "CraftCms\\Cms\\Support\\Facades\\Elements",
-                        "Entries": "CraftCms\\Cms\\Support\\Facades\\Entries",
-                        "EntryTypes": "CraftCms\\Cms\\Support\\Facades\\EntryTypes",
-                        "Fields": "CraftCms\\Cms\\Support\\Facades\\Fields",
-                        "Filesystems": "CraftCms\\Cms\\Support\\Facades\\Filesystems",
-                        "Folders": "CraftCms\\Cms\\Support\\Facades\\Folders",
                         "Gql": "CraftCms\\Cms\\Support\\Facades\\Gql",
-                        "HtmlSanitizers": "CraftCms\\Cms\\Support\\Facades\\HtmlSanitizers",
-                        "HtmlStack": "CraftCms\\Cms\\Support\\Facades\\HtmlStack",
                         "I18N": "CraftCms\\Cms\\Support\\Facades\\I18N",
-                        "ImageTransforms": "CraftCms\\Cms\\Support\\Facades\\ImageTransforms",
-                        "Images": "CraftCms\\Cms\\Support\\Facades\\Images",
-                        "InputNamespace": "CraftCms\\Cms\\Support\\Facades\\InputNamespace",
-                        "JobProgress": "CraftCms\\Cms\\Support\\Facades\\JobProgress",
-                        "Markdown": "CraftCms\\Cms\\Support\\Facades\\Markdown",
-                        "OAuth": "CraftCms\\Cms\\Support\\Facades\\OAuth",
                         "Path": "CraftCms\\Cms\\Support\\Facades\\Path",
-                        "Plugins": "CraftCms\\Cms\\Support\\Facades\\Plugins",
-                        "ProjectConfig": "CraftCms\\Cms\\Support\\Facades\\ProjectConfig",
-                        "Revisions": "CraftCms\\Cms\\Support\\Facades\\Revisions",
+                        "Twig": "CraftCms\\Cms\\Support\\Facades\\Twig",
+                        "OAuth": "CraftCms\\Cms\\Support\\Facades\\OAuth",
+                        "Sites": "CraftCms\\Cms\\Support\\Facades\\Sites",
+                        "Users": "CraftCms\\Cms\\Support\\Facades\\Users",
+                        "Assets": "CraftCms\\Cms\\Support\\Facades\\Assets",
+                        "Drafts": "CraftCms\\Cms\\Support\\Facades\\Drafts",
+                        "Fields": "CraftCms\\Cms\\Support\\Facades\\Fields",
+                        "Images": "CraftCms\\Cms\\Support\\Facades\\Images",
                         "Search": "CraftCms\\Cms\\Support\\Facades\\Search",
+                        "BulkOps": "CraftCms\\Cms\\Support\\Facades\\BulkOps",
+                        "Entries": "CraftCms\\Cms\\Support\\Facades\\Entries",
+                        "Folders": "CraftCms\\Cms\\Support\\Facades\\Folders",
+                        "Plugins": "CraftCms\\Cms\\Support\\Facades\\Plugins",
+                        "Updates": "CraftCms\\Cms\\Support\\Facades\\Updates",
+                        "Volumes": "CraftCms\\Cms\\Support\\Facades\\Volumes",
+                        "Elements": "CraftCms\\Cms\\Support\\Facades\\Elements",
+                        "Markdown": "CraftCms\\Cms\\Support\\Facades\\Markdown",
                         "Sections": "CraftCms\\Cms\\Support\\Facades\\Sections",
                         "Security": "CraftCms\\Cms\\Support\\Facades\\Security",
+                        "Addresses": "CraftCms\\Cms\\Support\\Facades\\Addresses",
+                        "HtmlStack": "CraftCms\\Cms\\Support\\Facades\\HtmlStack",
+                        "Revisions": "CraftCms\\Cms\\Support\\Facades\\Revisions",
+                        "Conditions": "CraftCms\\Cms\\Support\\Facades\\Conditions",
+                        "Deprecator": "CraftCms\\Cms\\Support\\Facades\\Deprecator",
+                        "EntryTypes": "CraftCms\\Cms\\Support\\Facades\\EntryTypes",
                         "SiteGroups": "CraftCms\\Cms\\Support\\Facades\\SiteGroups",
-                        "Sites": "CraftCms\\Cms\\Support\\Facades\\Sites",
                         "Structures": "CraftCms\\Cms\\Support\\Facades\\Structures",
-                        "TemplateHooks": "CraftCms\\Cms\\Support\\Facades\\TemplateHooks",
-                        "Twig": "CraftCms\\Cms\\Support\\Facades\\Twig",
-                        "Updates": "CraftCms\\Cms\\Support\\Facades\\Updates",
                         "UserGroups": "CraftCms\\Cms\\Support\\Facades\\UserGroups",
+                        "AuthMethods": "CraftCms\\Cms\\Support\\Facades\\AuthMethods",
+                        "Filesystems": "CraftCms\\Cms\\Support\\Facades\\Filesystems",
+                        "JobProgress": "CraftCms\\Cms\\Support\\Facades\\JobProgress",
+                        "AssetIndexer": "CraftCms\\Cms\\Support\\Facades\\AssetIndexer",
+                        "Announcements": "CraftCms\\Cms\\Support\\Facades\\Announcements",
+                        "DeltaRegistry": "CraftCms\\Cms\\Support\\Facades\\DeltaRegistry",
+                        "ElementCaches": "CraftCms\\Cms\\Support\\Facades\\ElementCaches",
+                        "ProjectConfig": "CraftCms\\Cms\\Support\\Facades\\ProjectConfig",
+                        "TemplateHooks": "CraftCms\\Cms\\Support\\Facades\\TemplateHooks",
+                        "ElementActions": "CraftCms\\Cms\\Support\\Facades\\ElementActions",
+                        "ElementSources": "CraftCms\\Cms\\Support\\Facades\\ElementSources",
+                        "HtmlSanitizers": "CraftCms\\Cms\\Support\\Facades\\HtmlSanitizers",
+                        "InputNamespace": "CraftCms\\Cms\\Support\\Facades\\InputNamespace",
+                        "ElementActivity": "CraftCms\\Cms\\Support\\Facades\\ElementActivity",
+                        "ImageTransforms": "CraftCms\\Cms\\Support\\Facades\\ImageTransforms",
                         "UserPermissions": "CraftCms\\Cms\\Support\\Facades\\UserPermissions",
-                        "Users": "CraftCms\\Cms\\Support\\Facades\\Users",
-                        "Volumes": "CraftCms\\Cms\\Support\\Facades\\Volumes"
-                    }
+                        "ElementExporters": "CraftCms\\Cms\\Support\\Facades\\ElementExporters"
+                    },
+                    "providers": [
+                        "CraftCms\\Cms\\Providers\\CraftServiceProvider"
+                    ]
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "CraftCms\\Cms\\": "src/"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
-            },
-            "autoload-dev": {
+                ],
                 "psr-4": {
-                    "CraftCms\\Cms\\Tests\\": "tests/",
-                    "CraftCms\\Cms\\Database\\": "database/",
-                    "CraftCms\\Yii2Adapter\\Tests\\": "yii2-adapter/tests-laravel/",
-                    "Workbench\\App\\": "workbench/app/",
-                    "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-                    "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+                    "CraftCms\\Cms\\": "src/"
                 }
             },
-            "scripts": {
-                "copy-icons": [
-                    "php ./scripts/copyicons.php"
-                ],
-                "fix-cs": [
-                    "npx concurrently -c 'rector' 'pint src --parallel' './yii2-adapter/vendor/bin/ecs check --config ./yii2-adapter/ecs.php --ansi --fix' --names=rector,pint,ecs"
-                ],
-                "phpstan": [
-                    "phpstan --memory-limit=1G"
-                ],
-                "rector": [
-                    "rector"
-                ],
-                "tests": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "./vendor/bin/pest --compact"
-                ],
-                "tests-adapter": [
-                    "./vendor/bin/pest --configuration ./yii2-adapter/phpunit.xml.dist --test-directory ./yii2-adapter/tests-laravel"
-                ],
-                "post-autoload-dump": [
-                    "@clear",
-                    "@prepare"
-                ],
-                "clear": [
-                    "@php vendor/bin/testbench package:purge-skeleton --ansi"
-                ],
-                "prepare": [
-                    "@php vendor/bin/testbench package:discover --ansi"
-                ],
-                "build": [
-                    "@php vendor/bin/testbench workbench:build --ansi"
-                ],
-                "serve": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@php vendor/bin/testbench package:sync-skeleton --ansi",
-                    "@build",
-                    "@php vendor/bin/testbench serve --ansi"
-                ],
-                "ci": [
-                    "@php pint",
-                    "@rector",
-                    "@phpstan",
-                    "@tests",
-                    "@tests-adapter"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -630,16 +580,14 @@
                 "laravel"
             ],
             "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
                 "docs": "https://craftcms.com/docs/5.x/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "rss": "https://github.com/craftcms/cms/releases.atom",
+                "source": "https://github.com/craftcms/cms"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2026-05-24T11:05:54+00:00"
         },
         {
             "name": "craftcms/laravel-aliases",
@@ -2049,16 +1997,16 @@
         },
         {
             "name": "guzzlehttp/uri-template",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "4f4bbd4e7172148801e76e3decc1e559bdee34e1"
+                "reference": "eef7f87bab6f204eba3c39224d8075c70c637946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/4f4bbd4e7172148801e76e3decc1e559bdee34e1",
-                "reference": "4f4bbd4e7172148801e76e3decc1e559bdee34e1",
+                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/eef7f87bab6f204eba3c39224d8075c70c637946",
+                "reference": "eef7f87bab6f204eba3c39224d8075c70c637946",
                 "shasum": ""
             },
             "require": {
@@ -2067,7 +2015,7 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.44 || ^9.6.25",
+                "phpunit/phpunit": "^8.5.52 || ^9.6.34",
                 "uri-template/tests": "1.0.0"
             },
             "type": "library",
@@ -2115,7 +2063,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/uri-template/issues",
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.5"
+                "source": "https://github.com/guzzle/uri-template/tree/v1.0.6"
             },
             "funding": [
                 {
@@ -2131,7 +2079,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-22T14:27:06+00:00"
+            "time": "2026-05-23T22:00:21+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
@@ -13557,7 +13505,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "craftcms/cms": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

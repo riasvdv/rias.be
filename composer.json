@@ -4,7 +4,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.5",
-        "craftcms/cms": "^6.0.0",
+        "craftcms/cms": "^6.x-dev",
         "laravel/framework": "^13.0",
         "laravel/octane": "^2.17",
         "laravel/tinker": "^3.0",
@@ -23,12 +23,6 @@
         "nunomaduro/collision": "^8.6",
         "phpunit/phpunit": "^12.5.12"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../cms-6.x"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
