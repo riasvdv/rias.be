@@ -1,11 +1,12 @@
 <?php
+
 /**
  * General Configuration
  *
  * All of your system's general configuration settings go in here. You can see a
  * list of the available settings in vendor/craftcms/cms/src/config/GeneralConfig.php.
  *
- * @see \CraftCms\Cms\Config\GeneralConfig
+ * @see GeneralConfig
  * @link https://craftcms.com/docs/5.x/reference/config/general.html
  */
 
@@ -20,5 +21,4 @@ return GeneralConfig::create()
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
     ->aliases([
         '@webroot' => public_path(),
-    ])
-;
+    ]);
