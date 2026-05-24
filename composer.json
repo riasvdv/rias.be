@@ -4,6 +4,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.5",
+        "craftcms/cloud": "*",
         "craftcms/cms": "^6.x-dev",
         "laravel/framework": "^13.0",
         "laravel/octane": "^2.17",
