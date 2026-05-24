@@ -415,12 +415,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "b7e574ff83a48edd044851a7cb6538a3742229a5"
+                "reference": "c4f4c05debafb57a56e4cdfedb40109b87d3be59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/b7e574ff83a48edd044851a7cb6538a3742229a5",
-                "reference": "b7e574ff83a48edd044851a7cb6538a3742229a5",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c4f4c05debafb57a56e4cdfedb40109b87d3be59",
+                "reference": "c4f4c05debafb57a56e4cdfedb40109b87d3be59",
                 "shasum": ""
             },
             "require": {
@@ -587,7 +587,7 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2026-05-24T11:05:54+00:00"
+            "time": "2026-05-24T14:53:31+00:00"
         },
         {
             "name": "craftcms/laravel-aliases",
