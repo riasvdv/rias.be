@@ -10,6 +10,7 @@
         "laravel/octane": "^2.17",
         "laravel/tinker": "^3.0",
         "phiki/phiki": "^2.0",
+        "rias/craft-static-cache": "dev-main",
         "spatie/laravel-feed": "^4.5",
         "spatie/laravel-sitemap": "^8.1"
     },

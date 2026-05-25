@@ -1,4 +1,4 @@
-dateModified: 1779563565
+dateModified: 1779654377
 fs:
   assets:
     hasUrls: true
@@ -29,6 +29,45 @@ meta:
     c9aa63bb-fc79-4936-985d-63fc1870473b: Video # Video
     d4f20a8d-1882-432b-b698-5448257f51fc: Pages # Pages
     ec6c6c46-4a83-49b8-b063-daa3888fa7b8: Code # Code
+plugins:
+  static-cache:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
+    settings:
+      enabled: true
+      exclude:
+        __assoc__:
+          -
+            - uriParts
+            - '[]'
+      invalidation:
+        __assoc__:
+          -
+            - rules
+            - "{\r\n    \"all\": []\r\n}"
+      locks:
+        __assoc__:
+          1:
+            - waitSeconds
+            - 5
+      queryParameters:
+        __assoc__:
+          -
+            - allow
+            - '[]'
+      replacers:
+        - Rias\CraftStaticCache\Replacers\CsrfTokenReplacer
+      strategies:
+        __assoc__:
+          -
+            - file
+            -
+              __assoc__:
+                -
+                  - path
+                  - /Users/rias/Code/rias.be/storage/static-cache
+      strategy: file
 system:
   edition: solo
   live: true
