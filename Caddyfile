@@ -1,8 +1,6 @@
 {
 	{$CADDY_GLOBAL_OPTIONS}
 
-	admin {$CADDY_SERVER_ADMIN_HOST}:{$CADDY_SERVER_ADMIN_PORT}
-
 	frankenphp {
 		worker {
 			file "{$APP_PUBLIC_PATH}/frankenphp-worker.php"
