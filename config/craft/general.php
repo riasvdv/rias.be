@@ -18,8 +18,8 @@ return GeneralConfig::create()
     // Preload Single entries as Twig variables
     ->preloadSingles()
     ->generateTransformsBeforePageLoad()
-    ->cpLogoUrl(asset('assets/icons/ms-icon-310x310.png'))
-    ->cpIconUrl(asset('assets/icons/ms-icon-310x310.png'))
+    ->cpLogoUrl('/assets/icons/ms-icon-310x310.png')
+    ->cpIconUrl('/assets/icons/ms-icon-310x310.png')
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
     ->aliases([
         '@webroot' => public_path(),
