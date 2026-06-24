@@ -3,13 +3,55 @@ instructions: null
 name: Markdown
 searchable: false
 settings:
+  availableVolumes: '*'
   byteLimit: null
   charLimit: null
-  code: true
-  initialRows: 10
-  multiline: true
+  encode: false
+  flavor: gfm
+  htmlSanitizer: default
+  initialRows: 8
+  inlineOnly: false
+  linkSettingsShowLabelField: false
+  linkSettingsTypeSettings:
+    __assoc__:
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - showUnpermittedSections
+              - '1'
+            -
+              - showUnpermittedEntries
+              - '1'
+  linkSettingsTypes:
+    - entry
+    - url
   placeholder: null
-  uiMode: normal
+  sanitizeHtml: true
+  showStats: false
+  showToolbar: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  toolbarButtons:
+    - bold
+    - italic
+    - strikethrough
+    - code
+    - h1
+    - h2
+    - h3
+    - quote
+    - unordered-list
+    - ordered-list
+    - check-list
+    - link
+    - asset
+    - preview
+  uploadVolume: null
 translationKeyFormat: null
 translationMethod: none
-type: CraftCms\Cms\Field\PlainText
+type: CraftCms\Cms\Field\Markdown

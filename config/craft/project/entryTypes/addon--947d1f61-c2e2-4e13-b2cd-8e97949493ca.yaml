@@ -8,8 +8,7 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
-          -
-            dateAdded: '2026-05-23T18:57:57+00:00'
+          - dateAdded: '2026-05-23T18:57:57+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
@@ -24,8 +23,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 25
-          -
-            autocapitalize: true
+          - autocapitalize: true
             autocomplete: false
             autocorrect: true
             class: null
@@ -52,8 +50,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 75
-          -
-            dateAdded: '2026-05-23T18:57:57+00:00'
+          - dateAdded: '2026-05-23T18:57:57+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
@@ -68,8 +65,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2026-05-23T18:57:57+00:00'
+          - dateAdded: '2026-05-23T18:57:57+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null

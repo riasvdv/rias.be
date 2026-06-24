@@ -7,8 +7,7 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
-          -
-            autocapitalize: true
+          - autocapitalize: true
             autocomplete: false
             autocorrect: true
             class: null

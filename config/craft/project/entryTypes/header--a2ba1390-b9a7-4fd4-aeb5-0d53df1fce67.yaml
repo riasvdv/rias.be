@@ -10,8 +10,7 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
-          -
-            dateAdded: '2026-05-23T18:50:37+00:00'
+          - dateAdded: '2026-05-23T18:50:37+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null

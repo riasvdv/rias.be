@@ -1,4 +1,4 @@
-dateModified: 1779654377
+dateModified: 1782284948
 fs:
   assets:
     hasUrls: true
@@ -72,7 +72,7 @@ system:
   edition: solo
   live: true
   name: Rias.be
-  schemaVersion: 6.0.0.2
+  schemaVersion: 6.0.0.3
   timeZone: UTC
 users:
   allowPublicRegistration: false

@@ -1,15 +1,13 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  -
-    uid: 802c9eab-6bb4-4618-b8e1-35ae17d0146e # Page
+  - uid: 802c9eab-6bb4-4618-b8e1-35ae17d0146e # Page
 handle: pages
 maxAuthors: 1
 minAuthors: 0
 name: Pages
 previewTargets:
-  -
-    label: 'Primary entry page'
+  - label: 'Primary entry page'
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:

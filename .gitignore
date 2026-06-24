@@ -18,6 +18,7 @@
 /config/license.key
 /public/build
 /public/hot
+/public/static
 /public/storage
 /public/sitemap.xml
 /storage/*.key

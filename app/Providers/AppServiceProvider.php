@@ -21,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Markdown::extend('original', new PhikiCommonMarkFlavor);
+        Markdown::extend('gfm', new PhikiCommonMarkFlavor);
     }
 }

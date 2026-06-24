@@ -1,15 +1,13 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  -
-    uid: 947d1f61-c2e2-4e13-b2cd-8e97949493ca # Addon
+  - uid: 947d1f61-c2e2-4e13-b2cd-8e97949493ca # Addon
 handle: addons
 maxAuthors: 1
 minAuthors: 0
 name: Addons
 previewTargets:
-  -
-    label: 'Primary entry page'
+  - label: 'Primary entry page'
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:

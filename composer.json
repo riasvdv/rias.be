@@ -4,7 +4,6 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.5",
-        "craftcms/cloud": "*",
         "craftcms/cms": "^6.x-dev",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
@@ -15,7 +14,6 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^4.2",
-        "codemonkey/spx-mcp-server": "^0.2.1",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.5",
         "laravel/pao": "^1.0.6",
