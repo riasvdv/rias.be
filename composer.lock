@@ -5636,16 +5636,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/riasvdv/craft-static-cache.git",
-                "reference": "61903717ffe070cd3255f11d740eae87d8f6057e"
+                "reference": "414e413a29cf19a633707f245d88e70873bb1323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/craft-static-cache/zipball/61903717ffe070cd3255f11d740eae87d8f6057e",
-                "reference": "61903717ffe070cd3255f11d740eae87d8f6057e",
+                "url": "https://api.github.com/repos/riasvdv/craft-static-cache/zipball/414e413a29cf19a633707f245d88e70873bb1323",
+                "reference": "414e413a29cf19a633707f245d88e70873bb1323",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^6.0.0@dev",
+                "craftcms/cms": "*",
+                "ext-uri": "*",
                 "php": "^8.5"
             },
             "require-dev": {
@@ -5685,7 +5686,7 @@
                 "issues": "https://github.com/riasvdv/craft-static-cache/issues",
                 "source": "https://github.com/riasvdv/craft-static-cache/tree/main"
             },
-            "time": "2026-05-25T19:14:43+00:00"
+            "time": "2026-06-24T09:11:51+00:00"
         },
         {
             "name": "spatie/crawler",
