@@ -9,7 +9,7 @@ return [
     /**
      * Enable full-page static caching for eligible site requests.
      */
-    'enabled' => !env('APP_DEBUG'),
+    'enabled' => ! env('APP_DEBUG'),
 
     /**
      * Laravel cache store used for the canonical cached response.
