@@ -25,7 +25,7 @@
     <title>{{ title ?? entry.title ?? 'Rias.be' }} | Rias.be</title>
 
     {% if headerBlock %}
-        <meta name="description" content="{{ headerBlock.markdown|md|striptags|replace({"\n": ' '})|truncate(160) }}">
+        <meta name="description" content="{{ headerBlock.markdown|striptags|replace({"\n": ' '})|truncate(160)|raw }}">
     {% endif %}
 
     <link href="https://github.com/riasvdv" rel="me">

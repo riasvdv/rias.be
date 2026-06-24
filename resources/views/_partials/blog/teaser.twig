@@ -1,7 +1,7 @@
 {% set header = entry.contents.type('header').eagerly().one() %}
 {% set description %}
     {% if header %}
-        <p>{{ header.markdown|md|striptags|truncate(150) }}</p>
+        <p>{{ header.markdown|striptags|truncate(150)|raw }}</p>
     {% endif %}
 {% endset %}
 {% set footer %}

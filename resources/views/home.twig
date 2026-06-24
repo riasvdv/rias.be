@@ -22,7 +22,7 @@
         {% if introBlock and introBlock.type.handle == 'header' %}
             <header class="mb-4 flex items-center justify-between">
                 <div class="prose prose-xl md:prose-2xl max-w-3xl">
-                    {{ introBlock.markdown|md }}
+                    {{ introBlock.markdown }}
                 </div>
 
                 {% if avatarBlock %}
