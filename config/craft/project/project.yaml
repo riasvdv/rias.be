@@ -1,4 +1,4 @@
-dateModified: 1782284948
+dateModified: 1782284949
 fs:
   assets:
     hasUrls: true
@@ -6,7 +6,6 @@ fs:
     settings:
       path: '@webroot/assets'
       rootPath: /Users/rias/Code/craft.rias.be/public/assets
-      settingsHtml: "\n    \n                            \n        <div class=\"field\" id=\"path-field\" data-attribute=\"path\" data-error-key=\"path\"><div class=\"heading\"><label id=\"path-label\" for=\"path\">Base Path<span class=\"visually-hidden\">Required</span><span class=\"required\" aria-hidden=\"true\"></span></label></div><div id=\"path-instructions\" class=\"instructions\"><p>The base folder path that should be used as the root of the filesystem.</p>\n</div><div class=\"input ltr\">\n\n\n<div id=\"path-container\" class=\"autosuggest-container\" tabindex=\"-1\">\n        <input class=\"ltr text fullwidth text fullwidth\" type=\"text\" id=\"path-preview\" size value=\"@webroot/assets\" autocomplete=\"off\" disabled title placeholder=\"/path/to/folder\" dir=\"ltr\">\n\n    \n    <vue-autosuggest\n        :suggestions=\"filteredOptions\"\n        :get-suggestion-value=\"getSuggestionValue\"\n        :input-props=\"inputProps\"\n        :limit=\"limit\"\n        :component-attr-id-autosuggest=\"id\"\n        @selected=\"onSelected\"\n        @focus=\"updateFilteredOptions\"\n        @blur=\"onBlur\"\n        @input=\"onInputChange\"\n        v-model=\"inputProps.initialValue\"\n    >\n        <template slot-scope=\"{suggestion}\">\n            {{suggestion.item.name || suggestion.item}}\n            <span v-if=\"suggestion.item.hint\" class=\"light\">– {{suggestion.item.hint}}</span>\n        </template>\n    </vue-autosuggest>\n    \n</div>\n\n</div></div>\n\n\n"
     type: CraftCms\Cms\Filesystem\Filesystems\Local
     url: /assets
 meta:
