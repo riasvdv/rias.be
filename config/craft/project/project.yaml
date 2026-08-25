@@ -71,7 +71,7 @@ system:
   edition: solo
   live: true
   name: Rias.be
-  schemaVersion: 6.0.0.3
+  schemaVersion: 6.0.0.5
   timeZone: UTC
 users:
   allowPublicRegistration: false
