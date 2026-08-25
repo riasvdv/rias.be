@@ -1,0 +1,1 @@
+import{t as e}from"./tr-BoMERIKA.js";var t={...e};export{t as default};

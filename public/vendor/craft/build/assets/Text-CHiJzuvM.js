@@ -1,0 +1,1 @@
+import{A as e,J as t,L as n,S as r,U as i,b as a}from"./dist-hw24LBHM.js";import{o}from"./nav-item-DEjaz-rb-B-cPuDFl.js";var s=e({__name:`Text`,props:{as:{default:`div`},template:{},params:{}},setup(e){let s=e,c=a(()=>o(s.template,s.params));return(a,o)=>(i(),r(t(e.as),n(a.$attrs,{innerHTML:c.value}),null,16,[`innerHTML`]))}});export{s as t};

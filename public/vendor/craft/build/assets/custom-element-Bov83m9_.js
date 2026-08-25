@@ -1,0 +1,1 @@
+var e=e=>(t,n)=>{n===void 0?customElements.define(e,t):n.addInitializer((()=>{customElements.define(e,t)}))};export{e as t};
