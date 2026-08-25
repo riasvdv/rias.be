@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Cache\CacheServiceProvider;
 use Illuminate\Foundation\Application;
+use Illuminate\Cache\CacheServiceProvider;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Redis\RedisServiceProvider;
 
 $app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -20,7 +19,6 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })->create();
 
-$app->register(RedisServiceProvider::class);
 $app->register(CacheServiceProvider::class);
 
 return $app;
