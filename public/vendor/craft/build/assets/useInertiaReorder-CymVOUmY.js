@@ -1,0 +1,1 @@
+import{f as e,l as t}from"./dist-DLpH304J.js";function n({url:n,prop:r,key:i=`id`,param:a=`ids`}){let o=t();return function(t,s){let c=[...o.props[r]??[]],[l]=c.splice(t,1);l!==void 0&&(c.splice(s,0,l),e.visit(n,{method:typeof n==`string`?`post`:n.method,data:{[a]:c.map(e=>e[i])},optimistic:()=>({[r]:c}),preserveScroll:!0,preserveState:!0}))}}export{n as t};

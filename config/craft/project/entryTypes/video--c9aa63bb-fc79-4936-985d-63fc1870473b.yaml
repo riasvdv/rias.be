@@ -7,8 +7,7 @@ fieldLayouts:
     cardView:
       - 'layoutElement:3683565f-aa21-4743-8953-01e6457daff8'
     tabs:
-      -
-        elementCondition: null
+      - elementCondition: null
         elements:
           - dateAdded: '2026-05-23T18:55:28+00:00'
             editCondition: null

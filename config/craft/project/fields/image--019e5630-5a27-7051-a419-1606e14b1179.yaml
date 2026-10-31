@@ -6,8 +6,6 @@ settings:
   allowSelfRelations: false
   allowSubfolders: false
   allowUploads: true
-  allowedKinds:
-    - image
   branchLimit: null
   defaultPlacement: end
   defaultUploadLocationSource: 'volume:0a46a7e1-7181-479f-9595-3862c3342b53' # Images
@@ -16,15 +14,26 @@ settings:
   maxRelations: 1
   minRelations: 1
   previewMode: full
-  restrictFiles: true
   restrictLocation: false
   restrictedDefaultUploadSubpath: null
   restrictedLocationSource: 'volume:0a46a7e1-7181-479f-9595-3862c3342b53' # Images
   restrictedLocationSubpath: null
+  selectionCondition:
+    class: CraftCms\Cms\Asset\Conditions\AssetCondition
+    conditionRules:
+      operator: and
+      rules:
+        - class: CraftCms\Cms\Asset\Conditions\ViewableConditionRule
+          uid: 524b1ffb-8c7f-409a-916f-312bf3624cf1
+          value: true
+        - class: CraftCms\Cms\Asset\Conditions\FileTypeConditionRule
+          operator: in
+          uid: 5bcb9e36-affa-4658-99c7-ec35e4410060
+          values:
+            - image
   selectionLabel: 'Add image'
   showSearchInput: true
   showSiteMenu: false
-  showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources:
     - 'volume:0a46a7e1-7181-479f-9595-3862c3342b53' # Images

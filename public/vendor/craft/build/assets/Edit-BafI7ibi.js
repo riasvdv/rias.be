@@ -1,0 +1,1 @@
+import{G as e,Vt as t,Zt as n,nt as r}from"./vue.esm-bundler-6ql8m0cP.js";import{t as i}from"./ElementEditor-EEuK9jj_.js";var a=r({__name:`Edit`,props:{editorComponent:{},saveParams:{}},setup(r){let a=r,o=()=>({...a.saveParams});return(a,s)=>(t(),e(n(r.editorComponent?n(r.editorComponent):i),{"save-data":o}))}});export{a as default};

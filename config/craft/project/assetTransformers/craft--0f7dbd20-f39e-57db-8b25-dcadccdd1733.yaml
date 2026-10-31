@@ -1,0 +1,8 @@
+driver: craft
+handle: craft
+name: Craft
+settings:
+  disk: null
+  generateTransformsBeforePageLoad: true
+  hasUrls: false
+  subpath: null

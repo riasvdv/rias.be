@@ -1,16 +1,8 @@
-dateModified: 1782286163
-fs:
-  assets:
-    hasUrls: true
-    name: Assets
-    settings:
-      path: '@webroot/assets'
-      rootPath: /Users/rias/Code/craft.rias.be/public/assets
-    type: CraftCms\Cms\Filesystem\Filesystems\Local
-    url: /assets
+dateModified: 1793436043
 meta:
   __names__:
     0a46a7e1-7181-479f-9595-3862c3342b53: Images # Images
+    0f7dbd20-f39e-57db-8b25-dcadccdd1733: Craft # Craft
     1ed155de-d4c6-4dc4-a342-79f67151acd6: Addons # Addons
     3fdbb709-0266-4ad2-8309-eddd4be2f4a6: Image # Image
     5cc20a1d-c8ff-42b1-8fa7-2da05645834a: Rias.be # Rias.be
@@ -61,17 +53,15 @@ plugins:
         __assoc__:
           -
             - file
-            -
-              __assoc__:
+            - __assoc__:
                 -
                   - path
                   - /Users/rias/Code/rias.be/storage/static-cache
       strategy: file
 system:
   edition: solo
-  live: true
   name: Rias.be
-  schemaVersion: 6.0.0.5
+  schemaVersion: 6.0.0.33
   timeZone: UTC
 users:
   allowPublicRegistration: false

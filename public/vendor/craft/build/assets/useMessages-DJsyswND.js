@@ -1,0 +1,1 @@
+import{Ft as e,jt as t}from"./vue.esm-bundler-6ql8m0cP.js";import{a as n,r}from"./messages-BISkQ-zx.js";function i(){let e=e=>(t,r)=>n({type:e,message:t,settings:r});return{showMessage:n,notice:e(`notice`),success:e(`success`),error:e(`error`)}}function a(n,i){let a=null;e(()=>{a=r(n,i)}),t(()=>a?.())}export{i as n,a as t};

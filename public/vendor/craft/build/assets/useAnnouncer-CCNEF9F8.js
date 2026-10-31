@@ -1,0 +1,1 @@
+import{Kn as e}from"./vue.esm-bundler-6ql8m0cP.js";var t=e(null),n=e(null);function r(e={}){function r(r){r&&(n.value!==null&&clearTimeout(n.value),t.value=r,n.value=setTimeout(()=>{t.value=null},e.timeout||5e3))}return{announcement:t,announce:r}}export{r as t};

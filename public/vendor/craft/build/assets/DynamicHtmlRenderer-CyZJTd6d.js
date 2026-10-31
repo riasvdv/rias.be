@@ -1,0 +1,1 @@
+import{G as e,K as t,U as n,Vt as r,Zt as i,nt as a}from"./vue.esm-bundler-6ql8m0cP.js";var o=a({__name:`DynamicHtmlRenderer`,props:{html:{}},setup(o){let s=o,c=/<\?[\s\S]*?\?>/g,l=n(()=>s.html.replace(c,``)),u=[`<{{`,`}}>`],d=n(()=>a({template:l.value,compilerOptions:{delimiters:u}}));return(n,a)=>o.html?(r(),e(i(d.value),{key:0})):t(``,!0)}});export{o as t};

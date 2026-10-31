@@ -1,0 +1,1 @@
+function e(e){if(!e)return``;let t=new Date(e),n=window.Craft?.timezone,r=new Intl.DateTimeFormat(window.Craft?.formattingLocale,{dateStyle:`medium`,timeStyle:`short`,timeZone:n}).format(t),i=new Intl.DateTimeFormat(`en-US`,{timeZone:n,timeZoneName:`short`}).formatToParts(t).find(e=>e.type===`timeZoneName`)?.value;return i?`${r} ${i}`:r}export{e as t};

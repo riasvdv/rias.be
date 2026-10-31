@@ -1,1 +1,0 @@
-import{A as e,C as t,J as n,S as r,U as i,b as a}from"./dist-hw24LBHM.js";var o=e({__name:`DynamicHtmlRenderer`,props:{html:{}},setup(o){let s=o,c=a(()=>e({template:s.html}));return(e,a)=>o.html?(i(),r(n(c.value),{key:0})):t(``,!0)}});export{o as t};

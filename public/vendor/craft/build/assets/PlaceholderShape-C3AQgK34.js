@@ -1,0 +1,1 @@
+import{Vt as e,nt as t,q as n}from"./vue.esm-bundler-6ql8m0cP.js";import{t as r}from"./_plugin-vue_export-helper-BDNMzG2s.js";var i={class:`placeholder-shape`,"aria-hidden":`true`},a=r(t({__name:`PlaceholderShape`,setup(t){return(t,r)=>(e(),n(`span`,i))}}),[[`__scopeId`,`data-v-126a52a6`]]);export{a as t};

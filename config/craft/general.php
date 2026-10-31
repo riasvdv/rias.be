@@ -17,7 +17,6 @@ return GeneralConfig::create()
     ->defaultWeekStartDay(1)
     // Preload Single entries as Twig variables
     ->preloadSingles()
-    ->generateTransformsBeforePageLoad()
     ->cpLogoUrl('/assets/icons/ms-icon-310x310.png')
     ->cpIconUrl('/assets/icons/ms-icon-310x310.png')
     // Set the @webroot alias so the clear-caches command knows where to find CP resources

@@ -1,0 +1,1 @@
+var e=[`bold`,`italic`,`code`,`h3`,`quote`,`unordered-list`,`ordered-list`,`check-list`,`link`],t=[`bold`,`italic`,`strikethrough`,`code`,`h1`,`h2`,`h3`,`quote`,`unordered-list`,`ordered-list`,`check-list`,`link`];export{t as n,e as t};

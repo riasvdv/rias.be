@@ -4,8 +4,7 @@ fieldLayouts:
   ce5b1209-176a-4e00-a51b-be6501d5e780:
     cardThumbAlignment: end
     tabs:
-      -
-        elementCondition: null
+      - elementCondition: null
         elements:
           - autocapitalize: true
             autocomplete: false
@@ -40,7 +39,9 @@ fieldLayouts:
     thumbFieldKey: null
 fs: assets
 handle: images
+hasUrls: true
 name: Images
+propagationMethod: custom
 sortOrder: 1
 subpath: images
 titleTranslationKeyFormat: null

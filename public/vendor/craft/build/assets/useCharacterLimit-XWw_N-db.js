@@ -1,0 +1,1 @@
+import"./cp-Ast2Gc3-.js";import{n as e}from"./translate.ts-C8WHLkly.js";import{U as t}from"./vue.esm-bundler-6ql8m0cP.js";var n=1e4;function r(n,r){let i=t(()=>Math.max(0,[...n.value].length-r));return{overage:i,overageMessage:t(()=>i.value>0?e(`{num, number} {num, plural, =1{character} other{characters}} over the limit`,{num:i.value}):null)}}export{r as n,n as t};

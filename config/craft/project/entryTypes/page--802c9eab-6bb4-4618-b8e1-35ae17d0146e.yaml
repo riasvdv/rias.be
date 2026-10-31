@@ -5,8 +5,7 @@ fieldLayouts:
   d1f4814b-ff8a-4753-b91b-e2c7efd9ff30:
     cardThumbAlignment: end
     tabs:
-      -
-        elementCondition: null
+      - elementCondition: null
         elements:
           - autocapitalize: true
             autocomplete: false

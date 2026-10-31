@@ -5,8 +5,7 @@ fieldLayouts:
   76032274-9dc4-491a-bbb2-88487ac6df2d:
     cardThumbAlignment: start
     tabs:
-      -
-        elementCondition: null
+      - elementCondition: null
         elements:
           - autocapitalize: true
             autocomplete: false

@@ -1,0 +1,1 @@
+import{l as e}from"./dist-DLpH304J.js";import{U as t,er as n}from"./vue.esm-bundler-6ql8m0cP.js";function r(r){let i=e();return t(()=>{let e=r===void 0?i.props?.craft?.currentUser?.photoColors:n(r);return e?{"--photo-color-start":`var(--color-${e[0]}-500)`,"--photo-color-end":`var(--color-${e[1]}-500)`}:{}})}export{r as t};

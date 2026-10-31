@@ -3,6 +3,30 @@ instructions: null
 name: Markdown
 searchable: false
 settings:
+  assetSelectionCondition:
+    __assoc__:
+      -
+        - class
+        - CraftCms\Cms\Asset\Conditions\AssetCondition
+      -
+        - conditionRules
+        - __assoc__:
+            -
+              - operator
+              - and
+            -
+              - rules
+              -
+                - __assoc__:
+                    -
+                      - class
+                      - CraftCms\Cms\Asset\Conditions\ViewableConditionRule
+                    -
+                      - uid
+                      - 1ee1cd41-a62d-41dc-8e0b-f075011bf517
+                    -
+                      - value
+                      - true
   availableVolumes: '*'
   byteLimit: null
   charLimit: null
@@ -16,16 +40,12 @@ settings:
     __assoc__:
       -
         - entry
-        -
-          __assoc__:
+        - __assoc__:
             -
               - sources
               - '*'
             -
               - showUnpermittedSections
-              - '1'
-            -
-              - showUnpermittedEntries
               - '1'
   linkSettingsTypes:
     - entry
@@ -34,7 +54,6 @@ settings:
   sanitizeHtml: true
   showStats: false
   showToolbar: true
-  showUnpermittedFiles: false
   showUnpermittedVolumes: false
   toolbarButtons:
     - bold

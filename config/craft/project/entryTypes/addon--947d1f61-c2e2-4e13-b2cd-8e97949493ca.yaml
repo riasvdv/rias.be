@@ -5,8 +5,7 @@ fieldLayouts:
   e3543298-cfc4-42cc-b6f2-c79b3c7d07c5:
     cardThumbAlignment: end
     tabs:
-      -
-        elementCondition: null
+      - elementCondition: null
         elements:
           - dateAdded: '2026-05-23T18:57:57+00:00'
             editCondition: null

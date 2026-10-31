@@ -1,0 +1,1 @@
+function e(){return window.jQuery??window.$??null}export{e as t};
