@@ -93,6 +93,8 @@ prepare_env() {
 
 generate_app_key() {
   grep -q '^APP_KEY=.\+' .env || php artisan key:generate --ansi --no-interaction
+  # OAuth signing keys for the authenticated MCP server
+  [ -f storage/oauth-private.key ] || php artisan passport:keys --no-interaction
 }
 
 install_craft() {

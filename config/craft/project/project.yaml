@@ -1,4 +1,13 @@
-dateModified: 1793436043
+dateModified: 1793447013
+mcp:
+  authorizationRoute: /admin/mcp/auth
+  enabled: true
+  publicAllowDrafts: false
+  publicAllowInactive: false
+  publicAllowRevisions: false
+  publicEnabled: false
+  publicRoute: /mcp
+  route: /admin/mcp
 meta:
   __names__:
     0a46a7e1-7181-479f-9595-3862c3342b53: Images # Images
