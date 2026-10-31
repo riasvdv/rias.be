@@ -14,7 +14,10 @@ $app = Application::configure(basePath: dirname(__DIR__))
     )
     ->withCommands()
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Amp orb portals terminate HTTPS in a proxy in front of `artisan serve`.
+        if (env('AMP_ORB') !== null) {
+            $middleware->trustProxies(at: '*');
+        }
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

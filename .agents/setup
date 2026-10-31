@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+# Prepares a fresh Amp orb (Debian 12) for this Craft CMS / Laravel site.
+# Idempotent: safe to rerun on a stale snapshot.
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+step() {
+  local name="$1"
+  shift
+  local start=$SECONDS
+  echo "==> $name"
+  "$@"
+  echo "<== $name ($((SECONDS - start))s)"
+}
+
+PHP_VERSION=8.5
+PHP_PACKAGES=(
+  "php$PHP_VERSION-cli" "php$PHP_VERSION-bcmath" "php$PHP_VERSION-curl" "php$PHP_VERSION-gd"
+  "php$PHP_VERSION-intl" "php$PHP_VERSION-mbstring" "php$PHP_VERSION-pgsql" "php$PHP_VERSION-sqlite3"
+  "php$PHP_VERSION-xml" "php$PHP_VERSION-zip" "php$PHP_VERSION-imagick" "php$PHP_VERSION-redis"
+)
+APT_PACKAGES=("${PHP_PACKAGES[@]}" postgresql postgresql-client unzip)
+
+install_system_packages() {
+  local missing=()
+  for pkg in "${APT_PACKAGES[@]}"; do
+    dpkg -s "$pkg" >/dev/null 2>&1 || missing+=("$pkg")
+  done
+  if [ ${#missing[@]} -eq 0 ]; then
+    echo "all system packages present"
+    return
+  fi
+
+  if [ ! -f /etc/apt/sources.list.d/php.list ]; then
+    sudo apt-get update -qq
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ca-certificates curl lsb-release
+    sudo curl -fsSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
+    echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" |
+      sudo tee /etc/apt/sources.list.d/php.list >/dev/null
+  fi
+  sudo apt-get update -qq
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends "${missing[@]}"
+}
+
+install_composer() {
+  if command -v composer >/dev/null 2>&1; then
+    composer --version
+    return
+  fi
+  local installer
+  installer="$(mktemp)"
+  curl -fsSL https://getcomposer.org/installer -o "$installer"
+  sudo php "$installer" --quiet --install-dir=/usr/local/bin --filename=composer
+  rm -f "$installer"
+}
+
+start_postgres() {
+  # Ephemeral sandbox: favour speed over durability.
+  local conf
+  conf="$(ls /etc/postgresql/*/main/postgresql.conf | head -n1)"
+  if ! grep -q '^# amp-orb tuning' "$conf"; then
+    printf '\n# amp-orb tuning\nfsync = off\nsynchronous_commit = off\nfull_page_writes = off\n' | sudo tee -a "$conf" >/dev/null
+  fi
+  sudo service postgresql start >/dev/null
+  for _ in $(seq 1 30); do
+    pg_isready -q -h 127.0.0.1 && break
+    sleep 1
+  done
+
+  # Matches DB_USERNAME/DB_PASSWORD/DB_DATABASE in .env.example.
+  sudo -u postgres psql -qtAc "SELECT 1 FROM pg_roles WHERE rolname = 'root'" | grep -q 1 ||
+    sudo -u postgres psql -qc "CREATE ROLE root LOGIN SUPERUSER PASSWORD 'root'"
+  sudo -u postgres psql -qtAc "SELECT 1 FROM pg_database WHERE datname = 'craft'" | grep -q 1 ||
+    sudo -u postgres createdb -O root craft
+}
+
+install_php_dependencies() {
+  composer install --no-interaction --no-progress --prefer-dist
+}
+
+install_node_dependencies() {
+  npm ci --no-audit --no-fund
+}
+
+prepare_env() {
+  if [ ! -f .env ]; then
+    cp -- .env.example .env
+    # .env.example leaves DB_PASSWORD empty; the local role uses "root".
+    sed -i 's/^DB_PASSWORD=$/DB_PASSWORD=root/' .env
+  fi
+}
+
+generate_app_key() {
+  grep -q '^APP_KEY=.\+' .env || php artisan key:generate --ansi --no-interaction
+}
+
+install_craft() {
+  if php artisan craft:install:check >/dev/null 2>&1; then
+    php artisan craft:project-config:apply --no-interaction
+    return
+  fi
+  # Dev-only admin account for the orb's local database.
+  php artisan craft:install --no-interaction \
+    --username=admin --email=admin@example.com --password=password \
+    --siteName=Rias.be --siteUrl='$APP_URL' --language=en
+  # The installer rewrites the committed project config YAML; keep the
+  # checkout clean and sync the database to the committed files instead.
+  git checkout -- config/craft/project
+  php artisan craft:project-config:apply --no-interaction
+}
+
+# index.twig returns 404 until a "home" page exists, so seed one.
+seed_home_page() {
+  php artisan tinker --execute="$(cat <<'PHP'
+use CraftCms\Cms\Entry\Elements\Entry;
+use CraftCms\Cms\Support\Facades\Elements;
+use CraftCms\Cms\Support\Facades\Sections;
+
+if (Entry::find()->section('pages')->slug('home')->status(null)->exists()) {
+    echo "home page exists\n";
+    return;
+}
+$section = Sections::getSectionByHandle('pages');
+$entry = new Entry();
+$entry->sectionId = $section->id;
+$entry->typeId = $section->getEntryTypes()[0]->id;
+$entry->title = 'Home';
+$entry->slug = 'home';
+if (!Elements::saveElement($entry)) {
+    throw new RuntimeException(json_encode($entry->getErrors()));
+}
+echo "seeded home page\n";
+PHP
+)"
+}
+
+step "System packages (PHP $PHP_VERSION, PostgreSQL)" install_system_packages
+step "Composer" install_composer
+step "PostgreSQL" start_postgres
+step ".env" prepare_env
+step "Composer dependencies" install_php_dependencies
+step "App key" generate_app_key
+step "Craft install" install_craft
+step "Seed home page" seed_home_page
+step "npm dependencies" install_node_dependencies
+# Tests read public/build/manifest.json.
+step "Frontend build" npm run build --silent

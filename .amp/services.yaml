@@ -1,0 +1,13 @@
+services:
+  web:
+    command: >-
+      php artisan optimize:clear &&
+      APP_URL="$PUBLIC_URL" ASSET_URL="$PUBLIC_URL"
+      php artisan serve --host=0.0.0.0 --port="$PORT"
+    health: /
+    portal:
+      title: Rias.be
+      description: Control panel at /admin, sign in with admin / password.
+    portals:
+      - url: /admin
+        title: Control panel

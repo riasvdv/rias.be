@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Runs whenever an orb wakes. Keep it fast: only make sure PostgreSQL is up.
+set -euo pipefail
+
+if ! pg_isready -q -h 127.0.0.1; then
+  sudo service postgresql start >/dev/null
+fi
