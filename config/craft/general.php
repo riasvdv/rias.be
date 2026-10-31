@@ -17,6 +17,8 @@ return GeneralConfig::create()
     ->defaultWeekStartDay(1)
     // Preload Single entries as Twig variables
     ->preloadSingles()
+    // Make the project config read-only in production; change settings locally and deploy them instead
+    ->allowAdminChanges(env('APP_ENV', 'production') !== 'production')
     ->cpLogoUrl('/assets/icons/ms-icon-310x310.png')
     ->cpIconUrl('/assets/icons/ms-icon-310x310.png')
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
