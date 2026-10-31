@@ -100,39 +100,23 @@ install_craft() {
     php artisan craft:project-config:apply --no-interaction
     return
   fi
+  # The installer rewrites the project config YAML. Restore it afterwards so the
+  # database matches the files, but never discard uncommitted config changes.
+  local config_was_clean=false
+  git diff --quiet -- config/craft/project && config_was_clean=true
   # Dev-only admin account for the orb's local database.
   php artisan craft:install --no-interaction \
     --username=admin --email=admin@example.com --password=password \
     --siteName=Rias.be --siteUrl='$APP_URL' --language=en
-  # The installer rewrites the committed project config YAML; keep the
-  # checkout clean and sync the database to the committed files instead.
-  git checkout -- config/craft/project
-  php artisan craft:project-config:apply --no-interaction
+  if [ "$config_was_clean" = true ]; then
+    git checkout -- config/craft/project
+    php artisan craft:project-config:apply --no-interaction
+  fi
 }
 
-# index.twig returns 404 until a "home" page exists, so seed one.
-seed_home_page() {
-  php artisan tinker --execute="$(cat <<'PHP'
-use CraftCms\Cms\Entry\Elements\Entry;
-use CraftCms\Cms\Support\Facades\Elements;
-use CraftCms\Cms\Support\Facades\Sections;
-
-if (Entry::find()->section('pages')->slug('home')->status(null)->exists()) {
-    echo "home page exists\n";
-    return;
-}
-$section = Sections::getSectionByHandle('pages');
-$entry = new Entry();
-$entry->sectionId = $section->id;
-$entry->typeId = $section->getEntryTypes()[0]->id;
-$entry->title = 'Home';
-$entry->slug = 'home';
-if (!Elements::saveElement($entry)) {
-    throw new RuntimeException(json_encode($entry->getErrors()));
-}
-echo "seeded home page\n";
-PHP
-)"
+# Demo content (database/seeders); index.twig returns 404 without a "home" page.
+seed_content() {
+  php artisan db:seed --force --no-interaction
 }
 
 step "System packages (PHP $PHP_VERSION, PostgreSQL)" install_system_packages
@@ -142,7 +126,7 @@ step ".env" prepare_env
 step "Composer dependencies" install_php_dependencies
 step "App key" generate_app_key
 step "Craft install" install_craft
-step "Seed home page" seed_home_page
+step "Seed demo content" seed_content
 step "npm dependencies" install_node_dependencies
 # Tests read public/build/manifest.json.
 step "Frontend build" npm run build --silent
