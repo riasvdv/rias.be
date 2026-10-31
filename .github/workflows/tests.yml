@@ -21,6 +21,17 @@ jobs:
       - name: Composer install
         uses: "ramsey/composer-install@v2"
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Build frontend assets
+        run: |
+          npm ci
+          npm run build
+
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
