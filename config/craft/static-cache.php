@@ -99,6 +99,17 @@ return [
     ],
 
     /**
+     * Cache warming makes same-site HTTP requests before visitors hit pages.
+     */
+    'warming' => [
+        /**
+         * Extra URLs to warm in addition to live entry URLs.
+         * The homepage is rendered by index.twig, not an entry URL.
+         */
+        'urls' => ['/'],
+    ],
+
+    /**
      * Cache locks prevent duplicate renders for the same URL under load.
      */
     'locks' => [
