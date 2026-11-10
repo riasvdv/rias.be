@@ -51,6 +51,11 @@ return [
             'driver' => 'local',
             'root' => public_path('assets'),
             'url' => '/assets',
+            // Pages are statically cached, so they need transform file URLs, not generate-transform action URLs
+            'asset_transformer' => [
+                'driver' => 'craft',
+                'generate_transforms_before_page_load' => true,
+            ],
         ],
 
         's3' => [

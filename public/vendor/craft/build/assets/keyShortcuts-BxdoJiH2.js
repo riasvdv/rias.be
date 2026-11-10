@@ -1,1 +1,0 @@
-function e(){return/Mac|iPhone|iPad/.test(navigator.platform)}function t(t,{shift:n=!1}={}){return[e()?`Meta`:`Control`,...n?[`Shift`]:[],t].join(`+`)}export{e as n,t};

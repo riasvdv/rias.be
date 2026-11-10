@@ -1,4 +1,4 @@
-dateModified: 1793447013
+dateModified: 1794344178
 mcp:
   authorizationRoute: /admin/mcp/auth
   enabled: true
@@ -11,7 +11,6 @@ mcp:
 meta:
   __names__:
     0a46a7e1-7181-479f-9595-3862c3342b53: Images # Images
-    0f7dbd20-f39e-57db-8b25-dcadccdd1733: Craft # Craft
     1ed155de-d4c6-4dc4-a342-79f67151acd6: Addons # Addons
     3fdbb709-0266-4ad2-8309-eddd4be2f4a6: Image # Image
     5cc20a1d-c8ff-42b1-8fa7-2da05645834a: Rias.be # Rias.be
@@ -70,7 +69,7 @@ plugins:
 system:
   edition: solo
   name: Rias.be
-  schemaVersion: 6.0.0.33
+  schemaVersion: 6.0.0.36
   timeZone: UTC
 users:
   allowPublicRegistration: false

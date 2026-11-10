@@ -20,6 +20,7 @@
 /public/hot
 /public/static
 /public/storage
+/public/vendor/craft
 /public/sitemap.xml
 /storage/*.key
 /storage/pail
