@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52615dd805b4d71bf565dc5b5e5b5044",
+    "content-hash": "a851a265f36f9c9cf88016535ab263fe",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -420,16 +420,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "6.0.0-beta.1",
+            "version": "6.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "05ce9b81be3704fb27da3a5a6670accfa49ec9a9"
+                "reference": "fc9029bf43774af6819b4f3cabfcb5fbcb1d4f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/05ce9b81be3704fb27da3a5a6670accfa49ec9a9",
-                "reference": "05ce9b81be3704fb27da3a5a6670accfa49ec9a9",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/fc9029bf43774af6819b4f3cabfcb5fbcb1d4f0e",
+                "reference": "fc9029bf43774af6819b4f3cabfcb5fbcb1d4f0e",
                 "shasum": ""
             },
             "require": {
@@ -498,6 +498,7 @@
                 "intervention/image-driver-vips": "^4.1",
                 "larastan/larastan": "^3.13",
                 "laravel/boost": "^2.10.3",
+                "laravel/octane": "^2.24",
                 "laravel/pao": "^1.0",
                 "laravel/pint": "^1.22",
                 "laravel/socialite": "^5.23",
@@ -615,23 +616,24 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2026-11-10T18:14:47+00:00",
-            "published-time": "2026-11-10T18:15:11+00:00"
+            "time": "2026-11-13T06:09:15+00:00",
+            "published-time": "2026-11-13T06:09:25+00:00"
         },
         {
             "name": "craftcms/cms-assets",
-            "version": "6.0.0-beta.1",
+            "version": "6.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms-assets.git",
-                "reference": "87acafef481f17c12a10170211bbccda42588dbd"
+                "reference": "3b86eb51f380a733cdc86fdc89e63c7bddb0b5ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms-assets/zipball/87acafef481f17c12a10170211bbccda42588dbd",
-                "reference": "87acafef481f17c12a10170211bbccda42588dbd",
+                "url": "https://api.github.com/repos/craftcms/cms-assets/zipball/3b86eb51f380a733cdc86fdc89e63c7bddb0b5ca",
+                "reference": "3b86eb51f380a733cdc86fdc89e63c7bddb0b5ca",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -639,10 +641,10 @@
             ],
             "description": "Built assets for Craft CMS.",
             "support": {
-                "source": "https://github.com/craftcms/cms-assets/tree/6.0.0-beta.1"
+                "source": "https://github.com/craftcms/cms-assets/tree/6.x"
             },
-            "time": "2026-11-10T18:11:32+00:00",
-            "published-time": "2026-11-10T18:17:49+00:00"
+            "time": "2026-11-13T06:11:56+00:00",
+            "published-time": "2026-11-13T06:12:03+00:00"
         },
         {
             "name": "craftcms/laravel-aliases",
@@ -15084,6 +15086,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "craftcms/cms": 20,
         "rias/craft-static-cache": 20
     },
     "prefer-stable": true,
