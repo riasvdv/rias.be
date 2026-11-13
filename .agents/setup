@@ -99,7 +99,9 @@ generate_app_key() {
 
 install_craft() {
   if php artisan craft:install:check >/dev/null 2>&1; then
-    php artisan craft:project-config:apply --no-interaction
+    # A snapshot database can predate the installed Craft version, so run its
+    # migrations before applying project config.
+    php artisan craft:up --noBackup --no-interaction
     return
   fi
   # The installer rewrites the project config YAML. Restore it afterwards so the
